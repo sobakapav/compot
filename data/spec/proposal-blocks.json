@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "types": [
+    {
+      "type": "recipient",
+      "title": "Company Recipient",
+      "fields": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "website", "type": "string", "required": false },
+        { "name": "logoFile", "type": "string", "required": false }
+      ]
+    },
+    {
+      "type": "business_task",
+      "title": "Business Task",
+      "fields": [
+        { "name": "content", "type": "markdown", "required": true }
+      ]
+    },
+    {
+      "type": "design_task",
+      "title": "Design Task",
+      "repeatable": true,
+      "fields": [
+        { "name": "content", "type": "markdown", "required": true },
+        { "name": "serviceId", "type": "string", "required": false }
+      ]
+    },
+    {
+      "type": "plan",
+      "title": "Work Plan",
+      "fields": [
+        { "name": "plan", "type": "json", "required": true }
+      ],
+      "notes": [
+        "Gantt-capable structure with dependencies, nesting, and repeat placeholders.",
+        "Each task has visibility and detail level."
+      ]
+    },
+    {
+      "type": "resources",
+      "title": "Resources",
+      "fields": [
+        { "name": "price", "type": "string", "required": true },
+        { "name": "duration", "type": "string", "required": true },
+        { "name": "terms", "type": "string", "required": false }
+      ]
+    },
+    {
+      "type": "cases",
+      "title": "Similar Projects",
+      "fields": [
+        {
+          "name": "items",
+          "type": "array",
+          "required": true,
+          "itemSchema": {
+            "caseId": "string",
+            "note": "markdown"
+          }
+        }
+      ]
+    },
+    {
+      "type": "next_steps",
+      "title": "Next Steps",
+      "fields": [
+        { "name": "content", "type": "markdown", "required": true },
+        { "name": "contacts", "type": "markdown", "required": false }
+      ]
+    }
+  ]
+}

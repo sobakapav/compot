@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "path": "data/links/service-proposals.json",
+      "key": "serviceId",
+      "value": "proposalIds",
+      "example": {
+        "service-001": ["acme_2026-02-16", "beta_2026-02-10"]
+      }
+    },
+    {
+      "path": "data/links/service-cases.json",
+      "key": "serviceId",
+      "value": "caseIds",
+      "example": {
+        "service-001": ["case-001", "case-002"]
+      }
+    },
+    {
+      "path": "data/links/case-proposals.json",
+      "key": "caseId",
+      "value": "proposalIds",
+      "example": {
+        "case-001": ["acme_2026-02-16"]
+      }
+    }
+  ]
+}

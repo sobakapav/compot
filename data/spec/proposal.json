@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "acme_2026-02-16",
+  "status": "draft",
+  "clientName": "Acme Corp",
+  "serviceName": "UX/UI-дизайн под ключ",
+  "serviceId": "service-ux-ui-design",
+  "clientLogoDataUrl": "",
+  "caseIds": ["case-001", "case-002"],
+  "designId": "design-001",
+  "blocks": [
+    {
+      "id": "block-001",
+      "type": "recipient",
+      "title": "Company Recipient",
+      "contentFormat": "json",
+      "content": {
+        "name": "Acme Corp",
+        "website": "https://acme.example.com",
+        "logoFile": "assets/clients/acme.png"
+      },
+      "updatedAt": "2026-02-16T12:00:00Z"
+    }
+  ],
+  "createdAt": "2026-02-16T10:00:00Z",
+  "updatedAt": "2026-02-16T12:00:00Z"
+}

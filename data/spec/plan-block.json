@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "type": "plan",
+  "title": "Work Plan",
+  "contentFormat": "json",
+  "plan": {
+    "view": {
+      "mode": "summary",
+      "showDependencies": true,
+      "showDates": true,
+      "showDurations": true,
+      "showOwners": false,
+      "expandLevel": 1
+    },
+    "calendar": {
+      "startDate": "2026-02-16",
+      "timezone": "Europe/Moscow"
+    },
+    "tasks": [
+      {
+        "id": "phase-01",
+        "title": "Discovery",
+        "type": "phase",
+        "repeat": {
+          "count": 1,
+          "rule": null
+        },
+        "dates": {
+          "start": "2026-02-17",
+          "end": "2026-03-01",
+          "durationDays": 10
+        },
+        "dependencies": [],
+        "owner": "Design Lead",
+        "progress": 0,
+        "visibility": {
+          "show": true,
+          "detailLevel": "summary"
+        },
+        "children": [
+          {
+            "id": "task-01",
+            "title": "Stakeholder interviews",
+            "type": "task",
+            "dates": {
+              "start": "2026-02-17",
+              "end": "2026-02-20",
+              "durationDays": 3
+            },
+            "dependencies": [],
+            "owner": "Researcher",
+            "progress": 0,
+            "visibility": {
+              "show": true,
+              "detailLevel": "full"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

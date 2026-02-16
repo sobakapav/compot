@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "design-001",
+  "title": "Clean Light",
+  "description": "Light layout with minimal typography.",
+  "templateRef": {
+    "engine": "html",
+    "path": "designs/clean-light"
+  },
+  "assets": {
+    "companyName": "Your Company",
+    "companyLogoFile": "assets/company/logo.png"
+  },
+  "createdAt": "2026-02-16T12:00:00Z",
+  "updatedAt": "2026-02-16T12:00:00Z"
+}

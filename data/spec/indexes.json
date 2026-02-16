@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "proposals": {
+    "path": "data/proposals/index.json",
+    "item": {
+      "id": "acme_2026-02-16",
+      "clientName": "Acme Corp",
+      "serviceName": "UX/UI-дизайн под ключ",
+      "serviceId": "service-ux-ui-design",
+      "date": "2026-02-16",
+      "status": "draft"
+    }
+  },
+  "cases": {
+    "path": "data/cases/index.json",
+    "item": {
+      "id": "case-001",
+      "title": "Case Title",
+      "clientName": "Client Name",
+      "serviceIds": ["service-001"]
+    }
+  },
+  "services": {
+    "path": "data/services/index.json",
+    "item": {
+      "id": "service-001",
+      "title": "Service Title"
+    }
+  },
+  "designs": {
+    "path": "data/designs/index.json",
+    "item": {
+      "id": "design-001",
+      "title": "Clean Light"
+    }
+  }
+}

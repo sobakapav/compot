@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "service-ux-ui-design",
+      "title": "UX/UI-дизайн под ключ"
+    },
+    {
+      "id": "service-spot-redesign",
+      "title": "Точечный редизайн интерфейса"
+    },
+    {
+      "id": "service-new-features",
+      "title": "Добавление новой функциональности"
+    },
+    {
+      "id": "service-prototype",
+      "title": "Прототип под инвестиции"
+    },
+    {
+      "id": "service-ui-redesign",
+      "title": "UI-редизайн"
+    },
+    {
+      "id": "service-research",
+      "title": "Продуктовое исследование"
+    },
+    {
+      "id": "service-ux-audit",
+      "title": "UX-аудит"
+    },
+    {
+      "id": "service-ux-outsource",
+      "title": "UX-отдел на аутсорсе"
+    },
+    {
+      "id": "service-product-team",
+      "title": "Работа в продуктовой команде"
+    },
+    {
+      "id": "service-content-design",
+      "title": "Контент-дизайн"
+    }
+  ]
+}
