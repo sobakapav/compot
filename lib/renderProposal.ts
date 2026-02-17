@@ -12,11 +12,51 @@ const section = (title: string, body: string) => {
   if (!body.trim()) return "";
   return `
     <section class="block">
-      <h2>${escapeHtml(title)}</h2>
+      ${title ? `<h2>${escapeHtml(title)}</h2>` : ""}
       <div class="content">${escapeHtml(body).replaceAll("\n", "<br />")}</div>
     </section>
   `;
 };
+
+const sanitizeRichHtml = (html: string) => {
+  let safe = html;
+  safe = safe.replace(
+    /<\s*(script|style)[^>]*>[\s\S]*?<\s*\/\1\s*>/gi,
+    ""
+  );
+  safe = safe.replace(/on\w+="[^"]*"/gi, "");
+  safe = safe.replace(/on\w+='[^']*'/gi, "");
+
+  safe = safe.replace(/<\/?([a-z0-9]+)([^>]*)>/gi, (match, tag, attrs) => {
+    const allowed = ["p", "br", "strong", "b", "ul", "ol", "li", "a"];
+    const name = String(tag).toLowerCase();
+    if (!allowed.includes(name)) return "";
+    if (name !== "a") return `<${match.startsWith("</") ? "/" : ""}${name}>`;
+
+    const hrefMatch = String(attrs).match(/href\s*=\s*["']([^"']+)["']/i);
+    const href = hrefMatch?.[1] ?? "";
+    if (!href || !/^(https?:|mailto:)/i.test(href)) {
+      return match.startsWith("</") ? "</a>" : "<a>";
+    }
+    return match.startsWith("</")
+      ? "</a>"
+      : `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">`;
+  });
+  return safe;
+};
+
+const sectionRich = (title: string, body: string) => {
+  if (!body.trim()) return "";
+  return `
+    <section class="block">
+      ${title ? `<h2>${escapeHtml(title)}</h2>` : ""}
+      <div class="content rich">${sanitizeRichHtml(body)}</div>
+    </section>
+  `;
+};
+
+const applyDigitBold = (text: string) =>
+  escapeHtml(text).replace(/\d+/g, "<strong>$&</strong>");
 
 export const renderProposalHtml = (proposal: Proposal) => {
   const {
@@ -30,19 +70,27 @@ export const renderProposalHtml = (proposal: Proposal) => {
     nuances,
     assumptions,
     deliverables,
-    contacts,
+    contactName,
+    contactRole,
+    contactEmail,
+    contactTelegram,
+    contactPhone,
     validUntil,
   } = proposal;
 
   const blocks = [
-    section("Бизнес-задача", summary),
-    section("Объем работ", scope),
-    section("Сроки", timeline),
-    section("Стоимость", price),
-    section("Результаты", deliverables ?? ""),
-    section("Нюансы", nuances ?? ""),
+    sectionRich("Бизнес-задача", summary),
+    sectionRich("Дизайн-задача", scope),
+    sectionRich("Сроки", applyDigitBold(timeline)),
+    sectionRich("Стоимость", applyDigitBold(price)),
+    section("", nuances ?? ""),
     section("Предпосылки", assumptions ?? ""),
-    section("Контакты", contacts ?? ""),
+    section(
+      "Контакты",
+      [contactName, contactRole, contactEmail, contactTelegram, contactPhone]
+        .filter(Boolean)
+        .join("\n")
+    ),
     section("Действует до", validUntil ?? ""),
   ]
     .filter(Boolean)
@@ -62,7 +110,7 @@ export const renderProposalHtml = (proposal: Proposal) => {
         }
         * { box-sizing: border-box; }
         body {
-          font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+          font-family: "PT Sans Narrow", Arial, sans-serif;
           color: var(--text);
           margin: 0;
           padding: 0;
@@ -110,6 +158,28 @@ export const renderProposalHtml = (proposal: Proposal) => {
           font-size: 14px;
           line-height: 1.5;
           color: var(--text);
+        }
+        .block .content.rich p {
+          margin: 0 0 8px 0;
+        }
+        .block .content.rich ul,
+        .block .content.rich ol {
+          margin: 4px 0 8px 18px;
+          padding: 0;
+          list-style-position: outside;
+        }
+        .block .content.rich li {
+          margin: 2px 0;
+        }
+        .block .content.rich a {
+          color: #0e509e;
+          text-decoration: underline;
+        }
+        .block .content.rich ul {
+          list-style-type: disc;
+        }
+        .block .content.rich ol {
+          list-style-type: decimal;
         }
         footer {
           margin-top: 22px;

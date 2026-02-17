@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "simplefly",
+  "link": "https://sobakapav.ru/portfolio/simplefly",
+  "clientName": "",
+  "clientLogoFile": "",
+  "preview": "Провели оценку существующего интерфейса и интервью с пользователями. На их основе переработали дизайн приложения.",
+  "title": "Редизайн приложения для проведения сделок",
+  "description": "",
+  "createdAt": "2026-02-16T16:01:08.181Z",
+  "updatedAt": "2026-02-17T12:40:17Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/_astro/simplefly.WiNcWZCt.svg",
+  "previewImageFile": "/case-previews/simplefly.svg"
+}

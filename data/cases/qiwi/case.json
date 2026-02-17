@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "qiwi",
+  "link": "https://sobakapav.ru/portfolio/qiwi",
+  "clientName": "",
+  "clientLogoFile": "",
+  "preview": "Провели конкурентное сравнение, построили CJM и план поэтапного изменения интерфейса. Contact, KoronaPay и Unistream.",
+  "title": "Конкурентное сравнение трёх систем денежных переводов",
+  "description": "",
+  "createdAt": "2026-02-16T16:01:08.184Z",
+  "updatedAt": "2026-02-17T12:40:17Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/_astro/qiwi.L1ZhhDHV.svg",
+  "previewImageFile": "/case-previews/qiwi.svg"
+}

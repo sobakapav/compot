@@ -8,8 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +21,95 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), "PT Sans Narrow", sans-serif;
+}
+
+[contenteditable][data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: #a1a1aa;
+}
+
+[contenteditable]:focus {
+  outline: none;
+}
+
+.dir-ltr {
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+.proposal-page {
+  font-family: var(--font-sans), "PT Sans Narrow", sans-serif;
+  color: #111827;
+}
+
+.proposal-page h1,
+.proposal-page h2,
+.proposal-page h3 {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.proposal-headline {
+  font-family: var(--font-sans), "PT Sans Narrow", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.rich-field p {
+  margin: 0 0 0.5rem 0;
+}
+
+.rich-field ul,
+.rich-field ol {
+  margin: 0.25rem 0 0.5rem 1.25rem;
+  padding: 0;
+  list-style-position: outside;
+}
+
+.rich-field li {
+  margin: 0.15rem 0;
+}
+
+.rich-field a {
+  color: #0e509e;
+  text-decoration: underline;
+}
+
+.digit {
+  color: #19676c;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1;
+}
+
+.digit-field {
+  min-height: 2.6em;
+  line-height: 2.6em;
+  white-space: pre-wrap;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+.active-block {
+  background: #fff7cc;
+  border-radius: 18px;
+}
+
+.rich-field ul {
+  list-style-type: disc;
+}
+
+.rich-field ol {
+  list-style-type: decimal;
+}
+
+/* Hide Next.js dev tools bubble/column in dev */
+nextjs-portal,
+#__next-build-watcher,
+#__nextjs-devtools,
+#__nextjs-dev-tools,
+#__next-devtools,
+#nextjs-devtools-button,
+[data-nextjs-devtools] {
+  display: none !important;
 }

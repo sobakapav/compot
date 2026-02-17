@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "case-001",
+  "id": "seatmap",
   "link": "https://example.com/case",
   "clientName": "Client Name",
   "clientLogoFile": "assets/clients/client-logo.png",

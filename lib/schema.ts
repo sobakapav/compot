@@ -12,7 +12,11 @@ export const proposalSchema = z.object({
   nuances: z.string().optional().default(""),
   assumptions: z.string().optional().default(""),
   deliverables: z.string().optional().default(""),
-  contacts: z.string().optional().default(""),
+  contactName: z.string().optional().default(""),
+  contactRole: z.string().optional().default(""),
+  contactEmail: z.string().optional().default(""),
+  contactTelegram: z.string().optional().default(""),
+  contactPhone: z.string().optional().default(""),
   validUntil: z.string().optional().default(""),
 });
 

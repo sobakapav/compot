@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "t1",
+  "link": "https://sobakapav.ru/portfolio/t1",
+  "clientName": "T1",
+  "clientLogoFile": "",
+  "preview": "Собрали прототип MVP с удобным привлекательным интерфейсом для внутреннего стартапа компании T1.",
+  "title": "Медицинская карта с голосовым заполнением",
+  "description": "",
+  "createdAt": "2026-02-16T16:01:08.180Z",
+  "updatedAt": "2026-02-17T12:40:17Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/_astro/t1.CIdvoIWP.svg",
+  "previewImageFile": "/case-previews/t1.svg"
+}

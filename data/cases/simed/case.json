@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "simed",
+  "link": "https://sobakapav.ru/portfolio/simed",
+  "clientName": "СиМед",
+  "clientLogoFile": "",
+  "preview": "Провели редизайн медицинской системы для переезда в веб и улучшили пользовательский опыт.",
+  "title": "Редизайн модуля записи к врачу",
+  "description": "",
+  "createdAt": "2026-02-16T16:01:08.180Z",
+  "updatedAt": "2026-02-17T12:40:17Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/_astro/simed.DP__MQTU.svg",
+  "previewImageFile": "/case-previews/simed.svg"
+}

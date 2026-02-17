@@ -1,10 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "case-001",
+  "id": "seatmap",
   "link": "https://example.com/case",
   "clientName": "Client Name",
   "clientLogoFile": "assets/clients/client-logo.png",
   "preview": "Short preview text or markdown.",
+  "previewImageFile": "/case-previews/seatmap.webp",
+  "previewImageSourceUrl": "https://example.com/case-preview.webp",
   "title": "Case Title",
   "description": "Full case description in markdown.",
   "createdAt": "2026-02-16T12:00:00Z",

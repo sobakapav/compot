@@ -2,205 +2,205 @@
   "schemaVersion": 1,
   "items": [
     {
-      "id": "case-020",
+      "id": "seatmap",
       "title": "Инструмент для создания схем стадионов и концертных площадок",
-      "clientName": "",
+      "clientName": "Seatmap",
       "serviceIds": []
     },
     {
-      "id": "case-021",
+      "id": "electrocardiography",
       "title": "Медицинский интерфейс для работы с ЭКГ",
-      "clientName": "",
+      "clientName": "ERNA",
       "serviceIds": []
     },
     {
-      "id": "case-022",
+      "id": "broker",
       "title": "Аутсорс-исследование пользователей для финансовой компании",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-023",
+      "id": "anggell-2025",
       "title": "Дизайн интерфейса системы управления рестораном",
-      "clientName": "",
+      "clientName": "Anggell",
       "serviceIds": []
     },
     {
-      "id": "case-024",
+      "id": "t1",
       "title": "Медицинская карта с голосовым заполнением",
-      "clientName": "",
+      "clientName": "T1",
       "serviceIds": []
     },
     {
-      "id": "case-025",
+      "id": "simed",
       "title": "Редизайн модуля записи к врачу",
-      "clientName": "",
+      "clientName": "СиМед",
       "serviceIds": []
     },
     {
-      "id": "case-026",
+      "id": "lab4u",
       "title": "Аудит сайта и приложения медицинской лаборатории",
-      "clientName": "",
+      "clientName": "Lab4U",
       "serviceIds": []
     },
     {
-      "id": "case-027",
+      "id": "joono-ai",
       "title": "Исследование пользователей AI-фоторедактора",
-      "clientName": "",
+      "clientName": "Joono",
       "serviceIds": []
     },
     {
-      "id": "case-028",
+      "id": "torba",
       "title": "Исследование и дизайн интерфейса личного кабинета",
-      "clientName": "",
+      "clientName": "Торба",
       "serviceIds": []
     },
     {
-      "id": "case-029",
+      "id": "valer-ai",
       "title": "Редизайн AI-приложения для клиентов автосервиса",
-      "clientName": "",
+      "clientName": "Valer AI",
       "serviceIds": []
     },
     {
-      "id": "case-030",
+      "id": "simplefly",
       "title": "Редизайн приложения для проведения сделок",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-031",
+      "id": "prozhito",
       "title": "Интерфейс платформы общественной архивистики",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-032",
+      "id": "dipol",
       "title": "Интерфейс приложения визуальной LowCode среды разработки",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-033",
+      "id": "pushkin-digital",
       "title": "Дизайн интерфейса коллекции материалов Пушкинского дома",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-034",
+      "id": "tmh",
       "title": "Платформа дистанционного мониторинга пациентов",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-035",
+      "id": "jeffit",
       "title": "Система автоматизации для юридических департаментов",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-036",
+      "id": "hyperus",
       "title": "Дизайн интерфейса системы управления IT-инфраструктурой",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-037",
+      "id": "easydocs-2024",
       "title": "Дизайн интерфейса модуля приема кандидатов на работу",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-038",
+      "id": "elma-bot",
       "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-039",
+      "id": "otvinta-2024",
       "title": "UX-отдел на аутсорсе для строительного интернет-магазина",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-040",
+      "id": "ot-vinta",
       "title": "Точечный редизайн интерфейса магазина строительных товаров",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-041",
+      "id": "nextons",
       "title": "Таск-трекер юридической фирмы",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-042",
+      "id": "qiwi",
       "title": "Конкурентное сравнение трёх систем денежных переводов",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-043",
+      "id": "zapovednik",
       "title": "UX-аудит и редизайн магазина товаров для животных",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-044",
+      "id": "alfastrah-design",
       "title": "Дизайн-система для компании «АльфаСтрахование»",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-045",
+      "id": "e-gorod-mobile",
       "title": "Объединение двух мобильных приложений",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-046",
+      "id": "onkor",
       "title": "Дизайн интерфейса МИС для онкологических клиник",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-047",
+      "id": "control-patent",
       "title": "Интерфейс мобильного приложения для работы с трудовыми патентами",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-048",
+      "id": "avicenna",
       "title": "Медицинская информационная система",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-049",
+      "id": "stroynastroy",
       "title": "Дизайн интерфейса маркетплейса стройматериалов",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-050",
+      "id": "domotech",
       "title": "UX-аудит интерфейса сетевого магазина бытовой техники",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-051",
+      "id": "control-predpisanie",
       "title": "Мобильное приложение для работы с предписаниями",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-052",
+      "id": "pangeo",
       "title": "Платформа кибербезопасности",
       "clientName": "",
       "serviceIds": []
     },
     {
-      "id": "case-053",
+      "id": "simetra",
       "title": "UX-аудит системы транспортного моделирования",
       "clientName": "",
       "serviceIds": []

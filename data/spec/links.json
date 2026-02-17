@@ -14,7 +14,7 @@
       "key": "serviceId",
       "value": "caseIds",
       "example": {
-        "service-001": ["case-001", "case-002"]
+        "service-001": ["seatmap", "electrocardiography"]
       }
     },
     {
@@ -22,7 +22,7 @@
       "key": "caseId",
       "value": "proposalIds",
       "example": {
-        "case-001": ["acme_2026-02-16"]
+        "seatmap": ["acme_2026-02-16"]
       }
     }
   ]

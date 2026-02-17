@@ -7,7 +7,7 @@
   "serviceId": "service-ux-ui-design",
   "clientLogoDataUrl": "",
   "serviceId": "service-001",
-  "caseIds": ["case-001", "case-002"],
+  "caseIds": ["seatmap", "electrocardiography"],
   "designId": "design-001",
   "blocks": [],
   "createdAt": "2026-02-16T10:00:00Z",

@@ -14,7 +14,7 @@
   "cases": {
     "path": "data/cases/index.json",
     "item": {
-      "id": "case-001",
+      "id": "seatmap",
       "title": "Case Title",
       "clientName": "Client Name",
       "serviceIds": ["service-001"]

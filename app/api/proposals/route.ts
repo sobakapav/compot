@@ -6,12 +6,18 @@ export const runtime = "nodejs";
 
 export async function GET() {
   const proposals = await listProposals();
-  const items = proposals.map((item) => ({
-    id: item.id,
-    createdAt: item.createdAt,
-    clientName: item.proposal.clientName,
-    serviceName: item.proposal.serviceName,
-  }));
+  const items = proposals
+    .map((item) => {
+      const proposal = (item as typeof item & { proposal?: any }).proposal;
+      if (!proposal) return null;
+      return {
+        id: item.id,
+        createdAt: item.createdAt,
+        clientName: proposal.clientName ?? "",
+        serviceName: proposal.serviceName ?? "",
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
   return NextResponse.json({ items });
 }
 

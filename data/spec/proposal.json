@@ -6,7 +6,7 @@
   "serviceName": "UX/UI-дизайн под ключ",
   "serviceId": "service-ux-ui-design",
   "clientLogoDataUrl": "",
-  "caseIds": ["case-001", "case-002"],
+  "caseIds": ["seatmap", "electrocardiography"],
   "designId": "design-001",
   "blocks": [
     {
