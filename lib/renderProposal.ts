@@ -70,8 +70,6 @@ export const renderProposalHtml = (proposal: Proposal) => {
     nuances,
     assumptions,
     deliverables,
-    contactName,
-    contactRole,
     contactEmail,
     contactTelegram,
     contactPhone,
@@ -87,9 +85,7 @@ export const renderProposalHtml = (proposal: Proposal) => {
     section("Предпосылки", assumptions ?? ""),
     section(
       "Контакты",
-      [contactName, contactRole, contactEmail, contactTelegram, contactPhone]
-        .filter(Boolean)
-        .join("\n")
+      [contactEmail, contactTelegram, contactPhone].filter(Boolean).join("\n")
     ),
     section("Действует до", validUntil ?? ""),
   ]
@@ -109,14 +105,22 @@ export const renderProposalHtml = (proposal: Proposal) => {
           --accent: #0f172a;
         }
         * { box-sizing: border-box; }
+        @page {
+          size: A4;
+          margin: 0;
+        }
         body {
           font-family: "PT Sans Narrow", Arial, sans-serif;
           color: var(--text);
           margin: 0;
           padding: 0;
+          background: #ffffff;
         }
         .page {
-          padding: 32px 36px;
+          width: 210mm;
+          min-height: 297mm;
+          padding: 12mm 14mm;
+          margin: 0 auto;
         }
         header {
           border-bottom: 2px solid var(--accent);

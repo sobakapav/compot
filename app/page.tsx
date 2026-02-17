@@ -22,8 +22,6 @@ const defaultValues: Proposal = {
   nuances: "",
   assumptions: "",
   deliverables: "",
-  contactName: "Наталья Прокофьева",
-  contactRole: "генеральный директор",
   contactEmail: "pro@sobakapav.ru",
   contactTelegram: "@sobakapavpro",
   contactPhone: "+7 (495) 191-92-81",
@@ -39,7 +37,7 @@ const blocks = [
   { id: "price", label: "Стоимость", field: "price" },
   { id: "deliverables", label: "Результаты", field: "deliverables" },
   { id: "nuances", label: "Нюансы", field: "nuances" },
-  { id: "footer", label: "Подвал", field: "contactName" },
+  { id: "footer", label: "Подвал", field: "contactEmail" },
 ] as const;
 
 type ServiceItem = {
@@ -118,6 +116,7 @@ export default function Home() {
   >(null);
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [cases, setCases] = useState<CaseItem[]>([]);
+  const didInitContactsRef = useRef(false);
   const [selectedCaseIds, setSelectedCaseIds] = useState<string[]>([]);
   const [caseFilter, setCaseFilter] = useState("");
   const [validUntilValue, setValidUntilValue] = useState("");
@@ -239,32 +238,59 @@ export default function Home() {
         body: JSON.stringify(proposal),
       });
       if (!historyResponse.ok) {
-        throw new Error("Failed to store proposal");
+        const message = await historyResponse.text();
+        throw new Error(message || "Failed to store proposal");
       }
 
       const response = await fetch("/api/pdf", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(proposal),
+        body: JSON.stringify({
+          proposal,
+          selectedCaseIds,
+          planTasks,
+        }),
       });
       if (!response.ok) {
-        throw new Error("Failed to generate PDF");
+        const message = await response.text();
+        throw new Error(message || "Failed to generate PDF");
       }
       const blob = await response.blob();
+      if (!blob || blob.size === 0) {
+        throw new Error("Empty PDF");
+      }
       const url = URL.createObjectURL(blob);
+      window.open(url, "_blank", "noopener,noreferrer");
       const link = document.createElement("a");
       link.href = url;
       link.download = "proposal.pdf";
+      link.rel = "noopener";
       link.click();
       URL.revokeObjectURL(url);
     } catch (err) {
-      setError("Failed to generate PDF. Please try again.");
+      setError("Не удалось сформировать PDF. Проверь поля и попробуй снова.");
     } finally {
       setIsLoading(false);
     }
   };
 
   const requiredMark = useMemo(() => <span className="text-red-500">*</span>, []);
+
+  useEffect(() => {
+    if (didInitContactsRef.current) return;
+    didInitContactsRef.current = true;
+    setProposal((prev) => {
+      const hasAny =
+        prev.contactEmail || prev.contactTelegram || prev.contactPhone;
+      if (hasAny) return prev;
+      return {
+        ...prev,
+        contactEmail: defaultValues.contactEmail,
+        contactTelegram: defaultValues.contactTelegram,
+        contactPhone: defaultValues.contactPhone,
+      };
+    });
+  }, []);
 
   useEffect(() => {
     const loadHistory = async () => {
@@ -323,8 +349,6 @@ export default function Home() {
     if (selectedBlock === "footer") {
       setProposal((prev) => ({
         ...prev,
-        contactName: proposal.contactName ?? prev.contactName,
-        contactRole: proposal.contactRole ?? prev.contactRole,
         contactEmail: proposal.contactEmail ?? prev.contactEmail,
         contactTelegram: proposal.contactTelegram ?? prev.contactTelegram,
         contactPhone: proposal.contactPhone ?? prev.contactPhone,
@@ -354,7 +378,7 @@ export default function Home() {
 
   const renderDigitHtml = (value: string) =>
     escapeHtml(value).replace(
-      /\d+(?:[.,-]\d+)+|\d+/g,
+      /\d+(?:[.,\-–]\d+)+|\d+/g,
       "<span class=\"digit\">$&</span>"
     );
 
@@ -405,6 +429,28 @@ export default function Home() {
     const base = longDateFormatter.format(date).replace(/\s?г\.$/i, "");
     return `${base} года`;
   };
+
+  const headerRef = useRef<HTMLDivElement | null>(null);
+  const [headerShouldWrap, setHeaderShouldWrap] = useState(false);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const check = () => {
+      const parent = el.parentElement;
+      if (!parent) return;
+      setHeaderShouldWrap(el.scrollWidth > parent.clientWidth);
+    };
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    if (el.parentElement) observer.observe(el.parentElement);
+    window.addEventListener("resize", check);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", check);
+    };
+  }, [proposal.clientName, proposal.serviceName]);
 
   useEffect(() => {
     if (proposal.validUntil) return;
@@ -498,6 +544,11 @@ export default function Home() {
   useEffect(() => {
     const handler = () => {
       if (!showRichControls) return;
+      const selection = window.getSelection();
+      const node = selection?.anchorNode as Node | null;
+      const element =
+        node instanceof HTMLElement ? node : node?.parentElement ?? null;
+      if (!element?.closest(".rich-field")) return;
       updateRichState();
     };
     document.addEventListener("selectionchange", handler);
@@ -584,8 +635,6 @@ export default function Home() {
     deliverables: { history: true },
     nuances: { history: true },
     assumptions: { history: true },
-    contactName: { history: true },
-    contactRole: { history: true },
     contactEmail: { history: true },
     contactTelegram: { history: true },
     contactPhone: { history: true },
@@ -683,15 +732,17 @@ export default function Home() {
         </aside>
         <section className="w-[680px] flex-none">
           <section className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-20 pt-14 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
-            <div className="flex flex-col gap-2">
-            <section
-              data-block="header"
-              className={`flex flex-col gap-4 pb-8 ${
-                activeBlock === "header" ? "active-block" : ""
-              }`}
-            >
-              <div className="proposal-headline flex items-baseline gap-[0.2rem] text-[18px] text-zinc-900 whitespace-nowrap overflow-visible">
-                <span>Коммерческое предложение на</span>
+            <div className="flex flex-col gap-[24px]">
+              <section
+                data-block="header"
+                className={`flex flex-col gap-4 ${
+                  activeBlock === "header" ? "active-block" : ""
+                }`}
+              >
+              <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2]">
+                <span>Коммерческое предложение</span>
+                <br />
+                <span>на </span>
                 <span
                   ref={serviceRef}
                   className="inline-block align-baseline font-semibold border-b border-transparent focus:border-zinc-300"
@@ -706,10 +757,12 @@ export default function Home() {
                     )
                   }
                 />
-                <span>для компании</span>
-                <span className="flex min-w-[200px] flex-none items-baseline gap-[0.2rem]">
+                <br />
+                <span>для </span>
+                <span className="inline-flex items-baseline gap-1">
+                  <span>компании&nbsp;</span>
                   <span
-                    className={`flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 ${
+                    className={`inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px] ${
                       proposal.clientLogoDataUrl ? "" : "px-2"
                     }`}
                   >
@@ -744,15 +797,15 @@ export default function Home() {
 
             <section
               data-block="tasks"
-              className={`grid grid-cols-1 gap-6 md:grid-cols-2 ${
+              className={`grid grid-cols-1 gap-6 md:grid-cols-5 ${
                 activeBlock === "tasks" ? "active-block" : ""
               }`}
             >
-              <div className="flex flex-col gap-1">
-                <div className={labelClass}>Бизнес-задача {requiredMark}</div>
+              <div className="flex flex-col gap-1 md:col-span-2">
+                <div className={labelClass}>Цель заказчика {requiredMark}</div>
                 <div
                   ref={useEditableHtml(proposal.summary)}
-                  className={`${editableClass} rich-field min-h-[140px]`}
+                  className={`${editableClass} rich-field leading-[1.2]`}
                   contentEditable
                   suppressContentEditableWarning
                   data-placeholder="Опиши бизнес-задачу..."
@@ -773,11 +826,11 @@ export default function Home() {
                   }
                 />
               </div>
-              <div className="flex flex-col gap-1">
-                <div className={labelClass}>Дизайн-задача {requiredMark}</div>
+              <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                <div className={labelClass}>Задача исполнителя {requiredMark}</div>
                 <div
                   ref={useEditableHtml(proposal.scope)}
-                  className={`${editableClass} rich-field min-h-[140px]`}
+                  className={`${editableClass} rich-field leading-[1.2]`}
                   contentEditable
                   suppressContentEditableWarning
                   data-placeholder="Опиши дизайн-задачу..."
@@ -893,12 +946,12 @@ export default function Home() {
 
             <section
               data-block="terms"
-              className={`-mb-2 -mt-2 flex flex-col gap-2 py-2 ${
+              className={`flex flex-col gap-2 ${
                 activeBlock === "terms" ? "active-block" : ""
               }`}
             >
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                <div className="flex flex-col gap-1">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-5">
+                <div className="flex flex-col gap-1 md:col-span-1">
                   <div className={labelClass}>Сроки {requiredMark}</div>
                   <div
                     className="digit-field text-[15px] text-zinc-900"
@@ -922,33 +975,38 @@ export default function Home() {
                     }}
                   />
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 md:col-span-1 md:col-start-2">
                   <div className={labelClass}>Стоимость {requiredMark}</div>
-                  <div
-                    className="digit-field text-[15px] text-zinc-900"
-                    contentEditable
-                    suppressContentEditableWarning
-                    dir="ltr"
-                    data-placeholder="Стоимость..."
-                    onFocus={() => setFocus("price", "terms")}
-                    onInput={(event) => {
-                      const root = event.currentTarget;
-                      const offset = getSelectionOffset(root);
-                      const value = root.textContent ?? "";
-                      updateField("price", value);
-                      root.innerHTML = value ? renderDigitHtml(value) : "";
-                      requestAnimationFrame(() =>
-                        restoreSelectionOffset(root, offset)
-                      );
-                    }}
-                    dangerouslySetInnerHTML={{
-                      __html: renderDigitHtml(proposal.price),
-                    }}
-                  />
-                  <div className="mt-1 flex flex-col gap-1">
+                  <div className="flex min-h-[2.6em] items-end">
                     <div
-                      ref={useEditable(proposal.nuances ?? "")}
-                      className={editableClass}
+                      className="digit-field text-[15px] text-zinc-900"
+                      contentEditable
+                      suppressContentEditableWarning
+                      dir="ltr"
+                      data-placeholder="Стоимость..."
+                      onFocus={() => setFocus("price", "terms")}
+                      onInput={(event) => {
+                        const root = event.currentTarget;
+                        const offset = getSelectionOffset(root);
+                        const value = root.textContent ?? "";
+                        updateField("price", value);
+                        root.innerHTML = value ? renderDigitHtml(value) : "";
+                        requestAnimationFrame(() =>
+                          restoreSelectionOffset(root, offset)
+                        );
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html: renderDigitHtml(proposal.price),
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                  <div className={labelClass}>Нюансы</div>
+                  <div className="flex min-h-[2.6em] items-end">
+                    <div
+                    ref={useEditable(proposal.nuances ?? "")}
+                    className="w-full cursor-text bg-transparent text-[12px] leading-[1.2] text-zinc-900 outline-none"
                       contentEditable
                       suppressContentEditableWarning
                       data-placeholder="Нюансы..."
@@ -967,13 +1025,13 @@ export default function Home() {
 
             <section
               data-block="cases"
-              className={`flex flex-col gap-2 ${
+              className={`flex flex-col gap-0 ${
                 activeBlock === "cases" ? "active-block" : ""
               }`}
               onClick={() => setActiveBlock("cases")}
             >
               <div className={labelClass}>Похожие проекты</div>
-              <div className="grid grid-cols-5 gap-2">
+              <div className="grid grid-cols-5 gap-2 leading-[1]">
                 {selectedCaseIds.map((id) => {
                   const item = cases.find((c) => c.id === id);
                   if (!item) return null;
@@ -993,10 +1051,10 @@ export default function Home() {
                         const fromId = event.dataTransfer.getData("text/plain");
                         if (fromId) moveCase(fromId, item.id);
                       }}
-                      className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white py-3 pr-3 pl-0"
+                      className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
                     >
                       {item.previewImageFile || item.previewImageSourceUrl ? (
-                        <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg bg-zinc-50">
+                        <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
                           <img
                             src={item.previewImageFile || item.previewImageSourceUrl}
                             alt={item.title}
@@ -1041,21 +1099,23 @@ export default function Home() {
 
             <section
               data-block="footer"
-              className={`flex flex-col gap-2 ${
+              className={`mt-[48px] flex flex-col gap-2 ${
                 activeBlock === "footer" ? "active-block" : ""
               }`}
             >
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_1.6fr]">
-                <div className="flex flex-col gap-1">
-                  <div className="proposal-headline text-[18px] text-zinc-900">
+              <div className="grid grid-cols-1 gap-2 md:grid-cols-5 md:items-end">
+                <div className="flex flex-col gap-1 md:col-span-1 md:justify-end md:self-end">
+                  <div className="proposal-headline text-[10px] uppercase tracking-[0.2em] text-zinc-400">
                     Коммерческое
                     <br />
                     предложение
                     <br />
-                    действует&nbsp;до&nbsp;
+                    действует
+                    &nbsp;до
+                    <br />
                     <span
                       ref={useEditable(proposal.validUntil ?? "")}
-                      className="font-semibold"
+                      className="inline-flex whitespace-nowrap rounded bg-zinc-200 px-2 py-0.5 text-zinc-900 uppercase tracking-normal text-[12px] -ml-2"
                       contentEditable
                       suppressContentEditableWarning
                       data-placeholder="17 марта 2026 года"
@@ -1070,46 +1130,41 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col gap-1 relative">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">
+                <div className="flex flex-col gap-0 md:col-span-2 md:col-start-3 md:justify-end md:self-end translate-y-[8px]">
+                  <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2]">
                     С уважением,
                   </div>
-                  <div
-                    ref={useEditable(proposal.contactName ?? "")}
-                    className={editableClass}
-                    contentEditable
-                    suppressContentEditableWarning
-                    data-placeholder="Имя..."
-                    onFocus={() => setFocus("contactName", "footer")}
-                    onInput={(event) =>
-                      updateField("contactName", event.currentTarget.textContent ?? "")
-                    }
-                  />
-                  <div
-                    ref={useEditable(proposal.contactRole ?? "")}
-                    className={editableClass}
-                    contentEditable
-                    suppressContentEditableWarning
-                    data-placeholder="Должность..."
-                    onFocus={() => setFocus("contactRole", "footer")}
-                    onInput={(event) =>
-                      updateField("contactRole", event.currentTarget.textContent ?? "")
-                    }
-                  />
+                  <div className="relative flex items-end text-zinc-900">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/brand/sobaka-pavlova.png"
+                      alt="Собака Павлова"
+                      className="absolute -left-10 bottom-[2px] h-8 w-8 rounded-full object-cover"
+                    />
+                    <span className="proposal-headline text-[24px] font-semibold">
+                      Собака Павлова
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col md:col-span-1 md:col-start-5 md:justify-end md:self-end">
                   <div
                     ref={useEditable(proposal.contactPhone ?? "")}
-                    className={editableClass}
+                    className={`${editableClass} leading-[1] mt-[14px]`}
                     contentEditable
                     suppressContentEditableWarning
                     data-placeholder="Телефон..."
                     onFocus={() => setFocus("contactPhone", "footer")}
                     onInput={(event) =>
-                      updateField("contactPhone", event.currentTarget.textContent ?? "")
+                      updateField(
+                        "contactPhone",
+                        event.currentTarget.textContent ?? ""
+                      )
                     }
                   />
                   <a
                     ref={useEditable(proposal.contactEmail ?? "")}
-                    className={`${editableClass} text-[#0E509E] underline`}
+                    className={`${editableClass} leading-[1] text-[#0E509E] underline mt-[2px]`}
+                    style={{ color: "#0E509E" }}
                     contentEditable
                     suppressContentEditableWarning
                     data-placeholder="Email..."
@@ -1128,8 +1183,8 @@ export default function Home() {
                       )
                     }
                   />
-                  <div className="flex items-center gap-2 text-[15px] text-zinc-700">
-                    <span>telegram</span>
+                  <div className="mt-[2px] flex items-center gap-1 text-[15px] text-zinc-700 leading-[1]">
+                    <span>tg</span>
                     <a
                       ref={useEditable(proposal.contactTelegram ?? "")}
                       className="text-[15px] text-[#0E509E] underline"
@@ -1154,17 +1209,6 @@ export default function Home() {
                         )
                       }
                     />
-                  </div>
-                  <div className="pointer-events-none absolute bottom-0 right-0 flex items-center gap-3 text-zinc-900">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/brand/sobaka-pavlova.png"
-                      alt="Собака Павлова"
-                      className="h-8 w-8 rounded-full object-cover"
-                    />
-                    <span className="proposal-headline text-[18px]">
-                      Собака Павлова
-                    </span>
                   </div>
                 </div>
               </div>

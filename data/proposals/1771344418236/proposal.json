@@ -1,0 +1,23 @@
+{
+  "id": "1771344418236",
+  "createdAt": "2026-02-17T16:06:58.236Z",
+  "proposal": {
+    "clientName": "Азиатско-Тихоокеанский банк",
+    "serviceName": "добавление новой функциональности",
+    "serviceId": "service-new-features",
+    "clientLogoDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAN+SURBVHgB5ZvhbeowFIXN0/vfdoJ2A2ACYANGYAPYAJgAmACYAJgANgAmgA1gg7x8lozyUNISx9d2lSNdQSUKvifX9vHJjUoCYL/fJ4PBIPn6+kqUUmLRarWSfr+frFarwrGoxCMul0vS7XZFky4KyM4jwhsBx+MxeX9/D5J8NiaTSeKdAK58DMmbGI1GfgmQnus2sdls/BCw3W6jS56gIm+3W/JHCSMlQMWI+/2uTqeTEieAH4kV5/O53gRQBeIExIzPz095AviRWJGKMnkCer2eihHj8Vil27MS3wbR/SqyLXA4HD7G50UIhdL/2UCMoQBRpVk0NAvCuF6vqt1u61VXGpR1egrUr81m8/E+FT65n/dCAGA7ZD1wRQIJmWRNokRRokXwRgCgEiCB1zIgUVZsEs1eYRfwSoAB8ni32+mqyAqlvPIlJBGEgJhQayUIak/A31c+xMq9Xq/1fD0cDvpvs5qbOZuaj6rT6ThbnLzhOwGDYYCHVsbOwu19Fhs+wW+jPgl8yJ9QSMB8Prf28YocWEkwXmzwvPGgRIvGk0sAV90m8ed4dmAlQJW+KrX53HN1KqnkfZHAlCtbnZCWS8ByuXSavAnKUwJcTZvx5NrifJmUfW0cWNeAWNsxsUiChw6YTqelNfqrYMtcLBbKNaocrNjWNaqUUpmQqIIq69V/9wUQN9KQqIIqfiPj4UCmCeCND7i+SYL6rAJ9EqWUigSERJjFxxW4/287Fp03X+IreSK7BblAFdNV73q+CWDxcY1KpqtvAiSmQSXrPQQBzFvXsK6CEARIaALrKghBACFxPrCpgmCWmETjhJUuCFUBhOtpwPeVNXGCmqKupbG5W1QGQQmQmAZlb40FnQKEa01Q1tMIfl/A5UGMU21pTyN0BbiSxiyAVo5WaAKUg2nA/1vbeTEQgICxueI4QpWP8jEQ8GoVkDQK0mnLTSwEsBYU3b2BHA5QEh3nuj+g0WioWEAnCAHw7VJSRHuLNAEfHx9eGphihNYBb29vqq7QBMTazekDmgDpRqSoYbaXmJ7p8RWIJ10BnKBSu1rVDbrysyKjblWg2wGygmM2m/2qBKoE5a9F4LPqGo/HvyqRKlc/l4A6kEB+BoVdYjAU4wOPVSP7sMS3BAAaJ8o2IcUaLPDmadEsXmqWxmbCbsK+4n3Mj8JlYbrP6WBNL2SuYfoPekjlzlNX8xUAAAAASUVORK5CYII=",
+    "summary": "Бизнес-задача",
+    "scope": "Дизайн-задача",
+    "timeline": "от 2 месяцев",
+    "price": "2,5 млн руб.",
+    "nuances": "Да, есть нюансы.",
+    "assumptions": "",
+    "deliverables": "",
+    "contactName": "Наталья Прокофьева",
+    "contactRole": "генеральный директор",
+    "contactEmail": "pro@sobakapav.ru",
+    "contactTelegram": "@sobakapavpro",
+    "contactPhone": "+7 (495) 191-92-81",
+    "validUntil": "3 марта 2026 года"
+  }
+}

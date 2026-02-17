@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 import { chromium } from "playwright";
 import { proposalSchema } from "../../../lib/schema";
-import { renderProposalHtml } from "../../../lib/renderProposal";
 
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const parsed = proposalSchema.safeParse(body);
+    const proposalPayload = body?.proposal ?? body;
+    const parsed = proposalSchema.safeParse(proposalPayload);
     if (!parsed.success) {
       return NextResponse.json(
         { error: "Invalid payload", details: parsed.error.flatten() },
@@ -16,14 +16,34 @@ export async function POST(request: Request) {
       );
     }
 
-    const html = renderProposalHtml(parsed.data);
     const browser = await chromium.launch();
     const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: "networkidle" });
+    const origin = new URL(request.url).origin;
+    const payload = {
+      proposal: parsed.data,
+      selectedCaseIds: body?.selectedCaseIds ?? [],
+      planTasks: body?.planTasks ?? [],
+    };
+    const encoded = Buffer.from(JSON.stringify(payload)).toString("base64");
+    const printUrl = `${origin}/print?data=${encodeURIComponent(encoded)}`;
+    await page.setViewportSize({ width: 794, height: 1123 });
+    await page.goto(printUrl, { waitUntil: "networkidle" });
+    try {
+      await page.waitForSelector(".proposal-page", { timeout: 10000 });
+      await page.waitForTimeout(300);
+      const contentReady = await page.evaluate(() => {
+        const el = document.querySelector(".proposal-page");
+        const text = (el?.textContent ?? "").replace(/\s+/g, "");
+        return { hasEl: !!el, textLen: text.length };
+      });
+      console.log("[pdf] contentReady", contentReady);
+    } catch {
+      // Continue even if the wait times out; we'll still attempt to render.
+    }
     const pdf = await page.pdf({
       format: "A4",
       printBackground: true,
-      margin: { top: "20mm", right: "15mm", bottom: "20mm", left: "15mm" },
+      margin: { top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" },
     });
     await browser.close();
 

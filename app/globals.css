@@ -80,14 +80,22 @@ body {
   font-weight: 600;
   font-size: 2em;
   line-height: 1;
+  display: inline-block;
+  margin-right: 0.1em;
 }
 
 .digit-field {
+  display: flex;
+  align-items: flex-end;
   min-height: 2.6em;
-  line-height: 2.6em;
+  line-height: 1.2;
   white-space: pre-wrap;
   direction: ltr;
   unicode-bidi: plaintext;
+}
+
+.rounded-md {
+  border-radius: 0.25rem !important;
 }
 
 .active-block {
