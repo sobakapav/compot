@@ -8,12 +8,38 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const proposalPayload = body?.proposal ?? body;
-    const parsed = proposalSchema.safeParse(proposalPayload);
+    const parsed = proposalSchema.safeParse(proposalPayload ?? {});
     if (!parsed.success) {
-      return NextResponse.json(
-        { error: "Invalid payload", details: parsed.error.flatten() },
-        { status: 400 }
-      );
+      const fallback = proposalSchema.parse({});
+      const payload = {
+        proposal: fallback,
+        selectedCaseIds: body?.selectedCaseIds ?? [],
+        planTasks: body?.planTasks ?? [],
+      };
+      const encoded = Buffer.from(JSON.stringify(payload)).toString("base64");
+      const printUrl = `${new URL(request.url).origin}/print?data=${encodeURIComponent(encoded)}`;
+      const browser = await chromium.launch();
+      const page = await browser.newPage();
+      await page.setViewportSize({ width: 794, height: 1123 });
+      await page.goto(printUrl, { waitUntil: "networkidle" });
+      try {
+        await page.waitForSelector(".proposal-page", { timeout: 10000 });
+        await page.waitForTimeout(300);
+      } catch {
+        // Continue even if the wait times out; we'll still attempt to render.
+      }
+      const pdf = await page.pdf({
+        format: "A4",
+        printBackground: true,
+        margin: { top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" },
+      });
+      await browser.close();
+      return new NextResponse(pdf, {
+        headers: {
+          "Content-Type": "application/pdf",
+          "Content-Disposition": 'attachment; filename="proposal.pdf"',
+        },
+      });
     }
 
     const browser = await chromium.launch();

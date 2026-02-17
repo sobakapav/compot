@@ -1,14 +1,14 @@
 import { z } from "zod";
 
 export const proposalSchema = z.object({
-  clientName: z.string().min(1, "Client name is required"),
-  serviceName: z.string().min(1, "Service name is required"),
+  clientName: z.string().optional().default(""),
+  serviceName: z.string().optional().default(""),
   serviceId: z.string().optional().default(""),
   clientLogoDataUrl: z.string().optional().default(""),
-  summary: z.string().min(1, "Summary is required"),
-  scope: z.string().min(1, "Scope is required"),
-  timeline: z.string().min(1, "Timeline is required"),
-  price: z.string().min(1, "Price is required"),
+  summary: z.string().optional().default(""),
+  scope: z.string().optional().default(""),
+  timeline: z.string().optional().default(""),
+  price: z.string().optional().default(""),
   nuances: z.string().optional().default(""),
   assumptions: z.string().optional().default(""),
   deliverables: z.string().optional().default(""),

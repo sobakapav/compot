@@ -110,6 +110,7 @@ export default function Home() {
   const [selectedHistoryId, setSelectedHistoryId] = useState("");
   const [selectedBlock, setSelectedBlock] = useState("summary");
   const [proposal, setProposal] = useState<Proposal>(defaultValues);
+  const proposalRef = useRef<Proposal>(defaultValues);
   const [activeField, setActiveField] = useState<ProposalField | null>(null);
   const [activeBlock, setActiveBlock] = useState<
     "header" | "tasks" | "plan" | "terms" | "cases" | "footer" | null
@@ -293,6 +294,26 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    proposalRef.current = proposal;
+  }, [proposal]);
+
+  useEffect(() => {
+    const interval = window.setInterval(async () => {
+      const current = proposalRef.current;
+      try {
+        await fetch("/api/proposals", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(current),
+        });
+      } catch {
+        // Ignore autosave errors.
+      }
+    }, 5 * 60 * 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
     const loadHistory = async () => {
       try {
         const response = await fetch("/api/proposals");
@@ -328,9 +349,6 @@ export default function Home() {
         const data = await response.json();
         const items = data.items ?? [];
         setCases(items);
-        setSelectedCaseIds((prev) =>
-          prev.length ? prev : items.slice(0, 5).map((item: CaseItem) => item.id)
-        );
       } catch {
         return;
       }
@@ -1342,13 +1360,25 @@ export default function Home() {
                     {cases.length}
                   </span>
                 </div>
-                <input
-                  type="text"
-                  value={caseFilter}
-                  onChange={(event) => setCaseFilter(event.target.value)}
-                  placeholder="Поиск по кейсам и услугам..."
-                  className="mt-3 w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-xs text-zinc-700 placeholder:text-zinc-400 focus:border-zinc-900 focus:outline-none"
-                />
+                <div className="relative mt-3">
+                  <input
+                    type="text"
+                    value={caseFilter}
+                    onChange={(event) => setCaseFilter(event.target.value)}
+                    placeholder="Поиск по кейсам и услугам..."
+                    className="w-full rounded-md border border-zinc-200 bg-white px-3 py-2 pr-8 text-xs text-zinc-700 placeholder:text-zinc-400 focus:border-zinc-900 focus:outline-none"
+                  />
+                  {caseFilter && (
+                    <button
+                      type="button"
+                      onClick={() => setCaseFilter("")}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-zinc-400 hover:text-zinc-600"
+                      aria-label="Очистить"
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
                 <div className="mt-3 flex min-h-[360px] max-h-[520px] flex-col gap-2 overflow-auto text-sm">
                   {cases.length === 0 && (
                     <div className="rounded-md border border-dashed border-zinc-200 px-3 py-2 text-xs text-zinc-500">
