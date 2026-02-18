@@ -14,9 +14,15 @@ type CaseItem = {
 
 type PlanTask = {
   id: string;
-  title: string;
-  start: string;
-  end: string;
+  stage?: string;
+  iterations?: string;
+  hours?: string;
+  days?: string;
+  cost?: string;
+  results?: string;
+  title?: string;
+  start?: string;
+  end?: string;
 };
 
 const defaultValues: Proposal = {
@@ -35,6 +41,7 @@ const defaultValues: Proposal = {
   contactTelegram: "@sobakapavpro",
   contactPhone: "+7 (495) 191-92-81",
   validUntil: "",
+  hourlyRate: "4000",
 };
 
 const escapeHtml = (value: string) =>
@@ -50,6 +57,12 @@ const renderDigitHtml = (value: string) =>
     /\d+(?:[.,\-–]\d+)+|\d+/g,
     '<span class="digit">$&</span>'
   );
+
+const formatCost = (value: string) => {
+  const digits = value.replace(/[^\d]/g, "");
+  if (!digits) return "";
+  return digits.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
 
 const splitLinkSlug = (link: string) => {
   if (!link) return { base: "", slug: "" };
@@ -70,13 +83,13 @@ const formatCaseLink = (link?: string) => {
   return { base, slug };
 };
 
-const parseDate = (value: string) => {
-  const parsed = new Date(value);
-  return Number.isNaN(parsed.getTime()) ? null : parsed;
+const renderResultsHtml = (value: string) => {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+  const lines = trimmed.split(/\n+/).filter(Boolean);
+  if (lines.length <= 1) return escapeHtml(trimmed);
+  return `<ul>${lines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>`;
 };
-
-const daysBetween = (start: Date, end: Date) =>
-  Math.max(1, Math.round((end.getTime() - start.getTime()) / 86400000) + 1);
 
 const decodePayload = (data: string | undefined) => {
   if (!data) return null;
@@ -158,20 +171,18 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
   const planTasks = payload?.planTasks ?? [];
   const cases = await loadCases();
 
-  const planRange = (() => {
-    const dates = planTasks
-      .map((task) => [parseDate(task.start), parseDate(task.end)])
-      .flat()
-      .filter(Boolean) as Date[];
-    if (dates.length === 0) return null;
-    const min = new Date(Math.min(...dates.map((d) => d.getTime())));
-    const max = new Date(Math.max(...dates.map((d) => d.getTime())));
-    return { min, max, total: daysBetween(min, max) };
-  })();
+  const normalizedPlan = planTasks.map((task) => ({
+    stage: task.stage ?? task.title ?? "",
+    iterations: task.iterations ?? "1",
+    hours: task.hours ?? "",
+    days: task.days ?? "",
+    cost: task.cost ?? "",
+    results: task.results ?? "",
+  }));
 
   return (
     <div style={{ width: 794, margin: 0 }}>
-      <section className="proposal-page relative w-[794px] rounded-none bg-white px-12 pb-20 pt-14">
+      <section className="proposal-page relative w-[794px] rounded-none bg-white px-12 pb-20 pt-10">
         <div className="flex flex-col gap-[24px]">
           <section className="flex flex-col gap-4">
             <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2]">
@@ -221,41 +232,48 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
 
           <section className="flex flex-col gap-2">
             <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-              План
+              Этапы и результаты работ
             </div>
-            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+            <div className="bg-white">
               <div className="flex flex-col gap-3">
-                {planTasks.map((task) => {
-                  const start = parseDate(task.start);
-                  const end = parseDate(task.end);
-                  const total = planRange?.total ?? 1;
-                  const offset =
-                    start && planRange
-                      ? daysBetween(planRange.min, start) - 1
-                      : 0;
-                  const length = start && end ? daysBetween(start, end) : 1;
-                  const left = planRange ? (offset / total) * 100 : 0;
-                  const width = planRange ? (length / total) * 100 : 0;
-                  return (
-                    <div
-                      key={task.id}
-                      className="grid grid-cols-1 gap-2 md:grid-cols-[1.2fr_1fr_1fr_2fr_36px]"
-                    >
-                      <div className="text-sm text-zinc-900">{task.title}</div>
-                      <div className="text-sm text-zinc-900">{task.start}</div>
-                      <div className="text-sm text-zinc-900">{task.end}</div>
-                      <div className="relative h-9 rounded-md bg-zinc-100">
-                        <div
-                          className="absolute top-1/2 h-3 -translate-y-1/2 rounded-md bg-emerald-500"
-                          style={{
-                            left: `${left}%`,
-                            width: `${Math.max(2, width)}%`,
-                          }}
-                        />
-                      </div>
+                {normalizedPlan.map((task, index) => (
+                  <div
+                    key={`${task.stage}-${index}`}
+                    className="grid grid-cols-1 gap-1 md:grid-cols-1"
+                    style={{
+                      gridTemplateColumns:
+                        "1fr 2ch 4ch 3ch 7ch 2fr",
+                    }}
+                  >
+                    <div className="text-sm text-zinc-900">
+                      {index + 1}. {task.stage}
                     </div>
-                  );
-                })}
+                    <div className="text-sm text-zinc-900">
+                      {Number(task.iterations ?? "1") > 1 ? (
+                        <span className="font-semibold text-[#95001B]">
+                          ×{task.iterations}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <div className="text-sm text-right text-zinc-900">
+                      {task.hours}
+                    </div>
+                    <div className="text-sm text-right text-zinc-900">
+                      {task.days}
+                    </div>
+                    <div className="text-sm text-right text-zinc-900">
+                      {formatCost(task.cost ?? "")}
+                    </div>
+                    <div
+                      className="text-sm text-zinc-900"
+                      dangerouslySetInnerHTML={{
+                        __html: renderResultsHtml(task.results),
+                      }}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -277,7 +295,7 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
                 <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
                   Стоимость
                 </div>
-                <div className="flex min-h-[2.6em] items-end">
+                <div className="flex items-end">
                   <div
                     className="digit-field text-[15px] text-zinc-900"
                     dangerouslySetInnerHTML={{
@@ -293,7 +311,7 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
                   </div>
                 ) : null}
                 {proposal.nuances?.trim() ? (
-                  <div className="flex min-h-[2.6em] items-end">
+                  <div className="flex items-end">
                     <div className="text-[12px] text-zinc-900 leading-[1.2]">
                       {proposal.nuances}
                     </div>

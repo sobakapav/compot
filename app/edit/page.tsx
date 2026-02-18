@@ -20,7 +20,7 @@ type ProposalHistoryItem = {
   }[];
 };
 
-const defaultValues: Proposal = {
+  const defaultValues: Proposal = {
   clientName: "",
   serviceName: "",
   serviceId: "",
@@ -34,9 +34,10 @@ const defaultValues: Proposal = {
   deliverables: "",
   contactEmail: "pro@sobakapav.ru",
   contactTelegram: "@sobakapavpro",
-  contactPhone: "+7 (495) 191-92-81",
-  validUntil: "",
-};
+    contactPhone: "+7 (495) 191-92-81",
+    validUntil: "",
+    hourlyRate: "4000",
+  };
 
 type ProposalField = keyof Proposal;
 
@@ -144,15 +145,51 @@ export default function Home() {
 
   type PlanTask = {
     id: string;
-    title: string;
-    start: string;
-    end: string;
+    stage: string;
+    iterations: string;
+    hours: string;
+    days: string;
+    cost: string;
+    costManual?: boolean;
+    results: string;
+    title?: string;
+    start?: string;
+    end?: string;
   };
 
   const [planTasks, setPlanTasks] = useState<PlanTask[]>([
-    { id: "t1", title: "Discovery", start: "2026-03-01", end: "2026-03-10" },
-    { id: "t2", title: "Design", start: "2026-03-11", end: "2026-03-25" },
+    {
+      id: "t1",
+      stage: "Аналитика",
+      iterations: "1",
+      hours: "",
+      days: "",
+      cost: "",
+      costManual: false,
+      results: "",
+    },
+    {
+      id: "t2",
+      stage: "Дизайн",
+      iterations: "1",
+      hours: "",
+      days: "",
+      cost: "",
+      costManual: false,
+      results: "",
+    },
   ]);
+
+  const [planColumns, setPlanColumns] = useState({
+    stage: true,
+    iterations: true,
+    hours: true,
+    days: true,
+    cost: true,
+    results: true,
+  });
+  const planStageRefs = useRef<Record<string, HTMLInputElement | null>>({});
+  const planResultsRefs = useRef<Record<string, HTMLTextAreaElement | null>>({});
 
   const serviceTitleMap = useMemo(
     () => new Map(services.map((service) => [service.id, service.title])),
@@ -165,6 +202,18 @@ export default function Home() {
     if (name.length <= max) return name;
     return `${name.slice(0, max)}…`;
   }, [proposal.serviceName]);
+
+  const planGridTemplate = useMemo(() => {
+    const cols: string[] = [];
+    cols.push("calc(40% + 3px - 6ch)");
+    if (planColumns.iterations) cols.push("calc(2ch + 9px)");
+    if (planColumns.hours) cols.push("4ch");
+    if (planColumns.days) cols.push("3ch");
+    if (planColumns.cost) cols.push("7ch");
+    if (planColumns.results) cols.push("1fr");
+    cols.push("14px");
+    return cols.length ? cols.join(" ") : "1fr";
+  }, [planColumns]);
 
   const filteredCases = useMemo(() => {
     let list = cases;
@@ -204,22 +253,141 @@ export default function Home() {
     selectedCaseIds,
   ]);
 
+  const renderResultsHtml = (value: string) => {
+    const trimmed = value.trim();
+    if (!trimmed) return "";
+    const lines = trimmed.split(/\n+/).filter(Boolean);
+    if (lines.length <= 1) return escapeHtml(trimmed);
+    return `<ul>${lines
+      .map((line) => `<li>${escapeHtml(line)}</li>`)
+      .join("")}</ul>`;
+  };
+
+  const formatCost = (value: string) => {
+    const digits = value.replace(/[^\d]/g, "");
+    if (!digits) return "";
+    return digits.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
+  const normalizePlanTasks = (tasks: PlanTask[] = [], rateRaw = "") =>
+    tasks.map((task) => {
+      const base: PlanTask = {
+        ...task,
+        iterations: task.iterations ?? "1",
+        hours: task.hours ?? "",
+        days: task.days ?? "",
+        cost: task.cost ?? "",
+        costManual: task.costManual ?? false,
+        results: task.results ?? "",
+        stage: task.stage ?? task.title ?? "",
+      };
+      if (!base.cost) {
+        base.costManual = false;
+      }
+      if (base.costManual) {
+        const autoCost = recalcPlanCost({ ...base, cost: "" }, rateRaw);
+        if (autoCost && autoCost === base.cost) {
+          base.costManual = false;
+        }
+      }
+      return base;
+    });
+
   const updatePlanTask = (id: string, patch: Partial<PlanTask>) => {
     setPlanTasks((prev) =>
       prev.map((task) => (task.id === id ? { ...task, ...patch } : task))
     );
   };
 
-  const addPlanTask = () => {
+  const addPlanTask = (focus = false) => {
     const nextId = `t${planTasks.length + 1}`;
     setPlanTasks((prev) => [
       ...prev,
-      { id: nextId, title: "New task", start: "", end: "" },
+      {
+        id: nextId,
+        stage: "",
+        iterations: "1",
+        hours: "",
+        days: "",
+        cost: "",
+        costManual: false,
+        results: "",
+      },
     ]);
+    if (focus) {
+      setTimeout(() => {
+        planStageRefs.current[nextId]?.focus();
+      }, 0);
+    }
   };
 
-  const removePlanTask = (id: string) => {
-    setPlanTasks((prev) => prev.filter((task) => task.id !== id));
+  const recalcPlanCost = (task: PlanTask, rateRaw: string) => {
+    const hours = Number(String(task.hours ?? "").replace(/[^\d]/g, ""));
+    if (!hours) return "";
+    const rate = Number(String(rateRaw ?? "").replace(/[^\d]/g, ""));
+    if (!rate) return "";
+    const iterations =
+      Number(String(task.iterations ?? "1").replace(/[^\d]/g, "")) || 1;
+    return String(hours * rate * iterations);
+  };
+
+  const insertResultBullet = (id: string, el: HTMLTextAreaElement) => {
+    const value = el.value ?? "";
+    const start = el.selectionStart ?? value.length;
+    const end = el.selectionEnd ?? value.length;
+    const before = value.slice(0, start);
+    const after = value.slice(end);
+    const hasAnyBullet = value.includes("• ");
+    if (!hasAnyBullet) {
+      const base = value.startsWith("• ") ? value : `• ${value}`;
+      const nextValue = `${base}\n• `;
+      updatePlanTask(id, { results: nextValue });
+      requestAnimationFrame(() => {
+        const nextPos = nextValue.length;
+        el.setSelectionRange(nextPos, nextPos);
+        el.style.height = "auto";
+        el.style.height = `${el.scrollHeight}px`;
+      });
+      return;
+    }
+    const insert = `\n• `;
+    const nextValue = `${before}${insert}${after}`;
+    updatePlanTask(id, { results: nextValue });
+    requestAnimationFrame(() => {
+      const nextPos = (before + insert).length;
+      el.setSelectionRange(nextPos, nextPos);
+      el.style.height = "auto";
+      el.style.height = `${el.scrollHeight}px`;
+    });
+  };
+
+  const resizeTextarea = (el: HTMLTextAreaElement | null) => {
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight}px`;
+  };
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      Object.values(planStageRefs.current).forEach((el) =>
+        resizeTextarea(el as HTMLTextAreaElement | null)
+      );
+      Object.values(planResultsRefs.current).forEach((el) =>
+        resizeTextarea(el)
+      );
+    });
+  }, [planTasks]);
+
+  const movePlanTask = (fromId: string, toId: string) => {
+    setPlanTasks((prev) => {
+      const fromIndex = prev.findIndex((task) => task.id === fromId);
+      const toIndex = prev.findIndex((task) => task.id === toId);
+      if (fromIndex === -1 || toIndex === -1) return prev;
+      const next = [...prev];
+      const [item] = next.splice(fromIndex, 1);
+      next.splice(toIndex, 0, item);
+      return next;
+    });
   };
 
   const toggleCase = (id: string) => {
@@ -248,24 +416,6 @@ export default function Home() {
     });
   };
 
-  const parseDate = (value: string) => {
-    const parsed = new Date(value);
-    return Number.isNaN(parsed.getTime()) ? null : parsed;
-  };
-
-  const daysBetween = (start: Date, end: Date) =>
-    Math.max(1, Math.round((end.getTime() - start.getTime()) / 86400000) + 1);
-
-  const planRange = (() => {
-    const dates = planTasks
-      .map((task) => [parseDate(task.start), parseDate(task.end)])
-      .flat()
-      .filter(Boolean) as Date[];
-    if (dates.length === 0) return null;
-    const min = new Date(Math.min(...dates.map((d) => d.getTime())));
-    const max = new Date(Math.max(...dates.map((d) => d.getTime())));
-    return { min, max, total: daysBetween(min, max) };
-  })();
 
   const labelClass =
     "text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400";
@@ -460,9 +610,14 @@ export default function Home() {
             item.proposal.contactPhone || proposalRef.current.contactPhone,
           validUntil:
             item.proposal.validUntil || proposalRef.current.validUntil,
+          hourlyRate:
+            item.proposal.hourlyRate || proposalRef.current.hourlyRate || "4000",
         };
         const nextCaseIds = item.selectedCaseIds ?? [];
-        const nextPlanTasks = item.planTasks ?? [];
+        const nextPlanTasks = normalizePlanTasks(
+          item.planTasks ?? [],
+          mergedProposal.hourlyRate ?? "4000"
+        );
         setProposal(mergedProposal);
         setSelectedCaseIds(nextCaseIds);
         setPlanTasks(nextPlanTasks);
@@ -529,9 +684,15 @@ export default function Home() {
       setProposal({
         ...emptyProposal,
         ...proposal,
+        hourlyRate: proposal.hourlyRate ?? "4000",
       });
       setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
-      setPlanTasks(data?.item?.planTasks ?? []);
+      setPlanTasks(
+        normalizePlanTasks(
+          data?.item?.planTasks ?? [],
+          proposal.hourlyRate ?? "4000"
+        )
+      );
       return;
     }
 
@@ -558,13 +719,21 @@ export default function Home() {
         next.contactPhone = proposal.contactPhone ?? "";
         next.validUntil = proposal.validUntil ?? "";
       }
+      if (block === "plan") {
+        next.hourlyRate = proposal.hourlyRate ?? "4000";
+      }
       return next;
     });
     if (block === "cases") {
       setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
     }
     if (block === "plan") {
-      setPlanTasks(data?.item?.planTasks ?? []);
+      setPlanTasks(
+        normalizePlanTasks(
+          data?.item?.planTasks ?? [],
+          proposal.hourlyRate ?? "4000"
+        )
+      );
     }
   };
 
@@ -726,7 +895,8 @@ export default function Home() {
     "clientName",
     "clientLogoDataUrl",
   ]);
-  const showRichControls = activeField ? richFields.has(activeField) : false;
+  const showRichControls =
+    activeField && activeBlock !== "plan" ? richFields.has(activeField) : false;
   const showHeaderControls = activeField
     ? headerFields.has(activeField)
     : true;
@@ -1037,7 +1207,7 @@ export default function Home() {
           </div>
         </aside>
         <section className="w-[680px] flex-none">
-          <section className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-20 pt-14 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
+          <section className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-20 pt-10 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
             <div className="flex flex-col gap-[24px]">
               <section
                 data-block="header"
@@ -1160,87 +1330,272 @@ export default function Home() {
                 activeBlock === "plan" ? "active-block" : ""
               }`}
             >
-              <div className={labelClass}>План</div>
-              <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className={labelClass}>Этапы и результаты работ</div>
+              <div className="bg-transparent">
                 <div className="flex flex-col gap-3">
-                  {planTasks.map((task) => {
-                    const start = parseDate(task.start);
-                    const end = parseDate(task.end);
-                    const total = planRange?.total ?? 1;
-                    const offset =
-                      start && planRange
-                        ? daysBetween(planRange.min, start) - 1
-                        : 0;
-                    const length =
-                      start && end ? daysBetween(start, end) : 1;
-                    const left = planRange ? (offset / total) * 100 : 0;
-                    const width = planRange ? (length / total) * 100 : 0;
+                  {planTasks.map((task, index) => {
                     return (
                       <div
                         key={task.id}
-                        className="grid grid-cols-1 gap-2 md:grid-cols-[1.2fr_1fr_1fr_2fr_36px]"
+                        className="grid grid-cols-1 gap-2 md:grid-cols-1"
+                        style={{ gridTemplateColumns: planGridTemplate }}
+                        data-plan-row
+                        onDragOver={(event) => event.preventDefault()}
+                        onDrop={(event) => {
+                          const fromId = event.dataTransfer.getData("text/plain");
+                          if (!fromId) return;
+                          movePlanTask(fromId, task.id);
+                        }}
                       >
-                        <input
-                          className="w-full rounded-md border border-zinc-200 bg-transparent px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none"
-                          value={task.title}
-                          onFocus={() => setActiveBlock("plan")}
-                          onChange={(event) =>
-                            updatePlanTask(task.id, {
-                              title: event.target.value,
-                            })
-                          }
-                        />
-                        <input
-                          className="w-full rounded-md border border-zinc-200 bg-transparent px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none"
-                          placeholder="YYYY-MM-DD"
-                          value={task.start}
-                          onFocus={() => setActiveBlock("plan")}
-                          onChange={(event) =>
-                            updatePlanTask(task.id, {
-                              start: event.target.value,
-                            })
-                          }
-                        />
-                        <input
-                          className="w-full rounded-md border border-zinc-200 bg-transparent px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none"
-                          placeholder="YYYY-MM-DD"
-                          value={task.end}
-                          onFocus={() => setActiveBlock("plan")}
-                          onChange={(event) =>
-                            updatePlanTask(task.id, {
-                              end: event.target.value,
-                            })
-                          }
-                        />
-                        <div className="relative h-9 rounded-md bg-zinc-100">
-                          <div
-                            className="absolute top-1/2 h-3 -translate-y-1/2 rounded-md bg-emerald-500"
-                            style={{
-                              left: `${left}%`,
-                              width: `${Math.max(2, width)}%`,
+                        <div className="flex items-baseline gap-[4px]">
+                          <span
+                            className="cursor-grab text-sm text-zinc-900 leading-[1.2]"
+                            draggable
+                            onDragStart={(event) => {
+                              event.dataTransfer.setData("text/plain", task.id);
+                              const row = (event.currentTarget.closest(
+                                "[data-plan-row]"
+                              ) as HTMLElement | null);
+                              if (row) {
+                                const rect = row.getBoundingClientRect();
+                                const offsetX = event.clientX - rect.left;
+                                const offsetY = event.clientY - rect.top;
+                                event.dataTransfer.setDragImage(
+                                  row,
+                                  offsetX,
+                                  offsetY
+                                );
+                              }
+                            }}
+                          >
+                            {index + 1}.&nbsp;
+                          </span>
+                          <textarea
+                            ref={(el) => {
+                              planStageRefs.current[task.id] = el;
+                            }}
+                            rows={1}
+                            className="w-full resize-none bg-transparent px-0 py-0 text-sm leading-[1.2] text-zinc-900 outline-none"
+                            value={task.stage ?? task.title ?? ""}
+                            placeholder="Этап"
+                            dir="ltr"
+                            onFocus={() => setActiveBlock("plan")}
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter") {
+                                event.preventDefault();
+                                if (index === planTasks.length - 1) {
+                                  addPlanTask(true);
+                                }
+                              }
+                              if (event.key === "ArrowUp") {
+                                event.preventDefault();
+                                const current = Number(task.iterations ?? "1");
+                                const iterations = String(
+                                  Math.min(99, current + 1)
+                                );
+                                const next: Partial<PlanTask> = { iterations };
+                                if (!task.costManual) {
+                                  next.cost = recalcPlanCost(
+                                    { ...task, iterations },
+                                    proposal.hourlyRate ?? ""
+                                  );
+                                  next.costManual = false;
+                                }
+                                updatePlanTask(task.id, next);
+                              }
+                              if (event.key === "ArrowDown") {
+                                event.preventDefault();
+                                const current = Number(task.iterations ?? "1");
+                                const next = Math.max(1, current - 1);
+                                const iterations = String(Math.min(99, next));
+                                const patch: Partial<PlanTask> = { iterations };
+                                if (!task.costManual) {
+                                  patch.cost = recalcPlanCost(
+                                    { ...task, iterations },
+                                    proposal.hourlyRate ?? ""
+                                  );
+                                  patch.costManual = false;
+                                }
+                                updatePlanTask(task.id, patch);
+                              }
+                            }}
+                            onChange={(event) => {
+                              const el = event.currentTarget;
+                              updatePlanTask(task.id, {
+                                stage: el.value,
+                              });
+                              el.style.height = "auto";
+                              el.style.height = `${el.scrollHeight}px`;
+                            }}
+                            onInput={(event) => {
+                              const el = event.currentTarget;
+                              el.style.height = "auto";
+                              el.style.height = `${el.scrollHeight}px`;
                             }}
                           />
                         </div>
+                        {planColumns.iterations && (
+                          <div className="flex items-baseline gap-[1px]">
+                            <span
+                              className="text-xs"
+                              style={{
+                                color: "#95001B",
+                                width: "8px",
+                                lineHeight: "1.2",
+                                display: "inline-block",
+                              }}
+                            >
+                              {Number(task.iterations ?? "1") > 1 ? "×" : "\u00a0"}
+                            </span>
+                            <input
+                              inputMode="numeric"
+                              className={`w-[2ch] bg-transparent px-0 py-0 text-left text-sm leading-[1.2] focus:outline-none ${
+                                Number(task.iterations ?? "1") > 1
+                                  ? "font-semibold"
+                                  : "text-white"
+                              }`}
+                              style={{
+                                color:
+                                  Number(task.iterations ?? "1") > 1
+                                    ? "#95001B"
+                                    : "#ffffff",
+                              }}
+                              value={task.iterations ?? "1"}
+                              placeholder="Итерации"
+                              onFocus={() => setActiveBlock("plan")}
+                              onChange={(event) => {
+                                const iterations = event.target.value
+                                  .replace(/[^\d]/g, "")
+                                  .slice(0, 2);
+                                const next: Partial<PlanTask> = { iterations };
+                                if (!task.costManual) {
+                                  next.cost = recalcPlanCost(
+                                    {
+                                      ...task,
+                                      iterations,
+                                    },
+                                    proposal.hourlyRate ?? ""
+                                  );
+                                  next.costManual = false;
+                                }
+                                updatePlanTask(task.id, next);
+                              }}
+                            />
+                          </div>
+                        )}
+                        {planColumns.hours && (
+                          <div className="flex items-baseline">
+                            <input
+                              inputMode="numeric"
+                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] focus:outline-none"
+                              value={task.hours ?? ""}
+                              placeholder="Часы"
+                              onFocus={() => setActiveBlock("plan")}
+                              onChange={(event) => {
+                                const hours = event.target.value.replace(/[^\d]/g, "");
+                                const next: Partial<PlanTask> = { hours };
+                                if (!task.costManual) {
+                                  next.cost = recalcPlanCost(
+                                    {
+                                      ...task,
+                                      hours,
+                                    },
+                                    proposal.hourlyRate ?? ""
+                                  );
+                                  next.costManual = false;
+                                }
+                                updatePlanTask(task.id, next);
+                              }}
+                            />
+                          </div>
+                        )}
+                        {planColumns.days && (
+                          <div className="flex items-baseline">
+                            <input
+                              inputMode="numeric"
+                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] focus:outline-none"
+                              value={task.days ?? ""}
+                              placeholder="Дни"
+                              onFocus={() => setActiveBlock("plan")}
+                              onChange={(event) =>
+                                updatePlanTask(task.id, {
+                                  days: event.target.value.replace(/[^\d]/g, ""),
+                                })
+                              }
+                            />
+                          </div>
+                        )}
+                        {planColumns.cost && (
+                          <div className="flex items-baseline">
+                            <input
+                              inputMode="numeric"
+                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] focus:outline-none"
+                              value={formatCost(task.cost ?? "")}
+                              placeholder="Стоимость"
+                              onFocus={() => setActiveBlock("plan")}
+                              onChange={(event) => {
+                                const cost = event.target.value.replace(
+                                  /[^\d]/g,
+                                  ""
+                                );
+                                updatePlanTask(task.id, {
+                                  cost,
+                                  costManual: cost.length > 0,
+                                });
+                              }}
+                            />
+                          </div>
+                        )}
+                        {planColumns.results && (
+                          <textarea
+                            ref={(el) => {
+                              planResultsRefs.current[task.id] = el;
+                            }}
+                            rows={1}
+                            className="min-h-[20px] w-full resize-none bg-transparent px-0 py-0 text-sm leading-[1.2] outline-none"
+                            value={task.results ?? ""}
+                            placeholder="Результаты"
+                            dir="ltr"
+                            onFocus={() => setActiveBlock("plan")}
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter") {
+                                event.preventDefault();
+                                insertResultBullet(task.id, event.currentTarget);
+                              }
+                            }}
+                            onChange={(event) => {
+                              const el = event.currentTarget;
+                              updatePlanTask(task.id, {
+                                results: el.value,
+                              });
+                              el.style.height = "auto";
+                              el.style.height = `${el.scrollHeight}px`;
+                            }}
+                            onInput={(event) => {
+                              const el = event.currentTarget;
+                              el.style.height = "auto";
+                              el.style.height = `${el.scrollHeight}px`;
+                            }}
+                          />
+                        )}
                         <button
                           type="button"
-                          className="h-9 w-9 rounded-md border border-zinc-200 text-xs text-zinc-500 hover:border-zinc-300"
-                          onClick={() => removePlanTask(task.id)}
+                          className="text-xs text-zinc-400 hover:text-zinc-700"
+                          onClick={() =>
+                            setPlanTasks((prev) =>
+                              prev.filter((item) => item.id !== task.id)
+                            )
+                          }
+                          aria-label="Удалить этап"
                         >
-                          —
+                          ×
                         </button>
                       </div>
                     );
                   })}
-                  <button
-                    type="button"
-                    className="self-start rounded-md border border-zinc-200 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600 hover:border-zinc-300"
-                    onClick={() => {
-                      setActiveBlock("plan");
-                      addPlanTask();
-                    }}
-                  >
-                    Добавить этап
-                  </button>
+                  <div className="flex justify-end text-xs text-zinc-500">
+                    Детальный план производства — в отдельном документе
+                  </div>
                 </div>
               </div>
             </section>
@@ -1278,7 +1633,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-1 md:col-span-1 md:col-start-2">
                   <div className={labelClass}>Стоимость {requiredMark}</div>
-                  <div className="flex min-h-[2.6em] items-end">
+                  <div className="flex items-end">
                     <div
                       className="digit-field text-[15px] text-zinc-900"
                       contentEditable
@@ -1304,7 +1659,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
                   <div className={labelClass}>Нюансы</div>
-                  <div className="flex min-h-[2.6em] items-end">
+                  <div className="flex items-end">
                     <div
                     ref={useEditable(proposal.nuances ?? "")}
                     className="w-full cursor-text bg-transparent text-[12px] leading-[1.2] text-zinc-900 outline-none"
@@ -1400,7 +1755,7 @@ export default function Home() {
 
             <section
               data-block="footer"
-              className={`mt-[48px] flex flex-col gap-2 ${
+              className={`mt-[24px] flex flex-col gap-2 ${
                 activeBlock === "footer" ? "active-block" : ""
               }`}
             >
@@ -1837,6 +2192,76 @@ export default function Home() {
                 <div className="mt-2 text-xs text-zinc-500">
                   Выбрано: {selectedCaseIds.length}/5
                 </div>
+              </section>
+            )}
+
+            {activeBlock === "plan" && (
+              <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-zinc-900">
+                  Этапы и результаты
+                </div>
+                <label className="mt-3 flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                  Цена часа
+                  <input
+                    inputMode="numeric"
+                    className="w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-normal tracking-normal text-zinc-900 focus:border-zinc-900 focus:outline-none"
+                    value={proposal.hourlyRate ?? "4000"}
+                    onChange={(event) => {
+                      const value = event.target.value.replace(/[^\d]/g, "");
+                      setProposal((prev) => ({
+                        ...prev,
+                        hourlyRate: value,
+                      }));
+                      if (!value) return;
+                      setPlanTasks((prev) =>
+                        prev.map((task) => {
+                          if (task.costManual || !task.hours) return task;
+                          return {
+                            ...task,
+                            cost: recalcPlanCost(task, value),
+                            costManual: false,
+                          };
+                        })
+                      );
+                    }}
+                  />
+                </label>
+                <div className="mt-3 flex flex-col gap-2 text-xs text-zinc-700">
+                  {[
+                    ["stage", "Этапы", true],
+                    ["iterations", "Итерации", false],
+                    ["hours", "Часы", false],
+                    ["days", "Дни", false],
+                    ["cost", "Стоимость", false],
+                    ["results", "Результаты", false],
+                  ].map(([key, label, locked]) => (
+                    <label key={key} className="flex items-center gap-2">
+                      {!locked && (
+                        <input
+                          type="checkbox"
+                          checked={planColumns[key as keyof typeof planColumns]}
+                          onChange={(event) =>
+                            setPlanColumns((prev) => ({
+                              ...prev,
+                              [key]: event.target.checked,
+                            }))
+                          }
+                        />
+                      )}
+                      {label}
+                    </label>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="mt-4 w-full rounded-md border border-zinc-200 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600 hover:border-zinc-300"
+                  onClick={() => {
+                    setActiveBlock("plan");
+                    addPlanTask();
+                  }}
+                >
+                  Добавить этап
+                </button>
               </section>
             )}
 

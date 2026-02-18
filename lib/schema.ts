@@ -16,6 +16,7 @@ export const proposalSchema = z.object({
   contactTelegram: z.string().optional().default(""),
   contactPhone: z.string().optional().default(""),
   validUntil: z.string().optional().default(""),
+  hourlyRate: z.string().optional().default("4000"),
 });
 
 export type Proposal = z.infer<typeof proposalSchema>;
