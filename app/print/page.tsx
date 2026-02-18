@@ -94,6 +94,26 @@ const decodePayload = (data: string | undefined) => {
   }
 };
 
+const loadTokenPayload = async (token?: string | null) => {
+  if (!token) return null;
+  try {
+    const filePath = path.join(
+      process.cwd(),
+      "data",
+      "tmp-pdf",
+      `${token}.json`
+    );
+    const raw = await fs.readFile(filePath, "utf-8");
+    return JSON.parse(raw) as {
+      proposal?: Proposal;
+      selectedCaseIds?: string[];
+      planTasks?: PlanTask[];
+    };
+  } catch {
+    return null;
+  }
+};
+
 const loadCases = async (): Promise<CaseItem[]> => {
   try {
     const baseDir = path.join(process.cwd(), "data", "cases");
@@ -119,7 +139,7 @@ const loadCases = async (): Promise<CaseItem[]> => {
 };
 
 type PrintPageProps = {
-  searchParams?: Promise<{ data?: string | string[] }>;
+  searchParams?: Promise<{ data?: string | string[]; token?: string }>;
 };
 
 export default async function PrintPage({ searchParams }: PrintPageProps) {
@@ -127,7 +147,8 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
   const dataParam = Array.isArray(resolvedParams?.data)
     ? resolvedParams?.data?.[0]
     : resolvedParams?.data;
-  const payload = decodePayload(dataParam);
+  const token = resolvedParams?.token;
+  const payload = (await loadTokenPayload(token)) ?? decodePayload(dataParam);
   const proposal = payload?.proposal ?? defaultValues;
   const contactPhone = proposal.contactPhone || defaultValues.contactPhone;
   const contactEmail = proposal.contactEmail || defaultValues.contactEmail;
@@ -162,18 +183,16 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
               <span>для </span>
               <span className="inline-flex items-baseline gap-1">
                 <span>компании&nbsp;</span>
-                <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
-                  {proposal.clientLogoDataUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
+                {proposal.clientLogoDataUrl && (
+                  <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={proposal.clientLogoDataUrl}
                       alt="logo"
                       className="h-full w-auto object-contain"
                     />
-                  ) : (
-                    "Лого"
-                  )}
-                </span>
+                  </span>
+                )}
                 <span className="font-semibold">{proposal.clientName}</span>
               </span>
             </div>

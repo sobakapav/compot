@@ -7,14 +7,20 @@ export const runtime = "nodejs";
 export async function GET() {
   const proposals = await listProposals();
   const items = proposals.map((group) => {
-    const latest = group.latest;
-    const proposal = latest?.proposal;
+    const marked = group.marked ?? group.latest;
+    const proposal = marked?.proposal;
+    const lastEdited = group.versions[0];
     return {
       proposalId: group.proposalId,
-      latestVersionId: latest?.versionId ?? "",
-      latestCreatedAt: latest?.createdAt ?? "",
+      latestVersionId: group.latest?.versionId ?? "",
+      latestCreatedAt: group.latest?.createdAt ?? "",
+      markedVersionId: marked?.versionId ?? "",
+      markedCreatedAt: marked?.createdAt ?? "",
+      lastEditedVersionId: lastEdited?.versionId ?? "",
+      lastEditedAt: lastEdited?.createdAt ?? "",
       clientName: proposal?.clientName ?? "",
       serviceName: proposal?.serviceName ?? "",
+      clientLogoDataUrl: proposal?.clientLogoDataUrl ?? "",
       versions: group.versions.map((version) => ({
         versionId: version.versionId,
         createdAt: version.createdAt,

@@ -8,6 +8,8 @@ type ProposalHistoryItem = {
   proposalId: string;
   latestVersionId: string;
   latestCreatedAt: string;
+  markedVersionId: string;
+  markedCreatedAt: string;
   clientName: string;
   serviceName?: string;
   versions: {
@@ -300,6 +302,11 @@ export default function Home() {
         planTasks
       );
 
+      const createdAt = historyData?.createdAt ?? new Date().toISOString();
+      const stamp = `${createdAt.slice(0, 10)}_${createdAt
+        .slice(11, 16)
+        .replace(":", "-")}`;
+      const fileName = `sbkpv_cmpr_${stamp}.pdf`;
       const response = await fetch("/api/pdf", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -307,6 +314,7 @@ export default function Home() {
           proposal,
           selectedCaseIds,
           planTasks,
+          fileName,
         }),
       });
       if (!response.ok) {
@@ -321,7 +329,12 @@ export default function Home() {
       window.open(url, "_blank", "noopener,noreferrer");
       const link = document.createElement("a");
       link.href = url;
-      link.download = "proposal.pdf";
+      const now = new Date();
+      const stamp = `${now.toISOString().slice(0, 10)}_${now
+        .toISOString()
+        .slice(11, 16)
+        .replace(":", "-")}`;
+      link.download = fileName;
       link.rel = "noopener";
       link.click();
       URL.revokeObjectURL(url);
@@ -501,7 +514,15 @@ export default function Home() {
 
   const applyTemplate = async () => {
     if (!selectedHistoryId) return;
-    const response = await fetch(`/api/proposals/${selectedHistoryId}`);
+    const selectedItem = history.find(
+      (item) => item.proposalId === selectedHistoryId
+    );
+    const versionQuery = selectedItem?.markedVersionId
+      ? `?versionId=${selectedItem.markedVersionId}`
+      : "";
+    const response = await fetch(
+      `/api/proposals/${selectedHistoryId}${versionQuery}`
+    );
     if (!response.ok) return;
     const data = await response.json();
     const proposal: Proposal | undefined = data?.item?.proposal;
@@ -934,16 +955,16 @@ export default function Home() {
                               />
                               <span>
                                 {title}
-                                {item.latestCreatedAt && (
+                                {item.markedCreatedAt && (
                                   <span className="ml-2 text-[10px] text-zinc-400">
-                                    {item.latestCreatedAt.slice(0, 10)}
+                                    {item.markedCreatedAt.slice(0, 10)}
                                   </span>
                                 )}
                               </span>
                             </label>
                             {!isCurrent && (
                               <a
-                                href={`/view?proposalId=${item.proposalId}`}
+                                href={`/view?proposalId=${item.proposalId}&versionId=${item.markedVersionId || item.latestVersionId}`}
                                 className="text-[10px] text-[#0E509E] underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -1005,22 +1026,17 @@ export default function Home() {
                 <span>для </span>
                 <span className="inline-flex items-baseline gap-1">
                   <span>компании&nbsp;</span>
-                  <span
-                    className={`inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px] ${
-                      proposal.clientLogoDataUrl ? "" : "px-2"
-                    }`}
-                  >
-                    {proposal.clientLogoDataUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
+                  {proposal.clientLogoDataUrl && (
+                    <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={proposal.clientLogoDataUrl}
                         alt="logo"
                         className="h-full w-auto object-contain"
+                        onClick={() => setFocus("clientLogoDataUrl", "header")}
                       />
-                    ) : (
-                      "Лого"
-                    )}
-                  </span>
+                    </span>
+                  )}
                   <span
                     ref={clientRef}
                     className="inline-block align-baseline font-semibold border-b border-transparent focus:border-zinc-300"
@@ -1536,26 +1552,44 @@ export default function Home() {
                       ))}
                     </select>
                   </label>
-                  <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                    Логотип
-                    <input
-                      type="file"
-                      accept="image/*"
-                      className="block w-full cursor-pointer rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-normal tracking-normal text-zinc-900 file:mr-3 file:rounded file:border-0 file:bg-zinc-900 file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white hover:file:bg-zinc-800"
-                      onChange={(event) => {
-                        const file = event.target.files?.[0];
-                        if (!file) return;
-                        const reader = new FileReader();
-                        reader.onload = () => {
+                  <div className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                    <label className="flex flex-col gap-2">
+                      Логотип
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="block w-full cursor-pointer rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-normal tracking-normal text-zinc-900 file:mr-3 file:rounded file:border-0 file:bg-zinc-900 file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white hover:file:bg-zinc-800"
+                        onChange={(event) => {
+                          const file = event.target.files?.[0];
+                          if (!file) return;
+                          const reader = new FileReader();
+                          reader.onload = () => {
+                            setProposal((prev) => ({
+                              ...prev,
+                              clientLogoDataUrl: String(reader.result ?? ""),
+                            }));
+                          };
+                          reader.readAsDataURL(file);
+                        }}
+                      />
+                    </label>
+                    {proposal.clientLogoDataUrl && (
+                      <button
+                        type="button"
+                        className="w-fit text-[10px] font-medium tracking-normal text-[#0E509E] underline"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          event.stopPropagation();
                           setProposal((prev) => ({
                             ...prev,
-                            clientLogoDataUrl: String(reader.result ?? ""),
+                            clientLogoDataUrl: "",
                           }));
-                        };
-                        reader.readAsDataURL(file);
-                      }}
-                    />
-                  </label>
+                        }}
+                      >
+                        Удалить логотип
+                      </button>
+                    )}
+                  </div>
                 </div>
               </section>
             )}
@@ -1846,7 +1880,7 @@ export default function Home() {
                   onClick={onSubmit}
                   className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isLoading ? "Генерация..." : "Сгенерировать PDF"}
+                  {isLoading ? "Генерация..." : "Скачать PDF"}
                 </button>
                 <button
                   type="button"
@@ -1869,7 +1903,7 @@ export default function Home() {
                   }}
                   className="rounded-md border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-900 transition hover:border-zinc-300 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Сохранить черновик
+                  Сохранить версию
                 </button>
               </div>
               {error && (

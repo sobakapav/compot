@@ -2,13 +2,19 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ProposalCard } from "../components/ProposalCard";
 
 type ProposalListItem = {
   proposalId: string;
   latestVersionId: string;
   latestCreatedAt: string;
+  markedVersionId: string;
+  markedCreatedAt: string;
+  lastEditedVersionId: string;
+  lastEditedAt: string;
   clientName: string;
   serviceName?: string;
+  clientLogoDataUrl?: string;
   versions: {
     versionId: string;
     createdAt: string;
@@ -17,25 +23,27 @@ type ProposalListItem = {
   }[];
 };
 
-const formatDate = (value: string) => {
-  if (!value) return "";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toISOString().slice(0, 10);
-};
-
 const formatDateTime = (value: string) => {
   if (!value) return "";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   const datePart = date.toISOString().slice(0, 10);
-  const timePart = date.toISOString().slice(11, 19);
+  const timePart = date.toISOString().slice(11, 16);
   return `${datePart} ${timePart}`;
 };
 
 export default function AllProposalsPage() {
   const router = useRouter();
   const [items, setItems] = useState<ProposalListItem[]>([]);
+  const [selectedVersions, setSelectedVersions] = useState<
+    Record<string, string>
+  >({});
+
+  const getVersionLabel = (item: ProposalListItem, versionId: string) => {
+    const version = item.versions.find((v) => v.versionId === versionId);
+    if (!version) return versionId;
+    return formatDateTime(version.createdAt);
+  };
 
   useEffect(() => {
     const load = async () => {
@@ -44,6 +52,14 @@ export default function AllProposalsPage() {
         if (!response.ok) return;
         const data = await response.json();
         setItems(data.items ?? []);
+        const defaults: Record<string, string> = {};
+        for (const item of data.items ?? []) {
+          if (item?.proposalId) {
+            defaults[item.proposalId] =
+              item.markedVersionId || item.latestVersionId;
+          }
+        }
+        setSelectedVersions(defaults);
       } catch {
         return;
       }
@@ -66,7 +82,7 @@ export default function AllProposalsPage() {
           </h1>
           <button
             type="button"
-            className="rounded border border-zinc-200 bg-white px-4 py-2 text-sm text-zinc-900 hover:border-zinc-300"
+            className="rounded border border-zinc-900 bg-zinc-900 px-4 py-2 text-sm text-white hover:bg-zinc-800"
             onClick={() => router.push("/new")}
           >
             Новое предложение
@@ -78,66 +94,166 @@ export default function AllProposalsPage() {
               Пока нет сохранённых предложений.
             </div>
           )}
-          {sorted.map((item) => (
-            <div
-              key={item.proposalId}
-              className="rounded border border-zinc-200 bg-white px-4 py-3"
-            >
-              <div className="flex items-center justify-between gap-4">
-                <button
-                  type="button"
-                  className="text-left text-sm font-semibold text-[#0E509E] underline hover:text-[#0B3F7C]"
-                  onClick={() =>
+          {sorted.map((item) => {
+            const selected =
+              selectedVersions[item.proposalId] ??
+              item.markedVersionId ??
+              item.latestVersionId;
+            return (
+              <ProposalCard
+                key={item.proposalId}
+                item={item}
+                selectedVersionId={selected}
+                onSelectVersion={(versionId) =>
+                  setSelectedVersions((prev) => ({
+                    ...prev,
+                    [item.proposalId]: versionId,
+                  }))
+                }
+                onDragStart={(event) => {
+                  event.dataTransfer.setData("text/plain", item.proposalId);
+                }}
+                onDragOver={(event) => {
+                  event.preventDefault();
+                }}
+                onDrop={async (event) => {
+                  event.preventDefault();
+                  const sourceId = event.dataTransfer.getData("text/plain");
+                  const targetId = item.proposalId;
+                  if (!sourceId || sourceId === targetId) return;
+                  await fetch("/api/proposals/merge", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ sourceId, targetId }),
+                  });
+                  const response = await fetch("/api/proposals");
+                  if (!response.ok) return;
+                  const data = await response.json();
+                  setItems(data.items ?? []);
+                  const defaults: Record<string, string> = {};
+                  for (const proposal of data.items ?? []) {
+                    defaults[proposal.proposalId] =
+                      proposal.markedVersionId || proposal.latestVersionId;
+                  }
+                  setSelectedVersions(defaults);
+                }}
+                onEdit={() =>
+                  router.push(
+                    `/edit?proposalId=${item.proposalId}&versionId=${selected}`
+                  )
+                }
+                onDelete={async () => {
+                  const label = getVersionLabel(item, selected);
+                  const name = `${item.clientName || "Без клиента"} — ${
+                    item.serviceName || "Без услуги"
+                  }`;
+                  const ok = window.confirm(
+                    `Вы уверены, что хотите удалить версию ${label} предложения ${name}?`
+                  );
+                  if (!ok) return;
+                  await fetch(
+                    `/api/proposals/${item.proposalId}?versionId=${selected}`,
+                    { method: "DELETE" }
+                  );
+                  const response = await fetch("/api/proposals");
+                  if (!response.ok) return;
+                  const data = await response.json();
+                  setItems(data.items ?? []);
+                  const defaults: Record<string, string> = {};
+                  for (const proposal of data.items ?? []) {
+                    defaults[proposal.proposalId] =
+                      proposal.markedVersionId || proposal.latestVersionId;
+                  }
+                  setSelectedVersions(defaults);
+                }}
+                onMark={async () => {
+                  await fetch(`/api/proposals/${item.proposalId}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ versionId: selected }),
+                  });
+                  const response = await fetch("/api/proposals");
+                  if (!response.ok) return;
+                  const data = await response.json();
+                  setItems(data.items ?? []);
+                  const defaults: Record<string, string> = {};
+                  for (const proposal of data.items ?? []) {
+                    defaults[proposal.proposalId] =
+                      proposal.markedVersionId || proposal.latestVersionId;
+                  }
+                  setSelectedVersions(defaults);
+                }}
+                onSample={async () => {
+                  const response = await fetch(
+                    `/api/proposals/${item.proposalId}?versionId=${selected}`
+                  );
+                  if (!response.ok) return;
+                  const data = await response.json();
+                  const proposal = data?.item?.proposal;
+                  if (!proposal) return;
+                  const createResponse = await fetch("/api/proposals", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      proposal,
+                      source: "create",
+                      selectedCaseIds: data?.item?.selectedCaseIds ?? [],
+                      planTasks: data?.item?.planTasks ?? [],
+                    }),
+                  });
+                  if (!createResponse.ok) return;
+                  const created = await createResponse.json();
+                  if (created?.proposalId && created?.versionId) {
                     router.push(
-                      `/edit?proposalId=${item.proposalId}&versionId=${item.latestVersionId}`
-                    )
+                      `/edit?proposalId=${created.proposalId}&versionId=${created.versionId}`
+                    );
                   }
-                >
-                  {item.clientName || "Без клиента"} —{" "}
-                  {item.serviceName || "Без услуги"}
-                  {item.latestCreatedAt && (
-                    <span className="ml-2 text-xs font-normal text-zinc-400">
-                      {formatDate(item.latestCreatedAt)}
-                    </span>
-                  )}
-                </button>
-              </div>
-              <div className="mt-2 flex items-center gap-3 text-xs text-zinc-500">
-                <span>Версии:</span>
-                <select
-                  className="rounded border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-700"
-                  value={item.latestVersionId}
-                  onChange={(event) =>
-                    router.push(
-                      `/edit?proposalId=${item.proposalId}&versionId=${event.target.value}`
-                    )
+                }}
+                onDownload={async () => {
+                  const response = await fetch(
+                    `/api/proposals/${item.proposalId}?versionId=${selected}`
+                  );
+                  if (!response.ok) return;
+                  const data = await response.json();
+                  const createdAt = data?.item?.createdAt;
+                  const fileName = createdAt
+                    ? `sbkpv_cmpr_${createdAt
+                        .slice(0, 10)}_${createdAt
+                        .slice(11, 16)
+                        .replace(":", "-")}.pdf`
+                    : undefined;
+                  const payload = {
+                    proposal: data?.item?.proposal,
+                    selectedCaseIds: data?.item?.selectedCaseIds ?? [],
+                    planTasks: data?.item?.planTasks ?? [],
+                    fileName,
+                  };
+                  const pdfResponse = await fetch("/api/pdf", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                  });
+                  if (!pdfResponse.ok) return;
+                  const blob = await pdfResponse.blob();
+                  const url = URL.createObjectURL(blob);
+                  const link = document.createElement("a");
+                  link.href = url;
+                  if (fileName) {
+                    link.download = fileName;
                   }
-                >
-                  {item.versions.map((version) => (
-                    <option
-                      key={version.versionId}
-                      value={version.versionId}
-                      style={{
-                        fontWeight: version.pdf ? 600 : 400,
-                      }}
-                    >
-                      {formatDateTime(version.createdAt)}
-                      {version.pdf ? " · PDF" : ""}
-                    </option>
-                  ))}
-                </select>
-                <button
-                  type="button"
-                  className="ml-auto text-xs text-[#0E509E] underline"
-                  onClick={() =>
-                    router.push(`/view?proposalId=${item.proposalId}`)
-                  }
-                >
-                  Посмотреть
-                </button>
-              </div>
-            </div>
-          ))}
+                  link.rel = "noopener";
+                  link.click();
+                  URL.revokeObjectURL(url);
+                }}
+                onView={() =>
+                  router.push(
+                    `/view?proposalId=${item.proposalId}&versionId=${selected}`
+                  )
+                }
+                formatDateTime={formatDateTime}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,0 +1,32 @@
+{
+  "proposalId": "1771427614072-2zqe0a",
+  "versionId": "1771428714806-gb12wa",
+  "createdAt": "2026-02-18T15:31:54.806Z",
+  "source": "autosave",
+  "pdf": false,
+  "proposal": {
+    "clientName": "Азиатско-Тихоокеанский банк",
+    "serviceName": "точечный редизайн интерфейса",
+    "serviceId": "redesign",
+    "clientLogoDataUrl": "",
+    "summary": "",
+    "scope": "",
+    "timeline": "",
+    "price": "",
+    "nuances": "",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "pro@sobakapav.ru",
+    "contactTelegram": "@sobakapavpro",
+    "contactPhone": "+7 (495) 191-92-81",
+    "validUntil": "4 МАРТА 2026 ГОДА"
+  },
+  "selectedCaseIds": [
+    "ohlebe",
+    "petrovich",
+    "fishlook",
+    "solar-staff",
+    "nextons"
+  ],
+  "planTasks": []
+}

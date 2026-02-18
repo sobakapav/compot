@@ -22,6 +22,44 @@ const ensureDir = async () => {
 const makeId = () =>
   `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
+const markedPath = (proposalId: string) =>
+  path.join(proposalsDir, proposalId, "marked.json");
+
+const readMarkedVersionId = async (proposalId: string) => {
+  try {
+    const raw = await fs.readFile(markedPath(proposalId), "utf-8");
+    const data = JSON.parse(raw) as { versionId?: string; locked?: boolean };
+    return {
+      versionId: data?.versionId ?? null,
+      locked: Boolean(data?.locked),
+    };
+  } catch {
+    return { versionId: null, locked: false };
+  }
+};
+
+const writeMarkedVersionId = async (
+  proposalId: string,
+  versionId: string,
+  locked: boolean
+) => {
+  await fs.writeFile(
+    markedPath(proposalId),
+    JSON.stringify(
+      { versionId, locked, markedAt: new Date().toISOString() },
+      null,
+      2
+    ),
+    "utf-8"
+  );
+};
+
+const chooseDefaultMarked = (versions: StoredProposalVersion[]) => {
+  if (versions.length === 0) return null;
+  const latestPdf = versions.find((version) => version.pdf);
+  return latestPdf ?? versions[0];
+};
+
 export const saveProposalVersion = async ({
   proposal,
   proposalId,
@@ -72,6 +110,7 @@ export const listProposals = async () => {
     proposalId: string;
     versions: StoredProposalVersion[];
     latest: StoredProposalVersion | null;
+    marked: StoredProposalVersion | null;
   }[] = [];
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
@@ -126,7 +165,28 @@ export const listProposals = async () => {
       const latest =
         versions.find((v) => v.source !== "autosave") ?? versions[0] ?? null;
       if (versions.length) {
-        items.push({ proposalId, versions, latest });
+        const markedState = await readMarkedVersionId(proposalId);
+        let marked =
+          versions.find(
+            (version) => version.versionId === markedState.versionId
+          ) ?? null;
+        if (!marked || !markedState.locked) {
+          const nextMarked = chooseDefaultMarked(versions);
+          if (nextMarked) {
+            if (
+              nextMarked.versionId !== markedState.versionId ||
+              markedState.locked
+            ) {
+              await writeMarkedVersionId(
+                proposalId,
+                nextMarked.versionId,
+                false
+              );
+            }
+            marked = nextMarked;
+          }
+        }
+        items.push({ proposalId, versions, latest, marked });
       }
     } catch {
       continue;
@@ -198,8 +258,135 @@ export const getProposal = async (proposalId: string, versionId?: string) => {
     } satisfies StoredProposalVersion;
   }
   versions.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const markedState = await readMarkedVersionId(proposalId);
+  let marked =
+    versions.find((version) => version.versionId === markedState.versionId) ??
+    null;
+  if (marked && markedState.locked) return marked;
+  if (!markedState.locked) {
+    const nextMarked = chooseDefaultMarked(versions);
+    if (nextMarked) {
+      if (nextMarked.versionId !== markedState.versionId) {
+        await writeMarkedVersionId(proposalId, nextMarked.versionId, false);
+      }
+      marked = nextMarked;
+    }
+  }
+  if (marked) return marked;
   const latest =
     versions.find((v) => v.source !== "autosave") ?? versions[0];
   if (!latest) throw new Error("Not found");
   return latest;
+};
+
+export const markProposalVersion = async (
+  proposalId: string,
+  versionId?: string
+) => {
+  await ensureDir();
+  const versionsDir = path.join(proposalsDir, proposalId, "versions");
+  const versions: StoredProposalVersion[] = [];
+  const entries = await fs.readdir(versionsDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    try {
+      const filePath = path.join(versionsDir, entry.name, "proposal.json");
+      versions.push(await readVersion(filePath));
+    } catch {
+      continue;
+    }
+  }
+  versions.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  let marked = versionId
+    ? versions.find((version) => version.versionId === versionId) ?? null
+    : null;
+  if (!marked) {
+    marked = chooseDefaultMarked(versions);
+  }
+  if (!marked) throw new Error("Not found");
+  await writeMarkedVersionId(proposalId, marked.versionId, Boolean(versionId));
+  return marked;
+};
+
+export const deleteProposalVersion = async (
+  proposalId: string,
+  versionId: string
+) => {
+  const versionDir = path.join(
+    proposalsDir,
+    proposalId,
+    "versions",
+    versionId
+  );
+  await fs.rm(versionDir, { recursive: true, force: true });
+  const versionsDir = path.join(proposalsDir, proposalId, "versions");
+  const remaining: StoredProposalVersion[] = [];
+  try {
+    const entries = await fs.readdir(versionsDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      try {
+        const filePath = path.join(versionsDir, entry.name, "proposal.json");
+        remaining.push(await readVersion(filePath));
+      } catch {
+        continue;
+      }
+    }
+  } catch {
+    // ignore
+  }
+  remaining.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const markedState = await readMarkedVersionId(proposalId);
+  if (markedState.versionId === versionId) {
+    const marked = chooseDefaultMarked(remaining);
+    if (marked) {
+      await writeMarkedVersionId(proposalId, marked.versionId, false);
+    }
+  }
+};
+
+export const mergeProposals = async (
+  targetId: string,
+  sourceId: string
+) => {
+  if (targetId === sourceId) return;
+  const targetVersionsDir = path.join(proposalsDir, targetId, "versions");
+  const sourceVersionsDir = path.join(proposalsDir, sourceId, "versions");
+  await fs.mkdir(targetVersionsDir, { recursive: true });
+  const entries = await fs.readdir(sourceVersionsDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const fromDir = path.join(sourceVersionsDir, entry.name);
+    let toDir = path.join(targetVersionsDir, entry.name);
+    try {
+      await fs.access(toDir);
+      const newId = makeId();
+      toDir = path.join(targetVersionsDir, newId);
+    } catch {
+      // destination free
+    }
+    await fs.rename(fromDir, toDir);
+  }
+  await fs.rm(path.join(proposalsDir, sourceId), {
+    recursive: true,
+    force: true,
+  });
+  const versions: StoredProposalVersion[] = [];
+  const targetEntries = await fs.readdir(targetVersionsDir, {
+    withFileTypes: true,
+  });
+  for (const entry of targetEntries) {
+    if (!entry.isDirectory()) continue;
+    try {
+      const filePath = path.join(targetVersionsDir, entry.name, "proposal.json");
+      versions.push(await readVersion(filePath));
+    } catch {
+      continue;
+    }
+  }
+  versions.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const marked = chooseDefaultMarked(versions);
+  if (marked) {
+    await writeMarkedVersionId(targetId, marked.versionId, false);
+  }
 };

@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import type { Proposal } from "../../lib/schema";
+import { ViewActions } from "../components/ViewActions";
 import { getProposal } from "../../lib/storage";
 
 type CaseItem = {
@@ -153,18 +154,16 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
               <span>для </span>
               <span className="inline-flex items-baseline gap-1">
                 <span>компании&nbsp;</span>
-                <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
-                  {proposal.clientLogoDataUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
+                {proposal.clientLogoDataUrl && (
+                  <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={proposal.clientLogoDataUrl}
                       alt="logo"
                       className="h-full w-auto object-contain"
                     />
-                  ) : (
-                    "Лого"
-                  )}
-                </span>
+                  </span>
+                )}
                 <span className="font-semibold">{proposal.clientName}</span>
               </span>
             </div>
@@ -371,6 +370,16 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
           </section>
         </div>
       </section>
+      <ViewActions
+        proposalId={proposalId}
+        versionId={record?.versionId ?? ""}
+        createdAt={record?.createdAt}
+        payload={{
+          proposal,
+          selectedCaseIds,
+          planTasks,
+        }}
+      />
     </div>
   );
 }
