@@ -1,0 +1,120 @@
+{
+  "proposalId": "1771442172472-yqrdde",
+  "versionId": "1771445688855-2cdhgw",
+  "createdAt": "2026-02-18T20:14:48.855Z",
+  "source": "manual",
+  "pdf": false,
+  "proposal": {
+    "clientName": "ТумБурум Пырым",
+    "serviceName": "прототип под инвестиции",
+    "serviceId": "prototype",
+    "clientLogoDataUrl": "data:image/png;base64,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",
+    "summary": "Сделаем? <b>Сделаем!</b>",
+    "scope": "Конечно, сделаем. Как только <a href=\"https://www.sobakapav.ru\">разберёмся</a>, что <b>надо</b> делать.",
+    "timeline": "от 12недель ",
+    "price": "от 1,9млн руб. ",
+    "nuances": "<ol><li><span style=\"font-family: var(--font-sans), &quot;PT Sans Narrow&quot;, sans-serif;\">Детальный план производства — в отдельном документе.</span><br></li><li><span style=\"font-family: var(--font-sans), &quot;PT Sans Narrow&quot;, sans-serif;\">Здрассте, а где нумерация-то?</span><br></li></ol>",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "pro@sobakapav.ru",
+    "contactTelegram": "@sobakapavpro",
+    "contactPhone": "+7 (495) 191-92-81",
+    "validUntil": "4 МАРТА 2026 ГОДА",
+    "hourlyRate": "4213"
+  },
+  "selectedCaseIds": [
+    "pgk",
+    "dau",
+    "bibi",
+    "e-gorod-mobile",
+    "easydocs-2024"
+  ],
+  "planTasks": [
+    {
+      "id": "t1",
+      "title": "New task",
+      "start": "",
+      "end": "",
+      "iterations": "1",
+      "stage": "Старт проекта",
+      "hours": "8",
+      "days": "3",
+      "cost": "33704",
+      "costManual": false,
+      "results": "• бизнес-требования\n• расписание созвонов"
+    },
+    {
+      "id": "t2",
+      "title": "New task",
+      "start": "",
+      "end": "",
+      "iterations": "1",
+      "stage": "Аналитика",
+      "hours": "20",
+      "cost": "84260",
+      "days": "5",
+      "costManual": false,
+      "results": "• CJM\n• список сценариев"
+    },
+    {
+      "id": "t3",
+      "stage": "Выработка фирменного стиля",
+      "iterations": "2",
+      "hours": "50",
+      "days": "14",
+      "cost": "421300",
+      "results": "• mockup\n• базис дизайн-системы",
+      "costManual": false
+    },
+    {
+      "id": "t4",
+      "stage": "Концептуальное проектирование",
+      "iterations": "2",
+      "hours": "40",
+      "days": "5",
+      "cost": "337040",
+      "results": "эскизы",
+      "costManual": false
+    },
+    {
+      "id": "t8",
+      "stage": "Тестирование на пользователях",
+      "iterations": "2",
+      "hours": "20",
+      "days": "18",
+      "cost": "168520",
+      "results": "• расшифровки разговоров\n• уточнения к CJM",
+      "costManual": false
+    },
+    {
+      "id": "t5",
+      "stage": "Детализация дизайна",
+      "iterations": "4",
+      "hours": "50",
+      "days": "23",
+      "cost": "842600",
+      "results": "• прототипы интерфейса в формате Figma\n• скринкасты интерактивной функциональности",
+      "costManual": false
+    },
+    {
+      "id": "t6",
+      "stage": "Сдача в разработку",
+      "iterations": "1",
+      "hours": "10",
+      "days": "5",
+      "cost": "42130",
+      "results": "отчёты по результатам созвонов",
+      "costManual": false
+    },
+    {
+      "id": "t7",
+      "stage": "Авторское сопровождение",
+      "iterations": "1",
+      "hours": "5",
+      "days": "15",
+      "cost": "21065",
+      "results": "отчёты по результатам созвонов",
+      "costManual": false
+    }
+  ]
+}

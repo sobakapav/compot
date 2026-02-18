@@ -9,7 +9,10 @@ export const proposalSchema = z.object({
   scope: z.string().optional().default(""),
   timeline: z.string().optional().default(""),
   price: z.string().optional().default(""),
-  nuances: z.string().optional().default(""),
+  nuances: z
+    .string()
+    .optional()
+    .default("Детальный план производства — в отдельном документе"),
   assumptions: z.string().optional().default(""),
   deliverables: z.string().optional().default(""),
   contactEmail: z.string().optional().default(""),

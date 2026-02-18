@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { Proposal } from "../../lib/schema";
 
@@ -29,15 +29,15 @@ type ProposalHistoryItem = {
   scope: "",
   timeline: "",
   price: "",
-  nuances: "",
+  nuances: "Детальный план производства — в отдельном документе",
   assumptions: "",
   deliverables: "",
   contactEmail: "pro@sobakapav.ru",
   contactTelegram: "@sobakapavpro",
-    contactPhone: "+7 (495) 191-92-81",
-    validUntil: "",
-    hourlyRate: "4000",
-  };
+  contactPhone: "+7 (495) 191-92-81",
+  validUntil: "",
+  hourlyRate: "4000",
+};
 
 type ProposalField = keyof Proposal;
 
@@ -205,12 +205,15 @@ export default function Home() {
 
   const planGridTemplate = useMemo(() => {
     const cols: string[] = [];
-    cols.push("calc(40% + 3px - 6ch)");
-    if (planColumns.iterations) cols.push("calc(2ch + 9px)");
+    cols.push("calc(40% + 3px - 6ch + 2ch)");
     if (planColumns.hours) cols.push("4ch");
+    if (planColumns.iterations) cols.push("calc(2ch + 9px)");
     if (planColumns.days) cols.push("3ch");
-    if (planColumns.cost) cols.push("7ch");
-    if (planColumns.results) cols.push("1fr");
+    if (planColumns.cost) cols.push("9ch");
+    if (planColumns.results) {
+      cols.push("16px");
+      cols.push("1fr");
+    }
     cols.push("14px");
     return cols.length ? cols.join(" ") : "1fr";
   }, [planColumns]);
@@ -367,14 +370,16 @@ export default function Home() {
     el.style.height = `${el.scrollHeight}px`;
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     requestAnimationFrame(() => {
-      Object.values(planStageRefs.current).forEach((el) =>
-        resizeTextarea(el as HTMLTextAreaElement | null)
-      );
-      Object.values(planResultsRefs.current).forEach((el) =>
-        resizeTextarea(el)
-      );
+      requestAnimationFrame(() => {
+        Object.values(planStageRefs.current).forEach((el) =>
+          resizeTextarea(el as HTMLTextAreaElement | null)
+        );
+        Object.values(planResultsRefs.current).forEach((el) =>
+          resizeTextarea(el)
+        );
+      });
     });
   }, [planTasks]);
 
@@ -509,6 +514,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    setProposal((prev) => {
+      if (prev.nuances && prev.nuances.trim()) return prev;
+      return { ...prev, nuances: defaultValues.nuances };
+    });
+  }, []);
+
+  useEffect(() => {
     proposalRef.current = proposal;
   }, [proposal]);
 
@@ -603,11 +615,11 @@ export default function Home() {
           ...proposalRef.current,
           ...item.proposal,
           contactEmail:
-            item.proposal.contactEmail || proposalRef.current.contactEmail,
+            item.proposal.contactEmail || defaultValues.contactEmail,
           contactTelegram:
-            item.proposal.contactTelegram || proposalRef.current.contactTelegram,
+            item.proposal.contactTelegram || defaultValues.contactTelegram,
           contactPhone:
-            item.proposal.contactPhone || proposalRef.current.contactPhone,
+            item.proposal.contactPhone || defaultValues.contactPhone,
           validUntil:
             item.proposal.validUntil || proposalRef.current.validUntil,
           hourlyRate:
@@ -755,6 +767,24 @@ export default function Home() {
       "<span class=\"digit\">$&</span>"
     );
 
+  const sumPlanHours = useMemo(() => {
+    return planTasks.reduce((sum, task) => {
+      const hours = Number(String(task.hours ?? "").replace(/[^\d]/g, "")) || 0;
+      const iterations =
+        Number(String(task.iterations ?? "1").replace(/[^\d]/g, "")) || 1;
+      return sum + hours * iterations;
+    }, 0);
+  }, [planTasks]);
+
+  const sumPlanCost = useMemo(() => {
+    return planTasks.reduce((sum, task) => {
+      const cost = Number(String(task.cost ?? "").replace(/[^\d]/g, "")) || 0;
+      return sum + cost;
+    }, 0);
+  }, [planTasks]);
+
+  // (results no longer use HTML lists)
+
   const buildMonth = (year: number, month: number) => {
     const first = new Date(year, month, 1);
     const last = new Date(year, month + 1, 0);
@@ -888,15 +918,18 @@ export default function Home() {
     setProposal((prev) => ({ ...prev, [field]: normalized }));
   };
 
-  const richFields = new Set<ProposalField>(["summary", "scope"]);
+  const richFields = new Set<ProposalField>(["summary", "scope", "nuances"]);
   const headerFields = new Set<ProposalField>([
     "serviceName",
     "serviceId",
     "clientName",
     "clientLogoDataUrl",
   ]);
-  const showRichControls =
-    activeField && activeBlock !== "plan" ? richFields.has(activeField) : false;
+  const showRichControls = activeField
+    ? activeField === "nuances" || activeBlock !== "plan"
+      ? richFields.has(activeField)
+      : false
+    : false;
   const showHeaderControls = activeField
     ? headerFields.has(activeField)
     : true;
@@ -906,6 +939,8 @@ export default function Home() {
     ordered: false,
     unordered: false,
   });
+  const richActiveRef = useRef<HTMLDivElement | null>(null);
+  const richSelectionRef = useRef<Range | null>(null);
 
   const updateRichState = () => {
     setRichState({
@@ -919,10 +954,13 @@ export default function Home() {
     const handler = () => {
       if (!showRichControls) return;
       const selection = window.getSelection();
-      const node = selection?.anchorNode as Node | null;
+      if (!selection || selection.rangeCount === 0) return;
+      const range = selection.getRangeAt(0);
+      const node = selection.anchorNode as Node | null;
       const element =
         node instanceof HTMLElement ? node : node?.parentElement ?? null;
       if (!element?.closest(".rich-field")) return;
+      richSelectionRef.current = range.cloneRange();
       updateRichState();
     };
     document.addEventListener("selectionchange", handler);
@@ -930,6 +968,14 @@ export default function Home() {
   }, [showRichControls]);
 
   const execRichCommand = (command: string, value?: string) => {
+    if (richActiveRef.current) {
+      richActiveRef.current.focus();
+    }
+    const selection = window.getSelection();
+    if (selection && richSelectionRef.current) {
+      selection.removeAllRanges();
+      selection.addRange(richSelectionRef.current);
+    }
     document.execCommand(command, false, value);
     updateRichState();
   };
@@ -1188,7 +1234,7 @@ export default function Home() {
                             header: "Заголовок",
                             tasks: "Задачи",
                             plan: "План",
-                            terms: "Сроки-стоимость",
+                            terms: "Нюансы",
                             cases: "Похожие проекты",
                             footer: "Подвал",
                           }[activeBlock]
@@ -1207,81 +1253,141 @@ export default function Home() {
           </div>
         </aside>
         <section className="w-[680px] flex-none">
-          <section className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-20 pt-10 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
-            <div className="flex flex-col gap-[24px]">
-              <section
-                data-block="header"
-                className={`flex flex-col gap-4 ${
-                  activeBlock === "header" ? "active-block" : ""
-                }`}
-              >
-              <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2]">
-                <span>Коммерческое предложение</span>
-                <br />
-                <span>на </span>
-                <span
-                  ref={serviceRef}
-                  className="inline-block align-baseline font-semibold border-b border-transparent focus:border-zinc-300"
-                  contentEditable
-                  suppressContentEditableWarning
-                  data-placeholder="услугу"
-                  onFocus={() => setFocus("serviceName", "header")}
-                  onInput={(event) =>
-                    updateField(
-                      "serviceName",
-                      event.currentTarget.textContent ?? ""
-                    )
-                  }
-                />
-                <br />
-                <span>для </span>
-                <span className="inline-flex items-baseline gap-1">
-                  <span>компании&nbsp;</span>
-                  {proposal.clientLogoDataUrl && (
-                    <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={proposal.clientLogoDataUrl}
-                        alt="logo"
-                        className="h-full w-auto object-contain"
-                        onClick={() => setFocus("clientLogoDataUrl", "header")}
-                      />
-                    </span>
-                  )}
+        <section className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-0 pt-10 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
+          <div className="flex flex-col gap-0">
+            <section
+              data-block="header"
+              className={`mt-8 mb-2 grid grid-cols-1 gap-6 md:grid-cols-5 ${
+                activeBlock === "header" ? "active-block" : ""
+              }`}
+            >
+                <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2] md:col-span-3">
+                  <span>Коммерческое предложение</span>
+                  <br />
+                  <span>на </span>
                   <span
-                    ref={clientRef}
+                    ref={serviceRef}
                     className="inline-block align-baseline font-semibold border-b border-transparent focus:border-zinc-300"
                     contentEditable
                     suppressContentEditableWarning
-                    data-placeholder="название компании"
-                    onFocus={() => setFocus("clientName", "header")}
+                    data-placeholder="услугу"
+                    onFocus={() => setFocus("serviceName", "header")}
                     onInput={(event) =>
                       updateField(
-                        "clientName",
+                        "serviceName",
                         event.currentTarget.textContent ?? ""
                       )
                     }
                   />
-                </span>
-              </div>
-            </section>
+                  <br />
+                  <span>для </span>
+                  <span className="inline-flex items-baseline gap-1">
+                    <span>компании&nbsp;</span>
+                    {proposal.clientLogoDataUrl && (
+                      <span className="inline-flex h-6 items-center justify-center overflow-hidden bg-white text-[9px] uppercase tracking-[0.2em] text-zinc-400 align-middle translate-y-[6px]">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={proposal.clientLogoDataUrl}
+                          alt="logo"
+                          className="h-full w-auto object-contain"
+                          onClick={() =>
+                            setFocus("clientLogoDataUrl", "header")
+                          }
+                        />
+                      </span>
+                    )}
+                    <span
+                      ref={clientRef}
+                      className="inline-block align-baseline font-semibold border-b border-transparent focus:border-zinc-300"
+                      contentEditable
+                      suppressContentEditableWarning
+                      data-placeholder="название компании"
+                      onFocus={() => setFocus("clientName", "header")}
+                      onInput={(event) =>
+                        updateField(
+                          "clientName",
+                          event.currentTarget.textContent ?? ""
+                        )
+                      }
+                    />
+                  </span>
+                </div>
+                <div className="flex flex-col gap-1 md:col-span-1 md:col-start-4">
+                  <div className={`${labelClass} leading-none mt-[6px]`}>
+                    Сроки {requiredMark}
+                  </div>
+                  <div
+                    className="digit-field text-[15px] text-zinc-900"
+                    contentEditable
+                    suppressContentEditableWarning
+                    dir="ltr"
+                    data-placeholder="Сроки..."
+                    onFocus={() => setFocus("timeline", "header")}
+                    onInput={(event) => {
+                      const root = event.currentTarget;
+                      const offset = getSelectionOffset(root);
+                      const value = root.textContent ?? "";
+                      updateField("timeline", value);
+                      root.innerHTML = value ? renderDigitHtml(value) : "";
+                      requestAnimationFrame(() =>
+                        restoreSelectionOffset(root, offset)
+                      );
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: renderDigitHtml(proposal.timeline),
+                    }}
+                  />
+                </div>
+                <div className="flex flex-col gap-1 md:col-span-1 md:col-start-5">
+                  <div className={`${labelClass} leading-none mt-[6px]`}>
+                    Стоимость {requiredMark}
+                  </div>
+                  <div className="flex items-end">
+                    <div
+                      className="digit-field text-[15px] text-zinc-900"
+                      contentEditable
+                      suppressContentEditableWarning
+                      dir="ltr"
+                      data-placeholder="Стоимость..."
+                      onFocus={() => setFocus("price", "header")}
+                      onInput={(event) => {
+                        const root = event.currentTarget;
+                        const offset = getSelectionOffset(root);
+                        const value = root.textContent ?? "";
+                        updateField("price", value);
+                        root.innerHTML = value ? renderDigitHtml(value) : "";
+                        requestAnimationFrame(() =>
+                          restoreSelectionOffset(root, offset)
+                        );
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html: renderDigitHtml(proposal.price),
+                      }}
+                    />
+                  </div>
+                </div>
+              </section>
 
             <section
               data-block="tasks"
-              className={`grid grid-cols-1 gap-6 md:grid-cols-5 ${
+              className={`mt-4 grid grid-cols-1 gap-6 md:grid-cols-5 ${
                 activeBlock === "tasks" ? "active-block" : ""
               }`}
             >
               <div className="flex flex-col gap-1 md:col-span-2">
-                <div className={labelClass}>Цель заказчика {requiredMark}</div>
+                <div className={`${labelClass} leading-[1] inline-flex items-baseline`}>
+                  Цель заказчика{" "}
+                  <span className="align-super text-[9px] text-red-500">*</span>
+                </div>
                 <div
                   ref={useEditableHtml(proposal.summary)}
                   className={`${editableClass} rich-field leading-[1.2]`}
                   contentEditable
                   suppressContentEditableWarning
                   data-placeholder="Опиши бизнес-задачу..."
-                  onFocus={() => {
+                  onFocus={(event) => {
                     setFocus("summary", "tasks");
+                    richActiveRef.current = event.currentTarget;
                     updateRichState();
                   }}
                   onKeyDown={handleRichKeyDown}
@@ -1297,16 +1403,31 @@ export default function Home() {
                   }
                 />
               </div>
-              <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-                <div className={labelClass}>Задача подрядчика {requiredMark}</div>
+              <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3" style={{ transform: "translateY(-16px)" }}>
+                <div className={`${labelClass} leading-[1] inline-flex items-baseline`}>
+                  <span>Задача</span>{" "}
+                  <img
+                    src="/brand/sobaka-pavlova.png"
+                    alt="Собака Павлова"
+                    className="inline-block h-6 w-6 rounded-full object-cover"
+                    style={{ marginLeft: 4, marginRight: 4, transform: "translateY(6px)" }}
+                  />{" "}
+                  <span className="relative pr-2">
+                    Собаки Павловой
+                    <span className="absolute -top-[2px] right-0 text-[9px] text-red-500">
+                      *
+                    </span>
+                  </span>
+                </div>
                 <div
                   ref={useEditableHtml(proposal.scope)}
                   className={`${editableClass} rich-field leading-[1.2]`}
                   contentEditable
                   suppressContentEditableWarning
                   data-placeholder="Опиши дизайн-задачу..."
-                  onFocus={() => {
+                  onFocus={(event) => {
                     setFocus("scope", "tasks");
+                    richActiveRef.current = event.currentTarget;
                     updateRichState();
                   }}
                   onKeyDown={handleRichKeyDown}
@@ -1326,7 +1447,7 @@ export default function Home() {
 
             <section
               data-block="plan"
-              className={`flex flex-col gap-2 ${
+              className={`mb-1 flex flex-col gap-2 ${
                 activeBlock === "plan" ? "active-block" : ""
               }`}
             >
@@ -1349,7 +1470,7 @@ export default function Home() {
                       >
                         <div className="flex items-baseline gap-[4px]">
                           <span
-                            className="cursor-grab text-sm text-zinc-900 leading-[1.2]"
+                            className="cursor-grab text-sm font-normal text-zinc-900 leading-[1.2]"
                             draggable
                             onDragStart={(event) => {
                               event.dataTransfer.setData("text/plain", task.id);
@@ -1375,7 +1496,7 @@ export default function Home() {
                               planStageRefs.current[task.id] = el;
                             }}
                             rows={1}
-                            className="w-full resize-none bg-transparent px-0 py-0 text-sm leading-[1.2] text-zinc-900 outline-none"
+                            className="w-full resize-none bg-transparent px-0 py-0 text-sm font-semibold leading-[1.2] text-zinc-900 outline-none"
                             value={task.stage ?? task.title ?? ""}
                             placeholder="Этап"
                             dir="ltr"
@@ -1434,6 +1555,32 @@ export default function Home() {
                             }}
                           />
                         </div>
+                        {planColumns.hours && (
+                          <div className="flex items-baseline">
+                            <input
+                              inputMode="numeric"
+                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] focus:outline-none"
+                              value={task.hours ?? ""}
+                              placeholder="Часы"
+                              onFocus={() => setActiveBlock("plan")}
+                              onChange={(event) => {
+                                const hours = event.target.value.replace(/[^\d]/g, "");
+                                const next: Partial<PlanTask> = { hours };
+                                if (!task.costManual) {
+                                  next.cost = recalcPlanCost(
+                                    {
+                                      ...task,
+                                      hours,
+                                    },
+                                    proposal.hourlyRate ?? ""
+                                  );
+                                  next.costManual = false;
+                                }
+                                updatePlanTask(task.id, next);
+                              }}
+                            />
+                          </div>
+                        )}
                         {planColumns.iterations && (
                           <div className="flex items-baseline gap-[1px]">
                             <span
@@ -1483,37 +1630,11 @@ export default function Home() {
                             />
                           </div>
                         )}
-                        {planColumns.hours && (
-                          <div className="flex items-baseline">
-                            <input
-                              inputMode="numeric"
-                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] focus:outline-none"
-                              value={task.hours ?? ""}
-                              placeholder="Часы"
-                              onFocus={() => setActiveBlock("plan")}
-                              onChange={(event) => {
-                                const hours = event.target.value.replace(/[^\d]/g, "");
-                                const next: Partial<PlanTask> = { hours };
-                                if (!task.costManual) {
-                                  next.cost = recalcPlanCost(
-                                    {
-                                      ...task,
-                                      hours,
-                                    },
-                                    proposal.hourlyRate ?? ""
-                                  );
-                                  next.costManual = false;
-                                }
-                                updatePlanTask(task.id, next);
-                              }}
-                            />
-                          </div>
-                        )}
                         {planColumns.days && (
                           <div className="flex items-baseline">
                             <input
                               inputMode="numeric"
-                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] focus:outline-none"
+                              className="w-full bg-transparent px-0 py-0 text-right text-sm leading-[1.2] text-zinc-500 focus:outline-none"
                               value={task.days ?? ""}
                               placeholder="Дни"
                               onFocus={() => setActiveBlock("plan")}
@@ -1546,6 +1667,7 @@ export default function Home() {
                             />
                           </div>
                         )}
+                        {planColumns.results && <div />}
                         {planColumns.results && (
                           <textarea
                             ref={(el) => {
@@ -1593,8 +1715,44 @@ export default function Home() {
                       </div>
                     );
                   })}
-                  <div className="flex justify-end text-xs text-zinc-500">
-                    Детальный план производства — в отдельном документе
+                  <div
+                    className="grid grid-cols-1 gap-2 md:grid-cols-1"
+                    style={{ gridTemplateColumns: planGridTemplate }}
+                  >
+                    <div />
+                    {planColumns.hours && (
+                      <div className="flex w-full justify-end">
+                        <span
+                          className="inline-flex whitespace-nowrap px-2 py-0.5 text-sm text-white"
+                          style={{
+                            backgroundColor: "#19676C",
+                            borderRadius: "6px",
+                            marginRight: "-8px",
+                          }}
+                        >
+                          {formatCost(String(sumPlanHours))}
+                        </span>
+                      </div>
+                    )}
+                    {planColumns.iterations && <div />}
+                    {planColumns.days && <div />}
+                    {planColumns.cost && (
+                      <div className="flex w-full justify-end">
+                        <span
+                          className="inline-flex whitespace-nowrap px-2 py-0.5 text-sm text-white"
+                          style={{
+                            backgroundColor: "#19676C",
+                            borderRadius: "6px",
+                            marginRight: "-8px",
+                          }}
+                        >
+                          {formatCost(String(sumPlanCost))}
+                        </span>
+                      </div>
+                    )}
+                    {planColumns.results && <div />}
+                    {planColumns.results && <div />}
+                    <div />
                   </div>
                 </div>
               </div>
@@ -1602,75 +1760,36 @@ export default function Home() {
 
             <section
               data-block="terms"
-              className={`flex flex-col gap-2 ${
+              className={`mb-1 flex flex-col gap-0 ${
                 activeBlock === "terms" ? "active-block" : ""
               }`}
             >
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-5">
-                <div className="flex flex-col gap-1 md:col-span-1">
-                  <div className={labelClass}>Сроки {requiredMark}</div>
-                  <div
-                    className="digit-field text-[15px] text-zinc-900"
-                    contentEditable
-                    suppressContentEditableWarning
-                    dir="ltr"
-                    data-placeholder="Сроки..."
-                    onFocus={() => setFocus("timeline", "terms")}
-                    onInput={(event) => {
-                      const root = event.currentTarget;
-                      const offset = getSelectionOffset(root);
-                      const value = root.textContent ?? "";
-                      updateField("timeline", value);
-                      root.innerHTML = value ? renderDigitHtml(value) : "";
-                      requestAnimationFrame(() =>
-                        restoreSelectionOffset(root, offset)
-                      );
-                    }}
-                    dangerouslySetInnerHTML={{
-                      __html: renderDigitHtml(proposal.timeline),
-                    }}
-                  />
-                </div>
-                <div className="flex flex-col gap-1 md:col-span-1 md:col-start-2">
-                  <div className={labelClass}>Стоимость {requiredMark}</div>
-                  <div className="flex items-end">
-                    <div
-                      className="digit-field text-[15px] text-zinc-900"
-                      contentEditable
-                      suppressContentEditableWarning
-                      dir="ltr"
-                      data-placeholder="Стоимость..."
-                      onFocus={() => setFocus("price", "terms")}
-                      onInput={(event) => {
-                        const root = event.currentTarget;
-                        const offset = getSelectionOffset(root);
-                        const value = root.textContent ?? "";
-                        updateField("price", value);
-                        root.innerHTML = value ? renderDigitHtml(value) : "";
-                        requestAnimationFrame(() =>
-                          restoreSelectionOffset(root, offset)
-                        );
-                      }}
-                      dangerouslySetInnerHTML={{
-                        __html: renderDigitHtml(proposal.price),
-                      }}
-                    />
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-5">
                 <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-                  <div className={labelClass}>Нюансы</div>
-                  <div className="flex items-end">
+                  <div>
                     <div
-                    ref={useEditable(proposal.nuances ?? "")}
-                    className="w-full cursor-text bg-transparent text-[12px] leading-[1.2] text-zinc-900 outline-none"
+                      ref={useEditableHtml(proposal.nuances ?? "")}
+                      className="w-full cursor-text bg-transparent text-[15px] leading-[1.2] text-zinc-900 outline-none rich-field"
                       contentEditable
                       suppressContentEditableWarning
                       data-placeholder="Нюансы..."
-                      onFocus={() => setFocus("nuances", "terms")}
+                      onFocus={(event) => {
+                        setFocus("nuances", "terms");
+                        richActiveRef.current = event.currentTarget;
+                        updateRichState();
+                      }}
+                      onKeyDown={handleRichKeyDown}
+                      onClick={(event) => {
+                        const target = event.target as HTMLElement | null;
+                        if (target?.tagName === "A") {
+                          const href = (target as HTMLAnchorElement).href;
+                          if (href) window.open(href, "_blank", "noopener,noreferrer");
+                        }
+                      }}
                       onInput={(event) =>
-                        updateField(
+                        updateRichField(
                           "nuances",
-                          event.currentTarget.textContent ?? ""
+                          event.currentTarget.innerHTML ?? ""
                         )
                       }
                     />
@@ -1681,7 +1800,7 @@ export default function Home() {
 
             <section
               data-block="cases"
-              className={`flex flex-col gap-0 ${
+              className={`mb-2 flex flex-col gap-0 ${
                 activeBlock === "cases" ? "active-block" : ""
               }`}
               onClick={() => setActiveBlock("cases")}
@@ -1755,7 +1874,7 @@ export default function Home() {
 
             <section
               data-block="footer"
-              className={`mt-[24px] flex flex-col gap-2 ${
+              className={`mt-4 flex flex-col gap-2 ${
                 activeBlock === "footer" ? "active-block" : ""
               }`}
             >
@@ -1869,6 +1988,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
+            <div className="h-[32px] shrink-0" />
           </div>
         </section>
         </section>
@@ -2003,6 +2123,7 @@ export default function Home() {
                         ? "border-zinc-900 bg-zinc-900 text-white"
                         : "border-zinc-200 bg-white text-zinc-900 hover:border-zinc-300"
                     }`}
+                    onMouseDown={(event) => event.preventDefault()}
                     onClick={() => execRichCommand("bold")}
                   >
                     Жирный
@@ -2014,6 +2135,7 @@ export default function Home() {
                         ? "border-zinc-900 bg-zinc-900 text-white"
                         : "border-zinc-200 bg-white text-zinc-900 hover:border-zinc-300"
                     }`}
+                    onMouseDown={(event) => event.preventDefault()}
                     onClick={() => execRichCommand("insertUnorderedList")}
                   >
                     Список
@@ -2025,6 +2147,7 @@ export default function Home() {
                         ? "border-zinc-900 bg-zinc-900 text-white"
                         : "border-zinc-200 bg-white text-zinc-900 hover:border-zinc-300"
                     }`}
+                    onMouseDown={(event) => event.preventDefault()}
                     onClick={() => execRichCommand("insertOrderedList")}
                   >
                     Нумерация
@@ -2032,6 +2155,7 @@ export default function Home() {
                   <button
                     type="button"
                     className="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-medium text-zinc-900 transition hover:border-zinc-300"
+                    onMouseDown={(event) => event.preventDefault()}
                     onClick={() => {
                       const existing = getSelectionLink();
                       const url = window.prompt("Ссылка (URL):", existing);
@@ -2229,8 +2353,8 @@ export default function Home() {
                 <div className="mt-3 flex flex-col gap-2 text-xs text-zinc-700">
                   {[
                     ["stage", "Этапы", true],
-                    ["iterations", "Итерации", false],
                     ["hours", "Часы", false],
+                    ["iterations", "Итерации", false],
                     ["days", "Дни", false],
                     ["cost", "Стоимость", false],
                     ["results", "Результаты", false],

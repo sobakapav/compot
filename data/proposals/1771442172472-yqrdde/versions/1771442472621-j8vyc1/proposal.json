@@ -1,0 +1,120 @@
+{
+  "proposalId": "1771442172472-yqrdde",
+  "versionId": "1771442472621-j8vyc1",
+  "createdAt": "2026-02-18T19:21:12.621Z",
+  "source": "autosave",
+  "pdf": false,
+  "proposal": {
+    "clientName": "",
+    "serviceName": "прототип под инвестиции",
+    "serviceId": "prototype",
+    "clientLogoDataUrl": "",
+    "summary": "",
+    "scope": "",
+    "timeline": "",
+    "price": "",
+    "nuances": "Детальный план производства — в отдельном документе.",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "pro@sobakapav.ru",
+    "contactTelegram": "@sobakapavpro",
+    "contactPhone": "+7 (495) 191-92-81",
+    "validUntil": "4 МАРТА 2026 ГОДА",
+    "hourlyRate": "4213"
+  },
+  "selectedCaseIds": [
+    "pgk",
+    "dau",
+    "bibi",
+    "e-gorod-mobile",
+    "easydocs-2024"
+  ],
+  "planTasks": [
+    {
+      "id": "t1",
+      "title": "New task",
+      "start": "",
+      "end": "",
+      "iterations": "1",
+      "stage": "Старт проекта",
+      "hours": "8",
+      "days": "3",
+      "cost": "33704",
+      "costManual": false,
+      "results": "• бизнес-требования\n• расписание созвонов"
+    },
+    {
+      "id": "t2",
+      "title": "New task",
+      "start": "",
+      "end": "",
+      "iterations": "1",
+      "stage": "Аналитика",
+      "hours": "20",
+      "cost": "84260",
+      "days": "5",
+      "costManual": false,
+      "results": "• CJM\n• список сценариев"
+    },
+    {
+      "id": "t3",
+      "stage": "Выработка фирменного стиля",
+      "iterations": "4",
+      "hours": "50",
+      "days": "14",
+      "cost": "842600",
+      "results": "• mockup\n• базис дизайн-системы",
+      "costManual": false
+    },
+    {
+      "id": "t4",
+      "stage": "Концептуальное проектирование",
+      "iterations": "2",
+      "hours": "40",
+      "days": "5",
+      "cost": "337040",
+      "results": "эскизы",
+      "costManual": false
+    },
+    {
+      "id": "t8",
+      "stage": "Тестирование на пользователях",
+      "iterations": "2",
+      "hours": "20",
+      "days": "18",
+      "cost": "168520",
+      "results": "• расшифровки разговоров\n• уточнения к CJM",
+      "costManual": false
+    },
+    {
+      "id": "t5",
+      "stage": "Детализация дизайна",
+      "iterations": "4",
+      "hours": "50",
+      "days": "23",
+      "cost": "842600",
+      "results": "• прототипы интерфейса в формате Figma\n• скринкасты интерактивной функциональности",
+      "costManual": false
+    },
+    {
+      "id": "t6",
+      "stage": "Сдача в разработку",
+      "iterations": "1",
+      "hours": "10",
+      "days": "5",
+      "cost": "42130",
+      "results": "отчёты по результатам созвонов",
+      "costManual": false
+    },
+    {
+      "id": "t7",
+      "stage": "Авторское сопровождение",
+      "iterations": "1",
+      "hours": "10",
+      "days": "5",
+      "cost": "42130",
+      "results": "отчёты по результатам созвонов",
+      "costManual": false
+    }
+  ]
+}

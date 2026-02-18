@@ -1,0 +1,27 @@
+{
+  "proposalId": "1771441962342-7bqolc",
+  "versionId": "1771441962342-ugcn42",
+  "createdAt": "2026-02-18T19:12:42.342Z",
+  "source": "create",
+  "pdf": false,
+  "proposal": {
+    "clientName": "",
+    "serviceName": "",
+    "serviceId": "",
+    "clientLogoDataUrl": "",
+    "summary": "",
+    "scope": "",
+    "timeline": "",
+    "price": "",
+    "nuances": "Детальный план производства — в отдельном документе",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "",
+    "contactTelegram": "",
+    "contactPhone": "",
+    "validUntil": "4 МАРТА 2026 ГОДА",
+    "hourlyRate": "4000"
+  },
+  "selectedCaseIds": [],
+  "planTasks": []
+}

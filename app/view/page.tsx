@@ -35,7 +35,7 @@ const defaultValues: Proposal = {
   scope: "",
   timeline: "",
   price: "",
-  nuances: "",
+  nuances: "Детальный план производства — в отдельном документе",
   assumptions: "",
   deliverables: "",
   contactEmail: "pro@sobakapav.ru",
@@ -59,6 +59,12 @@ const renderDigitHtml = (value: string) =>
     '<span class="digit">$&</span>'
   );
 
+const formatCost = (value: string) => {
+  const digits = value.replace(/[^\d]/g, "");
+  if (!digits) return "";
+  return digits.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+
 const splitLinkSlug = (link: string) => {
   if (!link) return { base: "", slug: "" };
   const clean = link.replace(/\/$/, "");
@@ -79,12 +85,21 @@ const formatCaseLink = (link?: string) => {
 };
 
 const renderResultsHtml = (value: string) => {
+  if (/<ul|<li/i.test(value)) return value;
   const trimmed = value.trim();
   if (!trimmed) return "";
   const lines = trimmed.split(/\n+/).filter(Boolean);
   if (lines.length <= 1) return escapeHtml(trimmed);
   return `<ul>${lines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>`;
 };
+
+const decodeHtmlEntities = (value: string) =>
+  value
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#39;", "'")
+    .replaceAll("&amp;", "&");
 
 const loadCases = async (): Promise<CaseItem[]> => {
   try {
@@ -126,11 +141,24 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
 
   const normalizedPlan = planTasks.map((task) => ({
     stage: task.stage ?? task.title ?? "",
+    iterations: task.iterations ?? "1",
     hours: task.hours ?? "",
     days: task.days ?? "",
     cost: task.cost ?? "",
     results: task.results ?? "",
   }));
+
+  const sumPlanHours = normalizedPlan.reduce((sum, task) => {
+    const hours = Number(String(task.hours ?? "").replace(/[^\d]/g, "")) || 0;
+    const iterations =
+      Number(String(task.iterations ?? "1").replace(/[^\d]/g, "")) || 1;
+    return sum + hours * iterations;
+  }, 0);
+
+  const sumPlanCost = normalizedPlan.reduce((sum, task) => {
+    const cost = Number(String(task.cost ?? "").replace(/[^\d]/g, "")) || 0;
+    return sum + cost;
+  }, 0);
 
   const contactPhone = proposal.contactPhone || defaultValues.contactPhone;
   const contactEmail = proposal.contactEmail || defaultValues.contactEmail;
@@ -146,9 +174,9 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
         &lt;&lt; Назад к списку предложений
       </a>
       <section className="proposal-page relative w-full max-w-[794px] rounded-none bg-white px-12 pb-20 pt-14 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
-        <div className="flex flex-col gap-[24px]">
-          <section className="flex flex-col gap-4">
-            <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2]">
+        <div className="flex flex-col gap-0">
+          <section className="mb-2 grid grid-cols-1 gap-6 md:grid-cols-5">
+            <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2] md:col-span-3">
               <span>Коммерческое предложение</span>
               <br />
               <span>на </span>
@@ -170,30 +198,65 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
                 <span className="font-semibold">{proposal.clientName}</span>
               </span>
             </div>
+            <div className="flex flex-col gap-1 md:col-span-1 md:col-start-4">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400 leading-none mt-[6px]">
+                Сроки
+              </div>
+              <div
+                className="digit-field text-[15px] text-zinc-900"
+                dangerouslySetInnerHTML={{
+                  __html: renderDigitHtml(proposal.timeline || ""),
+                }}
+              />
+            </div>
+            <div className="flex flex-col gap-1 md:col-span-1 md:col-start-5">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400 leading-none mt-[6px]">
+                Стоимость
+              </div>
+              <div className="flex items-end">
+                <div
+                  className="digit-field text-[15px] text-zinc-900"
+                  dangerouslySetInnerHTML={{
+                    __html: renderDigitHtml(proposal.price || ""),
+                  }}
+                />
+              </div>
+            </div>
           </section>
 
-          <section className="grid grid-cols-1 gap-6 md:grid-cols-5">
+          <section className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-5">
             <div className="flex flex-col gap-1 md:col-span-2">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400 leading-[1] inline-flex items-baseline">
                 Цель заказчика
               </div>
               <div
                 className="rich-field w-full text-[15px] leading-[1.2] text-zinc-900"
-                dangerouslySetInnerHTML={{ __html: proposal.summary || "" }}
+                dangerouslySetInnerHTML={{
+                  __html: decodeHtmlEntities(proposal.summary || ""),
+                }}
               />
             </div>
-            <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-                Задача подрядчика
+            <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3" style={{ transform: "translateY(-16px)" }}>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400 leading-[1] inline-flex items-baseline">
+                <span>Задача</span>{" "}
+                <img
+                  src="/brand/sobaka-pavlova.png"
+                  alt="Собака Павлова"
+                  className="inline-block h-6 w-6 rounded-full object-cover"
+                  style={{ marginLeft: 4, marginRight: 4, transform: "translateY(6px)" }}
+                />{" "}
+                <span>Собаки Павловой</span>
               </div>
               <div
                 className="rich-field w-full text-[15px] leading-[1.2] text-zinc-900"
-                dangerouslySetInnerHTML={{ __html: proposal.scope || "" }}
+                dangerouslySetInnerHTML={{
+                  __html: decodeHtmlEntities(proposal.scope || ""),
+                }}
               />
             </div>
           </section>
 
-          <section className="flex flex-col gap-2">
+          <section className="mb-1 flex flex-col gap-0">
             <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
               Этапы и результаты работ
             </div>
@@ -202,12 +265,49 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
                 {normalizedPlan.map((task, index) => (
                   <div
                     key={`${task.stage}-${index}`}
-                    className="grid grid-cols-1 gap-2 md:grid-cols-[2fr_0.7fr_0.7fr_0.8fr_2.2fr]"
+                    className="grid items-baseline"
+                    style={{
+                      gridTemplateColumns:
+                        "calc(40% + 3px - 6ch + 2ch) 4ch calc(2ch + 9px) 3ch 9ch 16px 1fr",
+                      columnGap: "8px",
+                    }}
                   >
-                    <div className="text-sm text-zinc-900">{task.stage}</div>
-                    <div className="text-sm text-zinc-900">{task.hours}</div>
-                    <div className="text-sm text-zinc-900">{task.days}</div>
-                    <div className="text-sm text-zinc-900">{task.cost}</div>
+                    <div className="text-sm text-zinc-900">
+                      {index + 1}. <span className="font-semibold">{task.stage}</span>
+                    </div>
+                    <div className="text-sm text-right text-zinc-900">{task.hours}</div>
+                    <div className="flex items-baseline gap-[1px] text-sm">
+                      <span
+                        style={{
+                          color: "#95001B",
+                          width: "8px",
+                          lineHeight: "1.2",
+                          display: "inline-block",
+                        }}
+                      >
+                        {Number(task.iterations ?? "1") > 1 ? "×" : "\u00a0"}
+                      </span>
+                      <span
+                        className={
+                          Number(task.iterations ?? "1") > 1
+                            ? "font-semibold"
+                            : "text-white"
+                        }
+                        style={{
+                          color:
+                            Number(task.iterations ?? "1") > 1
+                              ? "#95001B"
+                              : "#ffffff",
+                        }}
+                      >
+                        {task.iterations ?? "1"}
+                      </span>
+                    </div>
+                    <div className="text-sm text-right text-zinc-500">{task.days}</div>
+                    <div className="text-sm text-right text-zinc-900">
+                      {formatCost(task.cost ?? "")}
+                    </div>
+                    <div />
                     <div
                       className="text-sm text-zinc-900"
                       dangerouslySetInnerHTML={{
@@ -216,54 +316,62 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
                     />
                   </div>
                 ))}
+                <div
+                  className="grid items-baseline"
+                  style={{
+                    gridTemplateColumns:
+                      "calc(40% + 3px - 6ch + 2ch) 4ch calc(2ch + 9px) 3ch 9ch 16px 1fr",
+                    columnGap: "8px",
+                  }}
+                >
+                  <div />
+                  <div className="flex w-full justify-end">
+                    <span
+                      className="inline-flex whitespace-nowrap px-2 py-0.5 text-sm text-white"
+                      style={{
+                        backgroundColor: "#19676C",
+                        borderRadius: "6px",
+                        marginRight: "-8px",
+                      }}
+                    >
+                      {formatCost(String(sumPlanHours))}
+                    </span>
+                  </div>
+                  <div />
+                  <div />
+                  <div className="flex w-full justify-end">
+                    <span
+                      className="inline-flex whitespace-nowrap px-2 py-0.5 text-sm text-white"
+                      style={{
+                        backgroundColor: "#19676C",
+                        borderRadius: "6px",
+                        marginRight: "-8px",
+                      }}
+                    >
+                      {formatCost(String(sumPlanCost))}
+                    </span>
+                  </div>
+                  <div />
+                  <div />
+                </div>
               </div>
             </div>
           </section>
 
-          <section className="flex flex-col gap-2">
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-5">
-              <div className="flex flex-col gap-1 md:col-span-1">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-                  Сроки
-                </div>
+          <section className="mb-1 flex flex-col gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-5">
+              <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
                 <div
-                  className="digit-field text-[15px] text-zinc-900"
+                  className="rich-field text-[15px] text-zinc-900 leading-[1.2]"
                   dangerouslySetInnerHTML={{
-                    __html: renderDigitHtml(proposal.timeline || ""),
+                    __html: decodeHtmlEntities(proposal.nuances || ""),
                   }}
                 />
               </div>
-              <div className="flex flex-col gap-1 md:col-span-1 md:col-start-2">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-                  Стоимость
-                </div>
-                <div className="flex min-h-[2.6em] items-end">
-                  <div
-                    className="digit-field text-[15px] text-zinc-900"
-                    dangerouslySetInnerHTML={{
-                      __html: renderDigitHtml(proposal.price || ""),
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-                {proposal.nuances?.trim() ? (
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-                    Нюансы
-                  </div>
-                ) : null}
-                {proposal.nuances?.trim() ? (
-                  <div className="flex min-h-[2.6em] items-end">
-                    <div className="text-[12px] text-zinc-900 leading-[1.2]">
-                      {proposal.nuances}
-                    </div>
-                  </div>
-                ) : null}
-              </div>
             </div>
           </section>
 
-          <section className="flex flex-col gap-0">
+          <section className="mb-2 flex flex-col gap-0">
             <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
               Похожие проекты
             </div>
@@ -309,7 +417,7 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
             </div>
           </section>
 
-          <section className="mt-[48px] flex flex-col gap-2">
+          <section className="mt-4 flex flex-col gap-2">
             <div className="grid grid-cols-1 gap-2 md:grid-cols-5 md:items-end">
               <div className="flex flex-col gap-1 md:col-span-1 md:justify-end md:self-end">
                 <div className="proposal-headline text-[10px] uppercase tracking-[0.2em] text-zinc-400">
