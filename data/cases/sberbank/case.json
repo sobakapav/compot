@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "sberbank",
+  "link": "https://sobakapav.ru/portfolio/sberbank",
+  "clientName": "Сбербанк",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Гайд по созданию интерфейсных текстов",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:03.200Z",
+  "updatedAt": "2026-02-18T11:12:37.284Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/sberbank/sberbank.jpg",
+  "previewImageFile": "/case-previews/sberbank.jpg",
+  "serviceIds": [
+    "content-design"
+  ]
+}

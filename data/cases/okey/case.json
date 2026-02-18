@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "okey",
+  "link": "https://sobakapav.ru/portfolio/okey",
+  "clientName": "О’КЕЙ",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Приложение для федеральной розничной сети",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:55.890Z",
+  "updatedAt": "2026-02-18T11:12:37.038Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "fastvps",
+  "link": "https://sobakapav.ru/portfolio/fastvps",
+  "clientName": "FastVPS",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс сервиса подбора хостинга",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:38.329Z",
+  "updatedAt": "2026-02-18T11:12:36.560Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/fastvps/fastvps.jpg",
+  "previewImageFile": "/case-previews/fastvps.jpg",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

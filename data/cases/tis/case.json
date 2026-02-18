@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "tis",
+  "link": "https://sobakapav.ru/portfolio/tis",
+  "clientName": "TIS.TATAR",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Глобальная система дистанционного мониторинга давления",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:07.950Z",
+  "updatedAt": "2026-02-18T11:12:37.520Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-design",
+    "product-team"
+  ]
+}

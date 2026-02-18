@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "korochka",
+  "link": "https://sobakapav.ru/portfolio/korochka",
+  "clientName": "Корочка.ру",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Сервис подбора ВУЗа",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:49.289Z",
+  "updatedAt": "2026-02-18T11:12:37.032Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/korochka/korochka.png",
+  "previewImageFile": "/case-previews/korochka.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "stream-telecom",
+  "link": "https://sobakapav.ru/portfolio/stream-telecom",
+  "clientName": "Stream Telecom",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс сервиса SMS-рассылок",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:06.337Z",
+  "updatedAt": "2026-02-18T11:12:37.515Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/stream-telecom/stream-telecom.png",
+  "previewImageFile": "/case-previews/stream-telecom.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

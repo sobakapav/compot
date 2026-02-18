@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "alfa",
+  "link": "https://sobakapav.ru/portfolio/alfa",
+  "clientName": "АльфаСтрахование",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс рабочего места страхового агента",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:21.259Z",
+  "updatedAt": "2026-02-18T11:12:36.540Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/alfa/alfa.png",
+  "previewImageFile": "/case-previews/alfa.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
+}

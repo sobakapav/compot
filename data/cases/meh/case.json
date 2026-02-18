@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "meh",
+  "link": "https://sobakapav.ru/portfolio/meh",
+  "clientName": "НПФ «Механотроника РА»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Контент и прототип буклета для отраслевой выставки",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:53.075Z",
+  "updatedAt": "2026-02-18T11:12:37.035Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/meh/main.jpg",
+  "previewImageFile": "/case-previews/meh.jpg",
+  "serviceIds": [
+    "content-design"
+  ]
+}

@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "nextons",
   "link": "https://sobakapav.ru/portfolio/nextons",
-  "clientName": "",
+  "clientName": "Nextons",
   "clientLogoFile": "",
-  "preview": "Перепроектировали UI ключевых страниц, содержащих все интерфейсные элементы, которые используются в системе.",
+  "preview": "",
   "title": "Таск-трекер юридической фирмы",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.184Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/nextons.DoaoluBc.svg",
-  "previewImageFile": "/case-previews/nextons.svg"
+  "updatedAt": "2026-02-18T11:12:37.037Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/nextons/main.png",
+  "previewImageFile": "/case-previews/nextons.png",
+  "serviceIds": [
+    "ui-redesign",
+    "redesign"
+  ]
 }

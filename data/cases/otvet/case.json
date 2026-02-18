@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "otvet",
+  "link": "https://sobakapav.ru/portfolio/otvet",
+  "clientName": "Мессенджер «Ответ»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса корпоративного мессенджера",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:58.565Z",
+  "updatedAt": "2026-02-18T11:12:37.272Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/otvet/otvet.jpg",
+  "previewImageFile": "/case-previews/otvet.jpg",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

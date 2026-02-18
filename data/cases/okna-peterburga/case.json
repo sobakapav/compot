@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "okna-peterburga",
+  "link": "https://sobakapav.ru/portfolio/okna-peterburga",
+  "clientName": "«Окна Петербурга»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Экспертная оценка и пользовательский аудит сайта компании",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:56.510Z",
+  "updatedAt": "2026-02-18T11:12:37.039Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/okna/main.png",
+  "previewImageFile": "/case-previews/okna-peterburga.png",
+  "serviceIds": [
+    "ux-audit"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "tigitl",
+  "link": "https://sobakapav.ru/portfolio/tigitl",
+  "clientName": "Tigitl",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс поисковика классической музыки",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:07.371Z",
+  "updatedAt": "2026-02-18T11:12:37.517Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/tigitl/tigitl.png",
+  "previewImageFile": "/case-previews/tigitl.png",
+  "serviceIds": [
+    "research",
+    "ux-design"
+  ]
+}

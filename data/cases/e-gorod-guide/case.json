@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "e-gorod-guide",
+  "link": "https://sobakapav.ru/portfolio/e-gorod-guide",
+  "clientName": "Электронный город",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Гайд по общению для сотрудников поддержки",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:33.166Z",
+  "updatedAt": "2026-02-18T11:12:36.554Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/e-gorod-guide/e-gorod-guide.jpg",
+  "previewImageFile": "/case-previews/e-gorod-guide.jpg",
+  "serviceIds": [
+    "content-design",
+    "ux-outsource"
+  ]
+}

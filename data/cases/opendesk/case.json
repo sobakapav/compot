@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "opendesk",
+  "link": "https://sobakapav.ru/portfolio/opendesk",
+  "clientName": "OpenDesk",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Банковское приложение с криптовалютой",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:57.984Z",
+  "updatedAt": "2026-02-18T11:12:37.267Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/opendesk/main.png",
+  "previewImageFile": "",
+  "serviceIds": [
+    "research",
+    "ux-design"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "miaz",
+  "link": "https://sobakapav.ru/portfolio/miaz",
+  "clientName": "МИАЦ СПб",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Электронная карта пациента",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:53.461Z",
+  "updatedAt": "2026-02-18T11:12:37.036Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/miaz/miaz.png",
+  "previewImageFile": "/case-previews/miaz.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

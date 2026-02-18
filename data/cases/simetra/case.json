@@ -2,13 +2,16 @@
   "schemaVersion": 1,
   "id": "simetra",
   "link": "https://sobakapav.ru/portfolio/simetra",
-  "clientName": "",
+  "clientName": "RITM³ (Simetra)",
   "clientLogoFile": "",
-  "preview": "Протестировали интерфейс универсальной платформы для транспортного моделирования, предложили и обосновали улучшения.",
+  "preview": "",
   "title": "UX-аудит системы транспортного моделирования",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.186Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/simetra.B_dTEA-h.svg",
-  "previewImageFile": "/case-previews/simetra.svg"
+  "updatedAt": "2026-02-18T11:12:37.285Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/simetra/main.png",
+  "previewImageFile": "/case-previews/simetra.png",
+  "serviceIds": [
+    "ux-audit"
+  ]
 }

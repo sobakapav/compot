@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "humans",
+  "link": "https://sobakapav.ru/portfolio/humans",
+  "clientName": "Humans",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интергация в команду разработки провайдера",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:43.528Z",
+  "updatedAt": "2026-02-18T11:12:36.563Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/humans/main.png",
+  "previewImageFile": "/case-previews/humans.png",
+  "serviceIds": [
+    "ux-outsource"
+  ]
+}

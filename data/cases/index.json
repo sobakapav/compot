@@ -2,208 +2,1006 @@
   "schemaVersion": 1,
   "items": [
     {
-      "id": "seatmap",
-      "title": "Инструмент для создания схем стадионов и концертных площадок",
-      "clientName": "Seatmap",
-      "serviceIds": []
+      "id": "alarm-motors",
+      "serviceIds": [
+        "product-team"
+      ]
     },
     {
-      "id": "electrocardiography",
-      "title": "Медицинский интерфейс для работы с ЭКГ",
-      "clientName": "ERNA",
-      "serviceIds": []
+      "id": "alfa-arm",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource",
+        "prototype"
+      ]
     },
     {
-      "id": "broker",
-      "title": "Аутсорс-исследование пользователей для финансовой компании",
-      "clientName": "",
-      "serviceIds": []
+      "id": "alfa",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
     },
     {
-      "id": "anggell-2025",
-      "title": "Дизайн интерфейса системы управления рестораном",
-      "clientName": "Anggell",
-      "serviceIds": []
-    },
-    {
-      "id": "t1",
-      "title": "Медицинская карта с голосовым заполнением",
-      "clientName": "T1",
-      "serviceIds": []
-    },
-    {
-      "id": "simed",
-      "title": "Редизайн модуля записи к врачу",
-      "clientName": "СиМед",
-      "serviceIds": []
-    },
-    {
-      "id": "lab4u",
-      "title": "Аудит сайта и приложения медицинской лаборатории",
-      "clientName": "Lab4U",
-      "serviceIds": []
-    },
-    {
-      "id": "joono-ai",
-      "title": "Исследование пользователей AI-фоторедактора",
-      "clientName": "Joono",
-      "serviceIds": []
-    },
-    {
-      "id": "torba",
-      "title": "Исследование и дизайн интерфейса личного кабинета",
-      "clientName": "Торба",
-      "serviceIds": []
-    },
-    {
-      "id": "valer-ai",
-      "title": "Редизайн AI-приложения для клиентов автосервиса",
-      "clientName": "Valer AI",
-      "serviceIds": []
-    },
-    {
-      "id": "simplefly",
-      "title": "Редизайн приложения для проведения сделок",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "prozhito",
-      "title": "Интерфейс платформы общественной архивистики",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "dipol",
-      "title": "Интерфейс приложения визуальной LowCode среды разработки",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "pushkin-digital",
-      "title": "Дизайн интерфейса коллекции материалов Пушкинского дома",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "tmh",
-      "title": "Платформа дистанционного мониторинга пациентов",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "jeffit",
-      "title": "Система автоматизации для юридических департаментов",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "hyperus",
-      "title": "Дизайн интерфейса системы управления IT-инфраструктурой",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "easydocs-2024",
-      "title": "Дизайн интерфейса модуля приема кандидатов на работу",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "elma-bot",
-      "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "otvinta-2024",
-      "title": "UX-отдел на аутсорсе для строительного интернет-магазина",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "ot-vinta",
-      "title": "Точечный редизайн интерфейса магазина строительных товаров",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "nextons",
-      "title": "Таск-трекер юридической фирмы",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "qiwi",
-      "title": "Конкурентное сравнение трёх систем денежных переводов",
-      "clientName": "",
-      "serviceIds": []
-    },
-    {
-      "id": "zapovednik",
-      "title": "UX-аудит и редизайн магазина товаров для животных",
-      "clientName": "",
-      "serviceIds": []
+      "id": "alfabank",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
     },
     {
       "id": "alfastrah-design",
-      "title": "Дизайн-система для компании «АльфаСтрахование»",
-      "clientName": "",
-      "serviceIds": []
+      "serviceIds": [
+        "ux-outsource",
+        "ui-redesign"
+      ]
     },
     {
-      "id": "e-gorod-mobile",
-      "title": "Объединение двух мобильных приложений",
-      "clientName": "",
-      "serviceIds": []
+      "id": "alfastrahhr",
+      "serviceIds": [
+        "ux-outsource",
+        "ui-redesign"
+      ]
     },
     {
-      "id": "onkor",
-      "title": "Дизайн интерфейса МИС для онкологических клиник",
-      "clientName": "",
-      "serviceIds": []
+      "id": "algohelp",
+      "serviceIds": [
+        "product-team",
+        "prototype"
+      ]
     },
     {
-      "id": "control-patent",
-      "title": "Интерфейс мобильного приложения для работы с трудовыми патентами",
-      "clientName": "",
-      "serviceIds": []
+      "id": "amber",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "anggell-2025",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "anggell",
+      "serviceIds": [
+        "product-team",
+        "prototype",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "atol",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "autotransinfo",
+      "serviceIds": [
+        "ux-design",
+        "new-features"
+      ]
     },
     {
       "id": "avicenna",
-      "title": "Медицинская информационная система",
-      "clientName": "",
-      "serviceIds": []
+      "serviceIds": [
+        "ui-redesign",
+        "new-features",
+        "product-team"
+      ]
     },
     {
-      "id": "stroynastroy",
-      "title": "Дизайн интерфейса маркетплейса стройматериалов",
-      "clientName": "",
-      "serviceIds": []
+      "id": "avito",
+      "serviceIds": [
+        "research"
+      ]
     },
     {
-      "id": "domotech",
-      "title": "UX-аудит интерфейса сетевого магазина бытовой техники",
-      "clientName": "",
-      "serviceIds": []
+      "id": "azbuka-vkusa",
+      "serviceIds": [
+        "redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "basis",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "bercut",
+      "serviceIds": [
+        "research"
+      ]
+    },
+    {
+      "id": "bibi",
+      "serviceIds": [
+        "ux-audit",
+        "new-features"
+      ]
+    },
+    {
+      "id": "biletik",
+      "serviceIds": [
+        "redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "boracase",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "brighteye",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "center-rechevyh-technologiy",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "checknpay",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "cindicator",
+      "serviceIds": [
+        "research",
+        "product-team"
+      ]
+    },
+    {
+      "id": "compel",
+      "serviceIds": [
+        "redesign",
+        "prototype",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "control-forest",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "control-mobile",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "control-patent",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
     },
     {
       "id": "control-predpisanie",
-      "title": "Мобильное приложение для работы с предписаниями",
-      "clientName": "",
-      "serviceIds": []
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "costa",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "crt-panel-administratora",
+      "serviceIds": [
+        "ux-design",
+        "new-features"
+      ]
+    },
+    {
+      "id": "cybermall",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "control",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "data-solution",
+      "serviceIds": [
+        "prototype",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "dau",
+      "serviceIds": [
+        "redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "dipol",
+      "serviceIds": [
+        "ui-redesign",
+        "research"
+      ]
+    },
+    {
+      "id": "domotech",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "e-gorod-guide",
+      "serviceIds": [
+        "content-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "e-gorod-mobile",
+      "serviceIds": [
+        "new-features",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "e-gorod",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "easydocs-2024",
+      "serviceIds": [
+        "ux-design",
+        "new-features",
+        "research"
+      ]
+    },
+    {
+      "id": "easydocs",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "edms",
+      "serviceIds": [
+        "ux-design",
+        "ui-redesign"
+      ]
+    },
+    {
+      "id": "electrocardiography",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "elma-bot",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "electronika",
+      "serviceIds": [
+        "ui-redesign",
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "elma",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "ethr",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "etm",
+      "serviceIds": [
+        "ux-audit",
+        "new-features"
+      ]
+    },
+    {
+      "id": "f-kabinki",
+      "serviceIds": [
+        "content-design",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "faberlic",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "fasting",
+      "serviceIds": [
+        "product-team"
+      ]
+    },
+    {
+      "id": "fastvps-ui",
+      "serviceIds": [
+        "ui-redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "fastvps",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "finexware",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "fishlook",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "foodtrucks",
+      "serviceIds": [
+        "research",
+        "prototype"
+      ]
+    },
+    {
+      "id": "flarm",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "gazprom-neft",
+      "serviceIds": [
+        "research",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "gazprom-services",
+      "serviceIds": [
+        "ux-audit",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "gazprom",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "geonaft",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "gormost",
+      "serviceIds": [
+        "ui-redesign"
+      ]
+    },
+    {
+      "id": "goodwood",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "humans",
+      "serviceIds": [
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "hyperus",
+      "serviceIds": [
+        "ux-audit",
+        "ui-redesign"
+      ]
+    },
+    {
+      "id": "inbank",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "intickets",
+      "serviceIds": [
+        "ux-audit",
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "jazzpay",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "jeffit-2021",
+      "serviceIds": [
+        "redesign",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "jeffit",
+      "serviceIds": [
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "jetlearn",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "joono-ai",
+      "serviceIds": [
+        "research"
+      ]
+    },
+    {
+      "id": "justfa",
+      "serviceIds": [
+        "ux-audit",
+        "redesign"
+      ]
+    },
+    {
+      "id": "kids-crooked-house",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "kapital",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "korochka-kontent",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "korochka",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "lab4u",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "lantapro",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "littleone",
+      "serviceIds": [
+        "research"
+      ]
+    },
+    {
+      "id": "likehack",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "lori",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "manualmachine",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "m-line",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "math",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "medmarket",
+      "serviceIds": [
+        "research"
+      ]
+    },
+    {
+      "id": "meh",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "miaz",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "mirbeer",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "monetory",
+      "serviceIds": [
+        "redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "nextons",
+      "serviceIds": [
+        "ui-redesign",
+        "redesign"
+      ]
+    },
+    {
+      "id": "neurobureau",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "netrika",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "nlmk",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "novotelekom",
+      "serviceIds": [
+        "ui-redesign",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "ohlebe",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "okey",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "okna-peterburga",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "omnitopic",
+      "serviceIds": [
+        "product-team",
+        "prototype"
+      ]
+    },
+    {
+      "id": "onesoil",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "onkor",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "opendesk",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "ot-vinta",
+      "serviceIds": [
+        "ux-audit",
+        "redesign",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "otkritie",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "otvet",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "otvinta-2025",
+      "serviceIds": [
+        "new-features",
+        "ux-outsource"
+      ]
+    },
+    {
+      "id": "otvinta-2024",
+      "serviceIds": [
+        "new-features",
+        "ux-outsource"
+      ]
     },
     {
       "id": "pangeo",
-      "title": "Платформа кибербезопасности",
-      "clientName": "",
-      "serviceIds": []
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "petrovich",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "pgk",
+      "serviceIds": [
+        "redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "pmr",
+      "serviceIds": [
+        "ux-design",
+        "content-design"
+      ]
+    },
+    {
+      "id": "prozhito",
+      "serviceIds": [
+        "ux-design",
+        "research"
+      ]
+    },
+    {
+      "id": "pushkin-digital",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "qiwi",
+      "serviceIds": [
+        "ux-audit",
+        "research"
+      ]
+    },
+    {
+      "id": "raisa",
+      "serviceIds": [
+        "ux-design",
+        "research"
+      ]
+    },
+    {
+      "id": "relefopt",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "relief-center",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "remtech",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "res",
+      "serviceIds": [
+        "ux-design",
+        "redesign"
+      ]
+    },
+    {
+      "id": "russpass",
+      "serviceIds": [
+        "ux-audit",
+        "research",
+        "redesign",
+        "prototype"
+      ]
+    },
+    {
+      "id": "sberbank",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "seatmap",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "serverscom",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "simed",
+      "serviceIds": [
+        "ux-design"
+      ]
     },
     {
       "id": "simetra",
-      "title": "UX-аудит системы транспортного моделирования",
-      "clientName": "",
-      "serviceIds": []
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "smartdeal-ecp",
+      "serviceIds": [
+        "redesign",
+        "new-features"
+      ]
+    },
+    {
+      "id": "sindbad",
+      "serviceIds": [
+        "content-design",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "smartdeal",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "snob",
+      "serviceIds": [
+        "ux-audit"
+      ]
+    },
+    {
+      "id": "solar-staff",
+      "serviceIds": [
+        "ux-audit",
+        "redesign"
+      ]
+    },
+    {
+      "id": "sportmaster",
+      "serviceIds": [
+        "ux-audit",
+        "research"
+      ]
+    },
+    {
+      "id": "stream-telecom",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "stroynastroy",
+      "serviceIds": [
+        "product-team",
+        "research",
+        "prototype"
+      ]
+    },
+    {
+      "id": "t1",
+      "serviceIds": [
+        "prototype"
+      ]
+    },
+    {
+      "id": "tigitl",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "tinkoff",
+      "serviceIds": [
+        "new-features",
+        "content-design"
+      ]
+    },
+    {
+      "id": "tiomed",
+      "serviceIds": [
+        "ux-design",
+        "content-design"
+      ]
+    },
+    {
+      "id": "tis",
+      "serviceIds": [
+        "ux-design",
+        "product-team"
+      ]
+    },
+    {
+      "id": "tmh",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "trash",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "veza",
+      "serviceIds": [
+        "ux-design",
+        "research"
+      ]
+    },
+    {
+      "id": "video-santa",
+      "serviceIds": [
+        "ux-design"
+      ]
+    },
+    {
+      "id": "vuborgskiy-zamok",
+      "serviceIds": [
+        "ux-design",
+        "content-design"
+      ]
+    },
+    {
+      "id": "viking-line",
+      "serviceIds": [
+        "content-design"
+      ]
+    },
+    {
+      "id": "yit",
+      "serviceIds": [
+        "ux-design",
+        "content-design"
+      ]
+    },
+    {
+      "id": "yota",
+      "serviceIds": [
+        "ux-design",
+        "new-features"
+      ]
+    },
+    {
+      "id": "zapovednik",
+      "serviceIds": [
+        "ux-audit",
+        "redesign"
+      ]
+    },
+    {
+      "id": "zateya",
+      "serviceIds": [
+        "research",
+        "ux-design"
+      ]
+    },
+    {
+      "id": "zehnder",
+      "serviceIds": [
+        "ux-design",
+        "content-design"
+      ]
+    },
+    {
+      "id": "zhivoj-office",
+      "serviceIds": [
+        "redesign"
+      ]
+    },
+    {
+      "id": "zombieland",
+      "serviceIds": [
+        "product-team",
+        "research"
+      ]
     }
   ]
 }

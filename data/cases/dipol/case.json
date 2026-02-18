@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "dipol",
   "link": "https://sobakapav.ru/portfolio/dipol",
-  "clientName": "",
+  "clientName": "Диполь",
   "clientLogoFile": "",
-  "preview": "Создали новую удобную для пользователей версию существующего решения.",
+  "preview": "",
   "title": "Интерфейс приложения визуальной LowCode среды разработки",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.181Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/dipol.BOh-Yl4U.svg",
-  "previewImageFile": "/case-previews/dipol.svg"
+  "updatedAt": "2026-02-18T11:12:36.553Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/dipol/main2.png",
+  "previewImageFile": "/case-previews/dipol.png",
+  "serviceIds": [
+    "ui-redesign",
+    "research"
+  ]
 }

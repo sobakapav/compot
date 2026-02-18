@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "ethr",
+  "link": "https://sobakapav.ru/portfolio/ethr",
+  "clientName": "Freemoneyforum.ru",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Концепция и тексты для сайта подбора IT-специалистов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:36.241Z",
+  "updatedAt": "2026-02-18T11:12:36.559Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/ethr/ethr.png",
+  "previewImageFile": "/case-previews/ethr.png",
+  "serviceIds": [
+    "content-design"
+  ]
+}

@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "elma-bot",
   "link": "https://sobakapav.ru/portfolio/elma-bot",
-  "clientName": "",
+  "clientName": "ELMA",
   "clientLogoFile": "",
-  "preview": "Спроектировали интерфейс платформы для создания коммерческих чат-ботов — для пользователей без опыта программирования.",
+  "preview": "",
   "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.183Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/elma-bot.CwquLtPs.svg",
-  "previewImageFile": "/case-previews/elma-bot.svg"
+  "updatedAt": "2026-02-18T11:12:36.558Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/elma-bot/main.png",
+  "previewImageFile": "/case-previews/elma-bot.png",
+  "serviceIds": [
+    "research",
+    "ux-design"
+  ]
 }

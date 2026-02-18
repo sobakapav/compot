@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "alarm-motors",
+  "link": "https://sobakapav.ru/portfolio/alarm-motors",
+  "clientName": "Аларм-Моторс",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "UX-консультирование команды разработчиков сайта",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:20.340Z",
+  "updatedAt": "2026-02-18T11:12:36.538Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/alarm-motors/alarm-motors.png",
+  "previewImageFile": "/case-previews/alarm-motors.png",
+  "serviceIds": [
+    "product-team"
+  ]
+}

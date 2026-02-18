@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "e-gorod",
+  "link": "https://sobakapav.ru/portfolio/e-gorod",
+  "clientName": "Электронный город",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Сайт амбициозного регионального провайдера",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:33.451Z",
+  "updatedAt": "2026-02-18T11:12:36.554Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/e-gorod/e-gorod.png",
+  "previewImageFile": "/case-previews/e-gorod.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "inbank",
+  "link": "https://sobakapav.ru/portfolio/inbank",
+  "clientName": "Inbank",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс интернет-банка для VIP-клиентов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:44.137Z",
+  "updatedAt": "2026-02-18T11:12:36.563Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/inbank/inbank.jpg",
+  "previewImageFile": "/case-previews/inbank.jpg",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

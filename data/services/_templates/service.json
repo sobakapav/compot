@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "service-001",
+  "id": "service-id",
   "title": "Service Title",
   "link": "https://example.com/service",
   "createdAt": "2026-02-16T12:00:00Z",

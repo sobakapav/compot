@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "zombieland",
+  "link": "https://sobakapav.ru/portfolio/zombieland",
+  "clientName": "Зомбиленд",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Старт продукта",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:12.929Z",
+  "updatedAt": "2026-02-18T11:12:37.528Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/zombieland/zombieland.png",
+  "previewImageFile": "/case-previews/zombieland.png",
+  "serviceIds": [
+    "product-team",
+    "research"
+  ]
+}

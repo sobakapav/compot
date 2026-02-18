@@ -2,13 +2,16 @@
   "schemaVersion": 1,
   "id": "lab4u",
   "link": "https://sobakapav.ru/portfolio/lab4u",
-  "clientName": "Lab4U",
+  "clientName": "Lab4u",
   "clientLogoFile": "",
-  "preview": "Провели экспертный UX-аудит сценария заказа анализов на сайте и в приложении онлайн-лаборатории после обновления их интерфейсов.",
-  "title": "Аудит сайта и приложения медицинской лаборатории",
+  "preview": "",
+  "title": "Аудит сайта и приложения медицинской лаборатории",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.180Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/lab4u.DVyWx-lC.svg",
-  "previewImageFile": "/case-previews/lab4u.svg"
+  "updatedAt": "2026-02-18T11:12:37.032Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/lab4u/main.png",
+  "previewImageFile": "/case-previews/lab4u.png",
+  "serviceIds": [
+    "ux-audit"
+  ]
 }

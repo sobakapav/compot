@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-cases.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:cases": "node scripts/sync-cases.mjs --force"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

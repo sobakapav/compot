@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "bercut",
+  "link": "https://sobakapav.ru/portfolio/bercut",
+  "clientName": "Bercut",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "UX-исследование и CJM мобильного сервиса",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:25.676Z",
+  "updatedAt": "2026-02-18T11:12:36.547Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/bercut/bercut.png",
+  "previewImageFile": "/case-previews/bercut.png",
+  "serviceIds": [
+    "research"
+  ]
+}

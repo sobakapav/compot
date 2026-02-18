@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "finexware",
+  "link": "https://sobakapav.ru/portfolio/finexware",
+  "clientName": "FinexWare",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс онлайн-платформы для трейдеров и инвесторов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:38.611Z",
+  "updatedAt": "2026-02-18T11:12:36.560Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/finexware/main.png",
+  "previewImageFile": "/case-previews/finexware.png",
+  "serviceIds": [
+    "research",
+    "ux-design"
+  ]
+}

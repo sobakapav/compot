@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "easydocs",
+  "link": "https://sobakapav.ru/portfolio/easydocs",
+  "clientName": "EasyDocs",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс приложения для проверки и подписи документов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:34.161Z",
+  "updatedAt": "2026-02-18T11:12:36.555Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/easydocs/easydocs.png",
+  "previewImageFile": "/case-previews/easydocs.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

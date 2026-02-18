@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "bibi",
+  "link": "https://sobakapav.ru/portfolio/bibi",
+  "clientName": "Би-Би",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "UX-аудит магазина для автовладельцев",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:26.071Z",
+  "updatedAt": "2026-02-18T11:12:36.548Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/bibi/main.png",
+  "previewImageFile": "/case-previews/bibi.png",
+  "serviceIds": [
+    "ux-audit",
+    "new-features"
+  ]
+}

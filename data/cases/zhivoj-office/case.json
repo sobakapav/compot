@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "zhivoj-office",
+  "link": "https://sobakapav.ru/portfolio/zhivoj-office",
+  "clientName": "Живой офис",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интернет-магазин для оптовиков",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:12.526Z",
+  "updatedAt": "2026-02-18T11:12:37.528Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/zhivoj-office/zhivoj-office.png",
+  "previewImageFile": "/case-previews/zhivoj-office.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

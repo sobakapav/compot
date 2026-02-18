@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "m-line",
+  "link": "https://sobakapav.ru/portfolio/m-line",
+  "clientName": "М-ЛАЙН",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса системы дистанционного наблюдения пациентов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:52.228Z",
+  "updatedAt": "2026-02-18T11:12:37.034Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/m-line/m-line.png",
+  "previewImageFile": "/case-previews/m-line.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

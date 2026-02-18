@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "likehack",
+  "link": "https://sobakapav.ru/portfolio/likehack",
+  "clientName": "LikeHack",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Новый интерфейс стартапа",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:50.819Z",
+  "updatedAt": "2026-02-18T11:12:37.033Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/likehack/likehack.png",
+  "previewImageFile": "/case-previews/likehack.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

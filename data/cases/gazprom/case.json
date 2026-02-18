@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "gazprom",
+  "link": "https://sobakapav.ru/portfolio/gazprom",
+  "clientName": "Газпром-нефть",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Внутренняя информационная система «Газпром нефти»",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:41.465Z",
+  "updatedAt": "2026-02-18T11:12:36.562Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/gazprom/main.png",
+  "previewImageFile": "/case-previews/gazprom.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
+}

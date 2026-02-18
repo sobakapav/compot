@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "alfabank",
+  "link": "https://sobakapav.ru/portfolio/alfabank",
+  "clientName": "Альфа-Банк",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс мобильного приложения «Альфа Банка»",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:21.600Z",
+  "updatedAt": "2026-02-18T11:12:36.541Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/alfabank/main.png",
+  "previewImageFile": "/case-previews/alfabank.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
+}

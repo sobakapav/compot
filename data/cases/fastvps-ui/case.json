@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "fastvps-ui",
+  "link": "https://sobakapav.ru/portfolio/fastvps-ui",
+  "clientName": "FastVPS",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Редизайн интерфейса панели администратора хостинга",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:38.023Z",
+  "updatedAt": "2026-02-18T11:12:36.560Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/fastvps-ui/main.png",
+  "previewImageFile": "/case-previews/fastvps-ui.png",
+  "serviceIds": [
+    "ui-redesign",
+    "new-features"
+  ]
+}

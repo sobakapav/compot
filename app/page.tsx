@@ -845,7 +845,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-                <div className={labelClass}>Задача исполнителя {requiredMark}</div>
+                <div className={labelClass}>Задача подрядчика {requiredMark}</div>
                 <div
                   ref={useEditableHtml(proposal.scope)}
                   className={`${editableClass} rich-field leading-[1.2]`}
@@ -1255,6 +1255,14 @@ export default function Home() {
                             ? lowerFirst(service.title)
                             : prev.serviceName,
                         }));
+                        if (id) {
+                          const matched = cases.filter((item) =>
+                            item.serviceIds?.includes(id)
+                          );
+                          setSelectedCaseIds(
+                            matched.slice(0, 5).map((item) => item.id)
+                          );
+                        }
                       }}
                     >
                       <option value="">Выбрать услугу</option>

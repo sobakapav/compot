@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "jazzpay",
+  "link": "https://sobakapav.ru/portfolio/jazzpay",
+  "clientName": "Jazzpay",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса платежного сервиса",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:44.802Z",
+  "updatedAt": "2026-02-18T11:12:36.794Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/jazzpay/basis.png",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "goodwood",
+  "link": "https://sobakapav.ru/portfolio/goodwood",
+  "clientName": "Good Wood",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Классический UX-аудит сайта",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:43.132Z",
+  "updatedAt": "2026-02-18T11:12:36.562Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/goodwood/main.png",
+  "previewImageFile": "/case-previews/goodwood.png",
+  "serviceIds": [
+    "ux-audit"
+  ]
+}

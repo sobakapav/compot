@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "geonaft",
+  "link": "https://sobakapav.ru/portfolio/geonaft",
+  "clientName": "Геонафт",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса программы геонавигации",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:41.918Z",
+  "updatedAt": "2026-02-18T11:12:36.562Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/geonaft/geonaft.png",
+  "previewImageFile": "/case-previews/geonaft.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

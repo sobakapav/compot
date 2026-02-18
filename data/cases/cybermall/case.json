@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "cybermall",
+  "link": "https://sobakapav.ru/portfolio/cybermall",
+  "clientName": "Кибермолл",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс интернет-магазина",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:31.037Z",
+  "updatedAt": "2026-02-18T11:12:36.552Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cybermall/cybermall.png",
+  "previewImageFile": "/case-previews/cybermall.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

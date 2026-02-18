@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "flarm",
+  "link": "https://sobakapav.ru/portfolio/flarm",
+  "clientName": "ФЛАРМ ПК",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Контент для сайта инженерного завода",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:40.086Z",
+  "updatedAt": "2026-02-18T11:12:36.561Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/flarm/flarm.png",
+  "previewImageFile": "/case-previews/flarm.png",
+  "serviceIds": [
+    "content-design"
+  ]
+}

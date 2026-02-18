@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "manualmachine",
+  "link": "https://sobakapav.ru/portfolio/manualmachine",
+  "clientName": "ManualMachine",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса для сайта с инструкциями",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:51.877Z",
+  "updatedAt": "2026-02-18T11:12:37.034Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/manualmachine/main.png",
+  "previewImageFile": "/case-previews/manualmachine.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

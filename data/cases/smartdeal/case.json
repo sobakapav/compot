@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "smartdeal",
+  "link": "https://sobakapav.ru/portfolio/smartdeal",
+  "clientName": "SmartDeal",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн рабочего места оператора",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:05.152Z",
+  "updatedAt": "2026-02-18T11:12:37.286Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "control-patent",
   "link": "https://sobakapav.ru/portfolio/control-patent",
-  "clientName": "",
+  "clientName": "Data Solution",
   "clientLogoFile": "",
-  "preview": "Создали дизайн нового мобильного приложения для работы с трудовыми патентами.",
+  "preview": "",
   "title": "Интерфейс мобильного приложения для работы с трудовыми патентами",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/control-patent.DPqFcVMF.svg",
-  "previewImageFile": "/case-previews/control-patent.svg"
+  "updatedAt": "2026-02-18T11:12:36.551Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/control-patent/main.png",
+  "previewImageFile": "/case-previews/control-patent.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
 }

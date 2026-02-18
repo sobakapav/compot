@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "center-rechevyh-technologiy",
+  "link": "https://sobakapav.ru/portfolio/center-rechevyh-technologiy",
+  "clientName": "Центр речевых технологий (ЦРТ)",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс службы банковской безопасности",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:27.429Z",
+  "updatedAt": "2026-02-18T11:12:36.548Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/center-rechevyh-technologiy/center-rechevyh-technologiy.png",
+  "previewImageFile": "/case-previews/center-rechevyh-technologiy.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

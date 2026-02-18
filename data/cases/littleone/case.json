@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "littleone",
+  "link": "https://sobakapav.ru/portfolio/littleone",
+  "clientName": "LittleOne",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Изучение цифровых привычек",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:50.465Z",
+  "updatedAt": "2026-02-18T11:12:37.033Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/littleone/littleone.png",
+  "previewImageFile": "/case-previews/littleone.png",
+  "serviceIds": [
+    "research"
+  ]
+}

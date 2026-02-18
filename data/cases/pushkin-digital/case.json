@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "pushkin-digital",
   "link": "https://sobakapav.ru/portfolio/pushkin-digital",
-  "clientName": "",
+  "clientName": "Пушкин ⟨цифровой⟩",
   "clientLogoFile": "",
-  "preview": "Создали интерфейсы научно-просветительского портала, где представлены рукописи и старые издания Пушкина, пушкинистика и справочные материалы.",
+  "preview": "",
   "title": "Дизайн интерфейса коллекции материалов Пушкинского дома",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.181Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/itmo.X2OipU7q.svg",
-  "previewImageFile": "/case-previews/pushkin-digital.svg"
+  "updatedAt": "2026-02-18T11:12:37.279Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/itmo/main.png",
+  "previewImageFile": "/case-previews/pushkin-digital.png",
+  "serviceIds": [
+    "research",
+    "ux-design"
+  ]
 }

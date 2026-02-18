@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "etm",
+  "link": "https://sobakapav.ru/portfolio/etm",
+  "clientName": "«ЭТМ»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "UX/UI-аудит для дистрибьютора электротехники",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:36.663Z",
+  "updatedAt": "2026-02-18T11:12:36.559Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/etm/main.png",
+  "previewImageFile": "/case-previews/etm.png",
+  "serviceIds": [
+    "ux-audit",
+    "new-features"
+  ]
+}

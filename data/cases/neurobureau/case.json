@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "neurobureau",
+  "link": "https://sobakapav.ru/portfolio/neurobureau",
+  "clientName": "Нейроиконика",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Редизайн интерфейса платформы для нейроисследований",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:54.602Z",
+  "updatedAt": "2026-02-18T11:12:37.037Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

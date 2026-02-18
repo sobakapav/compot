@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "data-solution",
+  "link": "https://sobakapav.ru/portfolio/data-solution",
+  "clientName": "Data Solution",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Конструктор коммерческих презентаций",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:31.319Z",
+  "updatedAt": "2026-02-18T11:12:36.553Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "prototype",
+    "ux-outsource"
+  ]
+}

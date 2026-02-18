@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "math",
+  "link": "https://sobakapav.ru/portfolio/math",
+  "clientName": "Образовательный лагерь «Марабу»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса математической игры для школьников",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:52.696Z",
+  "updatedAt": "2026-02-18T11:12:37.034Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/math/math.png",
+  "previewImageFile": "/case-previews/math.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "veza",
+  "link": "https://sobakapav.ru/portfolio/veza",
+  "clientName": "ВЕЗА",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Личный кабинет для проектировщиков и монтажников",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:08.908Z",
+  "updatedAt": "2026-02-18T11:12:37.523Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/veza/veza.jpg",
+  "previewImageFile": "/case-previews/veza.jpg",
+  "serviceIds": [
+    "ux-design",
+    "research"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "gormost",
+  "link": "https://sobakapav.ru/portfolio/gormost",
+  "clientName": "ГБУ «Гормост»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейсов для ГБУ «Гормост»",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:42.328Z",
+  "updatedAt": "2026-02-18T11:12:36.562Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/gormost/gormost.png",
+  "previewImageFile": "/case-previews/gormost.png",
+  "serviceIds": [
+    "ui-redesign"
+  ]
+}

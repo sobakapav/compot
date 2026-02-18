@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "snob",
+  "link": "https://sobakapav.ru/portfolio/snob",
+  "clientName": "«Сноб.ру»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Юзабилити-аудит",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:05.459Z",
+  "updatedAt": "2026-02-18T11:12:37.286Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/snob/snob.jpg",
+  "previewImageFile": "/case-previews/snob.jpg",
+  "serviceIds": [
+    "ux-audit"
+  ]
+}

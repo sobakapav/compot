@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "prozhito",
   "link": "https://sobakapav.ru/portfolio/prozhito",
-  "clientName": "",
+  "clientName": "Прожито",
   "clientLogoFile": "",
-  "preview": "Провели исследование пользователей, спроектировали и создали интерфейс каталога архивов.",
+  "preview": "",
   "title": "Интерфейс платформы общественной архивистики",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.181Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/prozhito.BfI5tKSa.svg",
-  "previewImageFile": "/case-previews/prozhito.svg"
+  "updatedAt": "2026-02-18T11:12:37.279Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/prozhito/main.png",
+  "previewImageFile": "/case-previews/prozhito.png",
+  "serviceIds": [
+    "ux-design",
+    "research"
+  ]
 }

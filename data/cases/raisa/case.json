@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "raisa",
+  "link": "https://sobakapav.ru/portfolio/raisa",
+  "clientName": "РАИСа",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса системы мониторинга пациентов в реанимации",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:01.475Z",
+  "updatedAt": "2026-02-18T11:12:37.281Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-design",
+    "research"
+  ]
+}

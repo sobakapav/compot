@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "korochka-kontent",
+  "link": "https://sobakapav.ru/portfolio/korochka-kontent",
+  "clientName": "Корочка.ру",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Справочник для абитуриентов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:48.859Z",
+  "updatedAt": "2026-02-18T11:12:37.031Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/korochka-kontent/korochka-kontent.jpg",
+  "previewImageFile": "/case-previews/korochka-kontent.jpg",
+  "serviceIds": [
+    "content-design"
+  ]
+}

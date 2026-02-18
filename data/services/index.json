@@ -2,44 +2,44 @@
   "schemaVersion": 1,
   "items": [
     {
-      "id": "service-ux-ui-design",
-      "title": "UX/UI-дизайн под ключ"
+      "id": "content-design",
+      "title": "Контент-дизайн"
     },
     {
-      "id": "service-spot-redesign",
-      "title": "Точечный редизайн интерфейса"
-    },
-    {
-      "id": "service-new-features",
+      "id": "new-features",
       "title": "Добавление новой функциональности"
     },
     {
-      "id": "service-prototype",
-      "title": "Прототип под инвестиции"
-    },
-    {
-      "id": "service-ui-redesign",
-      "title": "UI-редизайн"
-    },
-    {
-      "id": "service-research",
-      "title": "Продуктовое исследование"
-    },
-    {
-      "id": "service-ux-audit",
-      "title": "UX-аудит"
-    },
-    {
-      "id": "service-ux-outsource",
-      "title": "UX-отдел на аутсорсе"
-    },
-    {
-      "id": "service-product-team",
+      "id": "product-team",
       "title": "Работа в продуктовой команде"
     },
     {
-      "id": "service-content-design",
-      "title": "Контент-дизайн"
+      "id": "prototype",
+      "title": "Прототип под инвестиции"
+    },
+    {
+      "id": "research",
+      "title": "Продуктовое исследование"
+    },
+    {
+      "id": "redesign",
+      "title": "Точечный редизайн интерфейса"
+    },
+    {
+      "id": "ui-redesign",
+      "title": "UI-редизайн"
+    },
+    {
+      "id": "ux-audit",
+      "title": "UX-аудит"
+    },
+    {
+      "id": "ux-outsource",
+      "title": "UX-отдел на аутсорсе"
+    },
+    {
+      "id": "ux-design",
+      "title": "UX/UI-дизайн под ключ"
     }
   ]
 }

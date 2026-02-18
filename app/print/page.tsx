@@ -186,9 +186,9 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
               />
             </div>
             <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-                Задача исполнителя
-              </div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                  Задача подрядчика
+                </div>
               <div
                 className="rich-field w-full text-[15px] leading-[1.2] text-zinc-900"
                 dangerouslySetInnerHTML={{ __html: proposal.scope || "" }}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "sportmaster",
+  "link": "https://sobakapav.ru/portfolio/sportmaster",
+  "clientName": "Спортмастер",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "UX-тестирование терминалов самообслуживания «Спортмастера»",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:06.015Z",
+  "updatedAt": "2026-02-18T11:12:37.514Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/sportmaster/sportmaster.png",
+  "previewImageFile": "/case-previews/sportmaster.png",
+  "serviceIds": [
+    "ux-audit",
+    "research"
+  ]
+}

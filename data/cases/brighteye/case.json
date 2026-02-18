@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "brighteye",
+  "link": "https://sobakapav.ru/portfolio/brighteye",
+  "clientName": "Brighteye",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс оператора производственной линии и приложения для MOM Momentum от Brighteye",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:27.076Z",
+  "updatedAt": "2026-02-18T11:12:36.548Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/brighteye/brighteye.png",
+  "previewImageFile": "/case-previews/brighteye.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "vuborgskiy-zamok",
+  "link": "https://sobakapav.ru/portfolio/vuborgskiy-zamok",
+  "clientName": "Выборгский музей-заповедник",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Сайт Выборгского музея-заповедника",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:09.765Z",
+  "updatedAt": "2026-02-18T11:12:37.524Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/vuborgskiy-zamok/vuborgskiy-zamok.png",
+  "previewImageFile": "/case-previews/vuborgskiy-zamok.png",
+  "serviceIds": [
+    "ux-design",
+    "content-design"
+  ]
+}

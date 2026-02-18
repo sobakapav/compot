@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "gazprom-neft",
+  "link": "https://sobakapav.ru/portfolio/gazprom-neft",
+  "clientName": "Газпром-нефть",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Карта пользователя для внутреннего портала «Газпром нефти»",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:40.603Z",
+  "updatedAt": "2026-02-18T11:12:36.561Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/gazprom-neft/gazprom-neft.png",
+  "previewImageFile": "/case-previews/gazprom-neft.png",
+  "serviceIds": [
+    "research",
+    "ux-outsource"
+  ]
+}

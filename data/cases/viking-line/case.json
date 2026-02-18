@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "viking-line",
+  "link": "https://sobakapav.ru/portfolio/viking-line",
+  "clientName": "Viking Line",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Справочная система для судоходного концерна",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:10.174Z",
+  "updatedAt": "2026-02-18T11:12:37.525Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/viking-line/viking-line.png",
+  "previewImageFile": "/case-previews/viking-line.png",
+  "serviceIds": [
+    "content-design"
+  ]
+}

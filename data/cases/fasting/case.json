@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "fasting",
+  "link": "https://sobakapav.ru/portfolio/fasting",
+  "clientName": "Simple",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Концептуальный дизайн интерфейса приложения для интервального голодания",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:37.686Z",
+  "updatedAt": "2026-02-18T11:12:36.559Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/fasting/fasting.png",
+  "previewImageFile": "/case-previews/fasting.png",
+  "serviceIds": [
+    "product-team"
+  ]
+}

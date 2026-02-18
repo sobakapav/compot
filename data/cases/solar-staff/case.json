@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "solar-staff",
+  "link": "https://sobakapav.ru/portfolio/solar-staff",
+  "clientName": "Solar Staff",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Точечные улучшения интерфейса",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:05.680Z",
+  "updatedAt": "2026-02-18T11:12:37.512Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/solar-staff/solar-staff.jpg",
+  "previewImageFile": "",
+  "serviceIds": [
+    "ux-audit",
+    "redesign"
+  ]
+}

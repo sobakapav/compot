@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "electronika",
+  "link": "https://sobakapav.ru/portfolio/electronika",
+  "clientName": "Электроника",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Точечное улучшение интерфейса",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:35.524Z",
+  "updatedAt": "2026-02-18T11:12:36.558Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/electronika/electronika.jpg",
+  "previewImageFile": "/case-previews/electronika.jpg",
+  "serviceIds": [
+    "ui-redesign",
+    "ux-audit"
+  ]
+}

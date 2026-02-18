@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "elma",
+  "link": "https://sobakapav.ru/portfolio/elma",
+  "clientName": "ELMA",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн интерфейса системы управления бизнес-процессами",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:35.814Z",
+  "updatedAt": "2026-02-18T11:12:36.558Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/elma/elma.png",
+  "previewImageFile": "/case-previews/elma.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
+}

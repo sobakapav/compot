@@ -2,13 +2,18 @@
   "schemaVersion": 1,
   "id": "easydocs-2024",
   "link": "https://sobakapav.ru/portfolio/easydocs-2024",
-  "clientName": "",
+  "clientName": "EasyDocs",
   "clientLogoFile": "",
-  "preview": "Разработали интерфейс для нового модуля сервиса EasyDocs.",
-  "title": "Дизайн интерфейса модуля приема кандидатов на работу",
+  "preview": "",
+  "title": "Дизайн интерфейса модуля приема кандидатов на работу",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.183Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/easydocs2.DJxi9Xm7.svg",
-  "previewImageFile": "/case-previews/easydocs-2024.svg"
+  "updatedAt": "2026-02-18T11:12:36.555Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/easydocs-2024/main.png",
+  "previewImageFile": "/case-previews/easydocs-2024.png",
+  "serviceIds": [
+    "ux-design",
+    "new-features",
+    "research"
+  ]
 }

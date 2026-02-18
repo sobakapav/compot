@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "netrika",
+  "link": "https://sobakapav.ru/portfolio/netrika",
+  "clientName": "Нетрика.Медицина",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Рабочее место оператора службы записи к врачу",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:54.891Z",
+  "updatedAt": "2026-02-18T11:12:37.037Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/netrika/main.png",
+  "previewImageFile": "/case-previews/netrika.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

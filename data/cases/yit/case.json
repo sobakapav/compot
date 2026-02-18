@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "yit",
+  "link": "https://sobakapav.ru/portfolio/yit",
+  "clientName": "YIT",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Контент и дизайн интерфейса",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:10.499Z",
+  "updatedAt": "2026-02-18T11:12:37.526Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/yit/yit.png",
+  "previewImageFile": "/case-previews/yit.png",
+  "serviceIds": [
+    "ux-design",
+    "content-design"
+  ]
+}

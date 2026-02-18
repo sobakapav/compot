@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "intickets",
+  "link": "https://sobakapav.ru/portfolio/intickets",
+  "clientName": "INTICKETS.RU",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Система автоматизации билетных операций INTICKETS.RU",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:44.583Z",
+  "updatedAt": "2026-02-18T11:12:36.563Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/intickets/main.png",
+  "previewImageFile": "/case-previews/intickets.png",
+  "serviceIds": [
+    "ux-audit",
+    "research",
+    "ux-design"
+  ]
+}

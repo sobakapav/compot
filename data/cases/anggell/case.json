@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "anggell",
+  "link": "https://sobakapav.ru/portfolio/anggell",
+  "clientName": "Anggell",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн MVP системы поддержки принятия решений",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:23.059Z",
+  "updatedAt": "2026-02-18T11:12:36.544Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "product-team",
+    "prototype",
+    "ux-outsource"
+  ]
+}

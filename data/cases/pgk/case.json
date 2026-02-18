@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "pgk",
+  "link": "https://sobakapav.ru/portfolio/pgk",
+  "clientName": "Первая грузовая компания (ПГК)",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Корпоративный портал железнодорожной компании",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:00.061Z",
+  "updatedAt": "2026-02-18T11:12:37.277Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/pgk/main.png",
+  "previewImageFile": "/case-previews/pgk.png",
+  "serviceIds": [
+    "redesign",
+    "new-features"
+  ]
+}

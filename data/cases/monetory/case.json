@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "monetory",
+  "link": "https://sobakapav.ru/portfolio/monetory",
+  "clientName": "Monetory",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Агрегатор обменников криптовалюты и электронных денег",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:54.301Z",
+  "updatedAt": "2026-02-18T11:12:37.037Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/monetory/monetory.png",
+  "previewImageFile": "/case-previews/monetory.png",
+  "serviceIds": [
+    "redesign",
+    "new-features"
+  ]
+}

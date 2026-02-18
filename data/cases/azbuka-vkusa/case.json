@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "azbuka-vkusa",
+  "link": "https://sobakapav.ru/portfolio/azbuka-vkusa",
+  "clientName": "Азбука Вкуса",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "UX-редизайн продуктового интернет-магазина",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:25.013Z",
+  "updatedAt": "2026-02-18T11:12:36.547Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/azbuka/main.png",
+  "previewImageFile": "/case-previews/azbuka-vkusa.png",
+  "serviceIds": [
+    "redesign",
+    "new-features"
+  ]
+}

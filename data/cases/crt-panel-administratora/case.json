@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "crt-panel-administratora",
+  "link": "https://sobakapav.ru/portfolio/crt-panel-administratora",
+  "clientName": "Центр речевых технологий (ЦРТ)",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс рабочего места администратора",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:30.607Z",
+  "updatedAt": "2026-02-18T11:12:36.552Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/crt-panel-administratora/crt-panel-administratora.png",
+  "previewImageFile": "/case-previews/crt-panel-administratora.png",
+  "serviceIds": [
+    "ux-design",
+    "new-features"
+  ]
+}

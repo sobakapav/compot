@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "checknpay",
+  "link": "https://sobakapav.ru/portfolio/checknpay",
+  "clientName": "Check&#39;n&#39;Pay",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Сервис для выставления и оплаты счетов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:27.857Z",
+  "updatedAt": "2026-02-18T11:12:36.549Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/checknpay/checknpay.png",
+  "previewImageFile": "/case-previews/checknpay.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

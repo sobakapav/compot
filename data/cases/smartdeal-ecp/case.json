@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "smartdeal-ecp",
+  "link": "https://sobakapav.ru/portfolio/smartdeal-ecp",
+  "clientName": "SmartDeal",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Приложение для подписания документов при сделках с недвижимостью",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:04.878Z",
+  "updatedAt": "2026-02-18T11:12:37.286Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/smartdeal-ecp/main.png",
+  "previewImageFile": "/case-previews/smartdeal-ecp.png",
+  "serviceIds": [
+    "redesign",
+    "new-features"
+  ]
+}

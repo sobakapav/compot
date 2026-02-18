@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "fishlook",
+  "link": "https://sobakapav.ru/portfolio/fishlook",
+  "clientName": "Fishlook",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс маркетплейса",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:39.149Z",
+  "updatedAt": "2026-02-18T11:12:36.560Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/fishlook/fishlook.png",
+  "previewImageFile": "/case-previews/fishlook.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

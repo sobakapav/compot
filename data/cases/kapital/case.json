@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "kapital",
+  "link": "https://sobakapav.ru/portfolio/kapital",
+  "clientName": "Капитал МС",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Исследование пользователей и дизайн сайта страховой компании",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:48.471Z",
+  "updatedAt": "2026-02-18T11:12:37.031Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/kapital/kapital.png",
+  "previewImageFile": "/case-previews/kapital.png",
+  "serviceIds": [
+    "research",
+    "ux-design"
+  ]
+}

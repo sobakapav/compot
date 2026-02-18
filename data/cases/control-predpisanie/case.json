@@ -2,13 +2,17 @@
   "schemaVersion": 1,
   "id": "control-predpisanie",
   "link": "https://sobakapav.ru/portfolio/control-predpisanie",
-  "clientName": "",
+  "clientName": "Data Solution",
   "clientLogoFile": "",
-  "preview": "Создали дизайн интерфейса нового мобильного приложения для работы с предписаниями от контролирующих органов.",
-  "title": "Мобильное приложение для работы с предписаниями",
+  "preview": "",
+  "title": "Мобильное приложение для работы с предписаниями",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/control-predpisanie.DyIdoc7B.svg",
-  "previewImageFile": "/case-previews/control-predpisanie.svg"
+  "updatedAt": "2026-02-18T11:12:36.551Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/control-predpisanie/main.png",
+  "previewImageFile": "/case-previews/control-predpisanie.png",
+  "serviceIds": [
+    "ux-design",
+    "ux-outsource"
+  ]
 }

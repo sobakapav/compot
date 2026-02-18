@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "novotelekom",
+  "link": "https://sobakapav.ru/portfolio/novotelekom",
+  "clientName": "Электронный город",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Редизайн интерфейса мобильного приложения для сервисных инженеров",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:55.888Z",
+  "updatedAt": "2026-02-18T11:12:37.038Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/novotelekom/novotelekom.png",
+  "previewImageFile": "/case-previews/novotelekom.png",
+  "serviceIds": [
+    "ui-redesign",
+    "ux-outsource"
+  ]
+}

@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Compot
 
-## Getting Started
+Внутренний веб‑сервис для сборки коммерческих предложений: WYSIWYG‑редактор, генерация PDF и история черновиков.  
+Проект живёт локально и не требует базы данных — все данные хранятся в JSON на сервере.
 
-First, run the development server:
+## Быстрый старт
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открыть: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Важные команды
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load PT Sans Narrow.
+- `npm run dev` — запуск приложения. Перед стартом выполняется ежедневная синхронизация кейсов.
+- `npm run sync:cases` — принудительное обновление кейсов и превьюшек.
 
-## Learn More
+## Где лежат данные
 
-To learn more about Next.js, take a look at the following resources:
+- Кейсы: `data/cases/` (каждый кейс — отдельная папка + `case.json`)
+- Индекс кейсов: `data/cases/index.json`
+- Услуги: `data/services/` и `data/services/index.json`
+- Черновики/версии КП: `data/proposals/`
+- Превью кейсов (локально): `public/case-previews/`
+- Сырые данные синхронизации: `data/links/cases-raw.json`
+- Статус последней синхронизации: `data/links/case-sync.json`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Синхронизация кейсов
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Источник: `https://sobakapav.ru/listPortfolioAsJson`
 
-## Deploy on Vercel
+Скрипт:
+- тянет данные раз в сутки при `npm run dev`;
+- обновляет `case.json` и `index.json`;
+- скачивает новые превью в `public/case-previews/`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Костыли из‑за качества входных данных
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Нет отдельного JSON с корректными ID услуг.**  
+  Сейчас услуги в кейсах приходят строками (названия), поэтому мы вынуждены нормализовать их в ID (алиасы + ключевые слова).  
+  **Желательное решение:** источник должен отдавать услуги с их кодами/ID, а не только названия.
+
+- **JSON кейсов приходит как HTML‑страница.**  
+  Мы выдёргиваем JSON из `<p>` или из HTML‑текста и декодируем `&quot;` и прочие сущности.  
+  **Желательное решение:** отдавать чистый JSON с корректным `Content-Type: application/json`.
+
+- **Превью кейсов приходят разнородными ссылками.**  
+  Скрипт скачивает то, что пришло в `image`, и определяет расширение по URL или `content-type`.  
+  **Желательное решение:** фиксированный формат превью (например, всегда `.webp`) и явное поле `previewImageUrl`.
+
+## Примечания по PDF
+
+PDF рендерится из отдельной серверной страницы `/print` через Playwright.  
+Если появятся расхождения в переносах строк между HTML и PDF — скорее всего причина в различиях рендеринга шрифтов в среде браузера и Chromium.

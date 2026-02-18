@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "foodtrucks",
+  "link": "https://sobakapav.ru/portfolio/foodtrucks",
+  "clientName": "ФудТрек",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Цифровой сервис для организации работы фудтраков",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:39.621Z",
+  "updatedAt": "2026-02-18T11:12:36.560Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/foodtrucks/main.png",
+  "previewImageFile": "/case-previews/foodtrucks.png",
+  "serviceIds": [
+    "research",
+    "prototype"
+  ]
+}

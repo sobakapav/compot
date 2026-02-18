@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "jetlearn",
+  "link": "https://sobakapav.ru/portfolio/jetlearn",
+  "clientName": "JetLearn",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Платформа для корпоративного обучения",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:46.741Z",
+  "updatedAt": "2026-02-18T11:12:36.800Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/jetlearn/main.png",
+  "previewImageFile": "/case-previews/jetlearn.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

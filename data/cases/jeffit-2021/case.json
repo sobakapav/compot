@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "jeffit-2021",
+  "link": "https://sobakapav.ru/portfolio/jeffit-2021",
+  "clientName": "Jeffit",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Система для юридических фирм и департаментов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:45.638Z",
+  "updatedAt": "2026-02-18T11:12:36.798Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/jeffit/main.png",
+  "previewImageFile": "/case-previews/jeffit-2021.png",
+  "serviceIds": [
+    "redesign",
+    "ux-outsource"
+  ]
+}

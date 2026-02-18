@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "relief-center",
+  "link": "https://sobakapav.ru/portfolio/relief-center",
+  "clientName": "Рельеф-Центр",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Платформа для создания B2B-сайтов",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:02.082Z",
+  "updatedAt": "2026-02-18T11:12:37.283Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/relief-center/relief-center.png",
+  "previewImageFile": "/case-previews/relief-center.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

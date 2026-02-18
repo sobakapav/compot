@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "lantapro",
+  "link": "https://sobakapav.ru/portfolio/lantapro",
+  "clientName": "Lantapro (КИБ Комплекс)",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс системы кадастрового учета",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:49.928Z",
+  "updatedAt": "2026-02-18T11:12:37.032Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/lantapro/lantapro.png",
+  "previewImageFile": "/case-previews/lantapro.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

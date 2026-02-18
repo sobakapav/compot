@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "medmarket",
+  "link": "https://sobakapav.ru/portfolio/medmarket",
+  "clientName": "MedMarket (ООО \"Консалтинг и Связь\")",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Исследование и CJM пациентов с диабетом",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:52.696Z",
+  "updatedAt": "2026-02-18T11:12:37.034Z",
+  "previewImageSourceUrl": "",
+  "previewImageFile": "",
+  "serviceIds": [
+    "research"
+  ]
+}

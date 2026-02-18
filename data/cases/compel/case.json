@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "compel",
+  "link": "https://sobakapav.ru/portfolio/compel",
+  "clientName": "Компэл",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Редизайн внутренних цифровых сервисов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:28.542Z",
+  "updatedAt": "2026-02-18T11:12:36.549Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/compel/main.png",
+  "previewImageFile": "/case-previews/compel.png",
+  "serviceIds": [
+    "redesign",
+    "prototype",
+    "ux-outsource"
+  ]
+}

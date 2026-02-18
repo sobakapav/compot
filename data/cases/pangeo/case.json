@@ -2,13 +2,16 @@
   "schemaVersion": 1,
   "id": "pangeo",
   "link": "https://sobakapav.ru/portfolio/pangeo",
-  "clientName": "",
+  "clientName": "Пангео Радар",
   "clientLogoFile": "",
-  "preview": "Создали дизайн интерфейса узкоспециализированного комплекса информационной безопасности.",
+  "preview": "",
   "title": "Платформа кибербезопасности",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.186Z",
-  "updatedAt": "2026-02-17T12:40:17Z",
+  "updatedAt": "2026-02-18T11:12:37.274Z",
   "previewImageSourceUrl": "https://sobakapav.ru/_astro/pangeo.lVBPTiX9.png",
-  "previewImageFile": "/case-previews/pangeo.png"
+  "previewImageFile": "/case-previews/pangeo.png",
+  "serviceIds": [
+    "ux-design"
+  ]
 }

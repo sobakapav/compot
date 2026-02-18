@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "biletik",
+  "link": "https://sobakapav.ru/portfolio/biletik",
+  "clientName": "Билетик.Аэро",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс приложения для покупки авиабилетов",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:26.471Z",
+  "updatedAt": "2026-02-18T11:12:36.548Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/biletik/main.png",
+  "previewImageFile": "/case-previews/biletik.png",
+  "serviceIds": [
+    "redesign",
+    "new-features"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "atol",
+  "link": "https://sobakapav.ru/portfolio/atol",
+  "clientName": "Атол",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфес для управления онлайн-кассами",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:23.371Z",
+  "updatedAt": "2026-02-18T11:12:36.545Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/atol/atol.png",
+  "previewImageFile": "/case-previews/atol.png",
+  "serviceIds": [
+    "ux-design"
+  ]
+}

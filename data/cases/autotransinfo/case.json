@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "autotransinfo",
+  "link": "https://sobakapav.ru/portfolio/autotransinfo",
+  "clientName": "ATI.SU (АвтоТрансИнфо)",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн формы поиска для грузоперевозчиков",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:23.797Z",
+  "updatedAt": "2026-02-18T11:12:36.546Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/autotransinfo/autotransinfo.png",
+  "previewImageFile": "/case-previews/autotransinfo.png",
+  "serviceIds": [
+    "ux-design",
+    "new-features"
+  ]
+}

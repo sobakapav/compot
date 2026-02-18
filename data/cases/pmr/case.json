@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "pmr",
+  "link": "https://sobakapav.ru/portfolio/pmr",
+  "clientName": "Paradise Marbella",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс для сайта испанского агентства недвижимости",
+  "description": "",
+  "createdAt": "2026-02-18T10:43:00.619Z",
+  "updatedAt": "2026-02-18T11:12:37.278Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/pmr/pmr.png",
+  "previewImageFile": "/case-previews/pmr.png",
+  "serviceIds": [
+    "ux-design",
+    "content-design"
+  ]
+}

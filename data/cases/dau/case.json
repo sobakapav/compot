@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "dau",
+  "link": "https://sobakapav.ru/portfolio/dau",
+  "clientName": "«Дау»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Точечные улучшения процесса продаж фильмов «Дау»",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:31.925Z",
+  "updatedAt": "2026-02-18T11:12:36.553Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/dau/dau.png",
+  "previewImageFile": "/case-previews/dau.png",
+  "serviceIds": [
+    "redesign",
+    "new-features"
+  ]
+}

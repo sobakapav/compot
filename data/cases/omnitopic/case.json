@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "omnitopic",
+  "link": "https://sobakapav.ru/portfolio/omnitopic",
+  "clientName": "Omnitopic",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Дизайн MVP агрегатора IT-конференций",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:56.870Z",
+  "updatedAt": "2026-02-18T11:12:37.039Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/omnitopic/main.png",
+  "previewImageFile": "/case-previews/omnitopic.png",
+  "serviceIds": [
+    "product-team",
+    "prototype"
+  ]
+}

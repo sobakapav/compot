@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "otkritie",
+  "link": "https://sobakapav.ru/portfolio/otkritie",
+  "clientName": "Банк «Открытие»",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Интерфейс онлайн-банка для юридических лиц",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:58.296Z",
+  "updatedAt": "2026-02-18T11:12:37.271Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/otkritie/main.png",
+  "previewImageFile": "/case-previews/otkritie.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}

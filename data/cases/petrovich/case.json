@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "petrovich",
+  "link": "https://sobakapav.ru/portfolio/petrovich",
+  "clientName": "Петрович",
+  "clientLogoFile": "",
+  "preview": "",
+  "title": "Редизайн ключевых экранов интернет-магазина",
+  "description": "",
+  "createdAt": "2026-02-18T10:42:59.611Z",
+  "updatedAt": "2026-02-18T11:12:37.275Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/petrovich/petrovich.png",
+  "previewImageFile": "/case-previews/petrovich.png",
+  "serviceIds": [
+    "redesign"
+  ]
+}
