@@ -8,11 +8,12 @@
   "title": "Дизайн интерфейса платформы для инвесторов",
   "description": "",
   "createdAt": "2026-02-18T10:42:47.658Z",
-  "updatedAt": "2026-02-18T11:12:37.029Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/justfa/main.png",
+  "updatedAt": "2026-02-18T12:34:48.552Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/justfa.svg",
   "previewImageFile": "",
   "serviceIds": [
     "ux-audit",
     "redesign"
-  ]
+  ],
+  "year": 2023
 }

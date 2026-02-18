@@ -8,10 +8,11 @@
   "title": "Платформа дистанционного мониторинга пациентов",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.182Z",
-  "updatedAt": "2026-02-18T11:12:37.521Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/tmh/main.png",
-  "previewImageFile": "/case-previews/tmh.png",
+  "updatedAt": "2026-02-18T12:35:08.724Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/tmh_big.svg",
+  "previewImageFile": "/case-previews/tmh.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2024
 }

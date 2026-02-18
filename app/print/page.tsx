@@ -129,6 +129,10 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
     : resolvedParams?.data;
   const payload = decodePayload(dataParam);
   const proposal = payload?.proposal ?? defaultValues;
+  const contactPhone = proposal.contactPhone || defaultValues.contactPhone;
+  const contactEmail = proposal.contactEmail || defaultValues.contactEmail;
+  const contactTelegram = proposal.contactTelegram || defaultValues.contactTelegram;
+  const validUntil = proposal.validUntil || defaultValues.validUntil;
   const selectedCaseIds = payload?.selectedCaseIds ?? [];
   const planTasks = payload?.planTasks ?? [];
   const cases = await loadCases();
@@ -338,7 +342,7 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
                   &nbsp;до
                   <br />
                   <span className="inline-flex whitespace-nowrap rounded bg-zinc-200 px-2 py-0.5 text-zinc-900 uppercase tracking-normal text-[12px] -ml-2">
-                    {proposal.validUntil}
+                    {validUntil}
                   </span>
                 </div>
               </div>
@@ -360,15 +364,15 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
               </div>
               <div className="flex flex-col md:col-span-1 md:col-start-5 md:justify-end md:self-end">
                 <div className="text-[15px] text-zinc-900 leading-[1] mt-[14px]">
-                  {proposal.contactPhone}
+                  {contactPhone}
                 </div>
                 <div className="text-[15px] text-[#0E509E] underline leading-[1] mt-[2px]">
-                  {proposal.contactEmail}
+                  {contactEmail}
                 </div>
                 <div className="mt-[2px] flex items-center gap-1 text-[15px] text-zinc-700 leading-[1]">
                   <span>tg</span>
                   <span className="text-[#0E509E] underline">
-                    {proposal.contactTelegram}
+                    {contactTelegram}
                   </span>
                 </div>
               </div>

@@ -8,11 +8,12 @@
   "title": "Контент-дизайн сайта для продаж отопительных приборов",
   "description": "",
   "createdAt": "2026-02-18T10:43:12.245Z",
-  "updatedAt": "2026-02-18T11:12:37.527Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/zehnder/zehnder.png",
+  "updatedAt": "2026-02-18T12:35:11.760Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/zehnder/logo.png",
   "previewImageFile": "/case-previews/zehnder.png",
   "serviceIds": [
     "ux-design",
     "content-design"
-  ]
+  ],
+  "year": 2014
 }

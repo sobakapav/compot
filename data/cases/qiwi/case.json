@@ -8,11 +8,12 @@
   "title": "Конкурентное сравнение трёх систем денежных переводов",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.184Z",
-  "updatedAt": "2026-02-18T11:12:37.280Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/qiwi.L1ZhhDHV.svg",
+  "updatedAt": "2026-02-18T12:35:01.552Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/qiwi_big.svg",
   "previewImageFile": "/case-previews/qiwi.svg",
   "serviceIds": [
     "ux-audit",
     "research"
-  ]
+  ],
+  "year": 2023
 }

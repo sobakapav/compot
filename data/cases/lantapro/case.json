@@ -8,10 +8,11 @@
   "title": "Интерфейс системы кадастрового учета",
   "description": "",
   "createdAt": "2026-02-18T10:42:49.928Z",
-  "updatedAt": "2026-02-18T11:12:37.032Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/lantapro/lantapro.png",
-  "previewImageFile": "/case-previews/lantapro.png",
+  "updatedAt": "2026-02-18T12:34:50.143Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/lantapro.svg",
+  "previewImageFile": "/case-previews/lantapro.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2014
 }

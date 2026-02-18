@@ -8,11 +8,13 @@
   "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.183Z",
-  "updatedAt": "2026-02-18T11:12:36.558Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/elma-bot/main.png",
-  "previewImageFile": "/case-previews/elma-bot.png",
+  "updatedAt": "2026-02-18T12:34:39.769Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/elma_big.svg",
+  "previewImageFile": "/case-previews/elma-bot.svg",
   "serviceIds": [
     "research",
-    "ux-design"
-  ]
+    "ux-design",
+    "constructor"
+  ],
+  "year": 2023
 }

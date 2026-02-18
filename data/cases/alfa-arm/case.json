@@ -8,12 +8,13 @@
   "title": "Интерфейс рабочего места оператора поддержки банка",
   "description": "",
   "createdAt": "2026-02-18T10:42:20.733Z",
-  "updatedAt": "2026-02-18T11:12:36.539Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/alfa-arm/alfa-arm.png",
+  "updatedAt": "2026-02-18T12:34:25.859Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/alfa-arm_big.png",
   "previewImageFile": "/case-previews/alfa-arm.png",
   "serviceIds": [
     "ux-design",
     "ux-outsource",
     "prototype"
-  ]
+  ],
+  "year": 2020
 }

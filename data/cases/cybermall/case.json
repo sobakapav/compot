@@ -8,10 +8,11 @@
   "title": "Интерфейс интернет-магазина",
   "description": "",
   "createdAt": "2026-02-18T10:42:31.037Z",
-  "updatedAt": "2026-02-18T11:12:36.552Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cybermall/cybermall.png",
-  "previewImageFile": "/case-previews/cybermall.png",
+  "updatedAt": "2026-02-18T12:34:35.775Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/cybermall.svg",
+  "previewImageFile": "/case-previews/cybermall.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2013
 }

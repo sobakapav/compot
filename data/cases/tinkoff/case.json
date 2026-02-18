@@ -8,11 +8,12 @@
   "title": "Онбординг для банка",
   "description": "",
   "createdAt": "2026-02-18T10:43:07.664Z",
-  "updatedAt": "2026-02-18T11:12:37.519Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/tinkoff/tinkoff.jpg",
-  "previewImageFile": "/case-previews/tinkoff.jpg",
+  "updatedAt": "2026-02-18T12:35:07.927Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/tinkoff.svg",
+  "previewImageFile": "/case-previews/tinkoff.svg",
   "serviceIds": [
     "new-features",
     "content-design"
-  ]
+  ],
+  "year": 2015
 }

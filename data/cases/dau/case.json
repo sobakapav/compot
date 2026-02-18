@@ -8,11 +8,12 @@
   "title": "Точечные улучшения процесса продаж фильмов «Дау»",
   "description": "",
   "createdAt": "2026-02-18T10:42:31.925Z",
-  "updatedAt": "2026-02-18T11:12:36.553Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/dau/dau.png",
-  "previewImageFile": "/case-previews/dau.png",
+  "updatedAt": "2026-02-18T12:34:36.315Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/dau.svg",
+  "previewImageFile": "/case-previews/dau.svg",
   "serviceIds": [
     "redesign",
     "new-features"
-  ]
+  ],
+  "year": 2020
 }

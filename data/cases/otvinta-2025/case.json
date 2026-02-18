@@ -8,11 +8,12 @@
   "title": "Калькулятор расчета кровли для сайта строительного магазина",
   "description": "",
   "createdAt": "2026-02-18T10:42:58.877Z",
-  "updatedAt": "2026-02-18T11:12:37.273Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/otvinta-2025/main.png",
-  "previewImageFile": "/case-previews/otvinta-2025.png",
+  "updatedAt": "2026-02-18T12:34:58.010Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/otvinta3.svg",
+  "previewImageFile": "/case-previews/otvinta-2025.svg",
   "serviceIds": [
     "new-features",
     "ux-outsource"
-  ]
+  ],
+  "year": 2025
 }

@@ -8,10 +8,11 @@
   "title": "Дизайн интерфейсов для ГБУ «Гормост»",
   "description": "",
   "createdAt": "2026-02-18T10:42:42.328Z",
-  "updatedAt": "2026-02-18T11:12:36.562Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/gormost/gormost.png",
-  "previewImageFile": "/case-previews/gormost.png",
+  "updatedAt": "2026-02-18T12:34:45.521Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/gormost.svg",
+  "previewImageFile": "/case-previews/gormost.svg",
   "serviceIds": [
     "ui-redesign"
-  ]
+  ],
+  "year": 2019
 }

@@ -8,11 +8,12 @@
   "title": "Таск-трекер юридической фирмы",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.184Z",
-  "updatedAt": "2026-02-18T11:12:37.037Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/nextons/main.png",
-  "previewImageFile": "/case-previews/nextons.png",
+  "updatedAt": "2026-02-18T12:34:54.179Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/nextons.svg",
+  "previewImageFile": "/case-previews/nextons.svg",
   "serviceIds": [
     "ui-redesign",
     "redesign"
-  ]
+  ],
+  "year": 2023
 }

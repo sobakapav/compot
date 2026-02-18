@@ -8,10 +8,11 @@
   "title": "Интернет-магазин канцелярии для оптовиков",
   "description": "",
   "createdAt": "2026-02-18T10:43:01.779Z",
-  "updatedAt": "2026-02-18T11:12:37.282Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/relefopt/relefopt.png",
-  "previewImageFile": "/case-previews/relefopt.png",
+  "updatedAt": "2026-02-18T12:35:02.305Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/relefopt.svg",
+  "previewImageFile": "/case-previews/relefopt.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2015
 }

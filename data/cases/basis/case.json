@@ -8,10 +8,11 @@
   "title": "Контент для сайта архитектурной студии",
   "description": "",
   "createdAt": "2026-02-18T10:42:25.434Z",
-  "updatedAt": "2026-02-18T11:12:36.547Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/basis/basis.png",
-  "previewImageFile": "/case-previews/basis.png",
+  "updatedAt": "2026-02-18T12:34:30.440Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/basis.svg",
+  "previewImageFile": "/case-previews/basis.svg",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2015
 }

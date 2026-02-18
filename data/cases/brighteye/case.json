@@ -8,10 +8,11 @@
   "title": "Интерфейс оператора производственной линии и приложения для MOM Momentum от Brighteye",
   "description": "",
   "createdAt": "2026-02-18T10:42:27.076Z",
-  "updatedAt": "2026-02-18T11:12:36.548Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/brighteye/brighteye.png",
-  "previewImageFile": "/case-previews/brighteye.png",
+  "updatedAt": "2026-02-18T12:34:32.073Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/brighteye_big.svg",
+  "previewImageFile": "/case-previews/brighteye.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2021
 }

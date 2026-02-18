@@ -8,10 +8,11 @@
   "title": "Интерфейс приложения для проверки и подписи документов",
   "description": "",
   "createdAt": "2026-02-18T10:42:34.161Z",
-  "updatedAt": "2026-02-18T11:12:36.555Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/easydocs/easydocs.png",
-  "previewImageFile": "/case-previews/easydocs.png",
+  "updatedAt": "2026-02-18T12:34:38.716Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/easydocs.svg",
+  "previewImageFile": "/case-previews/easydocs.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2020
 }

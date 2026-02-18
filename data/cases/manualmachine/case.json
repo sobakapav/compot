@@ -8,10 +8,11 @@
   "title": "Дизайн интерфейса для сайта с инструкциями",
   "description": "",
   "createdAt": "2026-02-18T10:42:51.877Z",
-  "updatedAt": "2026-02-18T11:12:37.034Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/manualmachine/main.png",
-  "previewImageFile": "/case-previews/manualmachine.png",
+  "updatedAt": "2026-02-18T12:34:51.658Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/manualmachine.svg",
+  "previewImageFile": "/case-previews/manualmachine.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2019
 }

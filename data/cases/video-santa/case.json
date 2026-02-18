@@ -8,10 +8,12 @@
   "title": "Дизайн мобильного интерфейса и авторское сопровождение",
   "description": "",
   "createdAt": "2026-02-18T10:43:09.335Z",
-  "updatedAt": "2026-02-18T11:12:37.523Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/video-santa/video-santa.png",
-  "previewImageFile": "/case-previews/video-santa.png",
+  "updatedAt": "2026-02-18T12:35:09.548Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/dedmoroz.svg",
+  "previewImageFile": "/case-previews/video-santa.svg",
   "serviceIds": [
-    "ux-design"
-  ]
+    "ux-design",
+    "constructor"
+  ],
+  "year": 2019
 }

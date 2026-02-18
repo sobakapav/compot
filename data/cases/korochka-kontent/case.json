@@ -8,10 +8,11 @@
   "title": "Справочник для абитуриентов",
   "description": "",
   "createdAt": "2026-02-18T10:42:48.859Z",
-  "updatedAt": "2026-02-18T11:12:37.031Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/korochka-kontent/korochka-kontent.jpg",
-  "previewImageFile": "/case-previews/korochka-kontent.jpg",
+  "updatedAt": "2026-02-18T12:34:49.316Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/korochka.svg",
+  "previewImageFile": "/case-previews/korochka-kontent.svg",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2015
 }

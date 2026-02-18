@@ -8,11 +8,12 @@
   "title": "Интерфейс рабочего места страхового агента",
   "description": "",
   "createdAt": "2026-02-18T10:42:21.259Z",
-  "updatedAt": "2026-02-18T11:12:36.540Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/alfa/alfa.png",
+  "updatedAt": "2026-02-18T12:34:26.239Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/alfa.png",
   "previewImageFile": "/case-previews/alfa.png",
   "serviceIds": [
     "ux-design",
     "ux-outsource"
-  ]
+  ],
+  "year": 2015
 }

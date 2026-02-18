@@ -8,11 +8,12 @@
   "title": "Инструмент для создания схем стадионов и концертных площадок",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.178Z",
-  "updatedAt": "2026-02-18T11:12:37.285Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/seatmap/main.png",
-  "previewImageFile": "/case-previews/seatmap.png",
+  "updatedAt": "2026-02-18T12:35:03.363Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/seatmap.svg",
+  "previewImageFile": "/case-previews/seatmap.svg",
   "serviceIds": [
     "research",
     "ux-design"
-  ]
+  ],
+  "year": 2025
 }

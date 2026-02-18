@@ -8,10 +8,11 @@
   "title": "Гайд по созданию интерфейсных текстов",
   "description": "",
   "createdAt": "2026-02-18T10:43:03.200Z",
-  "updatedAt": "2026-02-18T11:12:37.284Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/sberbank/sberbank.jpg",
-  "previewImageFile": "/case-previews/sberbank.jpg",
+  "updatedAt": "2026-02-18T12:35:03.650Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/sber.png",
+  "previewImageFile": "/case-previews/sberbank.png",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2017
 }

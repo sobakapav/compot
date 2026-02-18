@@ -8,11 +8,12 @@
   "title": "Гайд по общению для сотрудников поддержки",
   "description": "",
   "createdAt": "2026-02-18T10:42:33.166Z",
-  "updatedAt": "2026-02-18T11:12:36.554Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/e-gorod-guide/e-gorod-guide.jpg",
-  "previewImageFile": "/case-previews/e-gorod-guide.jpg",
+  "updatedAt": "2026-02-18T12:34:37.228Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ecity_guide.svg",
+  "previewImageFile": "/case-previews/e-gorod-guide.svg",
   "serviceIds": [
     "content-design",
     "ux-outsource"
-  ]
+  ],
+  "year": 2019
 }

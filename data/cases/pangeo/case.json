@@ -8,10 +8,11 @@
   "title": "Платформа кибербезопасности",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.186Z",
-  "updatedAt": "2026-02-18T11:12:37.274Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/pangeo.lVBPTiX9.png",
-  "previewImageFile": "/case-previews/pangeo.png",
+  "updatedAt": "2026-02-18T12:34:58.868Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/pangeo_big.svg",
+  "previewImageFile": "/case-previews/pangeo.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2022
 }

@@ -8,10 +8,12 @@
   "title": "Конструктор CRM для среднего бизнеса",
   "description": "",
   "createdAt": "2026-02-18T10:42:22.668Z",
-  "updatedAt": "2026-02-18T11:12:36.543Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/amber/amber.png",
-  "previewImageFile": "/case-previews/amber.png",
+  "updatedAt": "2026-02-18T12:34:27.757Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/amber.svg",
+  "previewImageFile": "/case-previews/amber.svg",
   "serviceIds": [
-    "ux-design"
-  ]
+    "ux-design",
+    "constructor"
+  ],
+  "year": 2016
 }

@@ -8,11 +8,12 @@
   "title": "Мобильное приложение для работы с предписаниями",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-18T11:12:36.551Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/control-predpisanie/main.png",
-  "previewImageFile": "/case-previews/control-predpisanie.png",
+  "updatedAt": "2026-02-18T12:34:34.533Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/control-predpisanie.svg",
+  "previewImageFile": "/case-previews/control-predpisanie.svg",
   "serviceIds": [
     "ux-design",
     "ux-outsource"
-  ]
+  ],
+  "year": 2023
 }

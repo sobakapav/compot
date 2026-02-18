@@ -8,11 +8,12 @@
   "title": "Контент и дизайн интерфейса",
   "description": "",
   "createdAt": "2026-02-18T10:43:10.499Z",
-  "updatedAt": "2026-02-18T11:12:37.526Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/yit/yit.png",
-  "previewImageFile": "/case-previews/yit.png",
+  "updatedAt": "2026-02-18T12:35:10.702Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/yit.svg",
+  "previewImageFile": "/case-previews/yit.svg",
   "serviceIds": [
     "ux-design",
     "content-design"
-  ]
+  ],
+  "year": 2014
 }

@@ -8,11 +8,13 @@
   "title": "Дизайн интерфейса системы управления бизнес-процессами",
   "description": "",
   "createdAt": "2026-02-18T10:42:35.814Z",
-  "updatedAt": "2026-02-18T11:12:36.558Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/elma/elma.png",
-  "previewImageFile": "/case-previews/elma.png",
+  "updatedAt": "2026-02-18T12:34:40.013Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/elma_big.svg",
+  "previewImageFile": "/case-previews/elma.svg",
   "serviceIds": [
     "ux-design",
-    "ux-outsource"
-  ]
+    "ux-outsource",
+    "constructor"
+  ],
+  "year": 2020
 }

@@ -8,10 +8,11 @@
   "title": "UX-аудит и редизайн фотобанка",
   "description": "",
   "createdAt": "2026-02-18T10:42:51.462Z",
-  "updatedAt": "2026-02-18T11:12:37.033Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/lori/main.png",
-  "previewImageFile": "/case-previews/lori.png",
+  "updatedAt": "2026-02-18T12:34:51.140Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/lori.svg",
+  "previewImageFile": "/case-previews/lori.svg",
   "serviceIds": [
     "ux-audit"
-  ]
+  ],
+  "year": 2020
 }

@@ -8,11 +8,12 @@
   "title": "Cервис для управления государственными реестрами",
   "description": "",
   "createdAt": "2026-02-18T10:42:31.318Z",
-  "updatedAt": "2026-02-18T11:12:36.552Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/control/control.png",
-  "previewImageFile": "/case-previews/control.png",
+  "updatedAt": "2026-02-18T12:34:34.950Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/control-mobile.svg",
+  "previewImageFile": "/case-previews/control.svg",
   "serviceIds": [
     "ux-design",
     "ux-outsource"
-  ]
+  ],
+  "year": 2019
 }

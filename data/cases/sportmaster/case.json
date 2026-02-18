@@ -8,11 +8,12 @@
   "title": "UX-тестирование терминалов самообслуживания «Спортмастера»",
   "description": "",
   "createdAt": "2026-02-18T10:43:06.015Z",
-  "updatedAt": "2026-02-18T11:12:37.514Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/sportmaster/sportmaster.png",
-  "previewImageFile": "/case-previews/sportmaster.png",
+  "updatedAt": "2026-02-18T12:35:06.426Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/sportmaster.svg",
+  "previewImageFile": "/case-previews/sportmaster.svg",
   "serviceIds": [
     "ux-audit",
     "research"
-  ]
+  ],
+  "year": 2015
 }

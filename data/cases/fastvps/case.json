@@ -8,10 +8,11 @@
   "title": "Интерфейс сервиса подбора хостинга",
   "description": "",
   "createdAt": "2026-02-18T10:42:38.329Z",
-  "updatedAt": "2026-02-18T11:12:36.560Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/fastvps/fastvps.jpg",
-  "previewImageFile": "/case-previews/fastvps.jpg",
+  "updatedAt": "2026-02-18T12:34:42.300Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/fastvps.svg",
+  "previewImageFile": "/case-previews/fastvps.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2015
 }

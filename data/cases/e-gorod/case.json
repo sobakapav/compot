@@ -8,11 +8,12 @@
   "title": "Сайт амбициозного регионального провайдера",
   "description": "",
   "createdAt": "2026-02-18T10:42:33.451Z",
-  "updatedAt": "2026-02-18T11:12:36.554Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/e-gorod/e-gorod.png",
-  "previewImageFile": "/case-previews/e-gorod.png",
+  "updatedAt": "2026-02-18T12:34:38.121Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ecity.svg",
+  "previewImageFile": "/case-previews/e-gorod.svg",
   "serviceIds": [
     "ux-design",
     "ux-outsource"
-  ]
+  ],
+  "year": 2018
 }

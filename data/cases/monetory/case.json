@@ -8,11 +8,12 @@
   "title": "Агрегатор обменников криптовалюты и электронных денег",
   "description": "",
   "createdAt": "2026-02-18T10:42:54.301Z",
-  "updatedAt": "2026-02-18T11:12:37.037Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/monetory/monetory.png",
-  "previewImageFile": "/case-previews/monetory.png",
+  "updatedAt": "2026-02-18T12:34:53.330Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/monetory.svg",
+  "previewImageFile": "/case-previews/monetory.svg",
   "serviceIds": [
     "redesign",
     "new-features"
-  ]
+  ],
+  "year": 2021
 }

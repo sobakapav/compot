@@ -8,10 +8,11 @@
   "title": "Исследование и CJM пациентов с диабетом",
   "description": "",
   "createdAt": "2026-02-18T10:42:52.696Z",
-  "updatedAt": "2026-02-18T11:12:37.034Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:34:52.216Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/medmarket.png",
+  "previewImageFile": "/case-previews/medmarket.png",
   "serviceIds": [
     "research"
-  ]
+  ],
+  "year": 2022
 }

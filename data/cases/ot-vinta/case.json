@@ -8,12 +8,13 @@
   "title": "Точечный редизайн интерфейса магазина строительных товаров",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.184Z",
-  "updatedAt": "2026-02-18T11:12:37.270Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/_astro/ot-vinta.CnPAtV0m.svg",
+  "updatedAt": "2026-02-18T12:34:56.974Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ot-vinta.svg",
   "previewImageFile": "/case-previews/ot-vinta.svg",
   "serviceIds": [
     "ux-audit",
     "redesign",
     "ux-outsource"
-  ]
+  ],
+  "year": 2023
 }

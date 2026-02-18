@@ -8,10 +8,11 @@
   "title": "Интерфейс интернет-банка для VIP-клиентов",
   "description": "",
   "createdAt": "2026-02-18T10:42:44.137Z",
-  "updatedAt": "2026-02-18T11:12:36.563Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/inbank/inbank.jpg",
-  "previewImageFile": "/case-previews/inbank.jpg",
+  "updatedAt": "2026-02-18T12:34:46.268Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/inbank.svg",
+  "previewImageFile": "/case-previews/inbank.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2016
 }

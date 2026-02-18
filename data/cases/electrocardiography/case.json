@@ -8,11 +8,13 @@
   "title": "Медицинский интерфейс для работы с ЭКГ",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.179Z",
-  "updatedAt": "2026-02-18T11:12:36.556Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/erna/mainNDA.png",
+  "updatedAt": "2026-02-18T12:34:39.258Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/erna_big.png",
   "previewImageFile": "/case-previews/electrocardiography.png",
   "serviceIds": [
     "research",
-    "ux-design"
-  ]
+    "ux-design",
+    "constructor"
+  ],
+  "year": 2025
 }

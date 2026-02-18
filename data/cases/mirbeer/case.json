@@ -8,10 +8,11 @@
   "title": "UX-аудит магазина для пивоваров",
   "description": "",
   "createdAt": "2026-02-18T10:42:53.955Z",
-  "updatedAt": "2026-02-18T11:12:37.036Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/mirbeer/main.png",
-  "previewImageFile": "/case-previews/mirbeer.png",
+  "updatedAt": "2026-02-18T12:34:52.973Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/mirbeer.svg",
+  "previewImageFile": "/case-previews/mirbeer.svg",
   "serviceIds": [
     "ux-audit"
-  ]
+  ],
+  "year": 2021
 }

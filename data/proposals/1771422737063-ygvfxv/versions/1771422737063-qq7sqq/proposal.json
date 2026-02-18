@@ -1,0 +1,26 @@
+{
+  "proposalId": "1771422737063-ygvfxv",
+  "versionId": "1771422737063-qq7sqq",
+  "createdAt": "2026-02-18T13:52:17.063Z",
+  "source": "create",
+  "pdf": false,
+  "proposal": {
+    "clientName": "",
+    "serviceName": "",
+    "serviceId": "",
+    "clientLogoDataUrl": "",
+    "summary": "",
+    "scope": "",
+    "timeline": "",
+    "price": "",
+    "nuances": "",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "",
+    "contactTelegram": "",
+    "contactPhone": "",
+    "validUntil": "4 МАРТА 2026 ГОДА"
+  },
+  "selectedCaseIds": [],
+  "planTasks": []
+}

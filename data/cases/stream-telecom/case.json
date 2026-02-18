@@ -8,10 +8,11 @@
   "title": "Интерфейс сервиса SMS-рассылок",
   "description": "",
   "createdAt": "2026-02-18T10:43:06.337Z",
-  "updatedAt": "2026-02-18T11:12:37.515Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/stream-telecom/stream-telecom.png",
-  "previewImageFile": "/case-previews/stream-telecom.png",
+  "updatedAt": "2026-02-18T12:35:06.170Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/streamtelecom.svg",
+  "previewImageFile": "/case-previews/stream-telecom.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2018
 }

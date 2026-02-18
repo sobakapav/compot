@@ -8,10 +8,11 @@
   "title": "Медицинская карта с голосовым заполнением",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.180Z",
-  "updatedAt": "2026-02-18T11:12:37.517Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/t1/main.png",
-  "previewImageFile": "/case-previews/t1.png",
+  "updatedAt": "2026-02-18T12:35:07.078Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/t1_big.svg",
+  "previewImageFile": "/case-previews/t1.svg",
   "serviceIds": [
     "prototype"
-  ]
+  ],
+  "year": 2025
 }

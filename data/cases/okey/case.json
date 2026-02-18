@@ -8,10 +8,11 @@
   "title": "Приложение для федеральной розничной сети",
   "description": "",
   "createdAt": "2026-02-18T10:42:55.890Z",
-  "updatedAt": "2026-02-18T11:12:37.038Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:34:55.241Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/okey_big.svg",
+  "previewImageFile": "/case-previews/okey.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2019
 }

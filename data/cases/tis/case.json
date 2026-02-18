@@ -8,11 +8,12 @@
   "title": "Глобальная система дистанционного мониторинга давления",
   "description": "",
   "createdAt": "2026-02-18T10:43:07.950Z",
-  "updatedAt": "2026-02-18T11:12:37.520Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:35:08.465Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/tis_big.svg",
+  "previewImageFile": "/case-previews/tis.svg",
   "serviceIds": [
     "ux-design",
     "product-team"
-  ]
+  ],
+  "year": 2021
 }

@@ -8,11 +8,12 @@
   "title": "Точечное улучшение интерфейса",
   "description": "",
   "createdAt": "2026-02-18T10:42:35.524Z",
-  "updatedAt": "2026-02-18T11:12:36.558Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/electronika/electronika.jpg",
-  "previewImageFile": "/case-previews/electronika.jpg",
+  "updatedAt": "2026-02-18T12:34:39.527Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/elektronika.svg",
+  "previewImageFile": "/case-previews/electronika.svg",
   "serviceIds": [
     "ui-redesign",
     "ux-audit"
-  ]
+  ],
+  "year": 2017
 }

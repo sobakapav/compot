@@ -8,11 +8,12 @@
   "title": "Дизайн интерфейса системы мониторинга пациентов в реанимации",
   "description": "",
   "createdAt": "2026-02-18T10:43:01.475Z",
-  "updatedAt": "2026-02-18T11:12:37.281Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:35:01.802Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/raisa_big.svg",
+  "previewImageFile": "/case-previews/raisa.svg",
   "serviceIds": [
     "ux-design",
     "research"
-  ]
+  ],
+  "year": 2020
 }

@@ -8,11 +8,12 @@
   "title": "Интерфейс платформы общественной архивистики",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.181Z",
-  "updatedAt": "2026-02-18T11:12:37.279Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/prozhito/main.png",
-  "previewImageFile": "/case-previews/prozhito.png",
+  "updatedAt": "2026-02-18T12:35:01.028Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/prozhito.svg",
+  "previewImageFile": "/case-previews/prozhito.svg",
   "serviceIds": [
     "ux-design",
     "research"
-  ]
+  ],
+  "year": 2024
 }

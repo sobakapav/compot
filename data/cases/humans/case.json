@@ -8,10 +8,11 @@
   "title": "Интергация в команду разработки провайдера",
   "description": "",
   "createdAt": "2026-02-18T10:42:43.528Z",
-  "updatedAt": "2026-02-18T11:12:36.563Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/humans/main.png",
-  "previewImageFile": "/case-previews/humans.png",
+  "updatedAt": "2026-02-18T12:34:45.782Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/humans.svg",
+  "previewImageFile": "/case-previews/humans.svg",
   "serviceIds": [
     "ux-outsource"
-  ]
+  ],
+  "year": 2020
 }

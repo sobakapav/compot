@@ -8,13 +8,14 @@
   "title": "Цифровая туристическая платформа",
   "description": "",
   "createdAt": "2026-02-18T10:43:02.917Z",
-  "updatedAt": "2026-02-18T11:12:37.284Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/russpass/main.png",
-  "previewImageFile": "/case-previews/russpass.png",
+  "updatedAt": "2026-02-18T12:35:03.080Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/russpass.svg",
+  "previewImageFile": "/case-previews/russpass.svg",
   "serviceIds": [
     "ux-audit",
     "research",
     "redesign",
     "prototype"
-  ]
+  ],
+  "year": 2020
 }

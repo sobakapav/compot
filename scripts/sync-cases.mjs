@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const SOURCE_URL =
-  process.env.CASES_URL ?? "https://sobakapav.ru/listPortfolioAsJson";
+  process.env.CASES_URL ?? "https://sobakapav.ru/listPortfolioAsJson.json";
 const FORCE = process.argv.includes("--force");
 
 const rootDir = process.cwd();
@@ -10,7 +10,6 @@ const casesDir = path.join(rootDir, "data", "cases");
 const linksDir = path.join(rootDir, "data", "links");
 const previewsDir = path.join(rootDir, "public", "case-previews");
 const syncFile = path.join(linksDir, "case-sync.json");
-const servicesIndexPath = path.join(rootDir, "data", "services", "index.json");
 
 const getTodayKey = () => new Date().toISOString().slice(0, 10);
 
@@ -76,82 +75,7 @@ const normalizeServiceIds = (services) => {
   return list.filter(Boolean).map((value) => String(value));
 };
 
-const normalizeTitleKey = (value) =>
-  String(value)
-    .replace(/\u00a0/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
-
-const loadServiceTitleMap = async () => {
-  try {
-    const raw = await fs.readFile(servicesIndexPath, "utf-8");
-    const data = JSON.parse(raw);
-    const items = data.items ?? [];
-    const map = new Map();
-    for (const item of items) {
-      if (!item?.title || !item?.id) continue;
-      map.set(normalizeTitleKey(item.title), item.id);
-    }
-    return map;
-  } catch {
-    return new Map();
-  }
-};
-
-const buildServiceAliasMap = () => {
-  const aliases = new Map();
-  const add = (title, id) => aliases.set(normalizeTitleKey(title), id);
-  add("Продуктовая команда", "product-team");
-  add("Работа в продуктовой команде", "product-team");
-  add("Продуктовое исследование", "research");
-  add("UX-исследование", "research");
-  add("Точечный редизайн", "redesign");
-  add("Точечный редизайн интерфейса", "redesign");
-  add("UX-дизайн под ключ", "ux-design");
-  add("UX/UI-дизайн под ключ", "ux-design");
-  add("UX/UI дизайн под ключ", "ux-design");
-  add("UX-отдел на аутсорсе", "ux-outsource");
-  add("UI-редизайн", "ui-redesign");
-  add("UX-аудит", "ux-audit");
-  add("Контент-дизайн", "content-design");
-  add("Добавление новой функциональности", "new-features");
-  add("Прототип под инвестиции", "prototype");
-  return aliases;
-};
-
-const normalizeByKeywords = (value) => {
-  const key = normalizeTitleKey(value);
-  if (key.includes("продуктов") && key.includes("команд")) return "product-team";
-  if (key.includes("исслед")) return "research";
-  if (key.includes("точечн") && key.includes("редизайн")) return "redesign";
-  if (key.includes("ux") && key.includes("дизайн") && key.includes("под ключ"))
-    return "ux-design";
-  if (key.includes("ux") && key.includes("аутсорс")) return "ux-outsource";
-  if (key.includes("ui") && key.includes("редизайн")) return "ui-redesign";
-  if (key.includes("ux") && key.includes("аудит")) return "ux-audit";
-  if (key.includes("контент")) return "content-design";
-  if (key.includes("нов") && key.includes("функциональ"))
-    return "new-features";
-  if (key.includes("прототип")) return "prototype";
-  return null;
-};
-
-const normalizeServiceIdsWithMap = (services, map) => {
-  const aliasMap = buildServiceAliasMap();
-  const raw = normalizeServiceIds(services);
-  return raw
-    .map((value) => {
-      const key = normalizeTitleKey(value);
-      return (
-        map.get(key) ||
-        aliasMap.get(key) ||
-        normalizeByKeywords(value) ||
-        value
-      );
-    })
-    .filter(Boolean);
-};
+const normalizeServiceIdsWithMap = (services) => normalizeServiceIds(services);
 
 const resolvePreviewUrl = (item) =>
   pickFirst(item, [
@@ -244,71 +168,13 @@ const fetchJson = async (url) => {
   if (!response.ok) {
     throw new Error(`Failed to fetch cases: ${response.status}`);
   }
-  const text = await response.text();
-  const tryParse = (value) => {
-    try {
-      return JSON.parse(value);
-    } catch {
-      return null;
-    }
-  };
-  const direct = tryParse(text);
-  if (direct) return { json: direct, raw: text };
-
-  const preMatch = text.match(/<pre[^>]*>([\s\S]*?)<\/pre>/i);
-  if (preMatch?.[1]) {
-    const preJson = tryParse(preMatch[1].trim());
-    if (preJson) return { json: preJson, raw: text };
-  }
-
-  const decodeEntities = (value) =>
-    value
-      .replace(/&quot;/g, '"')
-      .replace(/&amp;/g, "&")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&nbsp;/g, " ");
-
-  const pMatch = text.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
-  if (pMatch?.[1]) {
-    const decoded = decodeEntities(pMatch[1].trim());
-    const pJson = tryParse(decoded);
-    if (pJson) return { json: pJson, raw: text };
-  }
-
-  const bracketStart = text.indexOf("[");
-  const bracketEnd = text.lastIndexOf("]");
-  if (bracketStart !== -1 && bracketEnd !== -1 && bracketEnd > bracketStart) {
-    const slice = decodeEntities(text.slice(bracketStart, bracketEnd + 1));
-    const sliceJson = tryParse(slice);
-    if (sliceJson) return { json: sliceJson, raw: text };
-  }
-
-  const stripped = text.replace(/<[^>]*>/g, "").trim();
-  const strippedJson = tryParse(stripped);
-  if (strippedJson) return { json: strippedJson, raw: text };
-
-  return { json: null, raw: text };
+  const json = await response.json();
+  return { json, raw: JSON.stringify(json) };
 };
 
 const fetchSource = async () => {
-  const urls = [
-    SOURCE_URL,
-    `${SOURCE_URL}?format=json`,
-    `${SOURCE_URL}?_format=json`,
-  ];
-
-  for (const url of urls) {
-    const { json, raw } = await fetchJson(url);
-    if (json) return { json, raw, url };
-    if (raw?.trim().startsWith("<!DOCTYPE")) {
-      await fs.mkdir(linksDir, { recursive: true });
-      await fs.writeFile(path.join(linksDir, "cases-raw.html"), raw, "utf-8");
-      await writeJson(path.join(linksDir, "cases-raw-meta.json"), { url });
-    }
-  }
-
-  throw new Error("Remote response is not valid JSON");
+  const { json, raw } = await fetchJson(SOURCE_URL);
+  return { json, raw, url: SOURCE_URL };
 };
 
 const extractItems = (payload) => {
@@ -342,7 +208,6 @@ const main = async () => {
     return;
   }
 
-  const serviceTitleMap = await loadServiceTitleMap();
   const indexItems = [];
   let updatedCount = 0;
   let downloadedCount = 0;
@@ -364,9 +229,15 @@ const main = async () => {
     const description = pickFirst(item, ["description", "text", "details"]);
     const previewUrl = resolvePreviewUrl(item);
     const serviceIds = normalizeServiceIdsWithMap(
-      item?.services ?? item?.serviceIds,
-      serviceTitleMap
+      item?.services ?? item?.serviceIds
     );
+    const yearRaw = pickFirst(item, ["year", "years", "date", "createdAt"]);
+    const year =
+      typeof yearRaw === "number"
+        ? yearRaw
+        : typeof yearRaw === "string"
+        ? Number(yearRaw.slice(0, 4)) || ""
+        : "";
 
     const caseDir = path.join(casesDir, id);
     await fs.mkdir(caseDir, { recursive: true });
@@ -399,10 +270,11 @@ const main = async () => {
       previewImageSourceUrl,
       previewImageFile,
       serviceIds,
+      year,
     };
     await writeJson(casePath, nextCase);
 
-    indexItems.push({ id, serviceIds });
+    indexItems.push({ id, serviceIds, year });
     updatedCount += 1;
   }
 

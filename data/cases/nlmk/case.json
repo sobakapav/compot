@@ -8,10 +8,11 @@
   "title": "Корпоративный портал для 53 тысяч пользователей",
   "description": "",
   "createdAt": "2026-02-18T10:42:55.436Z",
-  "updatedAt": "2026-02-18T11:12:37.038Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/nlmk/nlmk.png",
-  "previewImageFile": "/case-previews/nlmk.png",
+  "updatedAt": "2026-02-18T12:34:54.486Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/nlmk.svg",
+  "previewImageFile": "/case-previews/nlmk.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2017
 }

@@ -8,10 +8,11 @@
   "title": "Юзабилити-аудит",
   "description": "",
   "createdAt": "2026-02-18T10:43:05.459Z",
-  "updatedAt": "2026-02-18T11:12:37.286Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/snob/snob.jpg",
-  "previewImageFile": "/case-previews/snob.jpg",
+  "updatedAt": "2026-02-18T12:35:05.545Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/snob.svg",
+  "previewImageFile": "/case-previews/snob.svg",
   "serviceIds": [
     "ux-audit"
-  ]
+  ],
+  "year": 2013
 }

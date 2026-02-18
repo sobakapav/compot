@@ -8,10 +8,11 @@
   "title": "Концепция и тексты для сайта подбора IT-специалистов",
   "description": "",
   "createdAt": "2026-02-18T10:42:36.241Z",
-  "updatedAt": "2026-02-18T11:12:36.559Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/ethr/ethr.png",
-  "previewImageFile": "/case-previews/ethr.png",
+  "updatedAt": "2026-02-18T12:34:40.273Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ethr.svg",
+  "previewImageFile": "/case-previews/ethr.svg",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2016
 }

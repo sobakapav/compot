@@ -8,11 +8,12 @@
   "title": "Сайт Выборгского музея-заповедника",
   "description": "",
   "createdAt": "2026-02-18T10:43:09.765Z",
-  "updatedAt": "2026-02-18T11:12:37.524Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/vuborgskiy-zamok/vuborgskiy-zamok.png",
-  "previewImageFile": "/case-previews/vuborgskiy-zamok.png",
+  "updatedAt": "2026-02-18T12:35:10.156Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/vcastle.svg",
+  "previewImageFile": "/case-previews/vuborgskiy-zamok.svg",
   "serviceIds": [
     "ux-design",
     "content-design"
-  ]
+  ],
+  "year": 2016
 }

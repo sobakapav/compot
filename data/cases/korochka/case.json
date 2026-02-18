@@ -8,10 +8,11 @@
   "title": "Сервис подбора ВУЗа",
   "description": "",
   "createdAt": "2026-02-18T10:42:49.289Z",
-  "updatedAt": "2026-02-18T11:12:37.032Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/korochka/korochka.png",
-  "previewImageFile": "/case-previews/korochka.png",
+  "updatedAt": "2026-02-18T12:34:49.558Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/korochka.svg",
+  "previewImageFile": "/case-previews/korochka.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2015
 }

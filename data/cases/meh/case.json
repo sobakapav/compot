@@ -8,10 +8,11 @@
   "title": "Контент и прототип буклета для отраслевой выставки",
   "description": "",
   "createdAt": "2026-02-18T10:42:53.075Z",
-  "updatedAt": "2026-02-18T11:12:37.035Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/meh/main.jpg",
+  "updatedAt": "2026-02-18T12:34:52.449Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/meh.svg",
   "previewImageFile": "/case-previews/meh.jpg",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2016
 }

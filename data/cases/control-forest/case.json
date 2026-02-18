@@ -8,11 +8,12 @@
   "title": "Дизайн интерфейса мобильного приложения для лесничеств",
   "description": "",
   "createdAt": "2026-02-18T10:42:28.860Z",
-  "updatedAt": "2026-02-18T11:12:36.549Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/control-forest/main.png",
-  "previewImageFile": "/case-previews/control-forest.png",
+  "updatedAt": "2026-02-18T12:34:33.251Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/control-forest.svg",
+  "previewImageFile": "/case-previews/control-forest.svg",
   "serviceIds": [
     "ux-design",
     "ux-outsource"
-  ]
+  ],
+  "year": 2021
 }

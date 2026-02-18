@@ -8,11 +8,12 @@
   "title": "UX/UI-аудит для дистрибьютора электротехники",
   "description": "",
   "createdAt": "2026-02-18T10:42:36.663Z",
-  "updatedAt": "2026-02-18T11:12:36.559Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/etm/main.png",
-  "previewImageFile": "/case-previews/etm.png",
+  "updatedAt": "2026-02-18T12:34:40.630Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/etm.svg",
+  "previewImageFile": "/case-previews/etm.svg",
   "serviceIds": [
     "ux-audit",
     "new-features"
-  ]
+  ],
+  "year": 2021
 }

@@ -8,10 +8,11 @@
   "title": "Интерфейс службы банковской безопасности",
   "description": "",
   "createdAt": "2026-02-18T10:42:27.429Z",
-  "updatedAt": "2026-02-18T11:12:36.548Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/center-rechevyh-technologiy/center-rechevyh-technologiy.png",
-  "previewImageFile": "/case-previews/center-rechevyh-technologiy.png",
+  "updatedAt": "2026-02-18T12:34:32.341Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/crt.svg",
+  "previewImageFile": "/case-previews/center-rechevyh-technologiy.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2017
 }

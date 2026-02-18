@@ -8,11 +8,13 @@
   "title": "Приложение для работы с государственными реестрами",
   "description": "",
   "createdAt": "2026-02-18T10:42:29.193Z",
-  "updatedAt": "2026-02-18T11:12:36.550Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/control-mobile/control-mobile.png",
-  "previewImageFile": "/case-previews/control-mobile.png",
+  "updatedAt": "2026-02-18T12:34:33.955Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/control-mobile_big.svg",
+  "previewImageFile": "/case-previews/control-mobile.svg",
   "serviceIds": [
     "ux-design",
-    "ux-outsource"
-  ]
+    "ux-outsource",
+    "constructor"
+  ],
+  "year": 2019
 }

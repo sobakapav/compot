@@ -8,10 +8,11 @@
   "title": "Улучшение рекламных показателей профильного СМИ",
   "description": "",
   "createdAt": "2026-02-18T10:42:55.889Z",
-  "updatedAt": "2026-02-18T11:12:37.038Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:34:54.997Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ohlebe.svg",
+  "previewImageFile": "/case-previews/ohlebe.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2021
 }

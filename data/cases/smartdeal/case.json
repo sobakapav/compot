@@ -8,10 +8,11 @@
   "title": "Дизайн рабочего места оператора",
   "description": "",
   "createdAt": "2026-02-18T10:43:05.152Z",
-  "updatedAt": "2026-02-18T11:12:37.286Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:35:05.290Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/smartdeal.svg",
+  "previewImageFile": "/case-previews/smartdeal.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2018
 }

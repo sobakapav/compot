@@ -8,10 +8,11 @@
   "title": "Контент для сайта инженерного завода",
   "description": "",
   "createdAt": "2026-02-18T10:42:40.086Z",
-  "updatedAt": "2026-02-18T11:12:36.561Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/flarm/flarm.png",
-  "previewImageFile": "/case-previews/flarm.png",
+  "updatedAt": "2026-02-18T12:34:43.561Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/flarm.svg",
+  "previewImageFile": "/case-previews/flarm.svg",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2013
 }

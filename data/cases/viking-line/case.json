@@ -8,10 +8,11 @@
   "title": "Справочная система для судоходного концерна",
   "description": "",
   "createdAt": "2026-02-18T10:43:10.174Z",
-  "updatedAt": "2026-02-18T11:12:37.525Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/viking-line/viking-line.png",
-  "previewImageFile": "/case-previews/viking-line.png",
+  "updatedAt": "2026-02-18T12:35:09.799Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/vikingline.svg",
+  "previewImageFile": "/case-previews/viking-line.svg",
   "serviceIds": [
     "content-design"
-  ]
+  ],
+  "year": 2013
 }

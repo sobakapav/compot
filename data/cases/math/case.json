@@ -8,10 +8,11 @@
   "title": "Дизайн интерфейса математической игры для школьников",
   "description": "",
   "createdAt": "2026-02-18T10:42:52.696Z",
-  "updatedAt": "2026-02-18T11:12:37.034Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/math/math.png",
-  "previewImageFile": "/case-previews/math.png",
+  "updatedAt": "2026-02-18T12:34:51.917Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/matigra.svg",
+  "previewImageFile": "/case-previews/math.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2021
 }

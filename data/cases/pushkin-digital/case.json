@@ -8,11 +8,12 @@
   "title": "Дизайн интерфейса коллекции материалов Пушкинского дома",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.181Z",
-  "updatedAt": "2026-02-18T11:12:37.279Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/itmo/main.png",
-  "previewImageFile": "/case-previews/pushkin-digital.png",
+  "updatedAt": "2026-02-18T12:35:01.306Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/itmo_big.svg",
+  "previewImageFile": "/case-previews/pushkin-digital.svg",
   "serviceIds": [
     "research",
     "ux-design"
-  ]
+  ],
+  "year": 2024
 }

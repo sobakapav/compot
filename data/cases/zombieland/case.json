@@ -8,11 +8,12 @@
   "title": "Старт продукта",
   "description": "",
   "createdAt": "2026-02-18T10:43:12.929Z",
-  "updatedAt": "2026-02-18T11:12:37.528Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/zombieland/zombieland.png",
-  "previewImageFile": "/case-previews/zombieland.png",
+  "updatedAt": "2026-02-18T12:35:12.478Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/zombieland.svg",
+  "previewImageFile": "/case-previews/zombieland.svg",
   "serviceIds": [
     "product-team",
     "research"
-  ]
+  ],
+  "year": 2014
 }

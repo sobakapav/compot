@@ -8,12 +8,13 @@
   "title": "Дизайн MVP системы поддержки принятия решений",
   "description": "",
   "createdAt": "2026-02-18T10:42:23.059Z",
-  "updatedAt": "2026-02-18T11:12:36.544Z",
-  "previewImageSourceUrl": "",
-  "previewImageFile": "",
+  "updatedAt": "2026-02-18T12:34:28.587Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/anggell.svg",
+  "previewImageFile": "/case-previews/anggell.svg",
   "serviceIds": [
     "product-team",
     "prototype",
     "ux-outsource"
-  ]
+  ],
+  "year": 2022
 }

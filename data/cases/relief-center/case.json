@@ -8,10 +8,11 @@
   "title": "Платформа для создания B2B-сайтов",
   "description": "",
   "createdAt": "2026-02-18T10:43:02.082Z",
-  "updatedAt": "2026-02-18T11:12:37.283Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/relief-center/relief-center.png",
-  "previewImageFile": "/case-previews/relief-center.png",
+  "updatedAt": "2026-02-18T12:35:02.054Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/rcenter.svg",
+  "previewImageFile": "/case-previews/relief-center.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2015
 }

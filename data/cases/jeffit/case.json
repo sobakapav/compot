@@ -8,10 +8,11 @@
   "title": "Система автоматизации для юридических департаментов",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.182Z",
-  "updatedAt": "2026-02-18T11:12:36.799Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/jeffit/main.png",
-  "previewImageFile": "/case-previews/jeffit.png",
+  "updatedAt": "2026-02-18T12:34:47.263Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/jeffit.svg",
+  "previewImageFile": "/case-previews/jeffit.svg",
   "serviceIds": [
     "ux-outsource"
-  ]
+  ],
+  "year": 2024
 }

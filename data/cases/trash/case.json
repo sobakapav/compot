@@ -8,10 +8,11 @@
   "title": "Дизайн интерфейса для Департамента природопользования Москвы",
   "description": "",
   "createdAt": "2026-02-18T10:43:08.538Z",
-  "updatedAt": "2026-02-18T11:12:37.522Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/trash/trash.png",
-  "previewImageFile": "/case-previews/trash.png",
+  "updatedAt": "2026-02-18T12:35:09.046Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/moscowdept.svg",
+  "previewImageFile": "/case-previews/trash.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2019
 }

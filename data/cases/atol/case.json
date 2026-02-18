@@ -8,10 +8,11 @@
   "title": "Интерфес для управления онлайн-кассами",
   "description": "",
   "createdAt": "2026-02-18T10:42:23.371Z",
-  "updatedAt": "2026-02-18T11:12:36.545Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/atol/atol.png",
-  "previewImageFile": "/case-previews/atol.png",
+  "updatedAt": "2026-02-18T12:34:28.845Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/atol.svg",
+  "previewImageFile": "/case-previews/atol.svg",
   "serviceIds": [
     "ux-design"
-  ]
+  ],
+  "year": 2018
 }

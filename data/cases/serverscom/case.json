@@ -8,10 +8,11 @@
   "title": "Интерфейс клиентского портала",
   "description": "",
   "createdAt": "2026-02-18T10:43:03.789Z",
-  "updatedAt": "2026-02-18T11:12:37.285Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/serverscom/serverscom.png",
-  "previewImageFile": "/case-previews/serverscom.png",
+  "updatedAt": "2026-02-18T12:35:03.902Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/serverscom.svg",
+  "previewImageFile": "/case-previews/serverscom.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2016
 }

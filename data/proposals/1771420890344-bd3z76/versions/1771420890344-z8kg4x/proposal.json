@@ -1,0 +1,26 @@
+{
+  "proposalId": "1771420890344-bd3z76",
+  "versionId": "1771420890344-z8kg4x",
+  "createdAt": "2026-02-18T13:21:30.344Z",
+  "source": "create",
+  "pdf": false,
+  "proposal": {
+    "clientName": "",
+    "serviceName": "",
+    "serviceId": "",
+    "clientLogoDataUrl": "",
+    "summary": "",
+    "scope": "",
+    "timeline": "",
+    "price": "",
+    "nuances": "",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "",
+    "contactTelegram": "",
+    "contactPhone": "",
+    "validUntil": ""
+  },
+  "selectedCaseIds": [],
+  "planTasks": []
+}

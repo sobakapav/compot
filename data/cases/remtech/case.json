@@ -8,10 +8,11 @@
   "title": "Дизайн интерфейсов для поставщика промышленных полимеров",
   "description": "",
   "createdAt": "2026-02-18T10:43:02.468Z",
-  "updatedAt": "2026-02-18T11:12:37.283Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/remtech/main.png",
-  "previewImageFile": "/case-previews/remtech.png",
+  "updatedAt": "2026-02-18T12:35:02.572Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/remtech.svg",
+  "previewImageFile": "/case-previews/remtech.svg",
   "serviceIds": [
     "redesign"
-  ]
+  ],
+  "year": 2020
 }

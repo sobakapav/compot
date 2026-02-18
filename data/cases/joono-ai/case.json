@@ -8,10 +8,11 @@
   "title": "Исследование пользователей AI-фоторедактора",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.181Z",
-  "updatedAt": "2026-02-18T11:12:36.800Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/joono-ai/main.png",
-  "previewImageFile": "/case-previews/joono-ai.png",
+  "updatedAt": "2026-02-18T12:34:48.313Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/joono-ai.svg",
+  "previewImageFile": "/case-previews/joono-ai.svg",
   "serviceIds": [
     "research"
-  ]
+  ],
+  "year": 2025
 }

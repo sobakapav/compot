@@ -8,11 +8,12 @@
   "title": "Дизайн авиабилета и писем",
   "description": "",
   "createdAt": "2026-02-18T10:43:05.150Z",
-  "updatedAt": "2026-02-18T11:12:37.286Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/sindbad/sindbad.jpg",
-  "previewImageFile": "/case-previews/sindbad.jpg",
+  "updatedAt": "2026-02-18T12:35:04.773Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/sindbad.svg",
+  "previewImageFile": "/case-previews/sindbad.svg",
   "serviceIds": [
     "content-design",
     "ux-design"
-  ]
+  ],
+  "year": 2018
 }

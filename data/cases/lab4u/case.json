@@ -8,10 +8,11 @@
   "title": "Аудит сайта и приложения медицинской лаборатории",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.180Z",
-  "updatedAt": "2026-02-18T11:12:37.032Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/lab4u/main.png",
-  "previewImageFile": "/case-previews/lab4u.png",
+  "updatedAt": "2026-02-18T12:34:49.902Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/lab4u.svg",
+  "previewImageFile": "/case-previews/lab4u.svg",
   "serviceIds": [
     "ux-audit"
-  ]
+  ],
+  "year": 2025
 }

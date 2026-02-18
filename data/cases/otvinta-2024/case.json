@@ -8,11 +8,12 @@
   "title": "UX-отдел на аутсорсе для строительного интернет-магазина",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.184Z",
-  "updatedAt": "2026-02-18T11:12:37.273Z",
-  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/otvinta-2024/main.png",
-  "previewImageFile": "/case-previews/otvinta-2024.png",
+  "updatedAt": "2026-02-18T12:34:57.729Z",
+  "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/otvinta2.svg",
+  "previewImageFile": "/case-previews/otvinta-2024.svg",
   "serviceIds": [
     "new-features",
     "ux-outsource"
-  ]
+  ],
+  "year": 2024
 }
