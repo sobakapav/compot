@@ -329,11 +329,6 @@ export default function Home() {
       window.open(url, "_blank", "noopener,noreferrer");
       const link = document.createElement("a");
       link.href = url;
-      const now = new Date();
-      const stamp = `${now.toISOString().slice(0, 10)}_${now
-        .toISOString()
-        .slice(11, 16)
-        .replace(":", "-")}`;
       link.download = fileName;
       link.rel = "noopener";
       link.click();
@@ -512,7 +507,7 @@ export default function Home() {
     loadCases();
   }, []);
 
-  const applyTemplate = async () => {
+  const applyTemplate = async (block?: typeof activeBlock) => {
     if (!selectedHistoryId) return;
     const selectedItem = history.find(
       (item) => item.proposalId === selectedHistoryId
@@ -527,15 +522,50 @@ export default function Home() {
     const data = await response.json();
     const proposal: Proposal | undefined = data?.item?.proposal;
     if (!proposal) return;
-    const emptyProposal = Object.fromEntries(
-      Object.keys(defaultValues).map((key) => [key, ""])
-    ) as Proposal;
-    setProposal({
-      ...emptyProposal,
-      ...proposal,
+    if (!block) {
+      const emptyProposal = Object.fromEntries(
+        Object.keys(defaultValues).map((key) => [key, ""])
+      ) as Proposal;
+      setProposal({
+        ...emptyProposal,
+        ...proposal,
+      });
+      setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
+      setPlanTasks(data?.item?.planTasks ?? []);
+      return;
+    }
+
+    setProposal((prev) => {
+      const next = { ...prev };
+      if (block === "header") {
+        next.clientName = proposal.clientName ?? "";
+        next.serviceName = proposal.serviceName ?? "";
+        next.serviceId = proposal.serviceId ?? "";
+        next.clientLogoDataUrl = proposal.clientLogoDataUrl ?? "";
+      }
+      if (block === "tasks") {
+        next.summary = proposal.summary ?? "";
+        next.scope = proposal.scope ?? "";
+      }
+      if (block === "terms") {
+        next.timeline = proposal.timeline ?? "";
+        next.price = proposal.price ?? "";
+        next.nuances = proposal.nuances ?? "";
+      }
+      if (block === "footer") {
+        next.contactEmail = proposal.contactEmail ?? "";
+        next.contactTelegram = proposal.contactTelegram ?? "";
+        next.contactPhone = proposal.contactPhone ?? "";
+        next.validUntil = proposal.validUntil ?? "";
+      }
+      return next;
     });
-    setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
-    setPlanTasks(data?.item?.planTasks ?? []);
+    if (block === "cases") {
+      setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
+    }
+    if (block === "plan") {
+      setPlanTasks(data?.item?.planTasks ?? []);
+    }
   };
 
   const updateField = (field: ProposalField, value: string) => {
@@ -979,10 +1009,21 @@ export default function Home() {
                   </div>
                   <button
                     type="button"
-                    onClick={applyTemplate}
+                    onClick={() => applyTemplate(activeBlock)}
                     className="rounded-md border border-zinc-200 bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800"
                   >
-                    Взять как шаблон
+                    {activeBlock
+                      ? `Взять ${
+                          {
+                            header: "Заголовок",
+                            tasks: "Задачи",
+                            plan: "План",
+                            terms: "Сроки-стоимость",
+                            cases: "Похожие проекты",
+                            footer: "Подвал",
+                          }[activeBlock]
+                        } как шаблон`
+                      : "Взять как шаблон"}
                   </button>
                 </div>
                 {history.length === 0 && (
