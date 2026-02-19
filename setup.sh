@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+LOG_PREFIX="[УСТАНОВКА]"
+TEMP_LOG="/tmp/compot-setup.log"
+FINAL_LOG=""
+log() {
+  if [[ -n "${FINAL_LOG}" ]]; then
+    echo "${LOG_PREFIX} $*" | tee -a "${FINAL_LOG}"
+  else
+    echo "${LOG_PREFIX} $*" | tee -a "${TEMP_LOG}"
+  fi
+}
+
+abort() {
+  echo "${LOG_PREFIX} ОШИБКА: $*" >&2
+  exit 1
+}
+
+REPO_URL="https://github.com/sobakapav/compot"
+TARGET_DIR="$HOME/compot"
+NODE_VERSION="25.6.1"
+PORT="3000"
+
+log "Старт полного развёртывания Compot."
+log "Папка установки: ${TARGET_DIR}"
+log "Репозиторий: ${REPO_URL}"
+log "Желаемая версия Node.js: v${NODE_VERSION}"
+
+if [[ -d "${TARGET_DIR}" ]]; then
+  abort "Папка ${TARGET_DIR} уже существует. Удалите её или переместите, затем запустите скрипт снова."
+fi
+
+if ! command -v xcode-select >/dev/null 2>&1; then
+  abort "Не найден xcode-select. Установите Xcode Command Line Tools и запустите снова."
+fi
+
+if ! xcode-select -p >/dev/null 2>&1; then
+  log "Xcode Command Line Tools не установлены. Запускаю установку..."
+  xcode-select --install || true
+  log "После завершения установки Xcode Command Line Tools запустите скрипт ещё раз."
+  exit 1
+fi
+
+if ! command -v brew >/dev/null 2>&1; then
+  log "Homebrew не найден. Устанавливаю Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  log "Homebrew уже установлен."
+fi
+
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+else
+  abort "Не удалось найти brew после установки."
+fi
+
+log "Обновляю brew..."
+brew update
+
+log "Устанавливаю базовые зависимости через Homebrew..."
+brew install git
+brew install wget
+brew install curl
+
+log "Устанавливаю шрифт PT Sans Narrow..."
+brew tap homebrew/cask-fonts
+brew install --cask font-pt-sans
+
+CURRENT_NODE_VERSION=""
+if command -v node >/dev/null 2>&1; then
+  CURRENT_NODE_VERSION="$(node -v | sed 's/^v//')"
+fi
+
+if [[ "${CURRENT_NODE_VERSION}" != "${NODE_VERSION}" ]]; then
+  log "Текущая версия Node.js: ${CURRENT_NODE_VERSION:-не установлена}. Устанавливаю v${NODE_VERSION}..."
+  NODE_PKG="/tmp/node-v${NODE_VERSION}.pkg"
+  curl -L -o "${NODE_PKG}" "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.pkg"
+  sudo installer -pkg "${NODE_PKG}" -target /
+  rm -f "${NODE_PKG}"
+else
+  log "Node.js уже нужной версии v${NODE_VERSION}."
+fi
+
+log "Клонирую репозиторий..."
+git clone "${REPO_URL}" "${TARGET_DIR}"
+
+log "Перехожу в папку проекта..."
+cd "${TARGET_DIR}"
+
+LOG_DIR="${TARGET_DIR}/logs"
+FINAL_LOG="${LOG_DIR}/setup.log"
+mkdir -p "${LOG_DIR}"
+if [[ -f "${TEMP_LOG}" ]]; then
+  cat "${TEMP_LOG}" >> "${FINAL_LOG}"
+  rm -f "${TEMP_LOG}"
+fi
+log "Логи установки сохраняются в ${FINAL_LOG}"
+
+log "Выставляю права на запуск скриптов..."
+chmod +x "${TARGET_DIR}/run.sh" "${TARGET_DIR}/stop.sh" "${TARGET_DIR}/update.sh"
+
+log "Устанавливаю npm-зависимости (npm ci)..."
+npm ci
+
+log "Устанавливаю браузеры для Playwright..."
+npx playwright install
+
+log "Собираю проект (npm run build)..."
+npm run build
+
+log "Запускаю сервер через run.sh..."
+bash "${TARGET_DIR}/run.sh"
+
+log "Подсказка: для повторного запуска используйте ${TARGET_DIR}/run.sh"
+log "Подсказка: для остановки используйте ${TARGET_DIR}/stop.sh"
+log "Подсказка: для обновления используйте ${TARGET_DIR}/update.sh"
