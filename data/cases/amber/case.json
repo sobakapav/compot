@@ -2,18 +2,17 @@
   "schemaVersion": 1,
   "id": "amber",
   "link": "https://sobakapav.ru/portfolio/amber",
-  "clientName": "Amber",
+  "clientName": "amber",
   "clientLogoFile": "",
   "preview": "",
   "title": "Конструктор CRM для среднего бизнеса",
   "description": "",
   "createdAt": "2026-02-18T10:42:22.668Z",
-  "updatedAt": "2026-02-19T10:32:39.758Z",
+  "updatedAt": "2026-02-19T16:31:26.503Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/amber.svg",
   "previewImageFile": "/case-previews/amber.svg",
   "serviceIds": [
-    "ux-design",
-    "constructor"
+    "ux-design"
   ],
   "year": 2016
 }

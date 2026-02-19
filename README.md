@@ -31,7 +31,7 @@ npm run dev
 
 ## Синхронизация кейсов
 
-Источник: `https://sobakapav.ru/listPortfolioAsJson`
+Источник: `https://sobakapav.ru/listPortfolio.json`
 
 Скрипт:
 - тянет данные раз в сутки при `npm run dev`;
@@ -40,7 +40,7 @@ npm run dev
 
 ## Синхронизация услуг
 
-Источник: `https://sobakapav.ru/listServicesAsJson.json`
+Источник: `https://sobakapav.ru/listServices.json`
 
 Скрипт:
 - тянет данные раз в сутки при первом обращении к `/api/services` (и перед `npm run dev`/`npm start`);

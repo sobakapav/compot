@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const SOURCE_URL =
-  process.env.CASES_URL ?? "https://sobakapav.ru/listPortfolioAsJson.json";
+  process.env.CASES_URL ?? "https://sobakapav.ru/listPortfolio.json";
 const FORCE = process.argv.includes("--force");
 
 const rootDir = process.cwd();

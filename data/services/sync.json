@@ -3,7 +3,7 @@
   "status": "synced",
   "syncedAt": "2026-02-19T10:31:49.310Z",
   "lastSyncDate": "2026-02-19",
-  "sourceUrl": "https://sobakapav.ru/listServicesAsJson.json",
+  "sourceUrl": "https://sobakapav.ru/listServices.json",
   "itemsCount": 0,
   "missingServiceIds": [],
   "missingFields": []

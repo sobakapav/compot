@@ -2,19 +2,18 @@
   "schemaVersion": 1,
   "id": "elma-bot",
   "link": "https://sobakapav.ru/portfolio/elma-bot",
-  "clientName": "ELMA",
+  "clientName": "elma",
   "clientLogoFile": "",
   "preview": "",
   "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.183Z",
-  "updatedAt": "2026-02-19T10:32:39.777Z",
+  "updatedAt": "2026-02-19T16:31:26.523Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/elma_big.svg",
   "previewImageFile": "/case-previews/elma-bot.svg",
   "serviceIds": [
     "research",
-    "ux-design",
-    "constructor"
+    "ux-design"
   ],
   "year": 2023
 }

@@ -2,19 +2,18 @@
   "schemaVersion": 1,
   "id": "control-mobile",
   "link": "https://sobakapav.ru/portfolio/control-mobile",
-  "clientName": "Data Solution",
+  "clientName": "control",
   "clientLogoFile": "",
   "preview": "",
   "title": "Приложение для работы с государственными реестрами",
   "description": "",
   "createdAt": "2026-02-18T10:42:29.193Z",
-  "updatedAt": "2026-02-19T10:32:39.768Z",
+  "updatedAt": "2026-02-19T16:31:26.514Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/control-mobile_big.svg",
   "previewImageFile": "/case-previews/control-mobile.svg",
   "serviceIds": [
     "ux-design",
-    "ux-outsource",
-    "constructor"
+    "ux-outsource"
   ],
   "year": 2019
 }

@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const SOURCE_URL = "https://sobakapav.ru/listServicesAsJson.json";
+const SOURCE_URL = "https://sobakapav.ru/listServices.json";
 const SERVICES_DIR = path.join(process.cwd(), "data", "services");
 const INDEX_PATH = path.join(SERVICES_DIR, "index.json");
 const SYNC_PATH = path.join(SERVICES_DIR, "sync.json");

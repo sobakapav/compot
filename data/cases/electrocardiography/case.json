@@ -2,19 +2,18 @@
   "schemaVersion": 1,
   "id": "electrocardiography",
   "link": "https://sobakapav.ru/portfolio/electrocardiography",
-  "clientName": "Erna",
+  "clientName": "erna",
   "clientLogoFile": "",
   "preview": "",
   "title": "Медицинский интерфейс для работы с ЭКГ",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.179Z",
-  "updatedAt": "2026-02-19T10:32:39.776Z",
+  "updatedAt": "2026-02-19T16:31:26.523Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/erna_big.png",
   "previewImageFile": "/case-previews/electrocardiography.png",
   "serviceIds": [
     "research",
-    "ux-design",
-    "constructor"
+    "ux-design"
   ],
   "year": 2025
 }

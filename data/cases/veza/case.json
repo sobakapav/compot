@@ -2,19 +2,18 @@
   "schemaVersion": 1,
   "id": "veza",
   "link": "https://sobakapav.ru/portfolio/veza",
-  "clientName": "ВЕЗА",
+  "clientName": "veza",
   "clientLogoFile": "",
   "preview": "",
   "title": "Личный кабинет для проектировщиков и монтажников",
   "description": "",
   "createdAt": "2026-02-18T10:43:08.908Z",
-  "updatedAt": "2026-02-19T10:32:40.489Z",
+  "updatedAt": "2026-02-19T16:31:27.055Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/veza.svg",
   "previewImageFile": "/case-previews/veza.svg",
   "serviceIds": [
     "ux-design",
-    "research",
-    "constructor"
+    "research"
   ],
   "year": 2019
 }
