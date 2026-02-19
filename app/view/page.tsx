@@ -35,7 +35,15 @@ const defaultValues: Proposal = {
   scope: "",
   timeline: "",
   price: "",
+  headerCommentTitle: "",
+  headerComment: "",
+  headerCommentVisible: false,
+  nuancesTitle: "",
   nuances: "Детальный план производства — в отдельном документе",
+  nuancesVisible: true,
+  tasksCommentTitle: "",
+  tasksComment: "",
+  tasksCommentVisible: false,
   assumptions: "",
   deliverables: "",
   contactEmail: "pro@sobakapav.ru",
@@ -47,6 +55,9 @@ const defaultValues: Proposal = {
   casesRows: 1,
   casesTitle1: "Похожие проекты",
   casesTitle2: "Похожие проекты 2",
+  casesCommentTitle: "",
+  casesComment: "",
+  casesCommentVisible: false,
 };
 
 const escapeHtml = (value: string) =>
@@ -228,7 +239,7 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
       </a>
       <section className="proposal-page relative w-full max-w-[794px] rounded-none bg-white px-12 pb-20 pt-14 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
         <div className="flex flex-col gap-0">
-          <section className="mb-2 grid grid-cols-1 gap-6 md:grid-cols-5">
+          <section className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-5">
             <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2] md:col-span-3">
               <span>Коммерческое предложение</span>
               <br />
@@ -277,7 +288,28 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
             </div>
           </section>
 
-          <section className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-5">
+          {proposal.headerCommentVisible && (
+            <section className="mb-6 flex flex-col gap-0">
+              <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                <div className="hidden md:block md:col-span-2" />
+                <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                  {proposal.headerCommentTitle && (
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                      {proposal.headerCommentTitle}
+                    </div>
+                  )}
+                  <div
+                    className="rich-field text-[15px] text-zinc-900 leading-[1.2]"
+                    dangerouslySetInnerHTML={{
+                      __html: decodeHtmlEntities(proposal.headerComment || ""),
+                    }}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
+
+          <section className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-5">
             <div className="flex flex-col gap-1 md:col-span-2">
               <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400 leading-[1] inline-flex items-baseline">
                 Цель заказчика
@@ -309,7 +341,28 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
             </div>
           </section>
 
-          <section className="mb-1 flex flex-col gap-0">
+          {proposal.tasksCommentVisible && (
+            <section className="mb-6 flex flex-col gap-0">
+              <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                <div className="hidden md:block md:col-span-2" />
+                <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                  {proposal.tasksCommentTitle && (
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                      {proposal.tasksCommentTitle}
+                    </div>
+                  )}
+                  <div
+                    className="rich-field text-[15px] text-zinc-900 leading-[1.2]"
+                    dangerouslySetInnerHTML={{
+                      __html: decodeHtmlEntities(proposal.tasksComment || ""),
+                    }}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
+
+          <section className="mb-6 flex flex-col gap-0">
             <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
               Этапы и результаты работ
             </div>
@@ -411,20 +464,28 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
             </div>
           </section>
 
-          <section className="mb-1 flex flex-col gap-0">
-            <div className="grid grid-cols-1 md:grid-cols-5">
-              <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-                <div
-                  className="rich-field text-[15px] text-zinc-900 leading-[1.2]"
-                  dangerouslySetInnerHTML={{
-                    __html: decodeHtmlEntities(proposal.nuances || ""),
-                  }}
-                />
+          {proposal.nuancesVisible && (
+            <section className="mb-6 flex flex-col gap-0">
+              <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                <div className="hidden md:block md:col-span-2" />
+                <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                  {proposal.nuancesTitle && (
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                      {proposal.nuancesTitle}
+                    </div>
+                  )}
+                  <div
+                    className="rich-field text-[15px] text-zinc-900 leading-[1.2]"
+                    dangerouslySetInnerHTML={{
+                      __html: decodeHtmlEntities(proposal.nuances || ""),
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
 
-          <section className="mb-2 flex flex-col gap-0">
+          <section className="mb-6 flex flex-col gap-0">
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
@@ -443,7 +504,28 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
             </div>
           </section>
 
-          <section className="mt-4 flex flex-col gap-2">
+          {proposal.casesCommentVisible && (
+            <section className="mb-6 flex flex-col gap-0">
+              <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                <div className="hidden md:block md:col-span-2" />
+                <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                  {proposal.casesCommentTitle && (
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                      {proposal.casesCommentTitle}
+                    </div>
+                  )}
+                  <div
+                    className="rich-field text-[15px] text-zinc-900 leading-[1.2]"
+                    dangerouslySetInnerHTML={{
+                      __html: decodeHtmlEntities(proposal.casesComment || ""),
+                    }}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
+
+          <section className="flex flex-col gap-2">
             <div className="grid grid-cols-1 gap-2 md:grid-cols-5 md:items-end">
               <div className="flex flex-col gap-1 md:col-span-1 md:justify-end md:self-end">
                 <div className="proposal-headline text-[10px] uppercase tracking-[0.2em] text-zinc-400">

@@ -55,6 +55,14 @@ body {
   letter-spacing: 0.04em;
 }
 
+.proposal-col-gap-8 {
+  column-gap: 8px !important;
+}
+
+.proposal-row-gap-0 {
+  row-gap: 0 !important;
+}
+
 .rich-field p {
   margin: 0 0 0.5rem 0;
 }

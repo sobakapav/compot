@@ -21,11 +21,7 @@ This file describes the key constraints, layout rules, and implementation conven
 - Any layout change in `/edit` must be mirrored in `/print` (and typically `/view`).
 
 ## Layout & Spacing Rules (must match in HTML and PDF)
-- **Header → Tasks:** 8px
-- **Plan → Nuances:** 4px
-- **Nuances → Cases:** 4px
-- **Cases → Footer:** 8px
-- Add **16px space above Tasks** and **16px space above Footer**.
+- **Vertical spacing between all blocks:** 24px (including comments).
 - In `/edit`, there is **extra hygienic space above and below** the page for editing only (not in PDF): currently 32px top/bottom.
 
 ## Typography
@@ -63,6 +59,11 @@ This file describes the key constraints, layout rules, and implementation conven
 - Separate block below Plan, **no visible header**.
 - Default text: “Детальный план производства — в отдельном документе”.
 - Rich text behaves the same as summary/scope.
+
+## Comment Blocks
+- Comment blocks (for Header, Tasks, Plan, Cases) are independent blocks.
+- Title sits **above** the comment text, both in columns 3–5; columns 1–2 are empty.
+- Comment text is rich text with the same controls as `summary`/`scope`.
 
 ## Cases Block (“Похожие проекты”)
 - 5 cards per row.

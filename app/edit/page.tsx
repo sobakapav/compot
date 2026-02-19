@@ -29,7 +29,15 @@ type ProposalHistoryItem = {
   scope: "",
   timeline: "",
   price: "",
+  headerCommentTitle: "",
+  headerComment: "",
+  headerCommentVisible: false,
+  nuancesTitle: "",
   nuances: "Детальный план производства — в отдельном документе",
+  nuancesVisible: true,
+  tasksCommentTitle: "",
+  tasksComment: "",
+  tasksCommentVisible: false,
   assumptions: "",
   deliverables: "",
   contactEmail: "pro@sobakapav.ru",
@@ -41,6 +49,9 @@ type ProposalHistoryItem = {
   casesRows: 1,
   casesTitle1: "Похожие проекты",
   casesTitle2: "Похожие проекты 2",
+  casesCommentTitle: "",
+  casesComment: "",
+  casesCommentVisible: false,
 };
 
 type ProposalField = keyof Proposal;
@@ -51,7 +62,10 @@ const blocks = [
   { id: "timeline", label: "Сроки", field: "timeline" },
   { id: "price", label: "Стоимость", field: "price" },
   { id: "deliverables", label: "Результаты", field: "deliverables" },
-  { id: "nuances", label: "Нюансы", field: "nuances" },
+  { id: "headerComment", label: "Комментарий к заголовку", field: "headerComment" },
+  { id: "tasksComment", label: "Комментарий к задачам", field: "tasksComment" },
+  { id: "nuances", label: "Комментарий к плану", field: "nuances" },
+  { id: "casesComment", label: "Комментарий к кейсам", field: "casesComment" },
   { id: "footer", label: "Подвал", field: "contactEmail" },
 ] as const;
 
@@ -94,6 +108,34 @@ const useEditableHtml = (value: string) => {
   return ref;
 };
 
+const useSyncEditableText = (
+  ref: React.RefObject<HTMLDivElement>,
+  value: string,
+  enabled = true
+) => {
+  useEffect(() => {
+    if (!enabled) return;
+    if (!ref.current) return;
+    if (ref.current.textContent !== value) {
+      ref.current.textContent = value;
+    }
+  }, [enabled, value, ref]);
+};
+
+const useSyncEditableHtml = (
+  ref: React.RefObject<HTMLDivElement>,
+  value: string,
+  enabled = true
+) => {
+  useEffect(() => {
+    if (!enabled) return;
+    if (!ref.current) return;
+    if (ref.current.innerHTML !== value) {
+      ref.current.innerHTML = value;
+    }
+  }, [enabled, value, ref]);
+};
+
 const splitLinkSlug = (link: string) => {
   if (!link) return { base: "", slug: "" };
   const clean = link.replace(/\/$/, "");
@@ -129,7 +171,16 @@ export default function Home() {
   const planTasksRef = useRef<PlanTask[]>([]);
   const [activeField, setActiveField] = useState<ProposalField | null>(null);
   const [activeBlock, setActiveBlock] = useState<
-    "header" | "tasks" | "plan" | "terms" | "cases" | "footer" | null
+    | "header"
+    | "tasks"
+    | "plan"
+    | "terms"
+    | "cases"
+    | "footer"
+    | "headerComment"
+    | "tasksComment"
+    | "casesComment"
+    | null
   >(null);
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [cases, setCases] = useState<CaseItem[]>([]);
@@ -194,6 +245,22 @@ export default function Home() {
   });
   const planStageRefs = useRef<Record<string, HTMLInputElement | null>>({});
   const planResultsRefs = useRef<Record<string, HTMLTextAreaElement | null>>({});
+  const pageRef = useRef<HTMLDivElement | null>(null);
+  const blockGroupRefs = useRef<Record<"header" | "tasks" | "plan" | "cases", HTMLDivElement | null>>({
+    header: null,
+    tasks: null,
+    plan: null,
+    cases: null,
+  });
+  const commentAnchorBlocks: Array<"header" | "tasks" | "plan" | "cases"> = [
+    "header",
+    "tasks",
+    "plan",
+    "cases",
+  ];
+  const [commentAnchors, setCommentAnchors] = useState<
+    Partial<Record<"header" | "tasks" | "plan" | "cases", number>>
+  >({});
 
   const serviceTitleMap = useMemo(
     () => new Map(services.map((service) => [service.id, service.title])),
@@ -624,6 +691,28 @@ export default function Home() {
     planTasksRef.current = planTasks;
   }, [planTasks]);
 
+  useLayoutEffect(() => {
+    requestAnimationFrame(() => refreshCommentAnchors());
+  }, [proposal, planTasks, casesRows, selectedCaseIds.length]);
+
+  useEffect(() => {
+    const handleResize = () => refreshCommentAnchors();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [proposal, planTasks, casesRows, selectedCaseIds.length]);
+
+  useEffect(() => {
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => {
+      requestAnimationFrame(() => refreshCommentAnchors());
+    });
+    commentAnchorBlocks.forEach((block) => {
+      const el = blockGroupRefs.current[block];
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [commentAnchorBlocks]);
+
   useEffect(() => {
     const pid = searchParams.get("proposalId");
     const vid = searchParams.get("versionId");
@@ -825,15 +914,37 @@ export default function Home() {
         next.serviceName = proposal.serviceName ?? "";
         next.serviceId = proposal.serviceId ?? "";
         next.clientLogoDataUrl = proposal.clientLogoDataUrl ?? "";
+        next.headerCommentTitle = proposal.headerCommentTitle ?? "";
+        next.headerComment = proposal.headerComment ?? "";
+        next.headerCommentVisible =
+          proposal.headerCommentVisible ?? false;
+      }
+      if (block === "headerComment") {
+        next.headerCommentTitle = proposal.headerCommentTitle ?? "";
+        next.headerComment = proposal.headerComment ?? "";
+        next.headerCommentVisible =
+          proposal.headerCommentVisible ?? false;
       }
       if (block === "tasks") {
         next.summary = proposal.summary ?? "";
         next.scope = proposal.scope ?? "";
+        next.tasksCommentTitle = proposal.tasksCommentTitle ?? "";
+        next.tasksComment = proposal.tasksComment ?? "";
+        next.tasksCommentVisible =
+          proposal.tasksCommentVisible ?? false;
+      }
+      if (block === "tasksComment") {
+        next.tasksCommentTitle = proposal.tasksCommentTitle ?? "";
+        next.tasksComment = proposal.tasksComment ?? "";
+        next.tasksCommentVisible =
+          proposal.tasksCommentVisible ?? false;
       }
       if (block === "terms") {
         next.timeline = proposal.timeline ?? "";
         next.price = proposal.price ?? "";
+        next.nuancesTitle = proposal.nuancesTitle ?? "";
         next.nuances = proposal.nuances ?? "";
+        next.nuancesVisible = proposal.nuancesVisible ?? true;
       }
       if (block === "footer") {
         next.contactEmail = proposal.contactEmail ?? "";
@@ -844,6 +955,12 @@ export default function Home() {
       if (block === "plan") {
         next.hourlyRate = proposal.hourlyRate ?? "4000";
         next.hourlyRateFrozen = proposal.hourlyRateFrozen ?? false;
+      }
+      if (block === "casesComment") {
+        next.casesCommentTitle = proposal.casesCommentTitle ?? "";
+        next.casesComment = proposal.casesComment ?? "";
+        next.casesCommentVisible =
+          proposal.casesCommentVisible ?? false;
       }
       return next;
     });
@@ -865,12 +982,18 @@ export default function Home() {
           ...prev,
           casesTitle1: templateTitle1,
           casesTitle2: templateRows === 2 ? templateTitle2 : prev.casesTitle2,
+          casesCommentTitle: proposal.casesCommentTitle ?? "",
+          casesComment: proposal.casesComment ?? "",
+          casesCommentVisible: proposal.casesCommentVisible ?? false,
         }));
       } else {
         setSelectedCaseIds(templateCaseIds.slice(0, casesPerRow));
         setProposal((prev) => ({
           ...prev,
           casesTitle1: templateTitle1,
+          casesCommentTitle: proposal.casesCommentTitle ?? "",
+          casesComment: proposal.casesComment ?? "",
+          casesCommentVisible: proposal.casesCommentVisible ?? false,
         }));
       }
     }
@@ -1039,6 +1162,19 @@ export default function Home() {
     }
   };
 
+  const refreshCommentAnchors = () => {
+    if (!pageRef.current) return;
+    const pageTop = pageRef.current.getBoundingClientRect().top;
+    const next: Partial<Record<"header" | "tasks" | "plan" | "cases", number>> =
+      {};
+    commentAnchorBlocks.forEach((block) => {
+      const el = blockGroupRefs.current[block];
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      next[block] = rect.bottom - pageTop;
+    });
+    setCommentAnchors(next);
+  };
 
   const normalizeRichHtml = (html: string) => {
     const container = document.createElement("div");
@@ -1053,18 +1189,21 @@ export default function Home() {
     setProposal((prev) => ({ ...prev, [field]: normalized }));
   };
 
-  const richFields = new Set<ProposalField>(["summary", "scope", "nuances"]);
+  const richFields = new Set<ProposalField>([
+    "summary",
+    "scope",
+    "nuances",
+    "headerComment",
+    "tasksComment",
+    "casesComment",
+  ]);
   const headerFields = new Set<ProposalField>([
     "serviceName",
     "serviceId",
     "clientName",
     "clientLogoDataUrl",
   ]);
-  const showRichControls = activeField
-    ? activeField === "nuances" || activeBlock !== "plan"
-      ? richFields.has(activeField)
-      : false
-    : false;
+  const showRichControls = activeField ? richFields.has(activeField) : false;
   const showHeaderControls = activeField
     ? headerFields.has(activeField)
     : true;
@@ -1188,7 +1327,12 @@ export default function Home() {
     timeline: { history: false },
     price: { history: false },
     deliverables: { history: true },
+    headerCommentTitle: { history: true },
+    headerComment: { history: true },
+    nuancesTitle: { history: true },
     nuances: { history: true },
+    tasksCommentTitle: { history: true },
+    tasksComment: { history: true },
     assumptions: { history: true },
     contactEmail: { history: true },
     contactTelegram: { history: true },
@@ -1199,6 +1343,8 @@ export default function Home() {
     casesRows: { history: false },
     casesTitle1: { history: false },
     casesTitle2: { history: false },
+    casesCommentTitle: { history: true },
+    casesComment: { history: true },
   };
   const showHistory = activeField
     ? controlMap[activeField]?.history
@@ -1208,6 +1354,55 @@ export default function Home() {
   const serviceRef = useEditable(proposal.serviceName);
   const casesTitle1Ref = useEditable(proposal.casesTitle1 ?? "Похожие проекты");
   const casesTitle2Ref = useEditable(proposal.casesTitle2 ?? "Похожие проекты 2");
+  const headerCommentTitleRef = useEditable(proposal.headerCommentTitle ?? "");
+  const headerCommentRef = useEditableHtml(proposal.headerComment ?? "");
+  const tasksCommentTitleRef = useEditable(proposal.tasksCommentTitle ?? "");
+  const tasksCommentRef = useEditableHtml(proposal.tasksComment ?? "");
+  const nuancesTitleRef = useEditable(proposal.nuancesTitle ?? "");
+  const nuancesRef = useEditableHtml(proposal.nuances ?? "");
+  const casesCommentTitleRef = useEditable(proposal.casesCommentTitle ?? "");
+  const casesCommentRef = useEditableHtml(proposal.casesComment ?? "");
+
+  useSyncEditableText(
+    headerCommentTitleRef,
+    proposal.headerCommentTitle ?? "",
+    proposal.headerCommentVisible
+  );
+  useSyncEditableHtml(
+    headerCommentRef,
+    proposal.headerComment ?? "",
+    proposal.headerCommentVisible
+  );
+  useSyncEditableText(
+    tasksCommentTitleRef,
+    proposal.tasksCommentTitle ?? "",
+    proposal.tasksCommentVisible
+  );
+  useSyncEditableHtml(
+    tasksCommentRef,
+    proposal.tasksComment ?? "",
+    proposal.tasksCommentVisible
+  );
+  useSyncEditableText(
+    nuancesTitleRef,
+    proposal.nuancesTitle ?? "",
+    proposal.nuancesVisible
+  );
+  useSyncEditableHtml(
+    nuancesRef,
+    proposal.nuances ?? "",
+    proposal.nuancesVisible
+  );
+  useSyncEditableText(
+    casesCommentTitleRef,
+    proposal.casesCommentTitle ?? "",
+    proposal.casesCommentVisible
+  );
+  useSyncEditableHtml(
+    casesCommentRef,
+    proposal.casesComment ?? "",
+    proposal.casesCommentVisible
+  );
 
   const setFocus = (field: ProposalField, block: typeof activeBlock) => {
     setActiveField(field);
@@ -1376,8 +1571,11 @@ export default function Home() {
                             header: "Заголовок",
                             tasks: "Задачи",
                             plan: "План",
-                            terms: "Нюансы",
+                            terms: "Комментарий к плану",
+                            headerComment: "Комментарий к заголовку",
+                            tasksComment: "Комментарий к задачам",
                             cases: "Похожие проекты",
+                            casesComment: "Комментарий к кейсам",
                             footer: "Подвал",
                           }[activeBlock]
                         } как шаблон`
@@ -1395,14 +1593,18 @@ export default function Home() {
           </div>
         </aside>
         <section className="w-[680px] flex-none">
-        <section className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-0 pt-10 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]">
+        <section
+          ref={pageRef}
+          className="proposal-page relative min-h-screen w-full rounded-none bg-white px-12 pb-0 pt-10 shadow-[0_24px_60px_-40px_rgba(15,23,42,0.55)]"
+        >
           <div className="flex flex-col gap-0">
-            <section
-              data-block="header"
-              className={`mt-8 mb-2 grid grid-cols-1 gap-6 md:grid-cols-5 ${
-                activeBlock === "header" ? "active-block" : ""
-              }`}
-            >
+            <div ref={(el) => (blockGroupRefs.current.header = el)}>
+              <section
+                data-block="header"
+                className={`mt-8 mb-6 grid grid-cols-1 gap-6 md:grid-cols-5 ${
+                  activeBlock === "header" ? "active-block" : ""
+                }`}
+              >
                 <div className="proposal-headline text-[24px] text-zinc-900 leading-[1.2] md:col-span-3">
                   <span>Коммерческое предложение</span>
                   <br />
@@ -1508,14 +1710,76 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              </section>
+            </section>
+            </div>
 
-            <section
-              data-block="tasks"
-              className={`mt-4 grid grid-cols-1 gap-6 md:grid-cols-5 ${
-                activeBlock === "tasks" ? "active-block" : ""
-              }`}
-            >
+            {proposal.headerCommentVisible && (
+              <section
+                data-block="headerComment"
+                className={`mb-6 flex flex-col gap-0 ${
+                  activeBlock === "headerComment" ? "active-block" : ""
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                  <div className="hidden md:block md:col-span-2" />
+                  <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                    <div
+                      ref={headerCommentTitleRef}
+                      className={labelClass}
+                      contentEditable
+                      suppressContentEditableWarning
+                      data-placeholder="Заголовок..."
+                      onFocus={() =>
+                        setFocus("headerCommentTitle", "headerComment")
+                      }
+                      onInput={(event) =>
+                        updateField(
+                          "headerCommentTitle",
+                          event.currentTarget.textContent ?? ""
+                        )
+                      }
+                    />
+                    <div>
+                      <div
+                        ref={headerCommentRef}
+                        className="w-full cursor-text bg-transparent text-[15px] leading-[1.2] text-zinc-900 outline-none rich-field"
+                        contentEditable
+                        suppressContentEditableWarning
+                        data-placeholder="Комментарий..."
+                        onFocus={(event) => {
+                          setFocus("headerComment", "headerComment");
+                          richActiveRef.current = event.currentTarget;
+                          updateRichState();
+                        }}
+                        onKeyDown={handleRichKeyDown}
+                        onClick={(event) => {
+                          const target = event.target as HTMLElement | null;
+                          if (target?.tagName === "A") {
+                            const href = (target as HTMLAnchorElement).href;
+                            if (href)
+                              window.open(href, "_blank", "noopener,noreferrer");
+                          }
+                        }}
+                        onInput={(event) =>
+                          updateRichField(
+                            "headerComment",
+                            event.currentTarget.innerHTML ?? ""
+                          )
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            <div ref={(el) => (blockGroupRefs.current.tasks = el)}>
+              <section
+                data-block="tasks"
+                className={`mb-6 grid grid-cols-1 gap-6 md:grid-cols-5 ${
+                  activeBlock === "tasks" ? "active-block" : ""
+                }`}
+              >
               <div className="flex flex-col gap-1 md:col-span-2">
                 <div className={`${labelClass} leading-[1] inline-flex items-baseline`}>
                   Цель заказчика{" "}
@@ -1586,13 +1850,75 @@ export default function Home() {
                 />
               </div>
             </section>
+            </div>
 
-            <section
-              data-block="plan"
-              className={`mb-1 flex flex-col gap-2 ${
-                activeBlock === "plan" ? "active-block" : ""
-              }`}
-            >
+            {proposal.tasksCommentVisible && (
+              <section
+                data-block="tasksComment"
+                className={`mb-6 flex flex-col gap-0 ${
+                  activeBlock === "tasksComment" ? "active-block" : ""
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                  <div className="hidden md:block md:col-span-2" />
+                  <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                    <div
+                      ref={tasksCommentTitleRef}
+                      className={labelClass}
+                      contentEditable
+                      suppressContentEditableWarning
+                      data-placeholder="Заголовок..."
+                      onFocus={() =>
+                        setFocus("tasksCommentTitle", "tasksComment")
+                      }
+                      onInput={(event) =>
+                        updateField(
+                          "tasksCommentTitle",
+                          event.currentTarget.textContent ?? ""
+                        )
+                      }
+                    />
+                    <div>
+                      <div
+                        ref={tasksCommentRef}
+                        className="w-full cursor-text bg-transparent text-[15px] leading-[1.2] text-zinc-900 outline-none rich-field"
+                        contentEditable
+                        suppressContentEditableWarning
+                        data-placeholder="Комментарий..."
+                        onFocus={(event) => {
+                          setFocus("tasksComment", "tasksComment");
+                          richActiveRef.current = event.currentTarget;
+                          updateRichState();
+                        }}
+                        onKeyDown={handleRichKeyDown}
+                        onClick={(event) => {
+                          const target = event.target as HTMLElement | null;
+                          if (target?.tagName === "A") {
+                            const href = (target as HTMLAnchorElement).href;
+                            if (href)
+                              window.open(href, "_blank", "noopener,noreferrer");
+                          }
+                        }}
+                        onInput={(event) =>
+                          updateRichField(
+                            "tasksComment",
+                            event.currentTarget.innerHTML ?? ""
+                          )
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            <div ref={(el) => (blockGroupRefs.current.plan = el)}>
+              <section
+                data-block="plan"
+                className={`mb-6 flex flex-col gap-2 ${
+                  activeBlock === "plan" ? "active-block" : ""
+                }`}
+              >
               <div className={labelClass}>Этапы и результаты работ</div>
               <div className="bg-transparent">
                 <div className="flex flex-col gap-3">
@@ -1899,54 +2225,74 @@ export default function Home() {
                 </div>
               </div>
             </section>
+            </div>
 
-            <section
-              data-block="terms"
-              className={`mb-1 flex flex-col gap-0 ${
-                activeBlock === "terms" ? "active-block" : ""
-              }`}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-5">
-                <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
-                  <div>
+            {proposal.nuancesVisible && (
+              <section
+                data-block="terms"
+                className={`mb-6 flex flex-col gap-0 ${
+                  activeBlock === "terms" ? "active-block" : ""
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                  <div className="hidden md:block md:col-span-2" />
+                  <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
                     <div
-                      ref={useEditableHtml(proposal.nuances ?? "")}
-                      className="w-full cursor-text bg-transparent text-[15px] leading-[1.2] text-zinc-900 outline-none rich-field"
+                      ref={nuancesTitleRef}
+                      className={labelClass}
                       contentEditable
                       suppressContentEditableWarning
-                      data-placeholder="Нюансы..."
-                      onFocus={(event) => {
-                        setFocus("nuances", "terms");
-                        richActiveRef.current = event.currentTarget;
-                        updateRichState();
-                      }}
-                      onKeyDown={handleRichKeyDown}
-                      onClick={(event) => {
-                        const target = event.target as HTMLElement | null;
-                        if (target?.tagName === "A") {
-                          const href = (target as HTMLAnchorElement).href;
-                          if (href) window.open(href, "_blank", "noopener,noreferrer");
-                        }
-                      }}
+                      data-placeholder="Заголовок..."
+                      onFocus={() => setFocus("nuancesTitle", "terms")}
                       onInput={(event) =>
-                        updateRichField(
-                          "nuances",
-                          event.currentTarget.innerHTML ?? ""
+                        updateField(
+                          "nuancesTitle",
+                          event.currentTarget.textContent ?? ""
                         )
                       }
                     />
+                    <div>
+                      <div
+                        ref={nuancesRef}
+                        className="w-full cursor-text bg-transparent text-[15px] leading-[1.2] text-zinc-900 outline-none rich-field"
+                        contentEditable
+                        suppressContentEditableWarning
+                        data-placeholder="Комментарий..."
+                        onFocus={(event) => {
+                          setFocus("nuances", "terms");
+                          richActiveRef.current = event.currentTarget;
+                          updateRichState();
+                        }}
+                        onKeyDown={handleRichKeyDown}
+                        onClick={(event) => {
+                          const target = event.target as HTMLElement | null;
+                          if (target?.tagName === "A") {
+                            const href = (target as HTMLAnchorElement).href;
+                            if (href)
+                              window.open(href, "_blank", "noopener,noreferrer");
+                          }
+                        }}
+                        onInput={(event) =>
+                          updateRichField(
+                            "nuances",
+                            event.currentTarget.innerHTML ?? ""
+                          )
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
 
-            <section
-              data-block="cases"
-              className={`mb-2 flex flex-col gap-0 ${
-                activeBlock === "cases" ? "active-block" : ""
-              }`}
-              onClick={() => setActiveBlock("cases")}
-            >
+            <div ref={(el) => (blockGroupRefs.current.cases = el)}>
+              <section
+                data-block="cases"
+                className={`mb-6 flex flex-col gap-0 ${
+                  activeBlock === "cases" ? "active-block" : ""
+                }`}
+                onClick={() => setActiveBlock("cases")}
+              >
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-2">
                   <div
@@ -1986,10 +2332,71 @@ export default function Home() {
                 )}
               </div>
             </section>
+            </div>
+
+            {proposal.casesCommentVisible && (
+              <section
+                data-block="casesComment"
+                className={`mb-6 flex flex-col gap-0 ${
+                  activeBlock === "casesComment" ? "active-block" : ""
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-5 proposal-col-gap-8 proposal-row-gap-0">
+                  <div className="hidden md:block md:col-span-2" />
+                  <div className="flex flex-col gap-1 md:col-span-3 md:col-start-3">
+                    <div
+                      ref={casesCommentTitleRef}
+                      className={labelClass}
+                      contentEditable
+                      suppressContentEditableWarning
+                      data-placeholder="Заголовок..."
+                      onFocus={() =>
+                        setFocus("casesCommentTitle", "casesComment")
+                      }
+                      onInput={(event) =>
+                        updateField(
+                          "casesCommentTitle",
+                          event.currentTarget.textContent ?? ""
+                        )
+                      }
+                    />
+                    <div>
+                      <div
+                        ref={casesCommentRef}
+                        className="w-full cursor-text bg-transparent text-[15px] leading-[1.2] text-zinc-900 outline-none rich-field"
+                        contentEditable
+                        suppressContentEditableWarning
+                        data-placeholder="Комментарий..."
+                        onFocus={(event) => {
+                          setFocus("casesComment", "casesComment");
+                          richActiveRef.current = event.currentTarget;
+                          updateRichState();
+                        }}
+                        onKeyDown={handleRichKeyDown}
+                        onClick={(event) => {
+                          const target = event.target as HTMLElement | null;
+                          if (target?.tagName === "A") {
+                            const href = (target as HTMLAnchorElement).href;
+                            if (href)
+                              window.open(href, "_blank", "noopener,noreferrer");
+                          }
+                        }}
+                        onInput={(event) =>
+                          updateRichField(
+                            "casesComment",
+                            event.currentTarget.innerHTML ?? ""
+                          )
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
 
             <section
               data-block="footer"
-              className={`mt-4 flex flex-col gap-2 ${
+              className={`flex flex-col gap-2 ${
                 activeBlock === "footer" ? "active-block" : ""
               }`}
             >
@@ -2104,6 +2511,62 @@ export default function Home() {
               </div>
             </section>
             <div className="h-[32px] shrink-0" />
+          </div>
+          <div className="pointer-events-none absolute inset-y-0 right-0">
+            {commentAnchorBlocks.map((block) => {
+              const top = commentAnchors[block];
+              if (top === undefined) return null;
+              const isVisible =
+                block === "header"
+                  ? proposal.headerCommentVisible
+                  : block === "tasks"
+                  ? proposal.tasksCommentVisible
+                  : block === "plan"
+                  ? proposal.nuancesVisible
+                  : proposal.casesCommentVisible;
+              return (
+                <button
+                  key={block}
+                  type="button"
+                  aria-label={`Комментарий к блоку ${block}`}
+                  className={`pointer-events-auto absolute -right-6 flex h-7 w-7 items-center justify-center rounded-full border text-sm shadow-sm transition ${
+                    isVisible
+                      ? "border-black bg-black text-white hover:bg-black"
+                      : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-300 hover:text-zinc-600"
+                  }`}
+                  style={{ top, transform: "translateY(-50%)" }}
+                  onClick={() => {
+                    if (block === "header") {
+                      setProposal((prev) => ({
+                        ...prev,
+                        headerCommentVisible: !prev.headerCommentVisible,
+                      }));
+                      return;
+                    }
+                    if (block === "tasks") {
+                      setProposal((prev) => ({
+                        ...prev,
+                        tasksCommentVisible: !prev.tasksCommentVisible,
+                      }));
+                      return;
+                    }
+                    if (block === "plan") {
+                      setProposal((prev) => ({
+                        ...prev,
+                        nuancesVisible: !prev.nuancesVisible,
+                      }));
+                      return;
+                    }
+                    setProposal((prev) => ({
+                      ...prev,
+                      casesCommentVisible: !prev.casesCommentVisible,
+                    }));
+                  }}
+                >
+                  {isVisible ? "−" : "+"}
+                </button>
+              );
+            })}
           </div>
         </section>
         </section>

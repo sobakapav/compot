@@ -9,10 +9,18 @@ export const proposalSchema = z.object({
   scope: z.string().optional().default(""),
   timeline: z.string().optional().default(""),
   price: z.string().optional().default(""),
+  headerCommentTitle: z.string().optional().default(""),
+  headerComment: z.string().optional().default(""),
+  headerCommentVisible: z.boolean().optional().default(false),
+  nuancesTitle: z.string().optional().default(""),
   nuances: z
     .string()
     .optional()
     .default("Детальный план производства — в отдельном документе"),
+  nuancesVisible: z.boolean().optional().default(true),
+  tasksCommentTitle: z.string().optional().default(""),
+  tasksComment: z.string().optional().default(""),
+  tasksCommentVisible: z.boolean().optional().default(false),
   assumptions: z.string().optional().default(""),
   deliverables: z.string().optional().default(""),
   contactEmail: z.string().optional().default(""),
@@ -24,6 +32,9 @@ export const proposalSchema = z.object({
   casesRows: z.number().optional().default(1),
   casesTitle1: z.string().optional().default("Похожие проекты"),
   casesTitle2: z.string().optional().default("Похожие проекты 2"),
+  casesCommentTitle: z.string().optional().default(""),
+  casesComment: z.string().optional().default(""),
+  casesCommentVisible: z.boolean().optional().default(false),
 });
 
 export type Proposal = z.infer<typeof proposalSchema>;
