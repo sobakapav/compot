@@ -66,9 +66,15 @@ This file describes the key constraints, layout rules, and implementation conven
 
 ## Cases Block (“Похожие проекты”)
 - 5 cards per row.
+- Support 1 or 2 rows in a single block. Row count is controlled by data (see `casesRows`).
 - Card content order: preview (square), client name, case title, short link (sbkpv.ru/slug with slug bold).
 - No card borders; minimal padding; preview has smaller corner radius.
 - Selection control appears in the right panel only when Cases block is focused.
+ - Row titles are editable plain text: `casesTitle1` and `casesTitle2`.
+ - Defaults:
+   - One row: title is “Похожие проекты”.
+   - Two rows: titles are “Похожие проекты 1” and “Похожие проекты 2”.
+ - When removing the second row, truncate cases to 5 and reset title “Похожие проекты 1” → “Похожие проекты”.
 
 ## Footer Block
 - Contains “Коммерческое предложение действует до …” with date badge.
@@ -85,4 +91,3 @@ This file describes the key constraints, layout rules, and implementation conven
 - Avoid introducing extra wrapper spacing that changes layout between HTML and PDF.
 - If a layout changes in `/edit`, update `/view` and `/print` to match.
 - Keep URL and list data normalized (services use ID extracted from URL).
-

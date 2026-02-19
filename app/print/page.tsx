@@ -42,6 +42,9 @@ const defaultValues: Proposal = {
   contactPhone: "+7 (495) 191-92-81",
   validUntil: "",
   hourlyRate: "4000",
+  casesRows: 1,
+  casesTitle1: "Похожие проекты",
+  casesTitle2: "Похожие проекты 2",
 };
 
 const escapeHtml = (value: string) =>
@@ -179,6 +182,12 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
   const selectedCaseIds = payload?.selectedCaseIds ?? [];
   const planTasks = payload?.planTasks ?? [];
   const cases = await loadCases();
+  const casesPerRow = 5;
+  const casesRows = proposal.casesRows === 2 ? 2 : 1;
+  const caseRow1 = selectedCaseIds.slice(0, casesPerRow);
+  const caseRow2 = selectedCaseIds.slice(casesPerRow, casesPerRow * 2);
+  const casesTitle1 = proposal.casesTitle1 || defaultValues.casesTitle1;
+  const casesTitle2 = proposal.casesTitle2 || defaultValues.casesTitle2;
   const planGridTemplate =
     "calc(40% + 3px - 6ch + 2ch) 4ch calc(2ch + 9px) 3ch 9ch 16px 1fr";
 
@@ -202,6 +211,49 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
     const cost = Number(String(task.cost ?? "").replace(/[^\d]/g, "")) || 0;
     return sum + cost;
   }, 0);
+
+  const renderCaseCards = (rowIds: string[]) => (
+    <div className="grid grid-cols-5 gap-2 leading-[1]">
+      {rowIds.map((id) => {
+        const item = cases.find((c) => c.id === id);
+        if (!item) return null;
+        const { base, slug } = formatCaseLink(item.link);
+        return (
+          <div
+            key={item.id}
+            className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
+          >
+            {item.previewImageFile || item.previewImageSourceUrl ? (
+              <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.previewImageFile || item.previewImageSourceUrl}
+                  alt={item.title}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ) : (
+              <div className="text-[10px] text-zinc-500">
+                {item.preview || "—"}
+              </div>
+            )}
+            <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+              {item.clientName || "Клиент"}
+            </div>
+            <div className="text-[12px] font-medium text-zinc-900">
+              {item.title}
+            </div>
+            {item.link && (
+              <span className="text-[10px] text-[#0E509E] underline">
+                {base}
+                <span className="font-semibold">{slug}</span>
+              </span>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div style={{ width: 794, margin: 0 }}>
@@ -410,48 +462,21 @@ export default async function PrintPage({ searchParams }: PrintPageProps) {
             className="mb-2 flex flex-col gap-0"
             style={{ breakInside: "avoid", pageBreakInside: "avoid" }}
           >
-            <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
-              Похожие проекты
-            </div>
-            <div className="grid grid-cols-5 gap-2 leading-[1]">
-              {selectedCaseIds.map((id) => {
-                const item = cases.find((c) => c.id === id);
-                if (!item) return null;
-                const { base, slug } = formatCaseLink(item.link);
-                return (
-                  <div
-                    key={item.id}
-                    className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
-                  >
-                    {item.previewImageFile || item.previewImageSourceUrl ? (
-                      <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={item.previewImageFile || item.previewImageSourceUrl}
-                          alt={item.title}
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
-                    ) : (
-                      <div className="text-[10px] text-zinc-500">
-                        {item.preview || "—"}
-                      </div>
-                    )}
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-                      {item.clientName || "Клиент"}
-                    </div>
-                    <div className="text-[12px] font-medium text-zinc-900">
-                      {item.title}
-                    </div>
-                    {item.link && (
-                      <span className="text-[10px] text-[#0E509E] underline">
-                        {base}
-                        <span className="font-semibold">{slug}</span>
-                      </span>
-                    )}
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                  {casesTitle1}
+                </div>
+                {renderCaseCards(caseRow1)}
+              </div>
+              {casesRows === 2 && (
+                <div className="flex flex-col gap-2">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400">
+                    {casesTitle2}
                   </div>
-                );
-              })}
+                  {renderCaseCards(caseRow2)}
+                </div>
+              )}
             </div>
           </section>
 

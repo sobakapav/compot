@@ -37,6 +37,9 @@ type ProposalHistoryItem = {
   contactPhone: "+7 (495) 191-92-81",
   validUntil: "",
   hourlyRate: "4000",
+  casesRows: 1,
+  casesTitle1: "Похожие проекты",
+  casesTitle2: "Похожие проекты 2",
 };
 
 type ProposalField = keyof Proposal;
@@ -395,12 +398,16 @@ export default function Home() {
     });
   };
 
+  const casesPerRow = 5;
+  const casesRows = proposal.casesRows === 2 ? 2 : 1;
+  const casesLimit = casesRows * casesPerRow;
+
   const toggleCase = (id: string) => {
     setSelectedCaseIds((prev) => {
       if (prev.includes(id)) {
         return prev.filter((item) => item !== id);
       }
-      if (prev.length >= 5) return prev;
+      if (prev.length >= casesLimit) return prev;
       return [...prev, id];
     });
   };
@@ -426,6 +433,73 @@ export default function Home() {
     "text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-400";
   const editableClass =
     "w-full cursor-text text-[15px] leading-7 text-zinc-900 outline-none";
+  const caseRow1 = selectedCaseIds.slice(0, casesPerRow);
+  const caseRow2 = selectedCaseIds.slice(casesPerRow, casesPerRow * 2);
+
+  const renderCaseCards = (rowIds: string[]) => (
+    <div className="grid grid-cols-5 gap-2 leading-[1]">
+      {rowIds.map((id) => {
+        const item = cases.find((c) => c.id === id);
+        if (!item) return null;
+        const { base: linkBase, slug: linkSlug } = formatCaseLink(item.link);
+        return (
+          <div
+            key={item.id}
+            draggable
+            onDragStart={(event) => {
+              event.dataTransfer.setData("text/plain", item.id);
+            }}
+            onDragOver={(event) => event.preventDefault()}
+            onDrop={(event) => {
+              event.preventDefault();
+              const fromId = event.dataTransfer.getData("text/plain");
+              if (fromId) moveCase(fromId, item.id);
+            }}
+            className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
+          >
+            {item.previewImageFile || item.previewImageSourceUrl ? (
+              <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
+                <img
+                  src={item.previewImageFile || item.previewImageSourceUrl}
+                  alt={item.title}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div className="text-[10px] text-zinc-500">
+                {item.preview || "—"}
+              </div>
+            )}
+            <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+              {item.clientName || "Клиент"}
+            </div>
+            <div className="text-[12px] font-medium text-zinc-900">
+              {item.title}
+            </div>
+            {item.link && (
+              <a
+                className="text-[10px] text-[#0E509E] underline"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {linkBase}
+                <span className="font-semibold">{linkSlug}</span>
+              </a>
+            )}
+            <button
+              type="button"
+              onClick={() => removeCase(item.id)}
+              className="absolute right-2 top-2 hidden h-6 w-6 items-center justify-center rounded-full border border-zinc-200 bg-white text-xs text-zinc-500 shadow-sm group-hover:flex"
+            >
+              ×
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
 
   const onSubmit = async () => {
     setIsLoading(true);
@@ -544,6 +618,11 @@ export default function Home() {
     if (selectedCaseIds.length > 0) return;
     setCaseScope("all");
   }, [caseScope, selectedCaseIds.length]);
+
+  useEffect(() => {
+    if (selectedCaseIds.length <= casesLimit) return;
+    setSelectedCaseIds((prev) => prev.slice(0, casesLimit));
+  }, [casesLimit, selectedCaseIds.length]);
 
   useEffect(() => {
     const interval = window.setInterval(async () => {
@@ -693,12 +772,20 @@ export default function Home() {
       const emptyProposal = Object.fromEntries(
         Object.keys(defaultValues).map((key) => [key, ""])
       ) as Proposal;
+      emptyProposal.casesRows = defaultValues.casesRows;
+      emptyProposal.casesTitle1 = defaultValues.casesTitle1;
+      emptyProposal.casesTitle2 = defaultValues.casesTitle2;
       setProposal({
         ...emptyProposal,
         ...proposal,
         hourlyRate: proposal.hourlyRate ?? "4000",
       });
-      setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
+      const templateRows = proposal.casesRows === 2 ? 2 : 1;
+      const templateCaseIds = (data?.item?.selectedCaseIds ?? []).slice(
+        0,
+        templateRows * casesPerRow
+      );
+      setSelectedCaseIds(templateCaseIds);
       setPlanTasks(
         normalizePlanTasks(
           data?.item?.planTasks ?? [],
@@ -737,7 +824,31 @@ export default function Home() {
       return next;
     });
     if (block === "cases") {
-      setSelectedCaseIds(data?.item?.selectedCaseIds ?? []);
+      const templateRows = proposal.casesRows === 2 ? 2 : 1;
+      const templateTitle1 =
+        proposal.casesTitle1 || defaultValues.casesTitle1;
+      const templateTitle2 =
+        proposal.casesTitle2 || defaultValues.casesTitle2;
+      const templateCaseIds = data?.item?.selectedCaseIds ?? [];
+      if (casesRows === 2) {
+        const nextFirstRow = templateCaseIds.slice(0, casesPerRow);
+        const nextSecondRow =
+          templateRows === 2
+            ? templateCaseIds.slice(casesPerRow, casesPerRow * 2)
+            : [];
+        setSelectedCaseIds([...nextFirstRow, ...nextSecondRow]);
+        setProposal((prev) => ({
+          ...prev,
+          casesTitle1: templateTitle1,
+          casesTitle2: templateRows === 2 ? templateTitle2 : prev.casesTitle2,
+        }));
+      } else {
+        setSelectedCaseIds(templateCaseIds.slice(0, casesPerRow));
+        setProposal((prev) => ({
+          ...prev,
+          casesTitle1: templateTitle1,
+        }));
+      }
     }
     if (block === "plan") {
       setPlanTasks(
@@ -1059,6 +1170,9 @@ export default function Home() {
     contactTelegram: { history: true },
     contactPhone: { history: true },
     validUntil: { history: true },
+    casesRows: { history: false },
+    casesTitle1: { history: false },
+    casesTitle2: { history: false },
   };
   const showHistory = activeField
     ? controlMap[activeField]?.history
@@ -1066,6 +1180,8 @@ export default function Home() {
 
   const clientRef = useEditable(proposal.clientName);
   const serviceRef = useEditable(proposal.serviceName);
+  const casesTitle1Ref = useEditable(proposal.casesTitle1 ?? "Похожие проекты");
+  const casesTitle2Ref = useEditable(proposal.casesTitle2 ?? "Похожие проекты 2");
 
   const setFocus = (field: ProposalField, block: typeof activeBlock) => {
     setActiveField(field);
@@ -1805,70 +1921,43 @@ export default function Home() {
               }`}
               onClick={() => setActiveBlock("cases")}
             >
-              <div className={labelClass}>Похожие проекты</div>
-              <div className="grid grid-cols-5 gap-2 leading-[1]">
-                {selectedCaseIds.map((id) => {
-                  const item = cases.find((c) => c.id === id);
-                  if (!item) return null;
-                  const { base: linkBase, slug: linkSlug } = formatCaseLink(
-                    item.link
-                  );
-                  return (
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div
+                    ref={casesTitle1Ref}
+                    className={labelClass}
+                    contentEditable
+                    suppressContentEditableWarning
+                    data-placeholder="Похожие проекты"
+                    onFocus={() => setFocus("casesTitle1", "cases")}
+                    onInput={(event) =>
+                      updateField(
+                        "casesTitle1",
+                        event.currentTarget.textContent ?? ""
+                      )
+                    }
+                  />
+                  {renderCaseCards(caseRow1)}
+                </div>
+                {casesRows === 2 && (
+                  <div className="flex flex-col gap-2">
                     <div
-                      key={item.id}
-                      draggable
-                      onDragStart={(event) => {
-                        event.dataTransfer.setData("text/plain", item.id);
-                      }}
-                      onDragOver={(event) => event.preventDefault()}
-                      onDrop={(event) => {
-                        event.preventDefault();
-                        const fromId = event.dataTransfer.getData("text/plain");
-                        if (fromId) moveCase(fromId, item.id);
-                      }}
-                      className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
-                    >
-                      {item.previewImageFile || item.previewImageSourceUrl ? (
-                        <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
-                          <img
-                            src={item.previewImageFile || item.previewImageSourceUrl}
-                            alt={item.title}
-                            className="h-full w-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                      ) : (
-                        <div className="text-[10px] text-zinc-500">
-                          {item.preview || "—"}
-                        </div>
-                      )}
-                      <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-                        {item.clientName || "Клиент"}
-                      </div>
-                      <div className="text-[12px] font-medium text-zinc-900">
-                        {item.title}
-                      </div>
-                      {item.link && (
-                        <a
-                          className="text-[10px] text-[#0E509E] underline"
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {linkBase}
-                          <span className="font-semibold">{linkSlug}</span>
-                        </a>
-                      )}
-                      <button
-                        type="button"
-                        onClick={() => removeCase(item.id)}
-                        className="absolute right-2 top-2 hidden h-6 w-6 items-center justify-center rounded-full border border-zinc-200 bg-white text-xs text-zinc-500 shadow-sm group-hover:flex"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  );
-                })}
+                      ref={casesTitle2Ref}
+                      className={labelClass}
+                      contentEditable
+                      suppressContentEditableWarning
+                      data-placeholder="Похожие проекты 2"
+                      onFocus={() => setFocus("casesTitle2", "cases")}
+                      onInput={(event) =>
+                        updateField(
+                          "casesTitle2",
+                          event.currentTarget.textContent ?? ""
+                        )
+                      }
+                    />
+                    {renderCaseCards(caseRow2)}
+                  </div>
+                )}
               </div>
             </section>
 
@@ -2042,21 +2131,28 @@ export default function Home() {
                               .sort((a, b) => a.sort - b.sort)
                               .map((item) => item.value);
                           for (const year of years) {
-                            if (picked.length >= 5) break;
+                            if (picked.length >= casesPerRow) break;
                             const shuffled = shuffle(byYear[String(year)] ?? []);
                             for (const item of shuffled) {
-                              if (picked.length >= 5) break;
+                              if (picked.length >= casesPerRow) break;
                               picked.push(item.id);
                             }
                           }
-                          if (picked.length < 5) {
+                          if (picked.length < casesPerRow) {
                             const noYear = shuffle(byYear[""] ?? []);
                             for (const item of noYear) {
-                              if (picked.length >= 5) break;
+                              if (picked.length >= casesPerRow) break;
                               picked.push(item.id);
                             }
                           }
-                          setSelectedCaseIds(picked);
+                          const preserved =
+                            casesRows === 2
+                              ? selectedCaseIds.slice(
+                                  casesPerRow,
+                                  casesPerRow * 2
+                                )
+                              : [];
+                          setSelectedCaseIds([...picked, ...preserved]);
                         }
                       }}
                     >
@@ -2314,8 +2410,43 @@ export default function Home() {
                   })}
                 </div>
                 <div className="mt-2 text-xs text-zinc-500">
-                  Выбрано: {selectedCaseIds.length}/5
+                  Выбрано: {selectedCaseIds.length}/{casesLimit}
                 </div>
+                <button
+                  type="button"
+                  className="mt-3 w-full rounded-md border border-zinc-200 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600 hover:border-zinc-300"
+                  onClick={() => {
+                    if (casesRows === 1) {
+                      setProposal((prev) => ({
+                        ...prev,
+                        casesRows: 2,
+                        casesTitle1:
+                          prev.casesTitle1?.trim() === "Похожие проекты" ||
+                          !prev.casesTitle1
+                            ? "Похожие проекты 1"
+                            : prev.casesTitle1,
+                        casesTitle2:
+                          prev.casesTitle2?.trim() || "Похожие проекты 2",
+                      }));
+                      return;
+                    }
+                    setProposal((prev) => ({
+                      ...prev,
+                      casesRows: 1,
+                      casesTitle1:
+                        prev.casesTitle1?.trim() === "Похожие проекты 1"
+                          ? "Похожие проекты"
+                          : prev.casesTitle1,
+                    }));
+                    setSelectedCaseIds((prev) =>
+                      prev.slice(0, casesPerRow)
+                    );
+                  }}
+                >
+                  {casesRows === 1
+                    ? "Добавить ещё строку кейсов"
+                    : "Убрать вторую строку кейсов"}
+                </button>
               </section>
             )}
 
