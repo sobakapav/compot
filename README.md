@@ -14,8 +14,9 @@ npm run dev
 
 ## Важные команды
 
-- `npm run dev` — запуск приложения. Перед стартом выполняется ежедневная синхронизация кейсов.
+- `npm run dev` — запуск приложения. Перед стартом выполняется ежедневная синхронизация кейсов и услуг.
 - `npm run sync:cases` — принудительное обновление кейсов и превьюшек.
+- `npm run sync:services` — принудительное обновление списка услуг.
 
 ## Где лежат данные
 
@@ -26,6 +27,7 @@ npm run dev
 - Превью кейсов (локально): `public/case-previews/`
 - Сырые данные синхронизации: `data/links/cases-raw.json`
 - Статус последней синхронизации: `data/links/case-sync.json`
+- Статус последней синхронизации услуг: `data/services/sync.json`
 
 ## Синхронизация кейсов
 
@@ -35,6 +37,19 @@ npm run dev
 - тянет данные раз в сутки при `npm run dev`;
 - обновляет `case.json` и `index.json`;
 - скачивает новые превью в `public/case-previews/`.
+
+## Синхронизация услуг
+
+Источник: `https://sobakapav.ru/listServicesAsJson.json`
+
+Скрипт:
+- тянет данные раз в сутки при первом обращении к `/api/services` (и перед `npm run dev`/`npm start`);
+- обновляет `data/services/*/service.json` и `data/services/index.json`;
+- фиксирует отсутствующие услуги и поля в `data/services/sync.json`.
+
+Ручной запуск:
+- `npm run sync:services`
+- `POST /api/services/sync`
 
 ## Костыли из‑за качества входных данных
 

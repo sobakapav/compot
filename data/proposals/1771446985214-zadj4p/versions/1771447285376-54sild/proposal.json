@@ -1,8 +1,8 @@
 {
-  "proposalId": "1771442172472-yqrdde",
-  "versionId": "1771445687541-jw2rza",
-  "createdAt": "2026-02-18T20:14:47.541Z",
-  "source": "manual",
+  "proposalId": "1771446985214-zadj4p",
+  "versionId": "1771447285376-54sild",
+  "createdAt": "2026-02-18T20:41:25.376Z",
+  "source": "autosave",
   "pdf": false,
   "proposal": {
     "clientName": "ТумБурум Пырым",
@@ -23,11 +23,11 @@
     "hourlyRate": "4213"
   },
   "selectedCaseIds": [
-    "pgk",
-    "dau",
-    "bibi",
-    "e-gorod-mobile",
-    "easydocs-2024"
+    "goodwood",
+    "gazprom-services",
+    "mirbeer",
+    "intickets",
+    "lab4u"
   ],
   "planTasks": [
     {
@@ -50,19 +50,19 @@
       "end": "",
       "iterations": "1",
       "stage": "Аналитика",
-      "hours": "20",
-      "cost": "84260",
+      "hours": "10",
+      "cost": "42130",
       "days": "5",
       "costManual": false,
       "results": "• CJM\n• список сценариев"
     },
     {
       "id": "t3",
-      "stage": "Выработка фирменного стиля",
-      "iterations": "2",
-      "hours": "50",
+      "stage": "Фирменный стиль",
+      "iterations": "3",
+      "hours": "40",
       "days": "14",
-      "cost": "421300",
+      "cost": "505560",
       "results": "• mockup\n• базис дизайн-системы",
       "costManual": false
     },
@@ -73,7 +73,7 @@
       "hours": "40",
       "days": "5",
       "cost": "337040",
-      "results": "эскизы",
+      "results": "• эскизы\n• прототипы",
       "costManual": false
     },
     {
@@ -110,9 +110,9 @@
       "id": "t7",
       "stage": "Авторское сопровождение",
       "iterations": "1",
-      "hours": "5",
-      "days": "15",
-      "cost": "21065",
+      "hours": "10",
+      "days": "5",
+      "cost": "42130",
       "results": "отчёты по результатам созвонов",
       "costManual": false
     }

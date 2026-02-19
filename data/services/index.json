@@ -2,24 +2,24 @@
   "schemaVersion": 1,
   "items": [
     {
-      "id": "content-design",
-      "title": "Контент-дизайн"
-    },
-    {
       "id": "new-features",
       "title": "Добавление новой функциональности"
     },
     {
-      "id": "product-team",
-      "title": "Работа в продуктовой команде"
+      "id": "content-design",
+      "title": "Контент-дизайн"
+    },
+    {
+      "id": "research",
+      "title": "Продуктовое исследование"
     },
     {
       "id": "prototype",
       "title": "Прототип под инвестиции"
     },
     {
-      "id": "research",
-      "title": "Продуктовое исследование"
+      "id": "product-team",
+      "title": "Работа в продуктовой команде"
     },
     {
       "id": "redesign",

@@ -1,0 +1,33 @@
+{
+  "proposalId": "1771446808197-51prqp",
+  "versionId": "1771446808197-ufigdz",
+  "createdAt": "2026-02-18T20:33:28.197Z",
+  "source": "create",
+  "pdf": false,
+  "proposal": {
+    "clientName": "Азиатско-Тихоокеанский банк",
+    "serviceName": "добавление новой функциональности",
+    "serviceId": "new-features",
+    "clientLogoDataUrl": "",
+    "summary": "",
+    "scope": "",
+    "timeline": "100дней ",
+    "price": "1млн руб. ",
+    "nuances": "",
+    "assumptions": "",
+    "deliverables": "",
+    "contactEmail": "pro@sobakapav.ru",
+    "contactTelegram": "@sobakapavpro",
+    "contactPhone": "+7 (495) 191-92-81",
+    "validUntil": "4 МАРТА 2026 ГОДА",
+    "hourlyRate": "4000"
+  },
+  "selectedCaseIds": [
+    "pgk",
+    "dau",
+    "bibi",
+    "e-gorod-mobile",
+    "easydocs-2024"
+  ],
+  "planTasks": []
+}

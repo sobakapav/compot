@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/sync-cases.mjs",
+    "predev": "node scripts/sync-cases.mjs && node scripts/sync-services.mjs",
     "dev": "next dev",
     "build": "next build",
+    "prestart": "node scripts/sync-services.mjs",
     "start": "next start",
     "lint": "eslint",
-    "sync:cases": "node scripts/sync-cases.mjs --force"
+    "sync:cases": "node scripts/sync-cases.mjs --force",
+    "sync:services": "node scripts/sync-services.mjs --force"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
