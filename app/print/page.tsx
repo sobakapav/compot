@@ -42,6 +42,7 @@ const defaultValues: Proposal = {
   contactPhone: "+7 (495) 191-92-81",
   validUntil: "",
   hourlyRate: "4000",
+  hourlyRateFrozen: false,
   casesRows: 1,
   casesTitle1: "Похожие проекты",
   casesTitle2: "Похожие проекты 2",

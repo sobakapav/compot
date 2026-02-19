@@ -37,6 +37,7 @@ type ProposalHistoryItem = {
   contactPhone: "+7 (495) 191-92-81",
   validUntil: "",
   hourlyRate: "4000",
+  hourlyRateFrozen: false,
   casesRows: 1,
   casesTitle1: "Похожие проекты",
   casesTitle2: "Похожие проекты 2",
@@ -335,6 +336,23 @@ export default function Home() {
     const iterations =
       Number(String(task.iterations ?? "1").replace(/[^\d]/g, "")) || 1;
     return String(hours * rate * iterations);
+  };
+
+  const toggleHourlyRateFrozen = () => {
+    setProposal((prev) => {
+      const nextFrozen = !prev.hourlyRateFrozen;
+      if (!nextFrozen) {
+        const rate = prev.hourlyRate ?? "";
+        setPlanTasks((prevTasks) =>
+          prevTasks.map((task) => ({
+            ...task,
+            cost: recalcPlanCost({ ...task, cost: "" }, rate),
+            costManual: false,
+          }))
+        );
+      }
+      return { ...prev, hourlyRateFrozen: nextFrozen };
+    });
   };
 
   const insertResultBullet = (id: string, el: HTMLTextAreaElement) => {
@@ -703,6 +721,10 @@ export default function Home() {
             item.proposal.validUntil || proposalRef.current.validUntil,
           hourlyRate:
             item.proposal.hourlyRate || proposalRef.current.hourlyRate || "4000",
+          hourlyRateFrozen:
+            item.proposal.hourlyRateFrozen ??
+            proposalRef.current.hourlyRateFrozen ??
+            false,
         };
         const nextCaseIds = item.selectedCaseIds ?? [];
         const nextPlanTasks = normalizePlanTasks(
@@ -779,6 +801,7 @@ export default function Home() {
         ...emptyProposal,
         ...proposal,
         hourlyRate: proposal.hourlyRate ?? "4000",
+        hourlyRateFrozen: proposal.hourlyRateFrozen ?? false,
       });
       const templateRows = proposal.casesRows === 2 ? 2 : 1;
       const templateCaseIds = (data?.item?.selectedCaseIds ?? []).slice(
@@ -820,6 +843,7 @@ export default function Home() {
       }
       if (block === "plan") {
         next.hourlyRate = proposal.hourlyRate ?? "4000";
+        next.hourlyRateFrozen = proposal.hourlyRateFrozen ?? false;
       }
       return next;
     });
@@ -1170,6 +1194,8 @@ export default function Home() {
     contactTelegram: { history: true },
     contactPhone: { history: true },
     validUntil: { history: true },
+    hourlyRate: { history: false },
+    hourlyRateFrozen: { history: false },
     casesRows: { history: false },
     casesTitle1: { history: false },
     casesTitle2: { history: false },
@@ -1631,7 +1657,7 @@ export default function Home() {
                                   Math.min(99, current + 1)
                                 );
                                 const next: Partial<PlanTask> = { iterations };
-                                if (!task.costManual) {
+                                if (!proposal.hourlyRateFrozen && !task.costManual) {
                                   next.cost = recalcPlanCost(
                                     { ...task, iterations },
                                     proposal.hourlyRate ?? ""
@@ -1646,7 +1672,7 @@ export default function Home() {
                                 const next = Math.max(1, current - 1);
                                 const iterations = String(Math.min(99, next));
                                 const patch: Partial<PlanTask> = { iterations };
-                                if (!task.costManual) {
+                                if (!proposal.hourlyRateFrozen && !task.costManual) {
                                   patch.cost = recalcPlanCost(
                                     { ...task, iterations },
                                     proposal.hourlyRate ?? ""
@@ -1682,7 +1708,7 @@ export default function Home() {
                               onChange={(event) => {
                                 const hours = event.target.value.replace(/[^\d]/g, "");
                                 const next: Partial<PlanTask> = { hours };
-                                if (!task.costManual) {
+                                if (!proposal.hourlyRateFrozen && !task.costManual) {
                                   next.cost = recalcPlanCost(
                                     {
                                       ...task,
@@ -1731,7 +1757,7 @@ export default function Home() {
                                   .replace(/[^\d]/g, "")
                                   .slice(0, 2);
                                 const next: Partial<PlanTask> = { iterations };
-                                if (!task.costManual) {
+                                if (!proposal.hourlyRateFrozen && !task.costManual) {
                                   next.cost = recalcPlanCost(
                                     {
                                       ...task,
@@ -2457,29 +2483,53 @@ export default function Home() {
                 </div>
                 <label className="mt-3 flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
                   Цена часа
-                  <input
-                    inputMode="numeric"
-                    className="w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-normal tracking-normal text-zinc-900 focus:border-zinc-900 focus:outline-none"
-                    value={proposal.hourlyRate ?? "4000"}
-                    onChange={(event) => {
-                      const value = event.target.value.replace(/[^\d]/g, "");
-                      setProposal((prev) => ({
-                        ...prev,
-                        hourlyRate: value,
-                      }));
-                      if (!value) return;
-                      setPlanTasks((prev) =>
-                        prev.map((task) => {
-                          if (task.costManual || !task.hours) return task;
-                          return {
-                            ...task,
-                            cost: recalcPlanCost(task, value),
-                            costManual: false,
-                          };
-                        })
-                      );
-                    }}
-                  />
+                  <div className="flex items-center gap-2">
+                    <input
+                      inputMode="numeric"
+                      className="w-1/2 rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-normal tracking-normal text-zinc-900 focus:border-zinc-900 focus:outline-none disabled:cursor-not-allowed disabled:bg-zinc-100 disabled:opacity-100"
+                      value={proposal.hourlyRate ?? "4000"}
+                      disabled={proposal.hourlyRateFrozen}
+                      onChange={(event) => {
+                        if (proposal.hourlyRateFrozen) return;
+                        const value = event.target.value.replace(/[^\d]/g, "");
+                        setProposal((prev) => ({
+                          ...prev,
+                          hourlyRate: value,
+                        }));
+                        if (!value) return;
+                        setPlanTasks((prev) =>
+                          prev.map((task) => {
+                            if (
+                              proposal.hourlyRateFrozen ||
+                              task.costManual ||
+                              !task.hours
+                            ) {
+                              return task;
+                            }
+                            return {
+                              ...task,
+                              cost: recalcPlanCost(task, value),
+                              costManual: false,
+                            };
+                          })
+                        );
+                      }}
+                    />
+                    <button
+                      type="button"
+                      className={`flex-1 rounded-md border px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] ${
+                        proposal.hourlyRateFrozen
+                          ? "border-black bg-black text-white"
+                          : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300"
+                      }`}
+                      onClick={() => {
+                        setActiveBlock("plan");
+                        toggleHourlyRateFrozen();
+                      }}
+                    >
+                      {proposal.hourlyRateFrozen ? "Разморозить" : "Заморозить"}
+                    </button>
+                  </div>
                 </label>
                 <div className="mt-3 flex flex-col gap-2 text-xs text-zinc-700">
                   {[
