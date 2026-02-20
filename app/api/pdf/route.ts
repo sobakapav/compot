@@ -42,13 +42,14 @@ export async function POST(request: Request) {
         printBackground: true,
         margin: { top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" },
       });
+      const pdfBytes = new Uint8Array(pdf);
       await browser.close();
       await fs.rm(path.join(tmpDir, `${token}.json`), { force: true });
       const fileName =
         typeof body?.fileName === "string" && body.fileName.trim()
           ? body.fileName.trim()
           : null;
-      return new NextResponse(pdf, {
+      return new NextResponse(pdfBytes, {
         headers: {
           "Content-Type": "application/pdf",
           "Content-Disposition": `attachment; filename="${fileName ?? "sbkpv_cmpr.pdf"}"`,
@@ -92,6 +93,7 @@ export async function POST(request: Request) {
       printBackground: true,
       margin: { top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" },
     });
+    const pdfBytes = new Uint8Array(pdf);
     await browser.close();
     await fs.rm(path.join(tmpDir, `${token}.json`), { force: true });
 
@@ -99,7 +101,7 @@ export async function POST(request: Request) {
       typeof body?.fileName === "string" && body.fileName.trim()
         ? body.fileName.trim()
         : null;
-    return new NextResponse(pdf, {
+    return new NextResponse(pdfBytes, {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition": `attachment; filename="${fileName ?? "sbkpv_cmpr.pdf"}"`,

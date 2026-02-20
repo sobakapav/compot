@@ -43,8 +43,9 @@ if ! xcode-select -p >/dev/null 2>&1; then
 fi
 
 if ! command -v brew >/dev/null 2>&1; then
-  log "Homebrew не найден. Устанавливаю Homebrew..."
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  log "Homebrew не найден. Запускаю официальный установщик Homebrew..."
+  log "Установщик может запросить пароль и подтверждения."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   log "Homebrew уже установлен."
 fi
@@ -65,6 +66,13 @@ brew install git
 brew install wget
 brew install curl
 
+log "Устанавливаю шрифт PT Sans Narrow..."
+FONT_DIR="${HOME}/Library/Fonts"
+mkdir -p "${FONT_DIR}"
+curl -L -o "${FONT_DIR}/PTSans-Narrow.ttf" "https://github.com/google/fonts/raw/main/ofl/ptsans/PTSans-Narrow.ttf"
+curl -L -o "${FONT_DIR}/PTSans-NarrowBold.ttf" "https://github.com/google/fonts/raw/main/ofl/ptsans/PTSans-NarrowBold.ttf"
+log "Шрифты установлены в ${FONT_DIR}"
+
 CURRENT_NODE_VERSION=""
 if command -v node >/dev/null 2>&1; then
   CURRENT_NODE_VERSION="$(node -v | sed 's/^v//')"
@@ -78,6 +86,13 @@ if [[ "${CURRENT_NODE_VERSION}" != "${NODE_VERSION}" ]]; then
   rm -f "${NODE_PKG}"
 else
   log "Node.js уже нужной версии v${NODE_VERSION}."
+fi
+
+log "Проверка версий инструментов..."
+log "Node.js: $(node -v)"
+log "npm: $(npm -v)"
+if command -v npx >/dev/null 2>&1; then
+  log "npx: $(npx -v)"
 fi
 
 log "Клонирую репозиторий..."
