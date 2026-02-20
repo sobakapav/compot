@@ -65,10 +65,6 @@ brew install git
 brew install wget
 brew install curl
 
-log "Устанавливаю шрифт PT Sans Narrow..."
-brew tap homebrew/cask-fonts
-brew install --cask font-pt-sans
-
 CURRENT_NODE_VERSION=""
 if command -v node >/dev/null 2>&1; then
   CURRENT_NODE_VERSION="$(node -v | sed 's/^v//')"
