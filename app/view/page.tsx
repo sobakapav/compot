@@ -17,6 +17,7 @@ type CaseItem = {
 type PlanTask = {
   id: string;
   stage?: string;
+  iterations?: string;
   hours?: string;
   days?: string;
   cost?: string;
@@ -185,6 +186,13 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
   const contactEmail = proposal.contactEmail || defaultValues.contactEmail;
   const contactTelegram = proposal.contactTelegram || defaultValues.contactTelegram;
   const validUntil = proposal.validUntil || defaultValues.validUntil;
+
+  const payloadPlanTasks = planTasks.map((task) => ({
+    id: task.id,
+    title: task.title ?? task.stage ?? "",
+    start: task.start ?? "",
+    end: task.end ?? "",
+  }));
 
   const renderCaseCards = (rowIds: string[]) => (
     <div className="grid grid-cols-5 gap-2 leading-[1]">
@@ -582,7 +590,7 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
         payload={{
           proposal,
           selectedCaseIds,
-          planTasks,
+          planTasks: payloadPlanTasks,
         }}
       />
     </div>

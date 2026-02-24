@@ -331,8 +331,13 @@ export const syncServices = async ({
 const __filename = fileURLToPath(import.meta.url);
 if (process.argv[1] === __filename) {
   const force = process.argv.includes("--force");
+  const strict = force || process.env.SYNC_STRICT === "1";
   const result = await syncServices({ force, log: true });
   if (result.status === "failed") {
-    process.exitCode = 1;
+    if (strict) {
+      process.exitCode = 1;
+    } else {
+      console.warn("[services] Sync failed, continuing in non-strict mode.");
+    }
   }
 }

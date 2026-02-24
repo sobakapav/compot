@@ -18,20 +18,20 @@
       "year": 2020
     },
     {
-      "id": "alfa",
-      "serviceIds": [
-        "ux-design",
-        "ux-outsource"
-      ],
-      "year": 2015
-    },
-    {
       "id": "alfabank",
       "serviceIds": [
         "ux-design",
         "ux-outsource"
       ],
       "year": 2013
+    },
+    {
+      "id": "alfa",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ],
+      "year": 2015
     },
     {
       "id": "alfastrah-design",
@@ -128,19 +128,19 @@
       "year": 2015
     },
     {
-      "id": "bercut",
-      "serviceIds": [
-        "research"
-      ],
-      "year": 2015
-    },
-    {
       "id": "bibi",
       "serviceIds": [
         "ux-audit",
         "new-features"
       ],
       "year": 2019
+    },
+    {
+      "id": "bercut",
+      "serviceIds": [
+        "research"
+      ],
+      "year": 2015
     },
     {
       "id": "biletik",
@@ -165,18 +165,18 @@
       "year": 2021
     },
     {
-      "id": "checknpay",
-      "serviceIds": [
-        "ux-design"
-      ],
-      "year": 2013
-    },
-    {
       "id": "center-rechevyh-technologiy",
       "serviceIds": [
         "ux-design"
       ],
       "year": 2017
+    },
+    {
+      "id": "checknpay",
+      "serviceIds": [
+        "ux-design"
+      ],
+      "year": 2013
     },
     {
       "id": "cindicator",
@@ -187,14 +187,6 @@
       "year": 2019
     },
     {
-      "id": "control-forest",
-      "serviceIds": [
-        "ux-design",
-        "ux-outsource"
-      ],
-      "year": 2021
-    },
-    {
       "id": "compel",
       "serviceIds": [
         "redesign",
@@ -202,6 +194,14 @@
         "ux-outsource"
       ],
       "year": 2023
+    },
+    {
+      "id": "control-forest",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ],
+      "year": 2021
     },
     {
       "id": "control-mobile",
@@ -361,6 +361,14 @@
       "year": 2023
     },
     {
+      "id": "elma",
+      "serviceIds": [
+        "ux-design",
+        "ux-outsource"
+      ],
+      "year": 2020
+    },
+    {
       "id": "ethr",
       "serviceIds": [
         "content-design"
@@ -376,12 +384,12 @@
       "year": 2021
     },
     {
-      "id": "elma",
+      "id": "f-kabinki",
       "serviceIds": [
-        "ux-design",
-        "ux-outsource"
+        "content-design",
+        "ux-design"
       ],
-      "year": 2020
+      "year": 2015
     },
     {
       "id": "faberlic",
@@ -389,14 +397,6 @@
         "ux-design"
       ],
       "year": 2017
-    },
-    {
-      "id": "f-kabinki",
-      "serviceIds": [
-        "content-design",
-        "ux-design"
-      ],
-      "year": 2015
     },
     {
       "id": "fasting",
@@ -549,18 +549,18 @@
       "year": 2024
     },
     {
-      "id": "jetlearn",
-      "serviceIds": [
-        "ux-design"
-      ],
-      "year": 2021
-    },
-    {
       "id": "joono-ai",
       "serviceIds": [
         "research"
       ],
       "year": 2025
+    },
+    {
+      "id": "jetlearn",
+      "serviceIds": [
+        "ux-design"
+      ],
+      "year": 2021
     },
     {
       "id": "kapital",
@@ -571,14 +571,14 @@
       "year": 2020
     },
     {
-      "id": "korochka-kontent",
+      "id": "kids-crooked-house",
       "serviceIds": [
         "content-design"
       ],
       "year": 2015
     },
     {
-      "id": "kids-crooked-house",
+      "id": "korochka-kontent",
       "serviceIds": [
         "content-design"
       ],
@@ -627,6 +627,13 @@
       "year": 2020
     },
     {
+      "id": "m-line",
+      "serviceIds": [
+        "ux-design"
+      ],
+      "year": 2021
+    },
+    {
       "id": "manualmachine",
       "serviceIds": [
         "ux-design"
@@ -634,7 +641,7 @@
       "year": 2019
     },
     {
-      "id": "m-line",
+      "id": "math",
       "serviceIds": [
         "ux-design"
       ],
@@ -646,13 +653,6 @@
         "research"
       ],
       "year": 2022
-    },
-    {
-      "id": "math",
-      "serviceIds": [
-        "ux-design"
-      ],
-      "year": 2021
     },
     {
       "id": "meh",
@@ -669,17 +669,17 @@
       "year": 2018
     },
     {
-      "id": "mirbeer",
-      "serviceIds": [
-        "ux-audit"
-      ],
-      "year": 2021
-    },
-    {
       "id": "monetory",
       "serviceIds": [
         "redesign",
         "new-features"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "mirbeer",
+      "serviceIds": [
+        "ux-audit"
       ],
       "year": 2021
     },
@@ -691,19 +691,19 @@
       "year": 2022
     },
     {
+      "id": "neurobureau",
+      "serviceIds": [
+        "ux-design"
+      ],
+      "year": 2021
+    },
+    {
       "id": "nextons",
       "serviceIds": [
         "ui-redesign",
         "redesign"
       ],
       "year": 2023
-    },
-    {
-      "id": "neurobureau",
-      "serviceIds": [
-        "ux-design"
-      ],
-      "year": 2021
     },
     {
       "id": "nlmk",
@@ -742,17 +742,17 @@
       "year": 2022
     },
     {
-      "id": "omnitopic",
+      "id": "onesoil",
       "serviceIds": [
-        "product-team",
-        "prototype"
+        "ux-audit"
       ],
       "year": 2021
     },
     {
-      "id": "onesoil",
+      "id": "omnitopic",
       "serviceIds": [
-        "ux-audit"
+        "product-team",
+        "prototype"
       ],
       "year": 2021
     },
@@ -811,6 +811,13 @@
       "year": 2025
     },
     {
+      "id": "pangeo",
+      "serviceIds": [
+        "ux-design"
+      ],
+      "year": 2022
+    },
+    {
       "id": "petrovich",
       "serviceIds": [
         "redesign"
@@ -832,13 +839,6 @@
         "content-design"
       ],
       "year": 2014
-    },
-    {
-      "id": "pangeo",
-      "serviceIds": [
-        "ux-design"
-      ],
-      "year": 2022
     },
     {
       "id": "prozhito",
@@ -873,16 +873,16 @@
       "year": 2020
     },
     {
-      "id": "relief-center",
+      "id": "relefopt",
       "serviceIds": [
-        "ux-design"
+        "redesign"
       ],
       "year": 2015
     },
     {
-      "id": "relefopt",
+      "id": "relief-center",
       "serviceIds": [
-        "redesign"
+        "ux-design"
       ],
       "year": 2015
     },
@@ -919,19 +919,19 @@
       "year": 2017
     },
     {
-      "id": "serverscom",
-      "serviceIds": [
-        "redesign"
-      ],
-      "year": 2016
-    },
-    {
       "id": "seatmap",
       "serviceIds": [
         "research",
         "ux-design"
       ],
       "year": 2025
+    },
+    {
+      "id": "serverscom",
+      "serviceIds": [
+        "redesign"
+      ],
+      "year": 2016
     },
     {
       "id": "simed",
@@ -978,14 +978,6 @@
       "year": 2013
     },
     {
-      "id": "solar-staff",
-      "serviceIds": [
-        "ux-audit",
-        "redesign"
-      ],
-      "year": 2016
-    },
-    {
       "id": "sportmaster",
       "serviceIds": [
         "ux-audit",
@@ -1008,6 +1000,14 @@
         "prototype"
       ],
       "year": 2023
+    },
+    {
+      "id": "solar-staff",
+      "serviceIds": [
+        "ux-audit",
+        "redesign"
+      ],
+      "year": 2016
     },
     {
       "id": "t1",
@@ -1071,18 +1071,18 @@
       "year": 2019
     },
     {
-      "id": "video-santa",
-      "serviceIds": [
-        "ux-design"
-      ],
-      "year": 2019
-    },
-    {
       "id": "viking-line",
       "serviceIds": [
         "content-design"
       ],
       "year": 2013
+    },
+    {
+      "id": "video-santa",
+      "serviceIds": [
+        "ux-design"
+      ],
+      "year": 2019
     },
     {
       "id": "vuborgskiy-zamok",
@@ -1133,19 +1133,19 @@
       "year": 2014
     },
     {
+      "id": "zhivoj-office",
+      "serviceIds": [
+        "redesign"
+      ],
+      "year": 2015
+    },
+    {
       "id": "zombieland",
       "serviceIds": [
         "product-team",
         "research"
       ],
       "year": 2014
-    },
-    {
-      "id": "zhivoj-office",
-      "serviceIds": [
-        "redesign"
-      ],
-      "year": 2015
     }
   ]
 }
