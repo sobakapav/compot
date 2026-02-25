@@ -8,12 +8,17 @@
   "title": "Внутренняя информационная система «Газпром нефти»",
   "description": "",
   "createdAt": "2026-02-18T10:42:41.465Z",
-  "updatedAt": "2026-02-25T10:14:38.337Z",
+  "updatedAt": "2026-02-25T11:02:30.880Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/gazprom2.svg",
   "previewImageFile": "/case-previews/gazprom.svg",
-  "serviceIds": [
+  "year": 2022,
+  "clientId": "gazprom",
+  "services": [
     "ux-design",
     "ux-outsource"
   ],
-  "year": 2022
+  "markets": [
+    "prom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/gazprom2.svg"
 }

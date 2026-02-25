@@ -8,12 +8,17 @@
   "title": "Интерфейс поисковика классической музыки",
   "description": "",
   "createdAt": "2026-02-18T10:43:07.371Z",
-  "updatedAt": "2026-02-25T10:14:38.840Z",
+  "updatedAt": "2026-02-25T11:02:30.919Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/tigitl.svg",
   "previewImageFile": "/case-previews/tigitl.svg",
-  "serviceIds": [
+  "year": 2016,
+  "clientId": "tigitl",
+  "services": [
     "research",
     "ux-design"
   ],
-  "year": 2016
+  "markets": [
+    "ed"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/tigitl.svg"
 }

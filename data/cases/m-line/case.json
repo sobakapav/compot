@@ -8,11 +8,16 @@
   "title": "Дизайн интерфейса системы дистанционного наблюдения пациентов",
   "description": "",
   "createdAt": "2026-02-18T10:42:52.228Z",
-  "updatedAt": "2026-02-25T10:14:38.589Z",
+  "updatedAt": "2026-02-25T11:02:30.885Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/m-line.svg",
   "previewImageFile": "/case-previews/m-line.svg",
-  "serviceIds": [
+  "year": 2021,
+  "clientId": "m-line",
+  "services": [
     "ux-design"
   ],
-  "year": 2021
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/m-line.svg"
 }

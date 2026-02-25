@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "sportmaster",
+  "title": "Спортмастер",
+  "logo": "https://sobakapav.ru/images/portfolio/sportmaster/logo.png",
+  "link": "https://www.sportmaster.ru/",
+  "markets": [
+    "ec"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

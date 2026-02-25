@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "costa",
+  "title": "КОСТА",
+  "logo": "https://sobakapav.ru/images/portfolio/costa/logo.svg",
+  "link": "https://kostasoft.ru/",
+  "markets": [
+    "med"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

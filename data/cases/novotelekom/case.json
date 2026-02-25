@@ -8,12 +8,17 @@
   "title": "Редизайн интерфейса мобильного приложения для сервисных инженеров",
   "description": "",
   "createdAt": "2026-02-18T10:42:55.888Z",
-  "updatedAt": "2026-02-25T10:14:38.823Z",
+  "updatedAt": "2026-02-25T11:02:30.908Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/ecity-pril_big.svg",
   "previewImageFile": "/case-previews/novotelekom.svg",
-  "serviceIds": [
+  "year": 2019,
+  "clientId": "ecity",
+  "services": [
     "ui-redesign",
     "ux-outsource"
   ],
-  "year": 2019
+  "markets": [
+    "telecom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards-l/ecity-pril_big.svg"
 }

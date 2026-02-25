@@ -8,10 +8,25 @@ type CaseItem = {
   id: string;
   title: string;
   clientName: string;
+  clientId?: string;
   preview: string;
   previewImageFile?: string;
   previewImageSourceUrl?: string;
+  markets?: string[];
   link: string;
+};
+
+type ClientItem = {
+  id: string;
+  title: string;
+  logo?: string;
+  link?: string;
+  markets?: string[];
+};
+
+type MarketItem = {
+  id: string;
+  title: string;
 };
 
 type PlanTask = {
@@ -141,6 +156,30 @@ const loadCases = async (): Promise<CaseItem[]> => {
   }
 };
 
+const loadClients = async (): Promise<ClientItem[]> => {
+  try {
+    const baseDir = path.join(process.cwd(), "data", "clients");
+    const indexPath = path.join(baseDir, "index.json");
+    const raw = await fs.readFile(indexPath, "utf-8");
+    const data = JSON.parse(raw) as { items?: ClientItem[] };
+    return data.items ?? [];
+  } catch {
+    return [];
+  }
+};
+
+const loadMarkets = async (): Promise<MarketItem[]> => {
+  try {
+    const baseDir = path.join(process.cwd(), "data", "markets");
+    const indexPath = path.join(baseDir, "index.json");
+    const raw = await fs.readFile(indexPath, "utf-8");
+    const data = JSON.parse(raw) as { items?: MarketItem[] };
+    return data.items ?? [];
+  } catch {
+    return [];
+  }
+};
+
 type ViewPageProps = {
   searchParams?: Promise<{ proposalId?: string; versionId?: string }>;
 };
@@ -153,7 +192,31 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
   const proposal = record?.proposal ?? defaultValues;
   const selectedCaseIds = record?.selectedCaseIds ?? [];
   const planTasks = (record?.planTasks ?? []) as PlanTask[];
-  const cases = await loadCases();
+  const [cases, clients, markets] = await Promise.all([
+    loadCases(),
+    loadClients(),
+    loadMarkets(),
+  ]);
+  const clientTitleMap = new Map(
+    clients.map((client) => [client.id, client.title])
+  );
+  const clientLogoMap = new Map(
+    clients.map((client) => [client.id, client.logo || ""])
+  );
+  const marketTitleMap = new Map(
+    markets.map((market) => [market.id, market.title])
+  );
+  const getCaseClientTitle = (item: CaseItem) =>
+    (item.clientId && clientTitleMap.get(item.clientId)) ||
+    item.clientName ||
+    "";
+  const getCaseClientLogo = (item: CaseItem) =>
+    (item.clientId && clientLogoMap.get(item.clientId)) || "";
+  const getCasePrimaryMarket = (item: CaseItem) => {
+    const ids = item.markets ?? [];
+    const title = ids.length ? marketTitleMap.get(ids[0]) || ids[0] : "";
+    return title || "";
+  };
   const casesPerRow = 5;
   const casesRows = proposal.casesRows === 2 ? 2 : 1;
   const caseRow1 = selectedCaseIds.slice(0, casesPerRow);
@@ -205,6 +268,11 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
             key={item.id}
             className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
           >
+            {getCasePrimaryMarket(item) && (
+              <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+                {getCasePrimaryMarket(item)}
+              </div>
+            )}
             {item.previewImageFile || item.previewImageSourceUrl ? (
               <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -219,8 +287,18 @@ export default async function ViewPage({ searchParams }: ViewPageProps) {
                 {item.preview || "—"}
               </div>
             )}
-            <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              {item.clientName || "Клиент"}
+            <div className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+              {getCaseClientLogo(item) && (
+                <span className="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-white">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={getCaseClientLogo(item)}
+                    alt=""
+                    className="h-full w-auto object-contain"
+                  />
+                </span>
+              )}
+              <span>{getCaseClientTitle(item) || "Клиент"}</span>
             </div>
             <div className="text-[12px] font-medium text-zinc-900">
               {item.title}

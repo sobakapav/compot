@@ -8,13 +8,18 @@
   "title": "Система автоматизации билетных операций INTICKETS.RU",
   "description": "",
   "createdAt": "2026-02-18T10:42:44.583Z",
-  "updatedAt": "2026-02-25T10:14:38.573Z",
+  "updatedAt": "2026-02-25T11:02:30.882Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/intickets.svg",
   "previewImageFile": "/case-previews/intickets.png",
-  "serviceIds": [
+  "year": 2025,
+  "clientId": "intickets-ru",
+  "services": [
     "ux-audit",
     "research",
     "ux-design"
   ],
-  "year": 2025
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/intickets.svg"
 }

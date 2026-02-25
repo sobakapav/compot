@@ -8,12 +8,17 @@
   "title": "ARM сотрудника службы поддержки сотового оператора",
   "description": "",
   "createdAt": "2026-02-18T10:43:10.936Z",
-  "updatedAt": "2026-02-25T10:14:38.846Z",
+  "updatedAt": "2026-02-25T11:02:30.922Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/yota.svg",
   "previewImageFile": "/case-previews/yota.svg",
-  "serviceIds": [
+  "year": 2013,
+  "clientId": "yota",
+  "services": [
     "ux-design",
     "new-features"
   ],
-  "year": 2013
+  "markets": [
+    "telecom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/yota.svg"
 }

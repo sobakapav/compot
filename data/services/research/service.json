@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "id": "research",
   "title": "Продуктовое исследование",
-  "link": "https://sobakapav.ru/services/research",
   "createdAt": "2026-02-16T16:01:08.171Z",
-  "updatedAt": "2026-02-25T10:14:39.006Z"
+  "updatedAt": "2026-02-25T10:57:41.899Z",
+  "serviceGroup": "",
+  "image": ""
 }

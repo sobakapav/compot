@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "bora",
+  "title": "Bora",
+  "logo": "https://sobakapav.ru/images/portfolio/boracase/logo.png",
+  "link": "",
+  "markets": [
+    "log",
+    "it"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

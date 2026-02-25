@@ -8,12 +8,17 @@
   "title": "Интерфейс мобильного приложения «Альфа Банка»",
   "description": "",
   "createdAt": "2026-02-18T10:42:21.600Z",
-  "updatedAt": "2026-02-25T10:14:38.313Z",
+  "updatedAt": "2026-02-25T11:02:30.863Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/alfabank-mobile.svg",
   "previewImageFile": "/case-previews/alfabank.svg",
-  "serviceIds": [
+  "year": 2013,
+  "clientId": "alfa",
+  "services": [
     "ux-design",
     "ux-outsource"
   ],
-  "year": 2013
+  "markets": [
+    "fin"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/alfabank-mobile.svg"
 }

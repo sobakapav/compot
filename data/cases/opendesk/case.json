@@ -8,12 +8,17 @@
   "title": "Банковское приложение с криптовалютой",
   "description": "",
   "createdAt": "2026-02-18T10:42:57.984Z",
-  "updatedAt": "2026-02-25T10:14:38.826Z",
+  "updatedAt": "2026-02-25T11:02:30.909Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/opendesk.svg",
   "previewImageFile": "/case-previews/opendesk.svg",
-  "serviceIds": [
+  "year": 2018,
+  "clientId": "opendesk",
+  "services": [
     "research",
     "ux-design"
   ],
-  "year": 2018
+  "markets": [
+    "fin"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/opendesk.svg"
 }

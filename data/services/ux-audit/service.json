@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "id": "ux-audit",
   "title": "UX-аудит",
-  "link": "https://sobakapav.ru/services/ux-audit",
   "createdAt": "2026-02-16T16:01:08.172Z",
-  "updatedAt": "2026-02-25T10:14:39.006Z"
+  "updatedAt": "2026-02-25T10:57:41.900Z",
+  "serviceGroup": "",
+  "image": ""
 }

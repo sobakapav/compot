@@ -4,6 +4,8 @@
 - proposals/ — предложения и версии
 - cases/ — кейсы
 - services/ — услуги
+- clients/ — клиенты
+- markets/ — отрасли
 - designs/ — варианты дизайна
 - links/ — агрегирующие индексы и связи
 - spec/ — спецификации каркаса (типы блоков и примеры)
@@ -12,6 +14,8 @@
 - proposals/index.json
 - cases/index.json
 - services/index.json
+- clients/index.json
+- markets/index.json
 - designs/index.json
 - links/service-proposals.json
 - links/service-cases.json
@@ -20,6 +24,8 @@
 - spec/plan-block.json
 - spec/case.json
 - spec/service.json
+- spec/client.json
+- spec/market.json
 - spec/design.json
 - spec/proposal.json
 - spec/proposal-version.json

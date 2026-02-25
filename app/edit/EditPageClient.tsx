@@ -72,18 +72,37 @@ const blocks = [
 type ServiceItem = {
   id: string;
   title: string;
+  serviceGroup?: string;
+  image?: string;
+};
+
+type ClientItem = {
+  id: string;
+  title: string;
+  logo?: string;
   link?: string;
+  markets?: string[];
+};
+
+type MarketItem = {
+  id: string;
+  title: string;
 };
 
 type CaseItem = {
   id: string;
   title: string;
   clientName: string;
+  clientId?: string;
   preview: string;
   previewImageFile?: string;
   previewImageSourceUrl?: string;
+  image?: string;
   link: string;
+  services?: string[];
   serviceIds?: string[];
+  markets?: string[];
+  year?: number | string;
 };
 
 const useEditable = <T extends HTMLElement = HTMLDivElement>(value: string) => {
@@ -183,6 +202,8 @@ export default function EditPageClient() {
     | null
   >(null);
   const [services, setServices] = useState<ServiceItem[]>([]);
+  const [clients, setClients] = useState<ClientItem[]>([]);
+  const [markets, setMarkets] = useState<MarketItem[]>([]);
   const [cases, setCases] = useState<CaseItem[]>([]);
   const didInitContactsRef = useRef(false);
   const [selectedCaseIds, setSelectedCaseIds] = useState<string[]>([]);
@@ -210,6 +231,27 @@ export default function EditPageClient() {
     title?: string;
     start?: string;
     end?: string;
+  };
+
+  const getCaseServices = (item: CaseItem) =>
+    item.services ?? item.serviceIds ?? [];
+
+  const getCaseClientTitle = (item: CaseItem) =>
+    (item.clientId && clientTitleMap.get(item.clientId)) ||
+    item.clientName ||
+    "";
+
+  const getCaseClientLogo = (item: CaseItem) =>
+    (item.clientId && clientLogoMap.get(item.clientId)) || "";
+
+  const getCaseMarketTitles = (item: CaseItem) => {
+    const ids = item.markets ?? [];
+    return ids.map((id) => marketTitleMap.get(id) || id).filter(Boolean);
+  };
+
+  const getCasePrimaryMarket = (item: CaseItem) => {
+    const titles = getCaseMarketTitles(item);
+    return titles[0] || "";
   };
 
   const [planTasks, setPlanTasks] = useState<PlanTask[]>([
@@ -277,6 +319,21 @@ export default function EditPageClient() {
     [services]
   );
 
+  const clientTitleMap = useMemo(
+    () => new Map(clients.map((client) => [client.id, client.title])),
+    [clients]
+  );
+
+  const clientLogoMap = useMemo(
+    () => new Map(clients.map((client) => [client.id, client.logo || ""])),
+    [clients]
+  );
+
+  const marketTitleMap = useMemo(
+    () => new Map(markets.map((market) => [market.id, market.title])),
+    [markets]
+  );
+
   const serviceLabel = useMemo(() => {
     const name = proposal.serviceName || "услуга";
     const max = "UX-отдел на аутсорсе".length;
@@ -303,7 +360,7 @@ export default function EditPageClient() {
     let list = cases;
     if (caseScope === "service" && proposal.serviceId) {
       list = list.filter((item) =>
-        item.serviceIds?.includes(proposal.serviceId)
+        getCaseServices(item).includes(proposal.serviceId)
       );
     }
     if (caseScope === "selected") {
@@ -313,16 +370,19 @@ export default function EditPageClient() {
     if (!query) return list;
     return list.filter((item) => {
       const serviceTitles =
-        item.serviceIds?.map((id) => serviceTitleMap.get(id)).filter(Boolean) ??
-        [];
+        getCaseServices(item)
+          .map((id) => serviceTitleMap.get(id))
+          .filter(Boolean) ?? [];
+      const marketTitles = getCaseMarketTitles(item);
       const haystack = [
         item.id,
         item.title,
-        item.clientName,
+        getCaseClientTitle(item),
         item.preview,
         item.link,
-        ...(item.serviceIds ?? []),
+        ...getCaseServices(item),
         ...serviceTitles,
+        ...marketTitles,
       ]
         .join(" ")
         .toLowerCase();
@@ -332,6 +392,8 @@ export default function EditPageClient() {
     caseFilter,
     cases,
     serviceTitleMap,
+    clientTitleMap,
+    marketTitleMap,
     caseScope,
     proposal.serviceId,
     selectedCaseIds,
@@ -552,6 +614,11 @@ export default function EditPageClient() {
             }}
             className="group relative flex min-h-[140px] flex-col gap-2 rounded-xl bg-white pt-0 pb-0 pr-3 pl-0"
           >
+            {getCasePrimaryMarket(item) && (
+              <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+                {getCasePrimaryMarket(item)}
+              </div>
+            )}
             {item.previewImageFile || item.previewImageSourceUrl ? (
               <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded bg-zinc-50">
                 <img
@@ -566,8 +633,18 @@ export default function EditPageClient() {
                 {item.preview || "—"}
               </div>
             )}
-            <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              {item.clientName || "Клиент"}
+            <div className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+              {getCaseClientLogo(item) && (
+                <span className="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-white">
+                  <img
+                    src={getCaseClientLogo(item)}
+                    alt=""
+                    className="h-full w-auto object-contain"
+                    loading="lazy"
+                  />
+                </span>
+              )}
+              <span>{getCaseClientTitle(item) || "Клиент"}</span>
             </div>
             <div className="text-[12px] font-medium text-zinc-900">
               {item.title}
@@ -857,6 +934,34 @@ export default function EditPageClient() {
       }
     };
     loadServices();
+  }, []);
+
+  useEffect(() => {
+    const loadClients = async () => {
+      try {
+        const response = await fetch("/api/clients");
+        if (!response.ok) return;
+        const data = await response.json();
+        setClients(data.items ?? []);
+      } catch {
+        return;
+      }
+    };
+    loadClients();
+  }, []);
+
+  useEffect(() => {
+    const loadMarkets = async () => {
+      try {
+        const response = await fetch("/api/markets");
+        if (!response.ok) return;
+        const data = await response.json();
+        setMarkets(data.items ?? []);
+      } catch {
+        return;
+      }
+    };
+    loadMarkets();
   }, []);
 
   useEffect(() => {
@@ -2607,7 +2712,7 @@ export default function EditPageClient() {
                         }));
                         if (id) {
                           const matched = cases.filter((item) =>
-                            item.serviceIds?.includes(id)
+                            getCaseServices(item).includes(id)
                           );
                           const byYear = matched.reduce<Record<string, typeof matched>>(
                             (acc, item) => {
@@ -2854,7 +2959,7 @@ export default function EditPageClient() {
                     const checked = selectedCaseIds.includes(item.id);
                     const isServiceMatch =
                       proposal.serviceId &&
-                      item.serviceIds?.includes(proposal.serviceId);
+                      getCaseServices(item).includes(proposal.serviceId);
                     const linkInfo = item.link
                       ? formatCaseLink(item.link)
                       : null;
@@ -2884,9 +2989,9 @@ export default function EditPageClient() {
                         >
                           <div className="flex items-center gap-2">
                             <span>{item.title}</span>
-                            {item.clientName && (
+                            {getCaseClientTitle(item) && (
                               <span className="text-[10px] text-zinc-500">
-                                {item.clientName}
+                                {getCaseClientTitle(item)}
                               </span>
                             )}
                             {isServiceMatch && (

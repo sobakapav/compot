@@ -8,12 +8,17 @@
   "title": "Сайт амбициозного регионального провайдера",
   "description": "",
   "createdAt": "2026-02-18T10:42:33.451Z",
-  "updatedAt": "2026-02-25T10:14:38.330Z",
+  "updatedAt": "2026-02-25T11:02:30.876Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ecity.svg",
   "previewImageFile": "/case-previews/e-gorod.svg",
-  "serviceIds": [
+  "year": 2018,
+  "clientId": "ecity",
+  "services": [
     "ux-design",
     "ux-outsource"
   ],
-  "year": 2018
+  "markets": [
+    "telecom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/ecity.svg"
 }

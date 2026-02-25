@@ -8,11 +8,16 @@
   "title": "Интерфейс онлайн-банка для юридических лиц",
   "description": "",
   "createdAt": "2026-02-18T10:42:58.296Z",
-  "updatedAt": "2026-02-25T10:14:38.828Z",
+  "updatedAt": "2026-02-25T11:02:30.910Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/otkritie.svg",
   "previewImageFile": "/case-previews/otkritie.svg",
-  "serviceIds": [
+  "year": 2016,
+  "clientId": "otkritie",
+  "services": [
     "redesign"
   ],
-  "year": 2016
+  "markets": [
+    "fin"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/otkritie.svg"
 }

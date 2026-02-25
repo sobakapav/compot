@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "miac-spb",
+  "title": "МИАЦ СПб",
+  "logo": "https://sobakapav.ru/images/portfolio/miaz/logo.png",
+  "link": "https://spbmiac.ru/",
+  "markets": [
+    "med"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "acme",
+  "title": "Acme Corp",
+  "logo": "https://example.com/logo.svg",
+  "link": "https://acme.example",
+  "markets": ["market-001"],
+  "createdAt": "2026-02-16T12:00:00Z",
+  "updatedAt": "2026-02-16T12:00:00Z"
+}

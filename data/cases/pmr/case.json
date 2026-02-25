@@ -8,12 +8,17 @@
   "title": "Интерфейс для сайта испанского агентства недвижимости",
   "description": "",
   "createdAt": "2026-02-18T10:43:00.619Z",
-  "updatedAt": "2026-02-25T10:14:38.832Z",
+  "updatedAt": "2026-02-25T11:02:30.911Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/pmr.svg",
   "previewImageFile": "/case-previews/pmr.svg",
-  "serviceIds": [
+  "year": 2014,
+  "clientId": "paradise-marbella",
+  "services": [
     "ux-design",
     "content-design"
   ],
-  "year": 2014
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/pmr.svg"
 }

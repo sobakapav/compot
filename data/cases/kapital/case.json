@@ -8,12 +8,18 @@
   "title": "Исследование пользователей и дизайн сайта страховой компании",
   "description": "",
   "createdAt": "2026-02-18T10:42:48.471Z",
-  "updatedAt": "2026-02-25T10:14:38.582Z",
+  "updatedAt": "2026-02-25T11:02:30.884Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/kapital.svg",
   "previewImageFile": "/case-previews/kapital.svg",
-  "serviceIds": [
+  "year": 2020,
+  "clientId": "kapital-ms",
+  "services": [
     "research",
     "ux-design"
   ],
-  "year": 2020
+  "markets": [
+    "fin",
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/kapital.svg"
 }

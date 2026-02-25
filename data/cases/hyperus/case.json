@@ -8,12 +8,17 @@
   "title": "Дизайн интерфейса системы управления IT-инфраструктурой",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.182Z",
-  "updatedAt": "2026-02-25T10:14:38.338Z",
+  "updatedAt": "2026-02-25T11:02:30.882Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/hyperus.svg",
   "previewImageFile": "/case-previews/hyperus.svg",
-  "serviceIds": [
+  "year": 2024,
+  "clientId": "hyperus",
+  "services": [
     "ux-audit",
     "ui-redesign"
   ],
-  "year": 2024
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/hyperus.svg"
 }

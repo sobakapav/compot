@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "ecity",
+  "title": "Электронный город",
+  "logo": "https://sobakapav.ru/images/portfolio/novotelekom/logo.png",
+  "link": "https://2090000.ru/",
+  "markets": [
+    "telecom"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

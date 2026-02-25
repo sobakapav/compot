@@ -8,12 +8,17 @@
   "title": "Интерфейс приложения для покупки авиабилетов",
   "description": "",
   "createdAt": "2026-02-18T10:42:26.471Z",
-  "updatedAt": "2026-02-25T10:14:38.324Z",
+  "updatedAt": "2026-02-25T11:02:30.872Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/biletik.svg",
   "previewImageFile": "/case-previews/biletik.svg",
-  "serviceIds": [
+  "year": 2016,
+  "clientId": "biletik-aero",
+  "services": [
     "redesign",
     "new-features"
   ],
-  "year": 2016
+  "markets": [
+    "log"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/biletik.svg"
 }

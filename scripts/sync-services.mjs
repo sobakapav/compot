@@ -70,15 +70,21 @@ const normalizeItems = (payload) => {
           item.serviceId ||
           extractIdFromLink(item.link || item.url);
         const title = item.title || item.name || item.label || "";
-        const link =
-          item.link ||
-          item.url ||
-          (id ? `https://sobakapav.ru/services/${id}` : "");
+        const serviceGroup =
+          item.serviceGroup || item.service || item.group || item.category || "";
+        const image =
+          item.image ||
+          item.preview ||
+          item.cardImage ||
+          item.cover ||
+          item.coverUrl ||
+          "";
         if (!id) return null;
         return {
           id: String(id).trim(),
           title: String(title).trim(),
-          link: String(link).trim(),
+          serviceGroup: String(serviceGroup).trim(),
+          image: String(image).trim(),
         };
       })
       .filter(Boolean);
@@ -92,7 +98,8 @@ const normalizeItems = (payload) => {
           return {
             id: String(key).trim(),
             title: value.trim(),
-            link: `https://sobakapav.ru/services/${String(key).trim()}`,
+            serviceGroup: "",
+            image: "",
           };
         }
         if (value && typeof value === "object") {
@@ -104,15 +111,25 @@ const normalizeItems = (payload) => {
             key ||
             extractIdFromLink(value.link || value.url);
           const title = value.title || value.name || value.label || "";
-          const link =
-            value.link ||
-            value.url ||
-            (id ? `https://sobakapav.ru/services/${id}` : "");
+          const serviceGroup =
+            value.serviceGroup ||
+            value.service ||
+            value.group ||
+            value.category ||
+            "";
+          const image =
+            value.image ||
+            value.preview ||
+            value.cardImage ||
+            value.cover ||
+            value.coverUrl ||
+            "";
           if (!id) return null;
           return {
             id: String(id).trim(),
             title: String(title).trim(),
-            link: String(link).trim(),
+            serviceGroup: String(serviceGroup).trim(),
+            image: String(image).trim(),
           };
         }
         return null;
@@ -143,7 +160,12 @@ const readLocalServices = async () => {
     const servicePath = path.join(SERVICES_DIR, entry.name, "service.json");
     const service = await safeReadJson(servicePath, null);
     if (!service?.id || !service?.title) continue;
-    items.push({ id: service.id, title: service.title });
+    items.push({
+      id: service.id,
+      title: service.title,
+      serviceGroup: service.serviceGroup ?? "",
+      image: service.image ?? "",
+    });
   }
   return items;
 };
@@ -264,11 +286,13 @@ export const syncServices = async ({
     const existing = await safeReadJson(servicePath, {});
 
     const title = item.title || existing.title || "";
-    const link = item.link || existing.link || "";
+    const serviceGroup = item.serviceGroup || existing.serviceGroup || "";
+    const image = item.image || existing.image || "";
 
     const missing = [];
     if (!item.title) missing.push("title");
-    if (!item.link) missing.push("link");
+    if (!item.serviceGroup) missing.push("serviceGroup");
+    if (!item.image) missing.push("image");
     if (missing.length > 0) {
       missingFields.push({ id: item.id, missing });
     }
@@ -280,12 +304,13 @@ export const syncServices = async ({
       schemaVersion: 1,
       id: item.id,
       title,
-      link,
+      serviceGroup,
+      image,
       createdAt,
       updatedAt: now.toISOString(),
     });
 
-    updatedItems.push({ id: item.id, title });
+    updatedItems.push({ id: item.id, title, serviceGroup, image });
   }
 
   await writeJson(INDEX_PATH, {

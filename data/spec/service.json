@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "id": "service-001",
   "title": "Service Title",
-  "link": "https://example.com/service",
+  "serviceGroup": "Strategy",
+  "image": "https://example.com/service-card.webp",
   "createdAt": "2026-02-16T12:00:00Z",
   "updatedAt": "2026-02-16T12:00:00Z"
 }

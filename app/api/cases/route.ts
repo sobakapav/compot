@@ -12,9 +12,9 @@ export async function GET() {
     const indexItems = data.items ?? [];
     const items = indexItems.map((item: { id: string }) => item.id);
     const serviceMap = new Map<string, string[]>(
-      indexItems.map((item: { id: string; serviceIds?: string[] }) => [
+      indexItems.map((item: { id: string; services?: string[]; serviceIds?: string[] }) => [
         item.id,
-        item.serviceIds ?? [],
+        item.services ?? item.serviceIds ?? [],
       ])
     );
     const results = await Promise.all(
@@ -33,11 +33,16 @@ export async function GET() {
             id: parsed.id,
             title: parsed.title ?? "",
             clientName: parsed.clientName ?? "",
+            clientId: parsed.clientId ?? "",
             preview: parsed.preview ?? "",
             previewImageFile: parsed.previewImageFile ?? "",
             previewImageSourceUrl: parsed.previewImageSourceUrl ?? "",
+            image: parsed.image ?? "",
             link: parsed.link ?? "",
-            serviceIds: serviceMap.get(parsed.id) ?? [],
+            services:
+              parsed.services ?? parsed.serviceIds ?? serviceMap.get(parsed.id) ?? [],
+            markets: parsed.markets ?? [],
+            year: parsed.year ?? "",
           };
         } catch {
           return null;

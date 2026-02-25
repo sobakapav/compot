@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "crt",
+  "title": "Центр речевых технологий (ЦРТ)",
+  "logo": "https://sobakapav.ru/images/portfolio/center-rechevyh-technologiy/logo.png",
+  "link": "https://www.speechpro.ru/",
+  "markets": [
+    "it",
+    "gos"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

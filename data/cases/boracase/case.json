@@ -8,11 +8,17 @@
   "title": "Многомодульная система бронирования круизных и паромных перевозок",
   "description": "",
   "createdAt": "2026-02-18T10:42:26.764Z",
-  "updatedAt": "2026-02-25T10:14:38.324Z",
+  "updatedAt": "2026-02-25T11:02:30.872Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/bora.svg",
   "previewImageFile": "/case-previews/boracase.svg",
-  "serviceIds": [
+  "year": 2019,
+  "clientId": "bora",
+  "services": [
     "redesign"
   ],
-  "year": 2019
+  "markets": [
+    "log",
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/bora.svg"
 }

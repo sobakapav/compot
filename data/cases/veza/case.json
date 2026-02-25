@@ -8,12 +8,17 @@
   "title": "Личный кабинет для проектировщиков и монтажников",
   "description": "",
   "createdAt": "2026-02-18T10:43:08.908Z",
-  "updatedAt": "2026-02-25T10:14:38.843Z",
+  "updatedAt": "2026-02-25T11:02:30.921Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/veza.svg",
   "previewImageFile": "/case-previews/veza.svg",
-  "serviceIds": [
+  "year": 2019,
+  "clientId": "veza",
+  "services": [
     "ux-design",
     "research"
   ],
-  "year": 2019
+  "markets": [
+    "prom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/veza.svg"
 }

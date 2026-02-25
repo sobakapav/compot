@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "status": "synced",
+  "syncedAt": "2026-02-25T12:05:39.244Z",
+  "lastSyncDate": "2026-02-25",
+  "sourceUrl": "https://sobakapav.ru/listClients.json",
+  "itemsCount": 127,
+  "missingFields": [
+    {
+      "id": "bazis",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "bora",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "check-and-pay",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "baltika-carlsberg",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "freemoneyforum-ru",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "fishlook",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "fudtrek",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "jazzpay",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "joono",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "korochka-ru",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "likehack",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "littleone",
+      "missing": [
+        "markets"
+      ]
+    },
+    {
+      "id": "omnitopic",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "otvet",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "paradise-marbella",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "sindbad",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "stroynastroy",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "tigitl",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "moscow",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "zhivoy-ofis",
+      "missing": [
+        "link"
+      ]
+    },
+    {
+      "id": "zombilend",
+      "missing": [
+        "link"
+      ]
+    }
+  ]
+}

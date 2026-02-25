@@ -10,6 +10,7 @@ const casesDir = path.join(rootDir, "data", "cases");
 const linksDir = path.join(rootDir, "data", "links");
 const previewsDir = path.join(rootDir, "public", "case-previews");
 const syncFile = path.join(linksDir, "case-sync.json");
+const clientsIndexPath = path.join(rootDir, "data", "clients", "index.json");
 
 const getTodayKey = () => new Date().toISOString().slice(0, 10);
 
@@ -77,6 +78,15 @@ const normalizeServiceIds = (services) => {
 
 const normalizeServiceIdsWithMap = (services) => normalizeServiceIds(services);
 
+const normalizeMarketIds = (markets) => {
+  const list = toArray(markets).map((market) => {
+    if (!market) return "";
+    if (typeof market === "string") return market;
+    return market.id || market.slug || market.code || market.name || market.title || "";
+  });
+  return list.filter(Boolean).map((value) => String(value));
+};
+
 const resolvePreviewUrl = (item) =>
   pickFirst(item, [
     "previewImageSourceUrl",
@@ -88,6 +98,16 @@ const resolvePreviewUrl = (item) =>
     "cover",
     "coverUrl",
   ]);
+
+const readClientsIndex = async () => {
+  const data = await readJson(clientsIndexPath, { items: [] });
+  if (!Array.isArray(data.items)) return new Map();
+  return new Map(
+    data.items
+      .filter((item) => item?.id)
+      .map((item) => [String(item.id), String(item.title ?? "")])
+  );
+};
 
 const extensionFromUrl = (url) => {
   try {
@@ -191,6 +211,8 @@ const main = async () => {
   const run = await shouldRunToday();
   if (!run) return;
 
+  const clientsMap = await readClientsIndex();
+
   let payload;
   try {
     const fetched = await fetchSource();
@@ -217,20 +239,40 @@ const main = async () => {
     const id = deriveId(item, link);
     if (!id) continue;
 
+    const caseDir = path.join(casesDir, id);
+    await fs.mkdir(caseDir, { recursive: true });
+    const casePath = path.join(caseDir, "case.json");
+    const existing = await readJson(casePath, {});
+
     const title = pickFirst(item, ["title", "name", "caseName", "projectTitle"]);
-    const clientName = pickFirst(item, [
+    const clientId = pickFirst(item, ["clientId", "client", "clientCode", "clientSlug"]);
+    const clientNameFromMap = clientId ? clientsMap.get(String(clientId)) : "";
+    const clientName = clientNameFromMap || pickFirst(item, [
       "clientName",
+      "clientTitle",
       "client",
       "customer",
       "company",
       "brand",
-    ]);
-    const preview = pickFirst(item, ["preview", "excerpt", "summary", "short"]);
-    const description = pickFirst(item, ["description", "text", "details"]);
+    ]) || existing.clientName || "";
+    const preview =
+      pickFirst(item, ["preview", "excerpt", "summary", "short"]) ||
+      existing.preview ||
+      "";
+    const description =
+      pickFirst(item, ["description", "text", "details"]) ||
+      existing.description ||
+      "";
     const previewUrl = resolvePreviewUrl(item);
-    const serviceIds = normalizeServiceIdsWithMap(
+    const image = previewUrl || existing.image || "";
+    const servicesRaw = normalizeServiceIdsWithMap(
       item?.services ?? item?.serviceIds
     );
+    const services =
+      servicesRaw.length > 0 ? servicesRaw : existing.services ?? [];
+    const marketsRaw = normalizeMarketIds(item?.markets ?? item?.market);
+    const markets =
+      marketsRaw.length > 0 ? marketsRaw : existing.markets ?? [];
     const yearRaw = pickFirst(item, ["year", "years", "date", "createdAt"]);
     const year =
       typeof yearRaw === "number"
@@ -238,11 +280,6 @@ const main = async () => {
         : typeof yearRaw === "string"
         ? Number(yearRaw.slice(0, 4)) || ""
         : "";
-
-    const caseDir = path.join(casesDir, id);
-    await fs.mkdir(caseDir, { recursive: true });
-    const casePath = path.join(caseDir, "case.json");
-    const existing = await readJson(casePath, {});
 
     let previewImageFile = existing.previewImageFile ?? "";
     let previewImageSourceUrl = existing.previewImageSourceUrl ?? "";
@@ -260,6 +297,7 @@ const main = async () => {
       schemaVersion: 1,
       id,
       link,
+      clientId: clientId ? String(clientId) : "",
       clientName,
       clientLogoFile: existing.clientLogoFile ?? "",
       preview,
@@ -269,12 +307,14 @@ const main = async () => {
       updatedAt: new Date().toISOString(),
       previewImageSourceUrl,
       previewImageFile,
-      serviceIds,
+      image,
+      services,
+      markets,
       year,
     };
     await writeJson(casePath, nextCase);
 
-    indexItems.push({ id, serviceIds, year });
+    indexItems.push({ id, services, markets, clientId: clientId ? String(clientId) : "", year });
     updatedCount += 1;
   }
 

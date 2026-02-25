@@ -8,11 +8,16 @@
   "title": "Дизайн интерфейса платежного сервиса",
   "description": "",
   "createdAt": "2026-02-18T10:42:44.802Z",
-  "updatedAt": "2026-02-25T10:14:38.577Z",
+  "updatedAt": "2026-02-25T11:02:30.882Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/jazzpay.svg",
   "previewImageFile": "/case-previews/jazzpay.svg",
-  "serviceIds": [
+  "year": 2013,
+  "clientId": "jazzpay",
+  "services": [
     "ux-design"
   ],
-  "year": 2013
+  "markets": [
+    "fin"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/jazzpay.svg"
 }

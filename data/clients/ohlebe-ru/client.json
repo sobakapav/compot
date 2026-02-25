@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "ohlebe-ru",
+  "title": "OHLEBE.ru",
+  "logo": "https://sobakapav.ru/images/portfolio/ohlebe/logo.svg",
+  "link": "https://ohlebe.ru/",
+  "markets": [
+    "ec"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "cindicator",
+  "title": "Cindicator",
+  "logo": "https://sobakapav.ru/images/portfolio/cindicator/logo.png",
+  "link": "https://cindicator.com/",
+  "markets": [
+    "fin"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

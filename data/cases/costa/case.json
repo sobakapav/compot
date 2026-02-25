@@ -8,11 +8,16 @@
   "title": "Интерфейс дашборда медицинской системы",
   "description": "",
   "createdAt": "2026-02-18T10:42:30.230Z",
-  "updatedAt": "2026-02-25T10:14:38.328Z",
+  "updatedAt": "2026-02-25T11:02:30.874Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/costa.svg",
   "previewImageFile": "/case-previews/costa.svg",
-  "serviceIds": [
+  "year": 2017,
+  "clientId": "costa",
+  "services": [
     "ux-design"
   ],
-  "year": 2017
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/costa.svg"
 }

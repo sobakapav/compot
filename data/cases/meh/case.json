@@ -8,11 +8,16 @@
   "title": "Контент и прототип буклета для отраслевой выставки",
   "description": "",
   "createdAt": "2026-02-18T10:42:53.075Z",
-  "updatedAt": "2026-02-25T10:14:38.818Z",
+  "updatedAt": "2026-02-25T11:02:30.901Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/meh.svg",
   "previewImageFile": "/case-previews/meh.jpg",
-  "serviceIds": [
+  "year": 2016,
+  "clientId": "mechanotronika",
+  "services": [
     "content-design"
   ],
-  "year": 2016
+  "markets": [
+    "prom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/meh.svg"
 }

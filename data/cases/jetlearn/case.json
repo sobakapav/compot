@@ -8,11 +8,16 @@
   "title": "Платформа для корпоративного обучения",
   "description": "",
   "createdAt": "2026-02-18T10:42:46.741Z",
-  "updatedAt": "2026-02-25T10:14:38.579Z",
+  "updatedAt": "2026-02-25T11:02:30.883Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/jetlearn.svg",
   "previewImageFile": "/case-previews/jetlearn.svg",
-  "serviceIds": [
+  "year": 2021,
+  "clientId": "jetlearn",
+  "services": [
     "ux-design"
   ],
-  "year": 2021
+  "markets": [
+    "ed"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/jetlearn.svg"
 }

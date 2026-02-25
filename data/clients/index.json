@@ -1,0 +1,1161 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "alarm-motors",
+      "title": "Аларм-Моторс",
+      "logo": "https://sobakapav.ru/images/portfolio/alarm-motors/logo.png",
+      "link": "https://alarm-motors.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "alfa",
+      "title": "Альфа-Банк",
+      "logo": "https://sobakapav.ru/images/portfolio/alfabank/logo.svg",
+      "link": "https://alfabank.ru/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "alfastrah",
+      "title": "АльфаСтрахование",
+      "logo": "https://sobakapav.ru/images/portfolio/alfastrahhr/logo.png",
+      "link": "https://www.alfastrah.ru/",
+      "markets": [
+        "fin",
+        "it"
+      ]
+    },
+    {
+      "id": "algohelp",
+      "title": "Algohelp",
+      "logo": "https://sobakapav.ru/images/portfolio/algohelp/logo.png",
+      "link": "https://algohelp.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "amber",
+      "title": "Amber",
+      "logo": "https://sobakapav.ru/images/portfolio/amber/logo.jpg",
+      "link": "https://amber-soft.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "anggell",
+      "title": "Anggell",
+      "logo": "https://sobakapav.ru/images/portfolio/anggell/logo.svg",
+      "link": "http://www.anggell.com/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "atol",
+      "title": "Атол",
+      "logo": "https://sobakapav.ru/images/portfolio/atol/logo.svg",
+      "link": "https://www.atol.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "ati-su",
+      "title": "ATI.SU (АвтоТрансИнфо)",
+      "logo": "https://sobakapav.ru/images/portfolio/autotransinfo/logo.svg",
+      "link": "https://ati.su/",
+      "markets": [
+        "log"
+      ]
+    },
+    {
+      "id": "avicenna",
+      "title": "Авиценна",
+      "logo": "https://sobakapav.ru/images/portfolio/avicenna/logo.svg",
+      "link": "https://kostasoft.ru/produkty/mis-avitsenna/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "avito",
+      "title": "Avito",
+      "logo": "https://sobakapav.ru/images/portfolio/arriva/logo.svg",
+      "link": "https://www.avito.ru",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "azbuka-vkusa",
+      "title": "Азбука Вкуса",
+      "logo": "https://sobakapav.ru/images/portfolio/azbuka/logo.svg",
+      "link": "https://av.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "bazis",
+      "title": "Базис",
+      "logo": "https://sobakapav.ru/images/portfolio/basis/logo.svg",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "bercut",
+      "title": "Bercut",
+      "logo": "https://sobakapav.ru/images/portfolio/bercut/logo.png",
+      "link": "https://bercut.com/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "bi-bi",
+      "title": "Би-Би",
+      "logo": "https://sobakapav.ru/images/portfolio/bibi/logo.svg",
+      "link": "https://bi-bi.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "biletik-aero",
+      "title": "Билетик.Аэро",
+      "logo": "https://sobakapav.ru/images/portfolio/biletik/logo.svg",
+      "link": "https://www.biletik.aero/",
+      "markets": [
+        "log"
+      ]
+    },
+    {
+      "id": "bora",
+      "title": "Bora",
+      "logo": "https://sobakapav.ru/images/portfolio/boracase/logo.png",
+      "link": "",
+      "markets": [
+        "log",
+        "it"
+      ]
+    },
+    {
+      "id": "brighteye",
+      "title": "Brighteye",
+      "logo": "https://sobakapav.ru/images/portfolio/brighteye/logo.jpg",
+      "link": "https://www.brighteye.be/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "crt",
+      "title": "Центр речевых технологий (ЦРТ)",
+      "logo": "https://sobakapav.ru/images/portfolio/center-rechevyh-technologiy/logo.png",
+      "link": "https://www.speechpro.ru/",
+      "markets": [
+        "it",
+        "gos"
+      ]
+    },
+    {
+      "id": "check-and-pay",
+      "title": "Check and Pay",
+      "logo": "https://sobakapav.ru/images/portfolio/checknpay/logo.png",
+      "link": "",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "cindicator",
+      "title": "Cindicator",
+      "logo": "https://sobakapav.ru/images/portfolio/cindicator/logo.png",
+      "link": "https://cindicator.com/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "compel",
+      "title": "Компэл",
+      "logo": "https://sobakapav.ru/images/portfolio/compel/logo.png",
+      "link": "https://www.compel.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "control",
+      "title": "Data Solution",
+      "logo": "https://sobakapav.ru/images/portfolio/control/logo.svg",
+      "link": "https://datasolution.team/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "costa",
+      "title": "КОСТА",
+      "logo": "https://sobakapav.ru/images/portfolio/costa/logo.svg",
+      "link": "https://kostasoft.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "cybermall",
+      "title": "Кибермолл",
+      "logo": "https://sobakapav.ru/images/portfolio/cybermall/logo.png",
+      "link": "https://cybermall.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "dau",
+      "title": "«Дау»",
+      "logo": "https://sobakapav.ru/images/portfolio/dau/logo.png",
+      "link": "https://www.dau.com/en",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "dipol",
+      "title": "Диполь",
+      "logo": "https://sobakapav.ru/images/portfolio/dipol/logo.png",
+      "link": "https://dipaul.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "domotehnika",
+      "title": "Домотехника",
+      "logo": "https://sobakapav.ru/images/portfolio/domotech/logo.svg",
+      "link": "https://domotekhnika.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "ecity",
+      "title": "Электронный город",
+      "logo": "https://sobakapav.ru/images/portfolio/novotelekom/logo.png",
+      "link": "https://2090000.ru/",
+      "markets": [
+        "telecom"
+      ]
+    },
+    {
+      "id": "easydocs",
+      "title": "EasyDocs",
+      "logo": "https://sobakapav.ru/images/portfolio/easydocs/logo.png",
+      "link": "https://easydocs.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "baltika-carlsberg",
+      "title": "Балтика & Carlsberg",
+      "logo": "https://sobakapav.ru/images/portfolio/edms/logo.png",
+      "link": "",
+      "markets": [
+        "it",
+        "prom"
+      ]
+    },
+    {
+      "id": "erna",
+      "title": "Erna",
+      "logo": "https://sobakapav.ru/images/portfolio/erna/logo.svg",
+      "link": "https://erna.moscow/#rec806330140#!/tab/822667600-3",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "elektronika",
+      "title": "Электроника",
+      "logo": "https://sobakapav.ru/images/portfolio/electronika/logo.svg",
+      "link": "https://www.electronika.ru/",
+      "markets": [
+        "gos"
+      ]
+    },
+    {
+      "id": "elma",
+      "title": "ELMA",
+      "logo": "https://sobakapav.ru/images/portfolio/elma/logo.svg",
+      "link": "https://elma365.com",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "freemoneyforum-ru",
+      "title": "Freemoneyforum.ru",
+      "logo": "https://sobakapav.ru/images/portfolio/ethr/logo.png",
+      "link": "",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "etm",
+      "title": "«ЭТМ»",
+      "logo": "https://sobakapav.ru/images/portfolio/etm/logo.svg",
+      "link": "https://www.etm.ru/",
+      "markets": [
+        "ec",
+        "prom"
+      ]
+    },
+    {
+      "id": "f-kabinki",
+      "title": "Эф-Кабинки",
+      "logo": "https://sobakapav.ru/images/portfolio/f-kabinki/logo.png",
+      "link": "https://f-kabinki.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "faberlic",
+      "title": "Faberlic",
+      "logo": "https://sobakapav.ru/images/portfolio/faberlic/logo.png",
+      "link": "https://faberlic.com/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "simple",
+      "title": "Simple",
+      "logo": "https://sobakapav.ru/images/portfolio/fasting/logo.svg",
+      "link": "https://simple.life/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "fastvps",
+      "title": "FastVPS",
+      "logo": "https://sobakapav.ru/images/portfolio/fastvps/logo.svg",
+      "link": "https://fastvps.ru/",
+      "markets": [
+        "telecom"
+      ]
+    },
+    {
+      "id": "finexware",
+      "title": "FinexWare",
+      "logo": "https://sobakapav.ru/images/portfolio/finexware/logo.svg",
+      "link": "http://finexware.com/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "fishlook",
+      "title": "Fishlook",
+      "logo": "https://sobakapav.ru/images/portfolio/fishlook/logo.png",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "flarm",
+      "title": "ФЛАРМ ПК",
+      "logo": "https://sobakapav.ru/images/portfolio/flarm/logo.svg",
+      "link": "https://www.flarm-spb.ru/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "fudtrek",
+      "title": "ФудТрек",
+      "logo": "https://sobakapav.ru/images/portfolio/foodtrucks/logo.png",
+      "link": "",
+      "markets": [
+        "log"
+      ]
+    },
+    {
+      "id": "gazprom",
+      "title": "Газпром-нефть",
+      "logo": "https://sobakapav.ru/images/portfolio/gazprom/logo.png",
+      "link": "https://www.gazprom-neft.ru/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "geonaft",
+      "title": "Геонафт",
+      "logo": "https://sobakapav.ru/images/portfolio/geonaft/gti.svg",
+      "link": "https://geonaft.ai/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "good-wood",
+      "title": "Good Wood",
+      "logo": "https://sobakapav.ru/images/portfolio/goodwood/logo.svg",
+      "link": "https://www.gwd.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "gormost",
+      "title": "ГБУ «Гормост»",
+      "logo": "https://sobakapav.ru/images/portfolio/gormost/logo.svg",
+      "link": "https://gormost.mos.ru/",
+      "markets": [
+        "gos",
+        "log"
+      ]
+    },
+    {
+      "id": "humans",
+      "title": "Humans",
+      "logo": "https://sobakapav.ru/images/portfolio/humans/logo.svg",
+      "link": "https://humans.uz/",
+      "markets": [
+        "telecom"
+      ]
+    },
+    {
+      "id": "hyperus",
+      "title": "Hyperus",
+      "logo": "https://sobakapav.ru/images/portfolio/hyperus/logo.svg",
+      "link": "https://hyperus.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "inbank",
+      "title": "Inbank",
+      "logo": "https://sobakapav.ru/images/portfolio/inbank/inbank_logo.jpeg",
+      "link": "https://in-bank.ru/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "intickets-ru",
+      "title": "INTICKETS.RU",
+      "logo": "https://sobakapav.ru/images/portfolio/intickets/logo.svg",
+      "link": "http://intickets.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "jazzpay",
+      "title": "Jazzpay",
+      "logo": "https://sobakapav.ru/images/portfolio/jazzpay/logo.png",
+      "link": "",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "jeffit",
+      "title": "Jeffit",
+      "logo": "https://sobakapav.ru/images/portfolio/jeffit/logo.png",
+      "link": "https://jeffit.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "jetlearn",
+      "title": "JetLearn",
+      "logo": "https://sobakapav.ru/images/portfolio/jetlearn/logo.svg",
+      "link": "https://www.jetlearn.com/",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "joono",
+      "title": "Joono",
+      "logo": "https://sobakapav.ru/images/portfolio/joono-ai/logo.png",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "crooked",
+      "title": "Crooked",
+      "logo": "https://sobakapav.ru/images/portfolio/kids-crooked-house/logo.svg",
+      "link": "https://kidscrookedhouse.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "kapital-ms",
+      "title": "Капитал МС",
+      "logo": "https://sobakapav.ru/images/portfolio/kapital/logo.png",
+      "link": "https://kapmed.ru/",
+      "markets": [
+        "fin",
+        "med"
+      ]
+    },
+    {
+      "id": "korochka-ru",
+      "title": "Корочка.ру",
+      "logo": "https://sobakapav.ru/images/portfolio/korochka/logo.png",
+      "link": "",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "lab4u",
+      "title": "Lab4u",
+      "logo": "https://sobakapav.ru/images/portfolio/lab4u/logo.svg",
+      "link": "https://lab4u.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "complex",
+      "title": "Lantapro (КИБ Комплекс)",
+      "logo": "https://sobakapav.ru/images/portfolio/lantapro/logo.png",
+      "link": "https://lantapro.ru/",
+      "markets": [
+        "gos",
+        "it"
+      ]
+    },
+    {
+      "id": "likehack",
+      "title": "LikeHack",
+      "logo": "https://sobakapav.ru/images/portfolio/likehack/logo.png",
+      "link": "",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "littleone",
+      "title": "LittleOne",
+      "logo": "https://sobakapav.ru/images/portfolio/littleone/logo.png",
+      "link": "https://littleone.com/",
+      "markets": []
+    },
+    {
+      "id": "lori",
+      "title": "Фотобанк «Лори»",
+      "logo": "https://sobakapav.ru/images/portfolio/lori/logo.svg",
+      "link": "https://lori.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "m-line",
+      "title": "М-ЛАЙН",
+      "logo": "https://sobakapav.ru/images/portfolio/m-line/logo.svg",
+      "link": "https://m-line.expert",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "manualmachine",
+      "title": "ManualMachine",
+      "logo": "https://sobakapav.ru/images/portfolio/manualmachine/logo.svg",
+      "link": "https://manualmachine.com/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "math",
+      "title": "Образовательный лагерь «Марабу»",
+      "logo": "https://sobakapav.ru/images/portfolio/math/logo.svg",
+      "link": "https://marabou.club/",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "medmarket",
+      "title": "MedMarket (ООО \"Консалтинг и Связь\")",
+      "logo": "https://sobakapav.ru/images/portfolio/math/logo.svg",
+      "link": "https://med-market.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "mechanotronika",
+      "title": "НПФ «Механотроника РА»",
+      "logo": "https://sobakapav.ru/images/portfolio/meh/logo.png",
+      "link": "http://mtra.ru/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "miac-spb",
+      "title": "МИАЦ СПб",
+      "logo": "https://sobakapav.ru/images/portfolio/miaz/logo.png",
+      "link": "https://spbmiac.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "mirbir",
+      "title": "МирБир",
+      "logo": "https://sobakapav.ru/images/portfolio/mirbeer/logo.svg",
+      "link": "https://www.mirbeer.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "netrika-medicina",
+      "title": "Нетрика.Медицина",
+      "logo": "https://sobakapav.ru/images/portfolio/netrika/logo.png",
+      "link": "https://n3med.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "monetory",
+      "title": "Monetory",
+      "logo": "https://sobakapav.ru/images/portfolio/monetory/logo.svg",
+      "link": "https://monetory.io/ru",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "neuroiconica",
+      "title": "Нейроиконика",
+      "logo": "https://sobakapav.ru/images/portfolio/neurobureau/logo.svg",
+      "link": "https://neuroiconica.ru/",
+      "markets": [
+        "it",
+        "med"
+      ]
+    },
+    {
+      "id": "nextons",
+      "title": "Nextons",
+      "logo": "https://sobakapav.ru/images/portfolio/nextons/logo.svg",
+      "link": "https://nextons.ru/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "nlmk",
+      "title": "НЛМК",
+      "logo": "https://sobakapav.ru/images/portfolio/nlmk/logo.png",
+      "link": "https://nlmk.com/ru/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "ohlebe-ru",
+      "title": "OHLEBE.ru",
+      "logo": "https://sobakapav.ru/images/portfolio/ohlebe/logo.svg",
+      "link": "https://ohlebe.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "o-key",
+      "title": "О’КЕЙ",
+      "logo": "https://sobakapav.ru/images/portfolio/okey/logo.svg",
+      "link": "https://www.okmarket.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "okna-peterburga",
+      "title": "«Окна Петербурга»",
+      "logo": "https://sobakapav.ru/images/portfolio/okna/logo.svg",
+      "link": "https://www.okna-peter.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "omnitopic",
+      "title": "Omnitopic",
+      "logo": "https://sobakapav.ru/images/portfolio/omnitopic/logo.svg",
+      "link": "",
+      "markets": [
+        "it",
+        "ed"
+      ]
+    },
+    {
+      "id": "onesoil",
+      "title": "OneSoil",
+      "logo": "https://sobakapav.ru/images/portfolio/onesoil/logo.svg",
+      "link": "https://onesoil.ai/",
+      "markets": [
+        "it",
+        "prom"
+      ]
+    },
+    {
+      "id": "onkor",
+      "title": "ОНКОР",
+      "logo": "https://sobakapav.ru/images/portfolio/onkor/logo.svg",
+      "link": "https://oncor.pro/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "opendesk",
+      "title": "OpenDesk",
+      "logo": "https://sobakapav.ru/images/portfolio/opendesk/logo.svg",
+      "link": "https://www.aureum.de/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "otvinta",
+      "title": "От Винта",
+      "logo": "https://sobakapav.ru/images/portfolio/ot-vinta/logo.svg",
+      "link": "https://отвинтастрой.рф/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "otkritie",
+      "title": "Банк «Открытие»",
+      "logo": "https://sobakapav.ru/images/portfolio/otkritie/logo.svg",
+      "link": "https://www.open.ru/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "otvet",
+      "title": "Мессенджер «Ответ»",
+      "logo": "https://sobakapav.ru/images/portfolio/otvet/logo.png",
+      "link": "",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "pangeo-radar",
+      "title": "Пангео Радар",
+      "logo": "https://sobakapav.ru/images/portfolio/pangeo/logo.svg",
+      "link": "https://pangeoradar.ru/",
+      "markets": [
+        "it",
+        "gos"
+      ]
+    },
+    {
+      "id": "petrovich",
+      "title": "Петрович",
+      "logo": "https://sobakapav.ru/images/portfolio/petrovich/logo.jpg",
+      "link": "https://rf.petrovich.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "pgk",
+      "title": "Первая грузовая компания (ПГК)",
+      "logo": "https://sobakapav.ru/images/portfolio/pgk/logo.svg",
+      "link": "https://pgk.ru/",
+      "markets": [
+        "log",
+        "prom"
+      ]
+    },
+    {
+      "id": "paradise-marbella",
+      "title": "Paradise Marbella",
+      "logo": "https://sobakapav.ru/images/portfolio/pmr/logo.png",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "prozhito",
+      "title": "Прожито",
+      "logo": "https://sobakapav.ru/images/portfolio/prozhito/logo.svg",
+      "link": "https://prozhito.org/",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "pushkin-digital",
+      "title": "Пушкин ⟨цифровой⟩",
+      "logo": "https://sobakapav.ru/images/portfolio/itmo/logo.svg",
+      "link": "https://itmo.ru/",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "qiwi",
+      "title": "Qiwi (Contact)",
+      "logo": "https://sobakapav.ru/images/portfolio/qiwi/logo.svg",
+      "link": "https://www.contact-sys.com/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "raisa",
+      "title": "РАИСа",
+      "logo": "https://sobakapav.ru/images/portfolio/raisa/logo.svg",
+      "link": "https://rais.icu/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "relief",
+      "title": "Рельеф-Центр",
+      "logo": "https://sobakapav.ru/images/portfolio/relefopt/logo.svg",
+      "link": "https://relefopt.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "rtkco",
+      "title": "Ремтехкомплект",
+      "logo": "https://sobakapav.ru/images/portfolio/remtech/logo.svg",
+      "link": "https://www.rtkco.ru/",
+      "markets": [
+        "prom",
+        "ec"
+      ]
+    },
+    {
+      "id": "russpass",
+      "title": "RussPass",
+      "logo": "https://sobakapav.ru/images/portfolio/res/logo.svg",
+      "link": "https://russpass.ru/moskva)",
+      "markets": [
+        "log"
+      ]
+    },
+    {
+      "id": "irs",
+      "title": "ИРС",
+      "logo": "https://sobakapav.ru/images/portfolio/res/logo.svg",
+      "link": "https://www.irsural.ru/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "seatmap",
+      "title": "Seatmap",
+      "logo": "https://sobakapav.ru/images/portfolio/seatmap/logo.svg",
+      "link": "https://seatmap.pro/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "sberbank",
+      "title": "Сбербанк",
+      "logo": "https://sobakapav.ru/images/portfolio/sberbank/logo.png",
+      "link": "https://www.sberbank.com/ru",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "serverscom",
+      "title": "Serverscom",
+      "logo": "https://sobakapav.ru/images/portfolio/serverscom/logo.png",
+      "link": "https://www.servers.com/",
+      "markets": [
+        "telecom"
+      ]
+    },
+    {
+      "id": "simpleks",
+      "title": "Симплекс",
+      "logo": "https://sobakapav.ru/images/portfolio/simed/logo.svg",
+      "link": "https://simplex48.ru/simed-clinic/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "simatra",
+      "title": "RITM³ (Simetra)",
+      "logo": "https://sobakapav.ru/images/portfolio/simetra/logo.svg",
+      "link": "https://simetragroup.ru/",
+      "markets": [
+        "it",
+        "log"
+      ]
+    },
+    {
+      "id": "smartdeal",
+      "title": "SmartDeal",
+      "logo": "https://sobakapav.ru/images/portfolio/smartdeal-ecp/logo.svg",
+      "link": "https://smartdeal.pro/",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "sindbad",
+      "title": "Sindbad",
+      "logo": "https://sobakapav.ru/images/portfolio/sindbad/logo.jpg",
+      "link": "",
+      "markets": [
+        "log"
+      ]
+    },
+    {
+      "id": "snob-ru",
+      "title": "«Сноб.ру»",
+      "logo": "https://sobakapav.ru/images/portfolio/snob/logo.png",
+      "link": "https://snob.ru/",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "solar-staff",
+      "title": "Solar Staff",
+      "logo": "https://sobakapav.ru/images/portfolio/solar-staff/logo.svg",
+      "link": "https://www.solarstaff.com/ru",
+      "markets": [
+        "it"
+      ]
+    },
+    {
+      "id": "sportmaster",
+      "title": "Спортмастер",
+      "logo": "https://sobakapav.ru/images/portfolio/sportmaster/logo.png",
+      "link": "https://www.sportmaster.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "stream-telecom",
+      "title": "Stream Telecom",
+      "logo": "https://sobakapav.ru/images/portfolio/stream-telecom/logo.svg",
+      "link": "https://stream-telecom.ru/",
+      "markets": [
+        "telecom"
+      ]
+    },
+    {
+      "id": "stroynastroy",
+      "title": "Стройнастрой",
+      "logo": "https://sobakapav.ru/images/portfolio/stroynastroy/logo.png",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "t1",
+      "title": "T1",
+      "logo": "https://sobakapav.ru/images/portfolio/t1/logo.svg",
+      "link": "https://t1.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "tigitl",
+      "title": "Tigitl",
+      "logo": "https://sobakapav.ru/images/portfolio/tigitl/logo.png",
+      "link": "",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "tinkoff",
+      "title": "Тинькофф Банк",
+      "logo": "https://sobakapav.ru/images/portfolio/tinkoff/logo.svg",
+      "link": "https://www.tbank.ru/",
+      "markets": [
+        "fin"
+      ]
+    },
+    {
+      "id": "tiomed",
+      "title": "Tiomed",
+      "logo": "https://sobakapav.ru/images/portfolio/tiomed/logo.svg",
+      "link": "http://mis-implants.ru/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "tis",
+      "title": "TIS.TATAR",
+      "logo": "https://sobakapav.ru/images/portfolio/tis/logo.svg",
+      "link": "http://tis.tatar/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "tmh",
+      "title": "ТелеМедХаб (ТМХ)",
+      "logo": "https://sobakapav.ru/images/portfolio/tmh/logo.svg",
+      "link": "https://telemedhub.io/",
+      "markets": [
+        "med"
+      ]
+    },
+    {
+      "id": "moscow",
+      "title": "Департамент природопользования Москвы",
+      "logo": "https://sobakapav.ru/images/portfolio/trash/logo.png",
+      "link": "",
+      "markets": [
+        "gos"
+      ]
+    },
+    {
+      "id": "veza",
+      "title": "ВЕЗА",
+      "logo": "https://sobakapav.ru/images/portfolio/veza/logo.png",
+      "link": "https://www.veza.ru/",
+      "markets": [
+        "prom"
+      ]
+    },
+    {
+      "id": "ded-moroz",
+      "title": "Дед Мороз",
+      "logo": "https://sobakapav.ru/images/portfolio/video-santa/logo.png",
+      "link": "https://videodedmoroz.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "vyborg",
+      "title": "Выборгский музей-заповедник",
+      "logo": "https://sobakapav.ru/images/portfolio/vuborgskiy-zamok/logo.jpg",
+      "link": "http://vyborgmuseum.org/",
+      "markets": [
+        "ed"
+      ]
+    },
+    {
+      "id": "viking-line",
+      "title": "Viking Line",
+      "logo": "https://sobakapav.ru/images/portfolio/viking-line/logo.png",
+      "link": "https://ru.vikingline.com/",
+      "markets": [
+        "log"
+      ]
+    },
+    {
+      "id": "yit",
+      "title": "YIT",
+      "logo": "https://sobakapav.ru/images/portfolio/yit/logo.svg",
+      "link": "https://www.yit.lv/ru/nachalo",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "zapovednik",
+      "title": "Заповедник",
+      "logo": "https://sobakapav.ru/images/portfolio/zapovednik/logo.svg",
+      "link": "https://zapovednik96.ru",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "yota",
+      "title": "Yota",
+      "logo": "https://sobakapav.ru/images/portfolio/yota/logo.svg",
+      "link": "https://www.yota.ru/",
+      "markets": [
+        "telecom"
+      ]
+    },
+    {
+      "id": "veselaya-zateya",
+      "title": "Веселая затея",
+      "logo": "https://sobakapav.ru/images/portfolio/zateya/logo.png",
+      "link": "https://sharik.spb.ru/",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "zehnder",
+      "title": "Zehnder",
+      "logo": "https://sobakapav.ru/images/portfolio/zehnder/logo.png",
+      "link": "https://www.zehnder-systems.de/de",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "zhivoy-ofis",
+      "title": "Живой офис",
+      "logo": "https://sobakapav.ru/images/portfolio/zhivoj-office/logo.svg",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    },
+    {
+      "id": "zombilend",
+      "title": "Зомбиленд",
+      "logo": "https://sobakapav.ru/images/portfolio/zombieland/logo.png",
+      "link": "",
+      "markets": [
+        "ec"
+      ]
+    }
+  ]
+}

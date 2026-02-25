@@ -8,12 +8,18 @@
   "title": "Система электронного документооборота",
   "description": "",
   "createdAt": "2026-02-18T10:42:34.544Z",
-  "updatedAt": "2026-02-25T10:14:38.331Z",
+  "updatedAt": "2026-02-25T11:02:30.877Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/carlsberg.svg",
   "previewImageFile": "/case-previews/edms.svg",
-  "serviceIds": [
+  "year": 2018,
+  "clientId": "baltika-carlsberg",
+  "services": [
     "ux-design",
     "ui-redesign"
   ],
-  "year": 2018
+  "markets": [
+    "it",
+    "prom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/carlsberg.svg"
 }

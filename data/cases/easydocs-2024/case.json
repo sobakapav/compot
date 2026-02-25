@@ -8,13 +8,18 @@
   "title": "Дизайн интерфейса модуля приема кандидатов на работу",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.183Z",
-  "updatedAt": "2026-02-25T10:14:38.331Z",
+  "updatedAt": "2026-02-25T11:02:30.876Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/easydocs2.svg",
   "previewImageFile": "/case-previews/easydocs-2024.svg",
-  "serviceIds": [
+  "year": 2024,
+  "clientId": "easydocs",
+  "services": [
     "ux-design",
     "new-features",
     "research"
   ],
-  "year": 2024
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/easydocs2.svg"
 }

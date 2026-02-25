@@ -8,12 +8,17 @@
   "title": "Сайт о кабинках для физиотерапии",
   "description": "",
   "createdAt": "2026-02-18T10:42:37.000Z",
-  "updatedAt": "2026-02-25T10:14:38.333Z",
+  "updatedAt": "2026-02-25T11:02:30.878Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/cabin.png",
   "previewImageFile": "/case-previews/f-kabinki.png",
-  "serviceIds": [
+  "year": 2015,
+  "clientId": "f-kabinki",
+  "services": [
     "content-design",
     "ux-design"
   ],
-  "year": 2015
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/cabin.png"
 }

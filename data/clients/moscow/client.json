@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "moscow",
+  "title": "Департамент природопользования Москвы",
+  "logo": "https://sobakapav.ru/images/portfolio/trash/logo.png",
+  "link": "",
+  "markets": [
+    "gos"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

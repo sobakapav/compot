@@ -8,12 +8,18 @@
   "title": "Интерфейс рабочего места администратора",
   "description": "",
   "createdAt": "2026-02-18T10:42:30.607Z",
-  "updatedAt": "2026-02-25T10:14:38.328Z",
+  "updatedAt": "2026-02-25T11:02:30.874Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/crt.svg",
   "previewImageFile": "/case-previews/crt-panel-administratora.svg",
-  "serviceIds": [
+  "year": 2017,
+  "clientId": "crt",
+  "services": [
     "ux-design",
     "new-features"
   ],
-  "year": 2017
+  "markets": [
+    "it",
+    "gos"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/crt.svg"
 }

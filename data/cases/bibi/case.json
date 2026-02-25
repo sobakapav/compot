@@ -8,12 +8,17 @@
   "title": "UX-аудит магазина для автовладельцев",
   "description": "",
   "createdAt": "2026-02-18T10:42:26.071Z",
-  "updatedAt": "2026-02-25T10:14:38.323Z",
+  "updatedAt": "2026-02-25T11:02:30.872Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/bibi.svg",
   "previewImageFile": "/case-previews/bibi.svg",
-  "serviceIds": [
+  "year": 2019,
+  "clientId": "bi-bi",
+  "services": [
     "ux-audit",
     "new-features"
   ],
-  "year": 2019
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/bibi.svg"
 }

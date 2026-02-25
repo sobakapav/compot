@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "neuroiconica",
+  "title": "Нейроиконика",
+  "logo": "https://sobakapav.ru/images/portfolio/neurobureau/logo.svg",
+  "link": "https://neuroiconica.ru/",
+  "markets": [
+    "it",
+    "med"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "etm",
+  "title": "«ЭТМ»",
+  "logo": "https://sobakapav.ru/images/portfolio/etm/logo.svg",
+  "link": "https://www.etm.ru/",
+  "markets": [
+    "ec",
+    "prom"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

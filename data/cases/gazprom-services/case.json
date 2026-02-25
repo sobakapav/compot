@@ -8,12 +8,18 @@
   "title": "UX-аудит внутренних обучающих сервисов компании «Газпром нефть»",
   "description": "",
   "createdAt": "2026-02-18T10:42:41.100Z",
-  "updatedAt": "2026-02-25T10:14:38.336Z",
+  "updatedAt": "2026-02-25T11:02:30.880Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/gazprom-services.svg",
   "previewImageFile": "/case-previews/gazprom-services.svg",
-  "serviceIds": [
+  "year": 2021,
+  "clientId": "gazprom",
+  "services": [
     "ux-audit",
     "ux-outsource"
   ],
-  "year": 2021
+  "markets": [
+    "prom",
+    "ed"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/gazprom-services.svg"
 }

@@ -8,11 +8,16 @@
   "title": "Редизайн модуля записи к врачу",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.180Z",
-  "updatedAt": "2026-02-25T10:14:38.836Z",
+  "updatedAt": "2026-02-25T11:02:30.917Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/simed.svg",
   "previewImageFile": "/case-previews/simed.svg",
-  "serviceIds": [
+  "year": 2025,
+  "clientId": "simpleks",
+  "services": [
     "ux-design"
   ],
-  "year": 2025
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/simed.svg"
 }

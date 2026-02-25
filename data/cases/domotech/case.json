@@ -8,11 +8,16 @@
   "title": "UX-аудит интерфейса сетевого магазина бытовой техники",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-25T10:14:38.330Z",
+  "updatedAt": "2026-02-25T11:02:30.875Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/domotech.svg",
   "previewImageFile": "/case-previews/domotech.svg",
-  "serviceIds": [
+  "year": 2023,
+  "clientId": "domotehnika",
+  "services": [
     "ux-audit"
   ],
-  "year": 2023
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/domotech.svg"
 }

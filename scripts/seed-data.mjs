@@ -7,52 +7,62 @@ const services = [
   {
     id: "service-ux-ui-design",
     title: "UX/UI-дизайн под ключ",
-    link: "https://sobakapav.ru/services/ux-design",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-spot-redesign",
     title: "Точечный редизайн интерфейса",
-    link: "https://sobakapav.ru/services/redesign",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-new-features",
     title: "Добавление новой функциональности",
-    link: "https://sobakapav.ru/services/new-features",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-prototype",
     title: "Прототип под инвестиции",
-    link: "https://sobakapav.ru/services/prototype",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-ui-redesign",
     title: "UI-редизайн",
-    link: "https://sobakapav.ru/services/ui-redesign",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-research",
     title: "Продуктовое исследование",
-    link: "https://sobakapav.ru/services/research",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-ux-audit",
     title: "UX-аудит",
-    link: "https://sobakapav.ru/services/ux-audit",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-ux-outsource",
     title: "UX-отдел на аутсорсе",
-    link: "https://sobakapav.ru/services/ux-outsource",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-product-team",
     title: "Работа в продуктовой команде",
-    link: "https://sobakapav.ru/services/product-team",
+    serviceGroup: "",
+    image: "",
   },
   {
     id: "service-content-design",
     title: "Контент-дизайн",
-    link: "https://sobakapav.ru/services/content-design",
+    serviceGroup: "",
+    image: "",
   },
 ];
 
@@ -274,11 +284,17 @@ const seedServices = async () => {
       schemaVersion: 1,
       id: service.id,
       title: service.title,
-      link: service.link,
+      serviceGroup: service.serviceGroup,
+      image: service.image,
       createdAt: nowIso(),
       updatedAt: nowIso(),
     };
-    items.push({ id: service.id, title: service.title });
+    items.push({
+      id: service.id,
+      title: service.title,
+      serviceGroup: service.serviceGroup,
+      image: service.image,
+    });
     await writeJson(
       path.join(root, "data/services", service.id, "service.json"),
       payload
@@ -297,15 +313,27 @@ const seedCases = async () => {
       schemaVersion: 1,
       id: item.id,
       link: "",
+      clientId: "",
       clientName: "",
       clientLogoFile: "",
       preview: item.preview,
+      services: [],
+      markets: [],
+      year: "",
       title: item.title,
       description: "",
       createdAt: nowIso(),
       updatedAt: nowIso(),
     };
-    items.push({ id: item.id, title: item.title, clientName: "", serviceIds: [] });
+    items.push({
+      id: item.id,
+      title: item.title,
+      clientId: "",
+      clientName: "",
+      services: [],
+      markets: [],
+      year: "",
+    });
     await writeJson(
       path.join(root, "data/cases", item.id, "case.json"),
       payload
@@ -317,7 +345,19 @@ const seedCases = async () => {
   });
 };
 
+const seedClientsAndMarkets = async () => {
+  await writeJson(path.join(root, "data/clients/index.json"), {
+    schemaVersion: 1,
+    items: [],
+  });
+  await writeJson(path.join(root, "data/markets/index.json"), {
+    schemaVersion: 1,
+    items: [],
+  });
+};
+
 await seedServices();
 await seedCases();
+await seedClientsAndMarkets();
 
-console.log("Seeded services and cases.");
+console.log("Seeded services, cases, clients, and markets.");

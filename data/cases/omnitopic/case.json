@@ -8,12 +8,18 @@
   "title": "Дизайн MVP агрегатора IT-конференций",
   "description": "",
   "createdAt": "2026-02-18T10:42:56.870Z",
-  "updatedAt": "2026-02-25T10:14:38.825Z",
+  "updatedAt": "2026-02-25T11:02:30.909Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/omnitopic.svg",
   "previewImageFile": "/case-previews/omnitopic.svg",
-  "serviceIds": [
+  "year": 2021,
+  "clientId": "omnitopic",
+  "services": [
     "product-team",
     "prototype"
   ],
-  "year": 2021
+  "markets": [
+    "it",
+    "ed"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/omnitopic.svg"
 }

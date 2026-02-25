@@ -8,12 +8,17 @@
   "title": "Система для юридических фирм и департаментов",
   "description": "",
   "createdAt": "2026-02-18T10:42:45.638Z",
-  "updatedAt": "2026-02-25T10:14:38.578Z",
+  "updatedAt": "2026-02-25T11:02:30.882Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/jeffit.svg",
   "previewImageFile": "/case-previews/jeffit-2021.svg",
-  "serviceIds": [
+  "year": 2021,
+  "clientId": "jeffit",
+  "services": [
     "redesign",
     "ux-outsource"
   ],
-  "year": 2021
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/jeffit.svg"
 }

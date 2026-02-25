@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "finexware",
+  "title": "FinexWare",
+  "logo": "https://sobakapav.ru/images/portfolio/finexware/logo.svg",
+  "link": "http://finexware.com/",
+  "markets": [
+    "fin"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

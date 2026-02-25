@@ -8,12 +8,17 @@
   "title": "Дизайн формы поиска для грузоперевозчиков",
   "description": "",
   "createdAt": "2026-02-18T10:42:23.797Z",
-  "updatedAt": "2026-02-25T10:14:38.320Z",
+  "updatedAt": "2026-02-25T11:02:30.868Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/autotransinfo.svg",
   "previewImageFile": "/case-previews/autotransinfo.svg",
-  "serviceIds": [
+  "year": 2015,
+  "clientId": "ati-su",
+  "services": [
     "ux-design",
     "new-features"
   ],
-  "year": 2015
+  "markets": [
+    "log"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/autotransinfo.svg"
 }

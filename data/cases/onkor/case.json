@@ -8,11 +8,16 @@
   "title": "Дизайн интерфейса МИС для онкологических клиник",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-25T10:14:38.826Z",
+  "updatedAt": "2026-02-25T11:02:30.909Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/onkor.svg",
   "previewImageFile": "/case-previews/onkor.svg",
-  "serviceIds": [
+  "year": 2023,
+  "clientId": "onkor",
+  "services": [
     "redesign"
   ],
-  "year": 2023
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/onkor.svg"
 }

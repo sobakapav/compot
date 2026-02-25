@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "complex",
+  "title": "Lantapro (КИБ Комплекс)",
+  "logo": "https://sobakapav.ru/images/portfolio/lantapro/logo.png",
+  "link": "https://lantapro.ru/",
+  "markets": [
+    "gos",
+    "it"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

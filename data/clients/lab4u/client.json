@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "lab4u",
+  "title": "Lab4u",
+  "logo": "https://sobakapav.ru/images/portfolio/lab4u/logo.svg",
+  "link": "https://lab4u.ru/",
+  "markets": [
+    "med"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

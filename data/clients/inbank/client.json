@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "inbank",
+  "title": "Inbank",
+  "logo": "https://sobakapav.ru/images/portfolio/inbank/inbank_logo.jpeg",
+  "link": "https://in-bank.ru/",
+  "markets": [
+    "fin"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

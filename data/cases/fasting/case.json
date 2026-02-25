@@ -8,11 +8,16 @@
   "title": "Концептуальный дизайн интерфейса приложения для интервального голодания",
   "description": "",
   "createdAt": "2026-02-18T10:42:37.686Z",
-  "updatedAt": "2026-02-25T10:14:38.334Z",
+  "updatedAt": "2026-02-25T11:02:30.878Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/simple.svg",
   "previewImageFile": "/case-previews/fasting.svg",
-  "serviceIds": [
+  "year": 2019,
+  "clientId": "simple",
+  "services": [
     "product-team"
   ],
-  "year": 2019
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/simple.svg"
 }

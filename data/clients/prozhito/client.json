@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "prozhito",
+  "title": "Прожито",
+  "logo": "https://sobakapav.ru/images/portfolio/prozhito/logo.svg",
+  "link": "https://prozhito.org/",
+  "markets": [
+    "ed"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

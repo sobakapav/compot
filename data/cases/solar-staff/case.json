@@ -8,12 +8,17 @@
   "title": "Точечные улучшения интерфейса",
   "description": "",
   "createdAt": "2026-02-18T10:43:05.680Z",
-  "updatedAt": "2026-02-25T10:14:38.838Z",
+  "updatedAt": "2026-02-25T11:02:30.918Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/solarstaff.svg",
   "previewImageFile": "/case-previews/solar-staff.svg",
-  "serviceIds": [
+  "year": 2016,
+  "clientId": "solar-staff",
+  "services": [
     "ux-audit",
     "redesign"
   ],
-  "year": 2016
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/solarstaff.svg"
 }

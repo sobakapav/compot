@@ -8,11 +8,16 @@
   "title": "Кейсы для производителя детских площадок",
   "description": "",
   "createdAt": "2026-02-18T10:42:48.081Z",
-  "updatedAt": "2026-02-25T10:14:38.581Z",
+  "updatedAt": "2026-02-25T11:02:30.883Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/crooked.svg",
   "previewImageFile": "/case-previews/kids-crooked-house.svg",
-  "serviceIds": [
+  "year": 2015,
+  "clientId": "crooked",
+  "services": [
     "content-design"
   ],
-  "year": 2015
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/crooked.svg"
 }

@@ -8,12 +8,17 @@
   "title": "Дизайн интерфейса системы управления рестораном",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.180Z",
-  "updatedAt": "2026-02-25T10:14:38.318Z",
+  "updatedAt": "2026-02-25T11:02:30.866Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/anggell2.svg",
   "previewImageFile": "/case-previews/anggell-2025.svg",
-  "serviceIds": [
+  "year": 2025,
+  "clientId": "anggell",
+  "services": [
     "ux-design",
     "ux-outsource"
   ],
-  "year": 2025
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/anggell2.svg"
 }

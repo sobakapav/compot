@@ -8,11 +8,16 @@
   "title": "UX-исследование и CJM мобильного сервиса",
   "description": "",
   "createdAt": "2026-02-18T10:42:25.676Z",
-  "updatedAt": "2026-02-25T10:14:38.323Z",
+  "updatedAt": "2026-02-25T11:02:30.872Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/bercut.svg",
   "previewImageFile": "/case-previews/bercut.svg",
-  "serviceIds": [
+  "year": 2015,
+  "clientId": "bercut",
+  "services": [
     "research"
   ],
-  "year": 2015
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/bercut.svg"
 }

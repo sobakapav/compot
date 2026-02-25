@@ -8,11 +8,14 @@
   "title": "Изучение цифровых привычек",
   "description": "",
   "createdAt": "2026-02-18T10:42:50.465Z",
-  "updatedAt": "2026-02-25T10:14:38.587Z",
+  "updatedAt": "2026-02-25T11:02:30.885Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/littleone.svg",
   "previewImageFile": "/case-previews/littleone.svg",
-  "serviceIds": [
+  "year": 2016,
+  "clientId": "littleone",
+  "services": [
     "research"
   ],
-  "year": 2016
+  "markets": [],
+  "image": "https://sobakapav.ru/images/portfolio/cards/littleone.svg"
 }

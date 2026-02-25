@@ -8,12 +8,17 @@
   "title": "Контент-дизайн и структура сайта",
   "description": "",
   "createdAt": "2026-02-18T10:43:07.949Z",
-  "updatedAt": "2026-02-25T10:14:38.842Z",
+  "updatedAt": "2026-02-25T11:02:30.920Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/tiomed.svg",
   "previewImageFile": "/case-previews/tiomed.svg",
-  "serviceIds": [
+  "year": 2015,
+  "clientId": "tiomed",
+  "services": [
     "ux-design",
     "content-design"
   ],
-  "year": 2015
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/tiomed.svg"
 }

@@ -8,11 +8,16 @@
   "title": "Электронная карта пациента",
   "description": "",
   "createdAt": "2026-02-18T10:42:53.461Z",
-  "updatedAt": "2026-02-25T10:14:38.820Z",
+  "updatedAt": "2026-02-25T11:02:30.901Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/miats.svg",
   "previewImageFile": "/case-previews/miaz.svg",
-  "serviceIds": [
+  "year": 2018,
+  "clientId": "miac-spb",
+  "services": [
     "ux-design"
   ],
-  "year": 2018
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/miats.svg"
 }

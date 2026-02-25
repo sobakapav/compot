@@ -8,12 +8,17 @@
   "title": "Конструктор коммерческих презентаций",
   "description": "",
   "createdAt": "2026-02-18T10:42:31.319Z",
-  "updatedAt": "2026-02-25T10:14:38.329Z",
+  "updatedAt": "2026-02-25T11:02:30.874Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/ds.png",
   "previewImageFile": "/case-previews/data-solution.png",
-  "serviceIds": [
+  "year": 2022,
+  "clientId": "control",
+  "services": [
     "prototype",
     "ux-outsource"
   ],
-  "year": 2022
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/ds.png"
 }

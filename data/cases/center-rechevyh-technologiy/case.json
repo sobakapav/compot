@@ -8,11 +8,17 @@
   "title": "Интерфейс службы банковской безопасности",
   "description": "",
   "createdAt": "2026-02-18T10:42:27.429Z",
-  "updatedAt": "2026-02-25T10:14:38.324Z",
+  "updatedAt": "2026-02-25T11:02:30.873Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/crt.svg",
   "previewImageFile": "/case-previews/center-rechevyh-technologiy.svg",
-  "serviceIds": [
+  "year": 2017,
+  "clientId": "crt",
+  "services": [
     "ux-design"
   ],
-  "year": 2017
+  "markets": [
+    "it",
+    "gos"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/crt.svg"
 }

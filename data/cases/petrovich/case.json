@@ -8,11 +8,16 @@
   "title": "Редизайн ключевых экранов интернет-магазина",
   "description": "",
   "createdAt": "2026-02-18T10:42:59.611Z",
-  "updatedAt": "2026-02-25T10:14:38.831Z",
+  "updatedAt": "2026-02-25T11:02:30.911Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards-l/petrovich_big.svg",
   "previewImageFile": "/case-previews/petrovich.svg",
-  "serviceIds": [
+  "year": 2019,
+  "clientId": "petrovich",
+  "services": [
     "redesign"
   ],
-  "year": 2019
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards-l/petrovich_big.svg"
 }

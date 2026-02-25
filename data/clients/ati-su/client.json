@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "ati-su",
+  "title": "ATI.SU (АвтоТрансИнфо)",
+  "logo": "https://sobakapav.ru/images/portfolio/autotransinfo/logo.svg",
+  "link": "https://ati.su/",
+  "markets": [
+    "log"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

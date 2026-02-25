@@ -3,1149 +3,2075 @@
   "items": [
     {
       "id": "alarm-motors",
-      "serviceIds": [
+      "services": [
         "product-team"
       ],
-      "year": 2013
+      "markets": [
+        "ec"
+      ],
+      "clientId": "alarm-motors",
+      "year": 2013,
+      "title": "UX-консультирование команды разработчиков сайта",
+      "clientName": ""
     },
     {
       "id": "alfa-arm",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource",
         "prototype"
       ],
-      "year": 2020
+      "markets": [
+        "fin",
+        "it"
+      ],
+      "clientId": "alfa",
+      "year": 2020,
+      "title": "Интерфейс рабочего места оператора поддержки банка",
+      "clientName": ""
     },
     {
       "id": "alfabank",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2013
+      "markets": [
+        "fin"
+      ],
+      "clientId": "alfa",
+      "year": 2013,
+      "title": "Интерфейс мобильного приложения «Альфа Банка»",
+      "clientName": ""
     },
     {
       "id": "alfa",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2015
+      "markets": [
+        "fin",
+        "it"
+      ],
+      "clientId": "alfastrah",
+      "year": 2015,
+      "title": "Интерфейс рабочего места страхового агента",
+      "clientName": ""
     },
     {
       "id": "alfastrah-design",
-      "serviceIds": [
+      "services": [
         "ux-outsource",
         "ui-redesign"
       ],
-      "year": 2023
+      "markets": [
+        "fin",
+        "it"
+      ],
+      "clientId": "alfastrah",
+      "year": 2023,
+      "title": "Дизайн-система для компании «АльфаСтрахование»",
+      "clientName": ""
     },
     {
       "id": "alfastrahhr",
-      "serviceIds": [
+      "services": [
         "ux-outsource",
         "ui-redesign"
       ],
-      "year": 2018
+      "markets": [
+        "fin",
+        "it"
+      ],
+      "clientId": "alfastrah",
+      "year": 2018,
+      "title": "UI-редизайн интерфейса корпоративного портала",
+      "clientName": ""
     },
     {
       "id": "algohelp",
-      "serviceIds": [
+      "services": [
         "product-team",
         "prototype"
       ],
-      "year": 2019
+      "markets": [
+        "med"
+      ],
+      "clientId": "algohelp",
+      "year": 2019,
+      "title": "Приложение для врачей с руководством по экстренной помощи",
+      "clientName": ""
     },
     {
       "id": "amber",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2016
+      "markets": [
+        "it"
+      ],
+      "clientId": "amber",
+      "year": 2016,
+      "title": "Конструктор CRM для среднего бизнеса",
+      "clientName": ""
     },
     {
       "id": "anggell-2025",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2025
+      "markets": [
+        "it"
+      ],
+      "clientId": "anggell",
+      "year": 2025,
+      "title": "Дизайн интерфейса системы управления рестораном",
+      "clientName": ""
     },
     {
       "id": "anggell",
-      "serviceIds": [
+      "services": [
         "product-team",
         "prototype",
         "ux-outsource"
       ],
-      "year": 2022
+      "markets": [
+        "it"
+      ],
+      "clientId": "anggell",
+      "year": 2022,
+      "title": "Дизайн MVP системы поддержки принятия решений",
+      "clientName": ""
     },
     {
       "id": "atol",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2018
+      "markets": [
+        "it"
+      ],
+      "clientId": "atol",
+      "year": 2018,
+      "title": "Интерфес для управления онлайн-кассами",
+      "clientName": ""
     },
     {
       "id": "autotransinfo",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "new-features"
       ],
-      "year": 2015
+      "markets": [
+        "log"
+      ],
+      "clientId": "ati-su",
+      "year": 2015,
+      "title": "Дизайн формы поиска для грузоперевозчиков",
+      "clientName": ""
     },
     {
       "id": "avicenna",
-      "serviceIds": [
+      "services": [
         "ui-redesign",
         "new-features",
         "product-team"
       ],
-      "year": 2023
+      "markets": [
+        "med"
+      ],
+      "clientId": "avicenna",
+      "year": 2023,
+      "title": "Медицинская информационная система",
+      "clientName": ""
     },
     {
       "id": "avito",
-      "serviceIds": [
+      "services": [
         "research"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "avito",
+      "year": 2019,
+      "title": "UX-исследование рабочего места менеджера по продажам «Авито»",
+      "clientName": ""
     },
     {
       "id": "azbuka-vkusa",
-      "serviceIds": [
+      "services": [
         "redesign",
         "new-features"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "azbuka-vkusa",
+      "year": 2015,
+      "title": "UX-редизайн продуктового интернет-магазина",
+      "clientName": ""
     },
     {
       "id": "basis",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "bazis",
+      "year": 2015,
+      "title": "Контент для сайта архитектурной студии",
+      "clientName": ""
     },
     {
       "id": "bercut",
-      "serviceIds": [
+      "services": [
         "research"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "bercut",
+      "year": 2015,
+      "title": "UX-исследование и CJM мобильного сервиса",
+      "clientName": ""
     },
     {
       "id": "bibi",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "new-features"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "bi-bi",
+      "year": 2019,
+      "title": "UX-аудит магазина для автовладельцев",
+      "clientName": ""
     },
     {
       "id": "biletik",
-      "serviceIds": [
+      "services": [
         "redesign",
         "new-features"
       ],
-      "year": 2016
+      "markets": [
+        "log"
+      ],
+      "clientId": "biletik-aero",
+      "year": 2016,
+      "title": "Интерфейс приложения для покупки авиабилетов",
+      "clientName": ""
     },
     {
       "id": "boracase",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2019
+      "markets": [
+        "log",
+        "it"
+      ],
+      "clientId": "bora",
+      "year": 2019,
+      "title": "Многомодульная система бронирования круизных и паромных перевозок",
+      "clientName": ""
     },
     {
       "id": "brighteye",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2021
+      "markets": [
+        "prom"
+      ],
+      "clientId": "brighteye",
+      "year": 2021,
+      "title": "Интерфейс оператора производственной линии и приложения для MOM Momentum от Brighteye",
+      "clientName": ""
     },
     {
       "id": "center-rechevyh-technologiy",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2017
+      "markets": [
+        "it",
+        "gos"
+      ],
+      "clientId": "crt",
+      "year": 2017,
+      "title": "Интерфейс службы банковской безопасности",
+      "clientName": ""
     },
     {
       "id": "checknpay",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2013
+      "markets": [
+        "fin"
+      ],
+      "clientId": "check-and-pay",
+      "year": 2013,
+      "title": "Сервис для выставления и оплаты счетов",
+      "clientName": ""
     },
     {
       "id": "cindicator",
-      "serviceIds": [
+      "services": [
         "research",
         "product-team"
       ],
-      "year": 2019
+      "markets": [
+        "fin"
+      ],
+      "clientId": "cindicator",
+      "year": 2019,
+      "title": "UX-исследование приложения для финансовых трейдеров",
+      "clientName": ""
     },
     {
       "id": "compel",
-      "serviceIds": [
+      "services": [
         "redesign",
         "prototype",
         "ux-outsource"
       ],
-      "year": 2023
+      "markets": [
+        "it"
+      ],
+      "clientId": "compel",
+      "year": 2023,
+      "title": "Редизайн внутренних цифровых сервисов",
+      "clientName": ""
     },
     {
       "id": "control-forest",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2021
+      "markets": [
+        "gos",
+        "prom"
+      ],
+      "clientId": "control",
+      "year": 2021,
+      "title": "Дизайн интерфейса мобильного приложения для лесничеств",
+      "clientName": ""
     },
     {
       "id": "control-mobile",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2019
+      "markets": [
+        "gos"
+      ],
+      "clientId": "control",
+      "year": 2019,
+      "title": "Приложение для работы с государственными реестрами",
+      "clientName": ""
     },
     {
       "id": "control-patent",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2023
+      "markets": [
+        "gos"
+      ],
+      "clientId": "control",
+      "year": 2023,
+      "title": "Интерфейс мобильного приложения для работы с трудовыми патентами",
+      "clientName": ""
     },
     {
       "id": "control-predpisanie",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2023
+      "markets": [
+        "gos"
+      ],
+      "clientId": "control",
+      "year": 2023,
+      "title": "Мобильное приложение для работы с предписаниями",
+      "clientName": ""
     },
     {
       "id": "control",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2019
+      "markets": [
+        "gos"
+      ],
+      "clientId": "control",
+      "year": 2019,
+      "title": "Cервис для управления государственными реестрами",
+      "clientName": ""
     },
     {
       "id": "costa",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2017
+      "markets": [
+        "med"
+      ],
+      "clientId": "costa",
+      "year": 2017,
+      "title": "Интерфейс дашборда медицинской системы",
+      "clientName": ""
     },
     {
       "id": "crt-panel-administratora",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "new-features"
       ],
-      "year": 2017
+      "markets": [
+        "it",
+        "gos"
+      ],
+      "clientId": "crt",
+      "year": 2017,
+      "title": "Интерфейс рабочего места администратора",
+      "clientName": ""
     },
     {
       "id": "cybermall",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2013
+      "markets": [
+        "ec"
+      ],
+      "clientId": "cybermall",
+      "year": 2013,
+      "title": "Интерфейс интернет-магазина",
+      "clientName": ""
     },
     {
       "id": "data-solution",
-      "serviceIds": [
+      "services": [
         "prototype",
         "ux-outsource"
       ],
-      "year": 2022
+      "markets": [
+        "it"
+      ],
+      "clientId": "control",
+      "year": 2022,
+      "title": "Конструктор коммерческих презентаций",
+      "clientName": ""
     },
     {
       "id": "dau",
-      "serviceIds": [
+      "services": [
         "redesign",
         "new-features"
       ],
-      "year": 2020
+      "markets": [
+        "ec"
+      ],
+      "clientId": "dau",
+      "year": 2020,
+      "title": "Точечные улучшения процесса продаж фильмов «Дау»",
+      "clientName": ""
     },
     {
       "id": "dipol",
-      "serviceIds": [
+      "services": [
         "ui-redesign",
         "research"
       ],
-      "year": 2023
+      "markets": [
+        "it"
+      ],
+      "clientId": "dipol",
+      "year": 2023,
+      "title": "Интерфейс приложения визуальной LowCode среды разработки",
+      "clientName": ""
     },
     {
       "id": "domotech",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2023
+      "markets": [
+        "ec"
+      ],
+      "clientId": "domotehnika",
+      "year": 2023,
+      "title": "UX-аудит интерфейса сетевого магазина бытовой техники",
+      "clientName": ""
     },
     {
       "id": "e-gorod-guide",
-      "serviceIds": [
+      "services": [
         "content-design",
         "ux-outsource"
       ],
-      "year": 2019
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "ecity",
+      "year": 2019,
+      "title": "Гайд по общению для сотрудников поддержки",
+      "clientName": ""
     },
     {
       "id": "e-gorod-mobile",
-      "serviceIds": [
+      "services": [
         "new-features",
         "ux-outsource"
       ],
-      "year": 2023
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "ecity",
+      "year": 2023,
+      "title": "Объединение двух мобильных приложений",
+      "clientName": ""
     },
     {
       "id": "e-gorod",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2018
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "ecity",
+      "year": 2018,
+      "title": "Сайт амбициозного регионального провайдера",
+      "clientName": ""
     },
     {
       "id": "easydocs-2024",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "new-features",
         "research"
       ],
-      "year": 2024
+      "markets": [
+        "it"
+      ],
+      "clientId": "easydocs",
+      "year": 2024,
+      "title": "Дизайн интерфейса модуля приема кандидатов на работу",
+      "clientName": ""
     },
     {
       "id": "easydocs",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2020
+      "markets": [
+        "it"
+      ],
+      "clientId": "easydocs",
+      "year": 2020,
+      "title": "Интерфейс приложения для проверки и подписи документов",
+      "clientName": ""
     },
     {
       "id": "edms",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ui-redesign"
       ],
-      "year": 2018
+      "markets": [
+        "it",
+        "prom"
+      ],
+      "clientId": "baltika-carlsberg",
+      "year": 2018,
+      "title": "Система электронного документооборота",
+      "clientName": ""
     },
     {
       "id": "electrocardiography",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2025
+      "markets": [
+        "med"
+      ],
+      "clientId": "erna",
+      "year": 2025,
+      "title": "Медицинский интерфейс для работы с ЭКГ",
+      "clientName": ""
     },
     {
       "id": "electronika",
-      "serviceIds": [
+      "services": [
         "ui-redesign",
         "ux-audit"
       ],
-      "year": 2017
+      "markets": [
+        "gos"
+      ],
+      "clientId": "elektronika",
+      "year": 2017,
+      "title": "Точечное улучшение интерфейса",
+      "clientName": ""
     },
     {
       "id": "elma-bot",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2023
+      "markets": [
+        "it"
+      ],
+      "clientId": "elma",
+      "year": 2023,
+      "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
+      "clientName": ""
     },
     {
       "id": "elma",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2020
+      "markets": [
+        "it"
+      ],
+      "clientId": "elma",
+      "year": 2020,
+      "title": "Дизайн интерфейса системы управления бизнес-процессами",
+      "clientName": ""
     },
     {
       "id": "ethr",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2016
+      "markets": [
+        "it"
+      ],
+      "clientId": "freemoneyforum-ru",
+      "year": 2016,
+      "title": "Концепция и тексты для сайта подбора IT-специалистов",
+      "clientName": ""
     },
     {
       "id": "etm",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "new-features"
       ],
-      "year": 2021
+      "markets": [
+        "ec",
+        "prom"
+      ],
+      "clientId": "etm",
+      "year": 2021,
+      "title": "UX/UI-аудит для дистрибьютора электротехники",
+      "clientName": ""
     },
     {
       "id": "f-kabinki",
-      "serviceIds": [
+      "services": [
         "content-design",
         "ux-design"
       ],
-      "year": 2015
+      "markets": [
+        "med"
+      ],
+      "clientId": "f-kabinki",
+      "year": 2015,
+      "title": "Сайт о кабинках для физиотерапии",
+      "clientName": ""
     },
     {
       "id": "faberlic",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2017
+      "markets": [
+        "ec"
+      ],
+      "clientId": "faberlic",
+      "year": 2017,
+      "title": "Интерфейс сетевого интернет-магазина",
+      "clientName": ""
     },
     {
       "id": "fasting",
-      "serviceIds": [
+      "services": [
         "product-team"
       ],
-      "year": 2019
+      "markets": [
+        "med"
+      ],
+      "clientId": "simple",
+      "year": 2019,
+      "title": "Концептуальный дизайн интерфейса приложения для интервального голодания",
+      "clientName": ""
     },
     {
       "id": "fastvps-ui",
-      "serviceIds": [
+      "services": [
         "ui-redesign",
         "new-features"
       ],
-      "year": 2020
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "fastvps",
+      "year": 2020,
+      "title": "Редизайн интерфейса панели администратора хостинга",
+      "clientName": ""
     },
     {
       "id": "fastvps",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2015
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "fastvps",
+      "year": 2015,
+      "title": "Интерфейс сервиса подбора хостинга",
+      "clientName": ""
     },
     {
       "id": "finexware",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2019
+      "markets": [
+        "fin"
+      ],
+      "clientId": "finexware",
+      "year": 2019,
+      "title": "Интерфейс онлайн-платформы для трейдеров и инвесторов",
+      "clientName": ""
     },
     {
       "id": "fishlook",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "fishlook",
+      "year": 2019,
+      "title": "Интерфейс маркетплейса",
+      "clientName": ""
     },
     {
       "id": "flarm",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2013
+      "markets": [
+        "prom"
+      ],
+      "clientId": "flarm",
+      "year": 2013,
+      "title": "Контент для сайта инженерного завода",
+      "clientName": ""
     },
     {
       "id": "foodtrucks",
-      "serviceIds": [
+      "services": [
         "research",
         "prototype"
       ],
-      "year": 2022
+      "markets": [
+        "log"
+      ],
+      "clientId": "fudtrek",
+      "year": 2022,
+      "title": "Цифровой сервис для организации работы фудтраков",
+      "clientName": ""
     },
     {
       "id": "gazprom-neft",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-outsource"
       ],
-      "year": 2020
+      "markets": [
+        "prom"
+      ],
+      "clientId": "gazprom",
+      "year": 2020,
+      "title": "Карта пользователя для внутреннего портала «Газпром нефти»",
+      "clientName": ""
     },
     {
       "id": "gazprom-services",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "ux-outsource"
       ],
-      "year": 2021
+      "markets": [
+        "prom",
+        "ed"
+      ],
+      "clientId": "gazprom",
+      "year": 2021,
+      "title": "UX-аудит внутренних обучающих сервисов компании «Газпром нефть»",
+      "clientName": ""
     },
     {
       "id": "gazprom",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "ux-outsource"
       ],
-      "year": 2022
+      "markets": [
+        "prom"
+      ],
+      "clientId": "gazprom",
+      "year": 2022,
+      "title": "Внутренняя информационная система «Газпром нефти»",
+      "clientName": ""
     },
     {
       "id": "geonaft",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2018
+      "markets": [
+        "prom"
+      ],
+      "clientId": "geonaft",
+      "year": 2018,
+      "title": "Дизайн интерфейса программы геонавигации",
+      "clientName": ""
     },
     {
       "id": "goodwood",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2020
+      "markets": [
+        "ec"
+      ],
+      "clientId": "good-wood",
+      "year": 2020,
+      "title": "Классический UX-аудит сайта",
+      "clientName": ""
     },
     {
       "id": "gormost",
-      "serviceIds": [
+      "services": [
         "ui-redesign"
       ],
-      "year": 2019
+      "markets": [
+        "gos",
+        "log"
+      ],
+      "clientId": "gormost",
+      "year": 2019,
+      "title": "Дизайн интерфейсов для ГБУ «Гормост»",
+      "clientName": ""
     },
     {
       "id": "humans",
-      "serviceIds": [
+      "services": [
         "ux-outsource"
       ],
-      "year": 2020
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "humans",
+      "year": 2020,
+      "title": "Интергация в команду разработки провайдера",
+      "clientName": ""
     },
     {
       "id": "hyperus",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "ui-redesign"
       ],
-      "year": 2024
+      "markets": [
+        "it"
+      ],
+      "clientId": "hyperus",
+      "year": 2024,
+      "title": "Дизайн интерфейса системы управления IT-инфраструктурой",
+      "clientName": ""
     },
     {
       "id": "inbank",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2016
+      "markets": [
+        "fin"
+      ],
+      "clientId": "inbank",
+      "year": 2016,
+      "title": "Интерфейс интернет-банка для VIP-клиентов",
+      "clientName": ""
     },
     {
       "id": "intickets",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "research",
         "ux-design"
       ],
-      "year": 2025
+      "markets": [
+        "it"
+      ],
+      "clientId": "intickets-ru",
+      "year": 2025,
+      "title": "Система автоматизации билетных операций INTICKETS.RU",
+      "clientName": ""
     },
     {
       "id": "jazzpay",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2013
+      "markets": [
+        "fin"
+      ],
+      "clientId": "jazzpay",
+      "year": 2013,
+      "title": "Дизайн интерфейса платежного сервиса",
+      "clientName": ""
     },
     {
       "id": "jeffit-2021",
-      "serviceIds": [
+      "services": [
         "redesign",
         "ux-outsource"
       ],
-      "year": 2021
+      "markets": [
+        "it"
+      ],
+      "clientId": "jeffit",
+      "year": 2021,
+      "title": "Система для юридических фирм и департаментов",
+      "clientName": ""
     },
     {
       "id": "jeffit",
-      "serviceIds": [
+      "services": [
         "ux-outsource"
       ],
-      "year": 2024
+      "markets": [
+        "it"
+      ],
+      "clientId": "jeffit",
+      "year": 2024,
+      "title": "Система автоматизации для юридических департаментов",
+      "clientName": ""
     },
     {
       "id": "jetlearn",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2021
+      "markets": [
+        "ed"
+      ],
+      "clientId": "jetlearn",
+      "year": 2021,
+      "title": "Платформа для корпоративного обучения",
+      "clientName": ""
     },
     {
       "id": "joono-ai",
-      "serviceIds": [
+      "services": [
         "research"
       ],
-      "year": 2025
+      "markets": [
+        "ec"
+      ],
+      "clientId": "joono",
+      "year": 2025,
+      "title": "Исследование пользователей AI-фоторедактора",
+      "clientName": ""
     },
     {
       "id": "kids-crooked-house",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "crooked",
+      "year": 2015,
+      "title": "Кейсы для производителя детских площадок",
+      "clientName": ""
     },
     {
       "id": "kapital",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2020
+      "markets": [
+        "fin",
+        "med"
+      ],
+      "clientId": "kapital-ms",
+      "year": 2020,
+      "title": "Исследование пользователей и дизайн сайта страховой компании",
+      "clientName": ""
     },
     {
       "id": "korochka-kontent",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2015
+      "markets": [
+        "ed"
+      ],
+      "clientId": "korochka-ru",
+      "year": 2015,
+      "title": "Справочник для абитуриентов",
+      "clientName": ""
     },
     {
       "id": "korochka",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2015
+      "markets": [
+        "ed"
+      ],
+      "clientId": "korochka-ru",
+      "year": 2015,
+      "title": "Сервис подбора ВУЗа",
+      "clientName": ""
     },
     {
       "id": "lab4u",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2025
+      "markets": [
+        "med"
+      ],
+      "clientId": "lab4u",
+      "year": 2025,
+      "title": "Аудит сайта и приложения медицинской лаборатории",
+      "clientName": ""
     },
     {
       "id": "lantapro",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2014
+      "markets": [
+        "gos",
+        "it"
+      ],
+      "clientId": "complex",
+      "year": 2014,
+      "title": "Интерфейс системы кадастрового учета",
+      "clientName": ""
     },
     {
       "id": "likehack",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2013
+      "markets": [
+        "it"
+      ],
+      "clientId": "likehack",
+      "year": 2013,
+      "title": "Новый интерфейс стартапа",
+      "clientName": ""
     },
     {
       "id": "littleone",
-      "serviceIds": [
+      "services": [
         "research"
       ],
-      "year": 2016
+      "markets": [],
+      "clientId": "littleone",
+      "year": 2016,
+      "title": "Изучение цифровых привычек",
+      "clientName": ""
     },
     {
       "id": "lori",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2020
+      "markets": [
+        "ec"
+      ],
+      "clientId": "lori",
+      "year": 2020,
+      "title": "UX-аудит и редизайн фотобанка",
+      "clientName": ""
     },
     {
       "id": "m-line",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2021
+      "markets": [
+        "med"
+      ],
+      "clientId": "m-line",
+      "year": 2021,
+      "title": "Дизайн интерфейса системы дистанционного наблюдения пациентов",
+      "clientName": ""
     },
     {
       "id": "manualmachine",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "manualmachine",
+      "year": 2019,
+      "title": "Дизайн интерфейса для сайта с инструкциями",
+      "clientName": ""
     },
     {
       "id": "math",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2021
+      "markets": [
+        "ed"
+      ],
+      "clientId": "math",
+      "year": 2021,
+      "title": "Дизайн интерфейса математической игры для школьников",
+      "clientName": ""
     },
     {
       "id": "medmarket",
-      "serviceIds": [
+      "services": [
         "research"
       ],
-      "year": 2022
+      "markets": [
+        "med"
+      ],
+      "clientId": "medmarket",
+      "year": 2022,
+      "title": "Исследование и CJM пациентов с диабетом",
+      "clientName": ""
     },
     {
       "id": "meh",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2016
+      "markets": [
+        "prom"
+      ],
+      "clientId": "mechanotronika",
+      "year": 2016,
+      "title": "Контент и прототип буклета для отраслевой выставки",
+      "clientName": ""
     },
     {
       "id": "miaz",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2018
+      "markets": [
+        "med"
+      ],
+      "clientId": "miac-spb",
+      "year": 2018,
+      "title": "Электронная карта пациента",
+      "clientName": ""
     },
     {
       "id": "mirbeer",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2021
+      "markets": [
+        "ec"
+      ],
+      "clientId": "mirbir",
+      "year": 2021,
+      "title": "UX-аудит магазина для пивоваров",
+      "clientName": ""
     },
     {
       "id": "netrika",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2022
+      "markets": [
+        "med"
+      ],
+      "clientId": "netrika-medicina",
+      "year": 2022,
+      "title": "Рабочее место оператора службы записи к врачу",
+      "clientName": ""
     },
     {
       "id": "monetory",
-      "serviceIds": [
+      "services": [
         "redesign",
         "new-features"
       ],
-      "year": 2021
+      "markets": [
+        "fin"
+      ],
+      "clientId": "monetory",
+      "year": 2021,
+      "title": "Агрегатор обменников криптовалюты и электронных денег",
+      "clientName": ""
     },
     {
       "id": "neurobureau",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2021
+      "markets": [
+        "it",
+        "med"
+      ],
+      "clientId": "neuroiconica",
+      "year": 2021,
+      "title": "Редизайн интерфейса платформы для нейроисследований",
+      "clientName": ""
     },
     {
       "id": "nextons",
-      "serviceIds": [
+      "services": [
         "ui-redesign",
         "redesign"
       ],
-      "year": 2023
+      "markets": [
+        "it"
+      ],
+      "clientId": "nextons",
+      "year": 2023,
+      "title": "Таск-трекер юридической фирмы",
+      "clientName": ""
     },
     {
       "id": "novotelekom",
-      "serviceIds": [
+      "services": [
         "ui-redesign",
         "ux-outsource"
       ],
-      "year": 2019
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "ecity",
+      "year": 2019,
+      "title": "Редизайн интерфейса мобильного приложения для сервисных инженеров",
+      "clientName": ""
     },
     {
       "id": "nlmk",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2017
+      "markets": [
+        "prom"
+      ],
+      "clientId": "nlmk",
+      "year": 2017,
+      "title": "Корпоративный портал для 53 тысяч пользователей",
+      "clientName": ""
     },
     {
       "id": "ohlebe",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2021
+      "markets": [
+        "ec"
+      ],
+      "clientId": "ohlebe-ru",
+      "year": 2021,
+      "title": "Улучшение рекламных показателей профильного СМИ",
+      "clientName": ""
     },
     {
       "id": "okey",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "o-key",
+      "year": 2019,
+      "title": "Приложение для федеральной розничной сети",
+      "clientName": ""
     },
     {
       "id": "okna-peterburga",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2022
+      "markets": [
+        "ec"
+      ],
+      "clientId": "okna-peterburga",
+      "year": 2022,
+      "title": "Экспертная оценка и пользовательский аудит сайта компании",
+      "clientName": ""
     },
     {
       "id": "omnitopic",
-      "serviceIds": [
+      "services": [
         "product-team",
         "prototype"
       ],
-      "year": 2021
+      "markets": [
+        "it",
+        "ed"
+      ],
+      "clientId": "omnitopic",
+      "year": 2021,
+      "title": "Дизайн MVP агрегатора IT-конференций",
+      "clientName": ""
     },
     {
       "id": "onesoil",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2021
+      "markets": [
+        "it",
+        "prom"
+      ],
+      "clientId": "onesoil",
+      "year": 2021,
+      "title": "Мобильное приложение для фермеров",
+      "clientName": ""
     },
     {
       "id": "onkor",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2023
+      "markets": [
+        "med"
+      ],
+      "clientId": "onkor",
+      "year": 2023,
+      "title": "Дизайн интерфейса МИС для онкологических клиник",
+      "clientName": ""
     },
     {
       "id": "opendesk",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2018
+      "markets": [
+        "fin"
+      ],
+      "clientId": "opendesk",
+      "year": 2018,
+      "title": "Банковское приложение с криптовалютой",
+      "clientName": ""
     },
     {
       "id": "ot-vinta",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "redesign",
         "ux-outsource"
       ],
-      "year": 2023
+      "markets": [
+        "ec"
+      ],
+      "clientId": "otvinta",
+      "year": 2023,
+      "title": "Точечный редизайн интерфейса магазина строительных товаров",
+      "clientName": ""
     },
     {
       "id": "otkritie",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2016
+      "markets": [
+        "fin"
+      ],
+      "clientId": "otkritie",
+      "year": 2016,
+      "title": "Интерфейс онлайн-банка для юридических лиц",
+      "clientName": ""
     },
     {
       "id": "otvet",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2016
+      "markets": [
+        "it"
+      ],
+      "clientId": "otvet",
+      "year": 2016,
+      "title": "Дизайн интерфейса корпоративного мессенджера",
+      "clientName": ""
     },
     {
       "id": "otvinta-2024",
-      "serviceIds": [
+      "services": [
         "new-features",
         "ux-outsource"
       ],
-      "year": 2024
+      "markets": [
+        "ec"
+      ],
+      "clientId": "otvinta",
+      "year": 2024,
+      "title": "UX-отдел на аутсорсе для строительного интернет-магазина",
+      "clientName": ""
     },
     {
       "id": "otvinta-2025",
-      "serviceIds": [
+      "services": [
         "new-features",
         "ux-outsource"
       ],
-      "year": 2025
+      "markets": [
+        "ec"
+      ],
+      "clientId": "otvinta",
+      "year": 2025,
+      "title": "Калькулятор расчета кровли для сайта строительного магазина",
+      "clientName": ""
     },
     {
       "id": "pangeo",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2022
+      "markets": [
+        "it",
+        "gos"
+      ],
+      "clientId": "pangeo-radar",
+      "year": 2022,
+      "title": "Платформа кибербезопасности",
+      "clientName": ""
     },
     {
       "id": "petrovich",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "petrovich",
+      "year": 2019,
+      "title": "Редизайн ключевых экранов интернет-магазина",
+      "clientName": ""
     },
     {
       "id": "pgk",
-      "serviceIds": [
+      "services": [
         "redesign",
         "new-features"
       ],
-      "year": 2018
+      "markets": [
+        "log",
+        "prom"
+      ],
+      "clientId": "pgk",
+      "year": 2018,
+      "title": "Корпоративный портал железнодорожной компании",
+      "clientName": ""
     },
     {
       "id": "pmr",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "content-design"
       ],
-      "year": 2014
+      "markets": [
+        "ec"
+      ],
+      "clientId": "paradise-marbella",
+      "year": 2014,
+      "title": "Интерфейс для сайта испанского агентства недвижимости",
+      "clientName": ""
     },
     {
       "id": "prozhito",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "research"
       ],
-      "year": 2024
+      "markets": [
+        "ed"
+      ],
+      "clientId": "prozhito",
+      "year": 2024,
+      "title": "Интерфейс платформы общественной архивистики",
+      "clientName": ""
     },
     {
       "id": "pushkin-digital",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2024
+      "markets": [
+        "ed"
+      ],
+      "clientId": "pushkin-digital",
+      "year": 2024,
+      "title": "Дизайн интерфейса коллекции материалов Пушкинского дома",
+      "clientName": ""
     },
     {
       "id": "qiwi",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "research"
       ],
-      "year": 2023
+      "markets": [
+        "fin"
+      ],
+      "clientId": "qiwi",
+      "year": 2023,
+      "title": "Конкурентное сравнение трёх систем денежных переводов",
+      "clientName": ""
     },
     {
       "id": "raisa",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "research"
       ],
-      "year": 2020
+      "markets": [
+        "med"
+      ],
+      "clientId": "raisa",
+      "year": 2020,
+      "title": "Дизайн интерфейса системы мониторинга пациентов в реанимации",
+      "clientName": ""
     },
     {
       "id": "relief-center",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2015
+      "markets": [
+        "it"
+      ],
+      "clientId": "relief",
+      "year": 2015,
+      "title": "Платформа для создания B2B-сайтов",
+      "clientName": ""
     },
     {
       "id": "relefopt",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "relief",
+      "year": 2015,
+      "title": "Интернет-магазин канцелярии для оптовиков",
+      "clientName": ""
     },
     {
       "id": "remtech",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2020
+      "markets": [
+        "prom",
+        "ec"
+      ],
+      "clientId": "rtkco",
+      "year": 2020,
+      "title": "Дизайн интерфейсов для поставщика промышленных полимеров",
+      "clientName": ""
     },
     {
       "id": "russpass",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "research",
         "redesign",
         "prototype"
       ],
-      "year": 2020
+      "markets": [
+        "log"
+      ],
+      "clientId": "russpass",
+      "year": 2020,
+      "title": "Цифровая туристическая платформа",
+      "clientName": ""
     },
     {
       "id": "res",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "redesign"
       ],
-      "year": 2021
+      "markets": [
+        "prom"
+      ],
+      "clientId": "irs",
+      "year": 2021,
+      "title": "Профессиональная система РЭС — калибратор тока и напряжения",
+      "clientName": ""
     },
     {
       "id": "seatmap",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2025
+      "markets": [
+        "it"
+      ],
+      "clientId": "seatmap",
+      "year": 2025,
+      "title": "Инструмент для создания схем стадионов и концертных площадок",
+      "clientName": ""
     },
     {
       "id": "sberbank",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2017
+      "markets": [
+        "fin"
+      ],
+      "clientId": "sberbank",
+      "year": 2017,
+      "title": "Гайд по созданию интерфейсных текстов",
+      "clientName": ""
     },
     {
       "id": "serverscom",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2016
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "serverscom",
+      "year": 2016,
+      "title": "Интерфейс клиентского портала",
+      "clientName": ""
     },
     {
       "id": "simed",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2025
+      "markets": [
+        "med"
+      ],
+      "clientId": "simpleks",
+      "year": 2025,
+      "title": "Редизайн модуля записи к врачу",
+      "clientName": ""
     },
     {
       "id": "simetra",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2022
+      "markets": [
+        "it",
+        "log"
+      ],
+      "clientId": "simatra",
+      "year": 2022,
+      "title": "UX-аудит системы транспортного моделирования",
+      "clientName": ""
     },
     {
       "id": "smartdeal",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2018
+      "markets": [
+        "it",
+        "gos"
+      ],
+      "clientId": "smartdeal",
+      "year": 2018,
+      "title": "Дизайн рабочего места оператора",
+      "clientName": ""
     },
     {
       "id": "sindbad",
-      "serviceIds": [
+      "services": [
         "content-design",
         "ux-design"
       ],
-      "year": 2018
+      "markets": [
+        "log"
+      ],
+      "clientId": "sindbad",
+      "year": 2018,
+      "title": "Дизайн авиабилета и писем",
+      "clientName": ""
     },
     {
       "id": "smartdeal-ecp",
-      "serviceIds": [
+      "services": [
         "redesign",
         "new-features"
       ],
-      "year": 2022
+      "markets": [
+        "it"
+      ],
+      "clientId": "smartdeal",
+      "year": 2022,
+      "title": "Приложение для подписания документов при сделках с недвижимостью",
+      "clientName": ""
     },
     {
       "id": "snob",
-      "serviceIds": [
+      "services": [
         "ux-audit"
       ],
-      "year": 2013
+      "markets": [
+        "ed"
+      ],
+      "clientId": "snob-ru",
+      "year": 2013,
+      "title": "Юзабилити-аудит",
+      "clientName": ""
     },
     {
       "id": "solar-staff",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "redesign"
       ],
-      "year": 2016
+      "markets": [
+        "it"
+      ],
+      "clientId": "solar-staff",
+      "year": 2016,
+      "title": "Точечные улучшения интерфейса",
+      "clientName": ""
     },
     {
       "id": "sportmaster",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "research"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "sportmaster",
+      "year": 2015,
+      "title": "UX-тестирование терминалов самообслуживания «Спортмастера»",
+      "clientName": ""
     },
     {
       "id": "stream-telecom",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2018
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "stream-telecom",
+      "year": 2018,
+      "title": "Интерфейс сервиса SMS-рассылок",
+      "clientName": ""
     },
     {
       "id": "stroynastroy",
-      "serviceIds": [
+      "services": [
         "product-team",
         "research",
         "prototype"
       ],
-      "year": 2023
+      "markets": [
+        "ec"
+      ],
+      "clientId": "stroynastroy",
+      "year": 2023,
+      "title": "Дизайн интерфейса маркетплейса стройматериалов",
+      "clientName": ""
     },
     {
       "id": "t1",
-      "serviceIds": [
+      "services": [
         "prototype"
       ],
-      "year": 2025
+      "markets": [
+        "med"
+      ],
+      "clientId": "t1",
+      "year": 2025,
+      "title": "Медицинская карта с голосовым заполнением",
+      "clientName": ""
     },
     {
       "id": "tigitl",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2016
+      "markets": [
+        "ed"
+      ],
+      "clientId": "tigitl",
+      "year": 2016,
+      "title": "Интерфейс поисковика классической музыки",
+      "clientName": ""
     },
     {
       "id": "tinkoff",
-      "serviceIds": [
+      "services": [
         "new-features",
         "content-design"
       ],
-      "year": 2015
+      "markets": [
+        "fin"
+      ],
+      "clientId": "tinkoff",
+      "year": 2015,
+      "title": "Онбординг для банка",
+      "clientName": ""
     },
     {
       "id": "tiomed",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "content-design"
       ],
-      "year": 2015
+      "markets": [
+        "med"
+      ],
+      "clientId": "tiomed",
+      "year": 2015,
+      "title": "Контент-дизайн и структура сайта",
+      "clientName": ""
     },
     {
       "id": "tis",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "product-team"
       ],
-      "year": 2021
+      "markets": [
+        "med"
+      ],
+      "clientId": "tis",
+      "year": 2021,
+      "title": "Глобальная система дистанционного мониторинга давления",
+      "clientName": ""
     },
     {
       "id": "tmh",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2024
+      "markets": [
+        "med"
+      ],
+      "clientId": "tmh",
+      "year": 2024,
+      "title": "Платформа дистанционного мониторинга пациентов",
+      "clientName": ""
     },
     {
       "id": "trash",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2019
+      "markets": [
+        "gos"
+      ],
+      "clientId": "moscow",
+      "year": 2019,
+      "title": "Дизайн интерфейса для Департамента природопользования Москвы",
+      "clientName": ""
     },
     {
       "id": "veza",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "research"
       ],
-      "year": 2019
+      "markets": [
+        "prom"
+      ],
+      "clientId": "veza",
+      "year": 2019,
+      "title": "Личный кабинет для проектировщиков и монтажников",
+      "clientName": ""
     },
     {
       "id": "video-santa",
-      "serviceIds": [
+      "services": [
         "ux-design"
       ],
-      "year": 2019
+      "markets": [
+        "ec"
+      ],
+      "clientId": "ded-moroz",
+      "year": 2019,
+      "title": "Дизайн мобильного интерфейса и авторское сопровождение",
+      "clientName": ""
     },
     {
       "id": "vuborgskiy-zamok",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "content-design"
       ],
-      "year": 2016
+      "markets": [
+        "ed"
+      ],
+      "clientId": "vyborg",
+      "year": 2016,
+      "title": "Сайт Выборгского музея-заповедника",
+      "clientName": ""
     },
     {
       "id": "viking-line",
-      "serviceIds": [
+      "services": [
         "content-design"
       ],
-      "year": 2013
+      "markets": [
+        "log"
+      ],
+      "clientId": "viking-line",
+      "year": 2013,
+      "title": "Справочная система для судоходного концерна",
+      "clientName": ""
     },
     {
       "id": "yit",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "content-design"
       ],
-      "year": 2014
+      "markets": [
+        "ec"
+      ],
+      "clientId": "yit",
+      "year": 2014,
+      "title": "Контент и дизайн интерфейса",
+      "clientName": ""
     },
     {
       "id": "zapovednik",
-      "serviceIds": [
+      "services": [
         "ux-audit",
         "redesign"
       ],
-      "year": 2023
+      "markets": [
+        "ec"
+      ],
+      "clientId": "zapovednik",
+      "year": 2023,
+      "title": "UX-аудит и редизайн магазина товаров для животных",
+      "clientName": ""
     },
     {
       "id": "yota",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "new-features"
       ],
-      "year": 2013
+      "markets": [
+        "telecom"
+      ],
+      "clientId": "yota",
+      "year": 2013,
+      "title": "ARM сотрудника службы поддержки сотового оператора",
+      "clientName": ""
     },
     {
       "id": "zateya",
-      "serviceIds": [
+      "services": [
         "research",
         "ux-design"
       ],
-      "year": 2014
+      "markets": [
+        "ec"
+      ],
+      "clientId": "veselaya-zateya",
+      "year": 2014,
+      "title": "UX-исследование и дизайн интерфейса интернет-магазина",
+      "clientName": ""
     },
     {
       "id": "zehnder",
-      "serviceIds": [
+      "services": [
         "ux-design",
         "content-design"
       ],
-      "year": 2014
+      "markets": [
+        "ec"
+      ],
+      "clientId": "zehnder",
+      "year": 2014,
+      "title": "Контент-дизайн сайта для продаж отопительных приборов",
+      "clientName": ""
     },
     {
       "id": "zhivoj-office",
-      "serviceIds": [
+      "services": [
         "redesign"
       ],
-      "year": 2015
+      "markets": [
+        "ec"
+      ],
+      "clientId": "zhivoy-ofis",
+      "year": 2015,
+      "title": "Интернет-магазин для оптовиков",
+      "clientName": ""
     },
     {
       "id": "zombieland",
-      "serviceIds": [
+      "services": [
         "product-team",
         "research"
       ],
-      "year": 2014
+      "markets": [
+        "ec"
+      ],
+      "clientId": "zombilend",
+      "year": 2014,
+      "title": "Старт продукта",
+      "clientName": ""
     }
   ]
 }

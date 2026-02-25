@@ -3,43 +3,63 @@
   "items": [
     {
       "id": "content-design",
-      "title": "Контент-дизайн"
+      "title": "Контент-дизайн",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "new-features",
-      "title": "Добавление новой функцио­нальности"
+      "title": "Добавление новой функцио­нальности",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "product-team",
-      "title": "Работа в продуктовой команде"
+      "title": "Работа в продуктовой команде",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "prototype",
-      "title": "Прототип под инвестиции"
+      "title": "Прототип под инвестиции",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "redesign",
-      "title": "Точечный редизайн интерфейса"
+      "title": "Точечный редизайн интерфейса",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "research",
-      "title": "Продуктовое исследование"
+      "title": "Продуктовое исследование",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "ui-redesign",
-      "title": "UI-редизайн"
+      "title": "UI-редизайн",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "ux-audit",
-      "title": "UX-аудит"
+      "title": "UX-аудит",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "ux-design",
-      "title": "UX/UI-дизайн под ключ"
+      "title": "UX/UI-дизайн под ключ",
+      "serviceGroup": "",
+      "image": ""
     },
     {
       "id": "ux-outsource",
-      "title": "UX-отдел на аутсорсе"
+      "title": "UX-отдел на аутсорсе",
+      "serviceGroup": "",
+      "image": ""
     }
   ]
 }

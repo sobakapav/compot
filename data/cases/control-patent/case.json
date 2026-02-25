@@ -8,12 +8,17 @@
   "title": "Интерфейс мобильного приложения для работы с трудовыми патентами",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-25T10:14:38.327Z",
+  "updatedAt": "2026-02-25T11:02:30.874Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/control-patent.svg",
   "previewImageFile": "/case-previews/control-patent.svg",
-  "serviceIds": [
+  "year": 2023,
+  "clientId": "control",
+  "services": [
     "ux-design",
     "ux-outsource"
   ],
-  "year": 2023
+  "markets": [
+    "gos"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/control-patent.svg"
 }

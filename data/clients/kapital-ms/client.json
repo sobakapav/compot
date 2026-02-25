@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "kapital-ms",
+  "title": "Капитал МС",
+  "logo": "https://sobakapav.ru/images/portfolio/kapital/logo.png",
+  "link": "https://kapmed.ru/",
+  "markets": [
+    "fin",
+    "med"
+  ],
+  "createdAt": "2026-02-25T12:05:39.237Z",
+  "updatedAt": "2026-02-25T12:05:39.244Z"
+}

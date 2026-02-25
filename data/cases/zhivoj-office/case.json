@@ -8,11 +8,16 @@
   "title": "Интернет-магазин для оптовиков",
   "description": "",
   "createdAt": "2026-02-18T10:43:12.526Z",
-  "updatedAt": "2026-02-25T10:14:38.847Z",
+  "updatedAt": "2026-02-25T11:02:30.922Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/zhivoj-office.svg",
   "previewImageFile": "/case-previews/zhivoj-office.svg",
-  "serviceIds": [
+  "year": 2015,
+  "clientId": "zhivoy-ofis",
+  "services": [
     "redesign"
   ],
-  "year": 2015
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/zhivoj-office.svg"
 }

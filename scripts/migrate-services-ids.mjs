@@ -14,19 +14,6 @@ const writeJson = async (filePath, data) => {
   await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
 };
 
-const getSlugFromLink = (link) => {
-  if (!link) return "";
-  try {
-    const url = new URL(link);
-    const parts = url.pathname.split("/").filter(Boolean);
-    return parts[parts.length - 1] || "";
-  } catch {
-    const clean = link.replace(/\/$/, "");
-    const parts = clean.split("/").filter(Boolean);
-    return parts[parts.length - 1] || "";
-  }
-};
-
 const isDirectory = (entry) => entry?.isDirectory?.();
 
 const main = async () => {
@@ -48,13 +35,17 @@ const main = async () => {
     } catch {
       continue;
     }
-    const slug = getSlugFromLink(data.link) || data.id || dirName;
-    const nextId = slug || data.id || dirName;
+    const nextId = data.id || dirName;
     data.id = nextId;
     data.updatedAt = new Date().toISOString();
     await writeJson(filePath, data);
 
-    indexItems.push({ id: nextId, title: data.title ?? "" });
+    indexItems.push({
+      id: nextId,
+      title: data.title ?? "",
+      serviceGroup: data.serviceGroup ?? "",
+      image: data.image ?? "",
+    });
 
     if (dirName !== nextId) {
       renameQueue.push({ from: dirName, to: nextId });

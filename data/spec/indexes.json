@@ -16,15 +16,38 @@
     "item": {
       "id": "seatmap",
       "title": "Case Title",
+      "clientId": "acme",
       "clientName": "Client Name",
-      "serviceIds": ["service-001"]
+      "image": "https://example.com/case-preview.webp",
+      "services": ["service-001"],
+      "markets": ["market-001"],
+      "year": 2026
     }
   },
   "services": {
     "path": "data/services/index.json",
     "item": {
       "id": "service-001",
-      "title": "Service Title"
+      "title": "Service Title",
+      "serviceGroup": "Strategy",
+      "image": "https://example.com/service-card.webp"
+    }
+  },
+  "clients": {
+    "path": "data/clients/index.json",
+    "item": {
+      "id": "acme",
+      "title": "Acme Corp",
+      "logo": "https://example.com/logo.svg",
+      "link": "https://acme.example",
+      "markets": ["market-001"]
+    }
+  },
+  "markets": {
+    "path": "data/markets/index.json",
+    "item": {
+      "id": "market-001",
+      "title": "Fintech"
     }
   },
   "designs": {

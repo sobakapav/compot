@@ -8,12 +8,18 @@
   "title": "Корпоративный портал железнодорожной компании",
   "description": "",
   "createdAt": "2026-02-18T10:43:00.061Z",
-  "updatedAt": "2026-02-25T10:14:38.831Z",
+  "updatedAt": "2026-02-25T11:02:30.911Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/pgk.svg",
   "previewImageFile": "/case-previews/pgk.svg",
-  "serviceIds": [
+  "year": 2018,
+  "clientId": "pgk",
+  "services": [
     "redesign",
     "new-features"
   ],
-  "year": 2018
+  "markets": [
+    "log",
+    "prom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/pgk.svg"
 }

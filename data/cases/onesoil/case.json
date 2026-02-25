@@ -8,11 +8,17 @@
   "title": "Мобильное приложение для фермеров",
   "description": "",
   "createdAt": "2026-02-18T10:42:57.342Z",
-  "updatedAt": "2026-02-25T10:14:38.825Z",
+  "updatedAt": "2026-02-25T11:02:30.909Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/onesoil.svg",
   "previewImageFile": "/case-previews/onesoil.svg",
-  "serviceIds": [
+  "year": 2021,
+  "clientId": "onesoil",
+  "services": [
     "ux-audit"
   ],
-  "year": 2021
+  "markets": [
+    "it",
+    "prom"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/onesoil.svg"
 }

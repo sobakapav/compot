@@ -8,13 +8,18 @@
   "title": "Медицинская информационная система",
   "description": "",
   "createdAt": "2026-02-16T16:01:08.185Z",
-  "updatedAt": "2026-02-25T10:14:38.320Z",
+  "updatedAt": "2026-02-25T11:02:30.869Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/avicenna.svg",
   "previewImageFile": "/case-previews/avicenna.svg",
-  "serviceIds": [
+  "year": 2023,
+  "clientId": "avicenna",
+  "services": [
     "ui-redesign",
     "new-features",
     "product-team"
   ],
-  "year": 2023
+  "markets": [
+    "med"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/avicenna.svg"
 }

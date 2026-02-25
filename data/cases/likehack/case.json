@@ -8,11 +8,16 @@
   "title": "Новый интерфейс стартапа",
   "description": "",
   "createdAt": "2026-02-18T10:42:50.819Z",
-  "updatedAt": "2026-02-25T10:14:38.587Z",
+  "updatedAt": "2026-02-25T11:02:30.885Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/likehack.svg",
   "previewImageFile": "/case-previews/likehack.svg",
-  "serviceIds": [
+  "year": 2013,
+  "clientId": "likehack",
+  "services": [
     "redesign"
   ],
-  "year": 2013
+  "markets": [
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/likehack.svg"
 }

@@ -8,12 +8,18 @@
   "title": "UI-редизайн интерфейса корпоративного портала",
   "description": "",
   "createdAt": "2026-02-18T10:42:21.889Z",
-  "updatedAt": "2026-02-25T10:14:38.315Z",
+  "updatedAt": "2026-02-25T11:02:30.865Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/alfastrah-hr.svg",
   "previewImageFile": "/case-previews/alfastrahhr.svg",
-  "serviceIds": [
+  "year": 2018,
+  "clientId": "alfastrah",
+  "services": [
     "ux-outsource",
     "ui-redesign"
   ],
-  "year": 2018
+  "markets": [
+    "fin",
+    "it"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/alfastrah-hr.svg"
 }

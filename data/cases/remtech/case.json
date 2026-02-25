@@ -8,11 +8,17 @@
   "title": "Дизайн интерфейсов для поставщика промышленных полимеров",
   "description": "",
   "createdAt": "2026-02-18T10:43:02.468Z",
-  "updatedAt": "2026-02-25T10:14:38.834Z",
+  "updatedAt": "2026-02-25T11:02:30.915Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/remtech.svg",
   "previewImageFile": "/case-previews/remtech.svg",
-  "serviceIds": [
+  "year": 2020,
+  "clientId": "rtkco",
+  "services": [
     "redesign"
   ],
-  "year": 2020
+  "markets": [
+    "prom",
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/remtech.svg"
 }

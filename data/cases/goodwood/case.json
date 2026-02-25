@@ -8,11 +8,16 @@
   "title": "Классический UX-аудит сайта",
   "description": "",
   "createdAt": "2026-02-18T10:42:43.132Z",
-  "updatedAt": "2026-02-25T10:14:38.337Z",
+  "updatedAt": "2026-02-25T11:02:30.881Z",
   "previewImageSourceUrl": "https://sobakapav.ru/images/portfolio/cards/goodwood.svg",
   "previewImageFile": "/case-previews/goodwood.svg",
-  "serviceIds": [
+  "year": 2020,
+  "clientId": "good-wood",
+  "services": [
     "ux-audit"
   ],
-  "year": 2020
+  "markets": [
+    "ec"
+  ],
+  "image": "https://sobakapav.ru/images/portfolio/cards/goodwood.svg"
 }
