@@ -168,7 +168,7 @@ export default function Home() {
         )}
         <div className="flex flex-row gap-3 text-sm">
           <Link
-            href="/new"
+            href="/new?force=1"
             className="w-fit rounded bg-zinc-900 px-4 py-2 text-white hover:bg-zinc-800"
           >
             Новое предложение

@@ -1,10 +1,24 @@
 import { redirect } from "next/navigation";
 import { proposalSchema } from "../../lib/schema";
-import { saveProposalVersion } from "../../lib/storage";
+import { listProposals, saveProposalVersion } from "../../lib/storage";
 
 export const runtime = "nodejs";
 
-export default async function NewProposalPage() {
+export default async function NewProposalPage({
+  searchParams,
+}: {
+  searchParams?: { force?: string | string[] };
+}) {
+  const forceParam = Array.isArray(searchParams?.force)
+    ? searchParams?.force?.[0]
+    : searchParams?.force;
+  const forceCreate = forceParam === "1" || forceParam === "true";
+  if (!forceCreate) {
+    const existing = await listProposals();
+    if (existing.length > 0) {
+      redirect("/all");
+    }
+  }
   const proposal = proposalSchema.parse({});
   const target = new Date();
   target.setDate(target.getDate() + 14);

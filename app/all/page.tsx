@@ -126,7 +126,7 @@ export default function AllProposalsPage() {
             <button
               type="button"
               className="rounded border border-zinc-900 bg-zinc-900 px-4 py-2 text-sm text-white hover:bg-zinc-800"
-              onClick={() => router.push("/new")}
+              onClick={() => router.push("/new?force=1")}
             >
               Новое предложение
             </button>
