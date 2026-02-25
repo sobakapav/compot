@@ -9,7 +9,8 @@ This file describes the key constraints, layout rules, and implementation conven
 - **Keep changes local to the project:** Modify only files inside the project workspace.
 
 ## Routing / Pages
-- `/new` creates a new proposal and opens editor.
+- `/new` creates a new proposal and opens editor **only when the data repo has no proposals**. If proposals exist, it redirects to `/all`.
+- `?force=1` on `/new` always creates a new proposal.
 - `/edit` edits an existing proposal.
 - `/view` shows a proposal in read‑only mode.
 - `/all` lists proposals and versions.
@@ -87,6 +88,10 @@ This file describes the key constraints, layout rules, and implementation conven
 - PDF generation should always save a version.
 - Auto‑save only stores a new version when data changes.
 - “Marked as актуальная” logic: if user explicitly sets it, keep; otherwise auto‑recompute on version changes.
+
+## Data Storage
+- Proposals live in a separate data‑repo (configured via `config.json`).
+- Code repo `data/proposals` is legacy and should not be used.
 
 ## Implementation Notes
 - Avoid introducing extra wrapper spacing that changes layout between HTML and PDF.

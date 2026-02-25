@@ -23,11 +23,36 @@ npm run dev
 - Кейсы: `data/cases/` (каждый кейс — отдельная папка + `case.json`)
 - Индекс кейсов: `data/cases/index.json`
 - Услуги: `data/services/` и `data/services/index.json`
-- Черновики/версии КП: `data/proposals/`
+- Черновики/версии КП: отдельный data‑repo, путь задаётся в `config.json`
 - Превью кейсов (локально): `public/case-previews/`
 - Сырые данные синхронизации: `data/links/cases-raw.json`
 - Статус последней синхронизации: `data/links/case-sync.json`
 - Статус последней синхронизации услуг: `data/services/sync.json`
+
+## Data‑repo (предложения и версии)
+
+Предложения живут в отдельном репозитории данных. Это позволяет обновлять код и данные независимо.
+
+`config.json` в корне проекта:
+```json
+{
+  "dataRepo": {
+    "path": "/Users/<user>/compot-data",
+    "remote": "git@github.com:sobakapav/compot-data.git",
+    "branch": "users/<login>",
+    "autoPushMinutes": 60
+  }
+}
+```
+
+Поведение:
+- Авто‑push работает раз в час, пока запущен сервер.
+- Ручной push: кнопка «Сохранить все в облаке» на `/all`.
+- При остановке через `stop.sh` выполняется принудительный `commit/push`.
+
+Важно:
+- Папка `data/proposals` в репозитории кода больше не используется.
+- Если data‑repo не настроен, используется путь по умолчанию `~/compot-data`.
 
 ## Синхронизация кейсов
 
