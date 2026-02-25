@@ -43,6 +43,11 @@ const getState = () => {
 
 const recordStatus = (reason: "auto" | "manual", result: PushResult) => {
   const state = getState();
+  const current: DataRepoStatus =
+    state.__compotDataRepoStatus ?? {
+      enabled: false,
+      intervalMinutes: 60,
+    };
   const status: PushStatus = {
     status: result.status,
     at: new Date().toISOString(),
@@ -58,12 +63,12 @@ const recordStatus = (reason: "auto" | "manual", result: PushResult) => {
   }
   if (reason === "auto") {
     state.__compotDataRepoStatus = {
-      ...state.__compotDataRepoStatus,
+      ...current,
       lastAuto: status,
     };
   } else {
     state.__compotDataRepoStatus = {
-      ...state.__compotDataRepoStatus,
+      ...current,
       lastManual: status,
     };
   }
