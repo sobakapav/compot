@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "status": "synced",
-  "syncedAt": "2026-02-19T10:31:49.310Z",
-  "lastSyncDate": "2026-02-19",
+  "syncedAt": "2026-02-25T10:14:39.006Z",
+  "lastSyncDate": "2026-02-25",
   "sourceUrl": "https://sobakapav.ru/listServices.json",
-  "itemsCount": 0,
+  "itemsCount": 10,
   "missingServiceIds": [],
   "missingFields": []
 }

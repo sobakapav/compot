@@ -19,6 +19,8 @@ abort() {
 
 REPO_URL="https://github.com/sobakapav/compot"
 TARGET_DIR="$HOME/compot"
+DATA_REPO_URL_DEFAULT="git@github.com:sobakapav/compot-data.git"
+DATA_REPO_DIR_DEFAULT="$HOME/compot-data"
 NODE_VERSION="25.6.1"
 PORT="3000"
 
@@ -109,6 +111,75 @@ if [[ -f "${TEMP_LOG}" ]]; then
   rm -f "${TEMP_LOG}"
 fi
 log "Логи установки сохраняются в ${FINAL_LOG}"
+
+log "Настраиваю репозиторий данных..."
+read -r -p "URL data-репозитория (по умолчанию ${DATA_REPO_URL_DEFAULT}): " DATA_REPO_URL_INPUT
+DATA_REPO_URL="${DATA_REPO_URL_INPUT:-${DATA_REPO_URL_DEFAULT}}"
+
+read -r -p "Папка data-репозитория (по умолчанию ${DATA_REPO_DIR_DEFAULT}): " DATA_REPO_DIR_INPUT
+DATA_REPO_DIR="${DATA_REPO_DIR_INPUT:-${DATA_REPO_DIR_DEFAULT}}"
+
+read -r -p "Ветка data-репозитория (необязательно): " DATA_REPO_BRANCH_INPUT
+DATA_REPO_BRANCH="${DATA_REPO_BRANCH_INPUT:-}"
+
+GIT_USER_NAME="$(git config --get user.name || true)"
+if [[ -z "${DATA_REPO_BRANCH}" ]]; then
+  if [[ -z "${GIT_USER_NAME}" ]]; then
+    read -r -p "GitHub логин (для ветки users/<login>): " GIT_USER_NAME
+  fi
+  DATA_REPO_SLUG="$(echo "${GIT_USER_NAME}" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9._-')"
+  if [[ -z "${DATA_REPO_SLUG}" ]]; then
+    DATA_REPO_SLUG="user-$(date +%s)"
+  fi
+  DATA_REPO_BRANCH="users/${DATA_REPO_SLUG}"
+fi
+
+if [[ -d "${DATA_REPO_DIR}/.git" ]]; then
+  log "Data-репозиторий уже существует: ${DATA_REPO_DIR}"
+  cd "${DATA_REPO_DIR}"
+  if ! git remote get-url origin >/dev/null 2>&1; then
+    git remote add origin "${DATA_REPO_URL}"
+  fi
+  git fetch --all --prune
+else
+  log "Клонирую data-репозиторий в ${DATA_REPO_DIR}..."
+  git clone "${DATA_REPO_URL}" "${DATA_REPO_DIR}"
+  cd "${DATA_REPO_DIR}"
+fi
+
+if git show-ref --verify --quiet "refs/remotes/origin/${DATA_REPO_BRANCH}"; then
+  git checkout -B "${DATA_REPO_BRANCH}" "origin/${DATA_REPO_BRANCH}"
+else
+  git checkout -B "${DATA_REPO_BRANCH}"
+  git push -u origin "${DATA_REPO_BRANCH}"
+fi
+
+cd "${TARGET_DIR}"
+
+SOURCE_PROPOSALS_DIR="${TARGET_DIR}/data/proposals"
+TARGET_PROPOSALS_DIR="${DATA_REPO_DIR}/proposals"
+if [[ -d "${SOURCE_PROPOSALS_DIR}" ]]; then
+  mkdir -p "${TARGET_PROPOSALS_DIR}"
+  if [[ -z "$(ls -A "${TARGET_PROPOSALS_DIR}" 2>/dev/null)" ]]; then
+    log "Переношу предложения из ${SOURCE_PROPOSALS_DIR} в ${TARGET_PROPOSALS_DIR}..."
+    rsync -a "${SOURCE_PROPOSALS_DIR}/" "${TARGET_PROPOSALS_DIR}/"
+    log "Перенос завершён. Исходные данные оставлены без изменений."
+  else
+    log "Перенос пропущен: ${TARGET_PROPOSALS_DIR} не пуст."
+  fi
+fi
+
+cat > "${TARGET_DIR}/config.json" <<EOF
+{
+  "dataRepo": {
+    "path": "${DATA_REPO_DIR}",
+    "remote": "${DATA_REPO_URL}",
+    "branch": "${DATA_REPO_BRANCH}",
+    "autoPushMinutes": 60
+  }
+}
+EOF
+log "Config записан в ${TARGET_DIR}/config.json"
 
 log "Выставляю права на запуск скриптов..."
 chmod +x "${TARGET_DIR}/run.sh" "${TARGET_DIR}/stop.sh" "${TARGET_DIR}/update.sh"

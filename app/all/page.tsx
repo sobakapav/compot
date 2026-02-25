@@ -38,6 +38,8 @@ export default function AllProposalsPage() {
   const [selectedVersions, setSelectedVersions] = useState<
     Record<string, string>
   >({});
+  const [pushLoading, setPushLoading] = useState(false);
+  const [pushStatus, setPushStatus] = useState<string | null>(null);
 
   const getVersionLabel = (item: ProposalListItem, versionId: string) => {
     const version = item.versions.find((v) => v.versionId === versionId);
@@ -67,6 +69,38 @@ export default function AllProposalsPage() {
     load();
   }, []);
 
+  const onPushAll = async () => {
+    setPushLoading(true);
+    setPushStatus(null);
+    try {
+      const response = await fetch("/api/data/push", { method: "POST" });
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload?.error ?? "Push failed");
+      }
+      if (payload?.status === "pushed") {
+        setPushStatus("Данные отправлены на GitHub.");
+        return;
+      }
+      if (payload?.status === "clean") {
+        setPushStatus("Нет изменений для отправки.");
+        return;
+      }
+      if (payload?.status === "skipped") {
+        setPushStatus("Отправка данных не настроена.");
+        return;
+      }
+      if (payload?.status === "failed") {
+        throw new Error(payload?.error ?? "Push failed");
+      }
+      setPushStatus("Не удалось определить результат отправки данных.");
+    } catch {
+      setPushStatus("Не удалось отправить данные на GitHub.");
+    } finally {
+      setPushLoading(false);
+    }
+  };
+
   const sorted = useMemo(() => {
     return [...items].sort((a, b) =>
       (b.latestCreatedAt || "").localeCompare(a.latestCreatedAt || "")
@@ -80,14 +114,27 @@ export default function AllProposalsPage() {
           <h1 className="text-2xl font-semibold text-zinc-900">
             Все предложения
           </h1>
-          <button
-            type="button"
-            className="rounded border border-zinc-900 bg-zinc-900 px-4 py-2 text-sm text-white hover:bg-zinc-800"
-            onClick={() => router.push("/new")}
-          >
-            Новое предложение
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              disabled={pushLoading}
+              className="rounded border border-zinc-300 bg-white px-4 py-2 text-sm text-zinc-900 hover:border-zinc-400 disabled:cursor-not-allowed disabled:opacity-60"
+              onClick={onPushAll}
+            >
+              {pushLoading ? "Сохранение..." : "Сохранить все в облаке"}
+            </button>
+            <button
+              type="button"
+              className="rounded border border-zinc-900 bg-zinc-900 px-4 py-2 text-sm text-white hover:bg-zinc-800"
+              onClick={() => router.push("/new")}
+            >
+              Новое предложение
+            </button>
+          </div>
         </div>
+        {pushStatus && (
+          <div className="text-sm text-zinc-500">{pushStatus}</div>
+        )}
         <div className="flex flex-col gap-3">
           {sorted.length === 0 && (
             <div className="rounded border border-dashed border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-500">

@@ -1,5 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
+import { getDataRepoPath } from "./config";
+import { ensureAutoPushStarted } from "./data-repo";
 import type { Proposal } from "./schema";
 
 export type StoredProposalVersion = {
@@ -13,21 +15,25 @@ export type StoredProposalVersion = {
   planTasks?: { id: string; title: string; start: string; end: string }[];
 };
 
-const proposalsDir = path.join(process.cwd(), "data", "proposals");
+const getProposalsDir = async () =>
+  path.join(await getDataRepoPath(), "proposals");
 
-const ensureDir = async () => {
+const ensureDir = async (proposalsDir: string) => {
   await fs.mkdir(proposalsDir, { recursive: true });
 };
 
 const makeId = () =>
   `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
-const markedPath = (proposalId: string) =>
+const markedPath = (proposalsDir: string, proposalId: string) =>
   path.join(proposalsDir, proposalId, "marked.json");
 
-const readMarkedVersionId = async (proposalId: string) => {
+const readMarkedVersionId = async (
+  proposalsDir: string,
+  proposalId: string
+) => {
   try {
-    const raw = await fs.readFile(markedPath(proposalId), "utf-8");
+    const raw = await fs.readFile(markedPath(proposalsDir, proposalId), "utf-8");
     const data = JSON.parse(raw) as { versionId?: string; locked?: boolean };
     return {
       versionId: data?.versionId ?? null,
@@ -39,12 +45,13 @@ const readMarkedVersionId = async (proposalId: string) => {
 };
 
 const writeMarkedVersionId = async (
+  proposalsDir: string,
   proposalId: string,
   versionId: string,
   locked: boolean
 ) => {
   await fs.writeFile(
-    markedPath(proposalId),
+    markedPath(proposalsDir, proposalId),
     JSON.stringify(
       { versionId, locked, markedAt: new Date().toISOString() },
       null,
@@ -75,7 +82,9 @@ export const saveProposalVersion = async ({
   selectedCaseIds?: string[];
   planTasks?: { id: string; title: string; start: string; end: string }[];
 }) => {
-  await ensureDir();
+  await ensureAutoPushStarted();
+  const proposalsDir = await getProposalsDir();
+  await ensureDir(proposalsDir);
   const pid = proposalId ?? makeId();
   const versionId = makeId();
   const stored: StoredProposalVersion = {
@@ -104,7 +113,9 @@ const readVersion = async (filePath: string) => {
 };
 
 export const listProposals = async () => {
-  await ensureDir();
+  await ensureAutoPushStarted();
+  const proposalsDir = await getProposalsDir();
+  await ensureDir(proposalsDir);
   const entries = await fs.readdir(proposalsDir, { withFileTypes: true });
   const items: {
     proposalId: string;
@@ -165,7 +176,7 @@ export const listProposals = async () => {
       const latest =
         versions.find((v) => v.source !== "autosave") ?? versions[0] ?? null;
       if (versions.length) {
-        const markedState = await readMarkedVersionId(proposalId);
+        const markedState = await readMarkedVersionId(proposalsDir, proposalId);
         let marked =
           versions.find(
             (version) => version.versionId === markedState.versionId
@@ -178,6 +189,7 @@ export const listProposals = async () => {
               markedState.locked
             ) {
               await writeMarkedVersionId(
+                proposalsDir,
                 proposalId,
                 nextMarked.versionId,
                 false
@@ -200,6 +212,8 @@ export const listProposals = async () => {
 };
 
 export const getProposal = async (proposalId: string, versionId?: string) => {
+  await ensureAutoPushStarted();
+  const proposalsDir = await getProposalsDir();
   const versionsDir = path.join(proposalsDir, proposalId, "versions");
   if (versionId) {
     const filePath = path.join(versionsDir, versionId, "proposal.json");
@@ -258,7 +272,7 @@ export const getProposal = async (proposalId: string, versionId?: string) => {
     } satisfies StoredProposalVersion;
   }
   versions.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-  const markedState = await readMarkedVersionId(proposalId);
+  const markedState = await readMarkedVersionId(proposalsDir, proposalId);
   let marked =
     versions.find((version) => version.versionId === markedState.versionId) ??
     null;
@@ -267,7 +281,12 @@ export const getProposal = async (proposalId: string, versionId?: string) => {
     const nextMarked = chooseDefaultMarked(versions);
     if (nextMarked) {
       if (nextMarked.versionId !== markedState.versionId) {
-        await writeMarkedVersionId(proposalId, nextMarked.versionId, false);
+        await writeMarkedVersionId(
+          proposalsDir,
+          proposalId,
+          nextMarked.versionId,
+          false
+        );
       }
       marked = nextMarked;
     }
@@ -283,7 +302,9 @@ export const markProposalVersion = async (
   proposalId: string,
   versionId?: string
 ) => {
-  await ensureDir();
+  await ensureAutoPushStarted();
+  const proposalsDir = await getProposalsDir();
+  await ensureDir(proposalsDir);
   const versionsDir = path.join(proposalsDir, proposalId, "versions");
   const versions: StoredProposalVersion[] = [];
   const entries = await fs.readdir(versionsDir, { withFileTypes: true });
@@ -304,7 +325,12 @@ export const markProposalVersion = async (
     marked = chooseDefaultMarked(versions);
   }
   if (!marked) throw new Error("Not found");
-  await writeMarkedVersionId(proposalId, marked.versionId, Boolean(versionId));
+  await writeMarkedVersionId(
+    proposalsDir,
+    proposalId,
+    marked.versionId,
+    Boolean(versionId)
+  );
   return marked;
 };
 
@@ -312,6 +338,8 @@ export const deleteProposalVersion = async (
   proposalId: string,
   versionId: string
 ) => {
+  await ensureAutoPushStarted();
+  const proposalsDir = await getProposalsDir();
   const versionDir = path.join(
     proposalsDir,
     proposalId,
@@ -336,11 +364,16 @@ export const deleteProposalVersion = async (
     // ignore
   }
   remaining.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-  const markedState = await readMarkedVersionId(proposalId);
+  const markedState = await readMarkedVersionId(proposalsDir, proposalId);
   if (markedState.versionId === versionId) {
     const marked = chooseDefaultMarked(remaining);
     if (marked) {
-      await writeMarkedVersionId(proposalId, marked.versionId, false);
+      await writeMarkedVersionId(
+        proposalsDir,
+        proposalId,
+        marked.versionId,
+        false
+      );
     }
   }
 };
@@ -349,6 +382,8 @@ export const mergeProposals = async (
   targetId: string,
   sourceId: string
 ) => {
+  await ensureAutoPushStarted();
+  const proposalsDir = await getProposalsDir();
   if (targetId === sourceId) return;
   const targetVersionsDir = path.join(proposalsDir, targetId, "versions");
   const sourceVersionsDir = path.join(proposalsDir, sourceId, "versions");
@@ -387,6 +422,6 @@ export const mergeProposals = async (
   versions.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const marked = chooseDefaultMarked(versions);
   if (marked) {
-    await writeMarkedVersionId(targetId, marked.versionId, false);
+    await writeMarkedVersionId(proposalsDir, targetId, marked.versionId, false);
   }
 };

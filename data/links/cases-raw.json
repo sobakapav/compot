@@ -1,2072 +1,2072 @@
 [
   {
-    "name": "alarm-motors",
+    "id": "alarm-motors",
     "year": 2013,
     "title": "UX-консультирование команды разработчиков сайта",
-    "client": "alarm-motors",
+    "clientId": "alarm-motors",
     "services": [
       "product-team"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/alarm-motors.svg"
   },
   {
-    "name": "alfa-arm",
+    "id": "alfa-arm",
     "year": 2020,
     "title": "Интерфейс рабочего места оператора поддержки банка",
-    "client": "alfa",
+    "clientId": "alfa",
     "services": [
       "ux-design",
       "ux-outsource",
       "prototype"
     ],
-    "market": [
+    "markets": [
       "fin",
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/alfa-arm_big.png"
   },
   {
-    "name": "alfabank",
+    "id": "alfabank",
     "year": 2013,
     "title": "Интерфейс мобильного приложения «Альфа Банка»",
-    "client": "alfa",
+    "clientId": "alfa",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/alfabank-mobile.svg"
   },
   {
-    "name": "alfa",
+    "id": "alfa",
     "year": 2015,
     "title": "Интерфейс рабочего места страхового агента",
-    "client": "alfastrah",
+    "clientId": "alfastrah",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "fin",
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/alfa.png"
   },
   {
-    "name": "alfastrah-design",
+    "id": "alfastrah-design",
     "year": 2023,
     "title": "Дизайн-система для компании «АльфаСтрахование»",
-    "client": "alfastrah",
+    "clientId": "alfastrah",
     "services": [
       "ux-outsource",
       "ui-redesign"
     ],
-    "market": [
+    "markets": [
       "fin",
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/alfastrah-design_big.svg"
   },
   {
-    "name": "alfastrahhr",
+    "id": "alfastrahhr",
     "year": 2018,
     "title": "UI-редизайн интерфейса корпоративного портала",
-    "client": "alfastrah",
+    "clientId": "alfastrah",
     "services": [
       "ux-outsource",
       "ui-redesign"
     ],
-    "market": [
+    "markets": [
       "fin",
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/alfastrah-hr.svg"
   },
   {
-    "name": "algohelp",
+    "id": "algohelp",
     "year": 2019,
     "title": "Приложение для врачей с руководством по экстренной помощи",
-    "client": "algohelp",
+    "clientId": "algohelp",
     "services": [
       "product-team",
       "prototype"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/algohelp.svg"
   },
   {
-    "name": "amber",
+    "id": "amber",
     "year": 2016,
     "title": "Конструктор CRM для среднего бизнеса",
-    "client": "amber",
+    "clientId": "amber",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/amber.svg"
   },
   {
-    "name": "anggell-2025",
+    "id": "anggell-2025",
     "year": 2025,
     "title": "Дизайн интерфейса системы управления рестораном",
-    "client": "anggell",
+    "clientId": "anggell",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/anggell2.svg"
   },
   {
-    "name": "anggell",
+    "id": "anggell",
     "year": 2022,
     "title": "Дизайн MVP системы поддержки принятия решений",
-    "client": "anggell",
+    "clientId": "anggell",
     "services": [
       "product-team",
       "prototype",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/anggell.svg"
   },
   {
-    "name": "atol",
+    "id": "atol",
     "year": 2018,
     "title": "Интерфес для управления онлайн-кассами",
-    "client": "atol",
+    "clientId": "atol",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/atol.svg"
   },
   {
-    "name": "autotransinfo",
+    "id": "autotransinfo",
     "year": 2015,
     "title": "Дизайн формы поиска для грузоперевозчиков",
-    "client": "ati-su",
+    "clientId": "ati-su",
     "services": [
       "ux-design",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "log"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/autotransinfo.svg"
   },
   {
-    "name": "avicenna",
+    "id": "avicenna",
     "year": 2023,
     "title": "Медицинская информационная система",
-    "client": "avicenna",
+    "clientId": "avicenna",
     "services": [
       "ui-redesign",
       "new-features",
       "product-team"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/avicenna.svg"
   },
   {
-    "name": "avito",
+    "id": "avito",
     "year": 2019,
     "title": "UX-исследование рабочего места менеджера по продажам «Авито»",
-    "client": "avito",
+    "clientId": "avito",
     "services": [
       "research"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/avito_big.svg"
   },
   {
-    "name": "azbuka-vkusa",
+    "id": "azbuka-vkusa",
     "year": 2015,
     "title": "UX-редизайн продуктового интернет-магазина",
-    "client": "azbuka-vkusa",
+    "clientId": "azbuka-vkusa",
     "services": [
       "redesign",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/azbuka.svg"
   },
   {
-    "name": "basis",
+    "id": "basis",
     "year": 2015,
     "title": "Контент для сайта архитектурной студии",
-    "client": "bazis",
+    "clientId": "bazis",
     "services": [
       "content-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/basis.svg"
   },
   {
-    "name": "bibi",
-    "year": 2019,
-    "title": "UX-аудит магазина для автовладельцев",
-    "client": "bi-bi",
-    "services": [
-      "ux-audit",
-      "new-features"
-    ],
-    "market": [
-      "ec"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/bibi.svg"
-  },
-  {
-    "name": "bercut",
+    "id": "bercut",
     "year": 2015,
     "title": "UX-исследование и CJM мобильного сервиса",
-    "client": "bercut",
+    "clientId": "bercut",
     "services": [
       "research"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/bercut.svg"
   },
   {
-    "name": "biletik",
+    "id": "bibi",
+    "year": 2019,
+    "title": "UX-аудит магазина для автовладельцев",
+    "clientId": "bi-bi",
+    "services": [
+      "ux-audit",
+      "new-features"
+    ],
+    "markets": [
+      "ec"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/bibi.svg"
+  },
+  {
+    "id": "biletik",
     "year": 2016,
     "title": "Интерфейс приложения для покупки авиабилетов",
-    "client": "biletik-aero",
+    "clientId": "biletik-aero",
     "services": [
       "redesign",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "log"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/biletik.svg"
   },
   {
-    "name": "boracase",
+    "id": "boracase",
     "year": 2019,
     "title": "Многомодульная система бронирования круизных и паромных перевозок",
-    "client": "bora",
+    "clientId": "bora",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "log",
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/bora.svg"
   },
   {
-    "name": "brighteye",
+    "id": "brighteye",
     "year": 2021,
     "title": "Интерфейс оператора производственной линии и приложения для MOM Momentum от Brighteye",
-    "client": "brighteye",
+    "clientId": "brighteye",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/brighteye_big.svg"
   },
   {
-    "name": "center-rechevyh-technologiy",
+    "id": "center-rechevyh-technologiy",
     "year": 2017,
     "title": "Интерфейс службы банковской безопасности",
-    "client": "crt",
+    "clientId": "crt",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it",
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/crt.svg"
   },
   {
-    "name": "checknpay",
+    "id": "checknpay",
     "year": 2013,
     "title": "Сервис для выставления и оплаты счетов",
-    "client": "check-and-pay",
+    "clientId": "check-and-pay",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/checknpay.svg"
   },
   {
-    "name": "cindicator",
+    "id": "cindicator",
     "year": 2019,
     "title": "UX-исследование приложения для финансовых трейдеров",
-    "client": "cindicator",
+    "clientId": "cindicator",
     "services": [
       "research",
       "product-team"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/cindicator.png"
   },
   {
-    "name": "compel",
+    "id": "compel",
     "year": 2023,
     "title": "Редизайн внутренних цифровых сервисов",
-    "client": "compel",
+    "clientId": "compel",
     "services": [
       "redesign",
       "prototype",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/compel.svg"
   },
   {
-    "name": "control-forest",
+    "id": "control-forest",
     "year": 2021,
     "title": "Дизайн интерфейса мобильного приложения для лесничеств",
-    "client": "control",
+    "clientId": "control",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "gos",
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/control-forest.svg"
   },
   {
-    "name": "control-mobile",
+    "id": "control-mobile",
     "year": 2019,
     "title": "Приложение для работы с государственными реестрами",
-    "client": "control",
+    "clientId": "control",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/control-mobile_big.svg"
   },
   {
-    "name": "control-patent",
+    "id": "control-patent",
     "year": 2023,
     "title": "Интерфейс мобильного приложения для работы с трудовыми патентами",
-    "client": "control",
+    "clientId": "control",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/control-patent.svg"
   },
   {
-    "name": "control-predpisanie",
+    "id": "control-predpisanie",
     "year": 2023,
     "title": "Мобильное приложение для работы с предписаниями",
-    "client": "control",
+    "clientId": "control",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/control-predpisanie.svg"
   },
   {
-    "name": "control",
+    "id": "control",
     "year": 2019,
     "title": "Cервис для управления государственными реестрами",
-    "client": "control",
+    "clientId": "control",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/control-mobile.svg"
   },
   {
-    "name": "costa",
+    "id": "costa",
     "year": 2017,
     "title": "Интерфейс дашборда медицинской системы",
-    "client": "costa",
+    "clientId": "costa",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/costa.svg"
   },
   {
-    "name": "crt-panel-administratora",
+    "id": "crt-panel-administratora",
     "year": 2017,
     "title": "Интерфейс рабочего места администратора",
-    "client": "crt",
+    "clientId": "crt",
     "services": [
       "ux-design",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "it",
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/crt.svg"
   },
   {
-    "name": "cybermall",
+    "id": "cybermall",
     "year": 2013,
     "title": "Интерфейс интернет-магазина",
-    "client": "cybermall",
+    "clientId": "cybermall",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/cybermall.svg"
   },
   {
-    "name": "data-solution",
+    "id": "data-solution",
     "year": 2022,
     "title": "Конструктор коммерческих презентаций",
-    "client": "control",
+    "clientId": "control",
     "services": [
       "prototype",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/ds.png"
   },
   {
-    "name": "dau",
+    "id": "dau",
     "year": 2020,
     "title": "Точечные улучшения процесса продаж фильмов «Дау»",
-    "client": "dau",
+    "clientId": "dau",
     "services": [
       "redesign",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/dau.svg"
   },
   {
-    "name": "dipol",
+    "id": "dipol",
     "year": 2023,
     "title": "Интерфейс приложения визуальной LowCode среды разработки",
-    "client": "dipol",
+    "clientId": "dipol",
     "services": [
       "ui-redesign",
       "research"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/dipol.svg"
   },
   {
-    "name": "domotech",
+    "id": "domotech",
     "year": 2023,
     "title": "UX-аудит интерфейса сетевого магазина бытовой техники",
-    "client": "domotehnika",
+    "clientId": "domotehnika",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/domotech.svg"
   },
   {
-    "name": "e-gorod-guide",
+    "id": "e-gorod-guide",
     "year": 2019,
     "title": "Гайд по общению для сотрудников поддержки",
-    "client": "ecity",
+    "clientId": "ecity",
     "services": [
       "content-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/ecity_guide.svg"
   },
   {
-    "name": "e-gorod-mobile",
+    "id": "e-gorod-mobile",
     "year": 2023,
     "title": "Объединение двух мобильных приложений",
-    "client": "ecity",
+    "clientId": "ecity",
     "services": [
       "new-features",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/novotelecom_big.svg"
   },
   {
-    "name": "e-gorod",
+    "id": "e-gorod",
     "year": 2018,
     "title": "Сайт амбициозного регионального провайдера",
-    "client": "ecity",
+    "clientId": "ecity",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/ecity.svg"
   },
   {
-    "name": "easydocs-2024",
+    "id": "easydocs-2024",
     "year": 2024,
     "title": "Дизайн интерфейса модуля приема кандидатов на работу",
-    "client": "easydocs",
+    "clientId": "easydocs",
     "services": [
       "ux-design",
       "new-features",
       "research"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/easydocs2.svg"
   },
   {
-    "name": "easydocs",
+    "id": "easydocs",
     "year": 2020,
     "title": "Интерфейс приложения для проверки и подписи документов",
-    "client": "easydocs",
+    "clientId": "easydocs",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/easydocs.svg"
   },
   {
-    "name": "edms",
+    "id": "edms",
     "year": 2018,
     "title": "Система электронного документооборота",
-    "client": "baltika-carlsberg",
+    "clientId": "baltika-carlsberg",
     "services": [
       "ux-design",
       "ui-redesign"
     ],
-    "market": [
+    "markets": [
       "it",
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/carlsberg.svg"
   },
   {
-    "name": "electrocardiography",
+    "id": "electrocardiography",
     "year": 2025,
     "title": "Медицинский интерфейс для работы с ЭКГ",
-    "client": "erna",
+    "clientId": "erna",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/erna_big.png"
   },
   {
-    "name": "electronika",
+    "id": "electronika",
     "year": 2017,
     "title": "Точечное улучшение интерфейса",
-    "client": "elektronika",
+    "clientId": "elektronika",
     "services": [
       "ui-redesign",
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/elektronika.svg"
   },
   {
-    "name": "elma-bot",
+    "id": "elma-bot",
     "year": 2023,
     "title": "Дизайн интерфейса lowcode-конструктора чат-ботов",
-    "client": "elma",
+    "clientId": "elma",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/elma_big.svg"
   },
   {
-    "name": "elma",
+    "id": "elma",
     "year": 2020,
     "title": "Дизайн интерфейса системы управления бизнес-процессами",
-    "client": "elma",
+    "clientId": "elma",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/elma_big.svg"
   },
   {
-    "name": "ethr",
+    "id": "ethr",
     "year": 2016,
     "title": "Концепция и тексты для сайта подбора IT-специалистов",
-    "client": "freemoneyforum-ru",
+    "clientId": "freemoneyforum-ru",
     "services": [
       "content-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/ethr.svg"
   },
   {
-    "name": "etm",
+    "id": "etm",
     "year": 2021,
     "title": "UX/UI-аудит для дистрибьютора электротехники",
-    "client": "etm",
+    "clientId": "etm",
     "services": [
       "ux-audit",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "ec",
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/etm.svg"
   },
   {
-    "name": "f-kabinki",
+    "id": "f-kabinki",
     "year": 2015,
     "title": "Сайт о кабинках для физиотерапии",
-    "client": "f-kabinki",
+    "clientId": "f-kabinki",
     "services": [
       "content-design",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/cabin.png"
   },
   {
-    "name": "faberlic",
+    "id": "faberlic",
     "year": 2017,
     "title": "Интерфейс сетевого интернет-магазина",
-    "client": "faberlic",
+    "clientId": "faberlic",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/faberlic.svg"
   },
   {
-    "name": "fasting",
+    "id": "fasting",
     "year": 2019,
     "title": "Концептуальный дизайн интерфейса приложения для интервального голодания",
-    "client": "simple",
+    "clientId": "simple",
     "services": [
       "product-team"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/simple.svg"
   },
   {
-    "name": "fastvps-ui",
+    "id": "fastvps-ui",
     "year": 2020,
     "title": "Редизайн интерфейса панели администратора хостинга",
-    "client": "fastvps",
+    "clientId": "fastvps",
     "services": [
       "ui-redesign",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/fastvps.svg"
   },
   {
-    "name": "fastvps",
+    "id": "fastvps",
     "year": 2015,
     "title": "Интерфейс сервиса подбора хостинга",
-    "client": "fastvps",
+    "clientId": "fastvps",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/fastvps.svg"
   },
   {
-    "name": "finexware",
+    "id": "finexware",
     "year": 2019,
     "title": "Интерфейс онлайн-платформы для трейдеров и инвесторов",
-    "client": "finexware",
+    "clientId": "finexware",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/finexware.svg"
   },
   {
-    "name": "fishlook",
+    "id": "fishlook",
     "year": 2019,
     "title": "Интерфейс маркетплейса",
-    "client": "fishlook",
+    "clientId": "fishlook",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/fishlook.svg"
   },
   {
-    "name": "flarm",
+    "id": "flarm",
     "year": 2013,
     "title": "Контент для сайта инженерного завода",
-    "client": "flarm",
+    "clientId": "flarm",
     "services": [
       "content-design"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/flarm.svg"
   },
   {
-    "name": "foodtrucks",
+    "id": "foodtrucks",
     "year": 2022,
     "title": "Цифровой сервис для организации работы фудтраков",
-    "client": "fudtrek",
+    "clientId": "fudtrek",
     "services": [
       "research",
       "prototype"
     ],
-    "market": [
+    "markets": [
       "log"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/foodtrucks.svg"
   },
   {
-    "name": "gazprom-neft",
+    "id": "gazprom-neft",
     "year": 2020,
     "title": "Карта пользователя для внутреннего портала «Газпром нефти»",
-    "client": "gazprom",
+    "clientId": "gazprom",
     "services": [
       "research",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/gazprom_big.svg"
   },
   {
-    "name": "gazprom-services",
+    "id": "gazprom-services",
     "year": 2021,
     "title": "UX-аудит внутренних обучающих сервисов компании «Газпром нефть»",
-    "client": "gazprom",
+    "clientId": "gazprom",
     "services": [
       "ux-audit",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "prom",
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/gazprom-services.svg"
   },
   {
-    "name": "gazprom",
+    "id": "gazprom",
     "year": 2022,
     "title": "Внутренняя информационная система «Газпром нефти»",
-    "client": "gazprom",
+    "clientId": "gazprom",
     "services": [
       "ux-design",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/gazprom2.svg"
   },
   {
-    "name": "geonaft",
+    "id": "geonaft",
     "year": 2018,
     "title": "Дизайн интерфейса программы геонавигации",
-    "client": "geonaft",
+    "clientId": "geonaft",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/geonaft.png"
   },
   {
-    "name": "goodwood",
+    "id": "goodwood",
     "year": 2020,
     "title": "Классический UX-аудит сайта",
-    "client": "good-wood",
+    "clientId": "good-wood",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/goodwood.svg"
   },
   {
-    "name": "gormost",
+    "id": "gormost",
     "year": 2019,
     "title": "Дизайн интерфейсов для ГБУ «Гормост»",
-    "client": "gormost",
+    "clientId": "gormost",
     "services": [
       "ui-redesign"
     ],
-    "market": [
+    "markets": [
       "gos",
       "log"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/gormost.svg"
   },
   {
-    "name": "humans",
+    "id": "humans",
     "year": 2020,
     "title": "Интергация в команду разработки провайдера",
-    "client": "humans",
+    "clientId": "humans",
     "services": [
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/humans.svg"
   },
   {
-    "name": "hyperus",
+    "id": "hyperus",
     "year": 2024,
     "title": "Дизайн интерфейса системы управления IT-инфраструктурой",
-    "client": "hyperus",
+    "clientId": "hyperus",
     "services": [
       "ux-audit",
       "ui-redesign"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/hyperus.svg"
   },
   {
-    "name": "inbank",
+    "id": "inbank",
     "year": 2016,
     "title": "Интерфейс интернет-банка для VIP-клиентов",
-    "client": "inbank",
+    "clientId": "inbank",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/inbank.svg"
   },
   {
-    "name": "intickets",
+    "id": "intickets",
     "year": 2025,
     "title": "Система автоматизации билетных операций INTICKETS.RU",
-    "client": "intickets-ru",
+    "clientId": "intickets-ru",
     "services": [
       "ux-audit",
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/intickets.svg"
   },
   {
-    "name": "jazzpay",
+    "id": "jazzpay",
     "year": 2013,
     "title": "Дизайн интерфейса платежного сервиса",
-    "client": "jazzpay",
+    "clientId": "jazzpay",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/jazzpay.svg"
   },
   {
-    "name": "jeffit-2021",
+    "id": "jeffit-2021",
     "year": 2021,
     "title": "Система для юридических фирм и департаментов",
-    "client": "jeffit",
+    "clientId": "jeffit",
     "services": [
       "redesign",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/jeffit.svg"
   },
   {
-    "name": "jeffit",
+    "id": "jeffit",
     "year": 2024,
     "title": "Система автоматизации для юридических департаментов",
-    "client": "jeffit",
+    "clientId": "jeffit",
     "services": [
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/jeffit.svg"
   },
   {
-    "name": "joono-ai",
-    "year": 2025,
-    "title": "Исследование пользователей AI-фоторедактора",
-    "client": "joono",
-    "services": [
-      "research"
-    ],
-    "market": [
-      "ec"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/joono-ai.svg"
-  },
-  {
-    "name": "jetlearn",
+    "id": "jetlearn",
     "year": 2021,
     "title": "Платформа для корпоративного обучения",
-    "client": "jetlearn",
+    "clientId": "jetlearn",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/jetlearn.svg"
   },
   {
-    "name": "kapital",
+    "id": "joono-ai",
+    "year": 2025,
+    "title": "Исследование пользователей AI-фоторедактора",
+    "clientId": "joono",
+    "services": [
+      "research"
+    ],
+    "markets": [
+      "ec"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/joono-ai.svg"
+  },
+  {
+    "id": "kids-crooked-house",
+    "year": 2015,
+    "title": "Кейсы для производителя детских площадок",
+    "clientId": "crooked",
+    "services": [
+      "content-design"
+    ],
+    "markets": [
+      "ec"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/crooked.svg"
+  },
+  {
+    "id": "kapital",
     "year": 2020,
     "title": "Исследование пользователей и дизайн сайта страховой компании",
-    "client": "kapital-ms",
+    "clientId": "kapital-ms",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "fin",
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/kapital.svg"
   },
   {
-    "name": "kids-crooked-house",
-    "year": 2015,
-    "title": "Кейсы для производителя детских площадок",
-    "client": "crooked",
-    "services": [
-      "content-design"
-    ],
-    "market": [
-      "ec"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/crooked.svg"
-  },
-  {
-    "name": "korochka-kontent",
+    "id": "korochka-kontent",
     "year": 2015,
     "title": "Справочник для абитуриентов",
-    "client": "korochka-ru",
+    "clientId": "korochka-ru",
     "services": [
       "content-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/korochka.svg"
   },
   {
-    "name": "korochka",
+    "id": "korochka",
     "year": 2015,
     "title": "Сервис подбора ВУЗа",
-    "client": "korochka-ru",
+    "clientId": "korochka-ru",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/korochka.svg"
   },
   {
-    "name": "lab4u",
+    "id": "lab4u",
     "year": 2025,
     "title": "Аудит сайта и приложения медицинской лаборатории",
-    "client": "lab4u",
+    "clientId": "lab4u",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/lab4u.svg"
   },
   {
-    "name": "lantapro",
+    "id": "lantapro",
     "year": 2014,
     "title": "Интерфейс системы кадастрового учета",
-    "client": "complex",
+    "clientId": "complex",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "gos",
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/lantapro.svg"
   },
   {
-    "name": "likehack",
+    "id": "likehack",
     "year": 2013,
     "title": "Новый интерфейс стартапа",
-    "client": "likehack",
+    "clientId": "likehack",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/likehack.svg"
   },
   {
-    "name": "littleone",
+    "id": "littleone",
     "year": 2016,
     "title": "Изучение цифровых привычек",
-    "client": "littleone",
+    "clientId": "littleone",
     "services": [
       "research"
     ],
-    "market": [],
+    "markets": [],
     "image": "https://sobakapav.ru/images/portfolio/cards/littleone.svg"
   },
   {
-    "name": "lori",
+    "id": "lori",
     "year": 2020,
     "title": "UX-аудит и редизайн фотобанка",
-    "client": "lori",
+    "clientId": "lori",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/lori.svg"
   },
   {
-    "name": "m-line",
+    "id": "m-line",
     "year": 2021,
     "title": "Дизайн интерфейса системы дистанционного наблюдения пациентов",
-    "client": "m-line",
+    "clientId": "m-line",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/m-line.svg"
   },
   {
-    "name": "manualmachine",
+    "id": "manualmachine",
     "year": 2019,
     "title": "Дизайн интерфейса для сайта с инструкциями",
-    "client": "manualmachine",
+    "clientId": "manualmachine",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/manualmachine.svg"
   },
   {
-    "name": "math",
+    "id": "math",
     "year": 2021,
     "title": "Дизайн интерфейса математической игры для школьников",
-    "client": "math",
+    "clientId": "math",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/matigra.svg"
   },
   {
-    "name": "medmarket",
+    "id": "medmarket",
     "year": 2022,
     "title": "Исследование и CJM пациентов с диабетом",
-    "client": "medmarket",
+    "clientId": "medmarket",
     "services": [
       "research"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/medmarket.png"
   },
   {
-    "name": "meh",
+    "id": "meh",
     "year": 2016,
     "title": "Контент и прототип буклета для отраслевой выставки",
-    "client": "mechanotronika",
+    "clientId": "mechanotronika",
     "services": [
       "content-design"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/meh.svg"
   },
   {
-    "name": "miaz",
+    "id": "miaz",
     "year": 2018,
     "title": "Электронная карта пациента",
-    "client": "miac-spb",
+    "clientId": "miac-spb",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/miats.svg"
   },
   {
-    "name": "monetory",
-    "year": 2021,
-    "title": "Агрегатор обменников криптовалюты и электронных денег",
-    "client": "monetory",
-    "services": [
-      "redesign",
-      "new-features"
-    ],
-    "market": [
-      "fin"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/monetory.svg"
-  },
-  {
-    "name": "mirbeer",
+    "id": "mirbeer",
     "year": 2021,
     "title": "UX-аудит магазина для пивоваров",
-    "client": "mirbir",
+    "clientId": "mirbir",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/mirbeer.svg"
   },
   {
-    "name": "netrika",
+    "id": "netrika",
     "year": 2022,
     "title": "Рабочее место оператора службы записи к врачу",
-    "client": "netrika-medicina",
+    "clientId": "netrika-medicina",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/netrika.svg"
   },
   {
-    "name": "neurobureau",
+    "id": "monetory",
+    "year": 2021,
+    "title": "Агрегатор обменников криптовалюты и электронных денег",
+    "clientId": "monetory",
+    "services": [
+      "redesign",
+      "new-features"
+    ],
+    "markets": [
+      "fin"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/monetory.svg"
+  },
+  {
+    "id": "neurobureau",
     "year": 2021,
     "title": "Редизайн интерфейса платформы для нейроисследований",
-    "client": "neuroiconica",
+    "clientId": "neuroiconica",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it",
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/neurobureau_big.png"
   },
   {
-    "name": "nextons",
+    "id": "nextons",
     "year": 2023,
     "title": "Таск-трекер юридической фирмы",
-    "client": "nextons",
+    "clientId": "nextons",
     "services": [
       "ui-redesign",
       "redesign"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/nextons.svg"
   },
   {
-    "name": "nlmk",
-    "year": 2017,
-    "title": "Корпоративный портал для 53 тысяч пользователей",
-    "client": "nlmk",
-    "services": [
-      "redesign"
-    ],
-    "market": [
-      "prom"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/nlmk.svg"
-  },
-  {
-    "name": "novotelekom",
+    "id": "novotelekom",
     "year": 2019,
     "title": "Редизайн интерфейса мобильного приложения для сервисных инженеров",
-    "client": "ecity",
+    "clientId": "ecity",
     "services": [
       "ui-redesign",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/ecity-pril_big.svg"
   },
   {
-    "name": "ohlebe",
-    "year": 2021,
-    "title": "Улучшение рекламных показателей профильного СМИ",
-    "client": "ohlebe-ru",
+    "id": "nlmk",
+    "year": 2017,
+    "title": "Корпоративный портал для 53 тысяч пользователей",
+    "clientId": "nlmk",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
+      "prom"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/nlmk.svg"
+  },
+  {
+    "id": "ohlebe",
+    "year": 2021,
+    "title": "Улучшение рекламных показателей профильного СМИ",
+    "clientId": "ohlebe-ru",
+    "services": [
+      "redesign"
+    ],
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/ohlebe.svg"
   },
   {
-    "name": "okey",
+    "id": "okey",
     "year": 2019,
     "title": "Приложение для федеральной розничной сети",
-    "client": "o-key",
+    "clientId": "o-key",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/okey_big.svg"
   },
   {
-    "name": "okna-peterburga",
+    "id": "okna-peterburga",
     "year": 2022,
     "title": "Экспертная оценка и пользовательский аудит сайта компании",
-    "client": "okna-peterburga",
+    "clientId": "okna-peterburga",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/spbwindows.svg"
   },
   {
-    "name": "onesoil",
-    "year": 2021,
-    "title": "Мобильное приложение для фермеров",
-    "client": "onesoil",
-    "services": [
-      "ux-audit"
-    ],
-    "market": [
-      "it",
-      "prom"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/onesoil.svg"
-  },
-  {
-    "name": "omnitopic",
+    "id": "omnitopic",
     "year": 2021,
     "title": "Дизайн MVP агрегатора IT-конференций",
-    "client": "omnitopic",
+    "clientId": "omnitopic",
     "services": [
       "product-team",
       "prototype"
     ],
-    "market": [
+    "markets": [
       "it",
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/omnitopic.svg"
   },
   {
-    "name": "onkor",
+    "id": "onesoil",
+    "year": 2021,
+    "title": "Мобильное приложение для фермеров",
+    "clientId": "onesoil",
+    "services": [
+      "ux-audit"
+    ],
+    "markets": [
+      "it",
+      "prom"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/onesoil.svg"
+  },
+  {
+    "id": "onkor",
     "year": 2023,
     "title": "Дизайн интерфейса МИС для онкологических клиник",
-    "client": "onkor",
+    "clientId": "onkor",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/onkor.svg"
   },
   {
-    "name": "opendesk",
+    "id": "opendesk",
     "year": 2018,
     "title": "Банковское приложение с криптовалютой",
-    "client": "opendesk",
+    "clientId": "opendesk",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/opendesk.svg"
   },
   {
-    "name": "ot-vinta",
+    "id": "ot-vinta",
     "year": 2023,
     "title": "Точечный редизайн интерфейса магазина строительных товаров",
-    "client": "otvinta",
+    "clientId": "otvinta",
     "services": [
       "ux-audit",
       "redesign",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/ot-vinta.svg"
   },
   {
-    "name": "otkritie",
+    "id": "otkritie",
     "year": 2016,
     "title": "Интерфейс онлайн-банка для юридических лиц",
-    "client": "otkritie",
+    "clientId": "otkritie",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/otkritie.svg"
   },
   {
-    "name": "otvet",
+    "id": "otvet",
     "year": 2016,
     "title": "Дизайн интерфейса корпоративного мессенджера",
-    "client": "otvet",
+    "clientId": "otvet",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/otvet.svg"
   },
   {
-    "name": "otvinta-2024",
+    "id": "otvinta-2024",
     "year": 2024,
     "title": "UX-отдел на аутсорсе для строительного интернет-магазина",
-    "client": "otvinta",
+    "clientId": "otvinta",
     "services": [
       "new-features",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/otvinta2.svg"
   },
   {
-    "name": "otvinta-2025",
+    "id": "otvinta-2025",
     "year": 2025,
     "title": "Калькулятор расчета кровли для сайта строительного магазина",
-    "client": "otvinta",
+    "clientId": "otvinta",
     "services": [
       "new-features",
       "ux-outsource"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/otvinta3.svg"
   },
   {
-    "name": "pangeo",
+    "id": "pangeo",
     "year": 2022,
     "title": "Платформа кибербезопасности",
-    "client": "pangeo-radar",
+    "clientId": "pangeo-radar",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it",
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/pangeo_big.svg"
   },
   {
-    "name": "petrovich",
+    "id": "petrovich",
     "year": 2019,
     "title": "Редизайн ключевых экранов интернет-магазина",
-    "client": "petrovich",
+    "clientId": "petrovich",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/petrovich_big.svg"
   },
   {
-    "name": "pgk",
+    "id": "pgk",
     "year": 2018,
     "title": "Корпоративный портал железнодорожной компании",
-    "client": "pgk",
+    "clientId": "pgk",
     "services": [
       "redesign",
       "new-features"
     ],
-    "market": [
+    "markets": [
       "log",
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/pgk.svg"
   },
   {
-    "name": "pmr",
+    "id": "pmr",
     "year": 2014,
     "title": "Интерфейс для сайта испанского агентства недвижимости",
-    "client": "paradise-marbella",
+    "clientId": "paradise-marbella",
     "services": [
       "ux-design",
       "content-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/pmr.svg"
   },
   {
-    "name": "prozhito",
+    "id": "prozhito",
     "year": 2024,
     "title": "Интерфейс платформы общественной архивистики",
-    "client": "prozhito",
+    "clientId": "prozhito",
     "services": [
       "ux-design",
       "research"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/prozhito.svg"
   },
   {
-    "name": "pushkin-digital",
+    "id": "pushkin-digital",
     "year": 2024,
     "title": "Дизайн интерфейса коллекции материалов Пушкинского дома",
-    "client": "pushkin-digital",
+    "clientId": "pushkin-digital",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/itmo_big.svg"
   },
   {
-    "name": "qiwi",
+    "id": "qiwi",
     "year": 2023,
     "title": "Конкурентное сравнение трёх систем денежных переводов",
-    "client": "qiwi",
+    "clientId": "qiwi",
     "services": [
       "ux-audit",
       "research"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/qiwi_big.svg"
   },
   {
-    "name": "raisa",
+    "id": "raisa",
     "year": 2020,
     "title": "Дизайн интерфейса системы мониторинга пациентов в реанимации",
-    "client": "raisa",
+    "clientId": "raisa",
     "services": [
       "ux-design",
       "research"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/raisa_big.svg"
   },
   {
-    "name": "relefopt",
-    "year": 2015,
-    "title": "Интернет-магазин канцелярии для оптовиков",
-    "client": "relief",
-    "services": [
-      "redesign"
-    ],
-    "market": [
-      "ec"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/relefopt.svg"
-  },
-  {
-    "name": "relief-center",
+    "id": "relief-center",
     "year": 2015,
     "title": "Платформа для создания B2B-сайтов",
-    "client": "relief",
+    "clientId": "relief",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/rcenter.svg"
   },
   {
-    "name": "remtech",
-    "year": 2020,
-    "title": "Дизайн интерфейсов для поставщика промышленных полимеров",
-    "client": "rtkco",
+    "id": "relefopt",
+    "year": 2015,
+    "title": "Интернет-магазин канцелярии для оптовиков",
+    "clientId": "relief",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
+      "ec"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/relefopt.svg"
+  },
+  {
+    "id": "remtech",
+    "year": 2020,
+    "title": "Дизайн интерфейсов для поставщика промышленных полимеров",
+    "clientId": "rtkco",
+    "services": [
+      "redesign"
+    ],
+    "markets": [
       "prom",
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/remtech.svg"
   },
   {
-    "name": "res",
-    "year": 2021,
-    "title": "Профессиональная система РЭС — калибратор тока и напряжения",
-    "client": "irs",
-    "services": [
-      "ux-design",
-      "redesign"
-    ],
-    "market": [
-      "prom"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards-l/res_big.svg"
-  },
-  {
-    "name": "russpass",
+    "id": "russpass",
     "year": 2020,
     "title": "Цифровая туристическая платформа",
-    "client": "russpass",
+    "clientId": "russpass",
     "services": [
       "ux-audit",
       "research",
       "redesign",
       "prototype"
     ],
-    "market": [
+    "markets": [
       "log"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/russpass.svg"
   },
   {
-    "name": "sberbank",
-    "year": 2017,
-    "title": "Гайд по созданию интерфейсных текстов",
-    "client": "sberbank",
+    "id": "res",
+    "year": 2021,
+    "title": "Профессиональная система РЭС — калибратор тока и напряжения",
+    "clientId": "irs",
     "services": [
-      "content-design"
+      "ux-design",
+      "redesign"
     ],
-    "market": [
-      "fin"
+    "markets": [
+      "prom"
     ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/sber.png"
+    "image": "https://sobakapav.ru/images/portfolio/cards-l/res_big.svg"
   },
   {
-    "name": "seatmap",
+    "id": "seatmap",
     "year": 2025,
     "title": "Инструмент для создания схем стадионов и концертных площадок",
-    "client": "seatmap",
+    "clientId": "seatmap",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/seatmap.svg"
   },
   {
-    "name": "serverscom",
+    "id": "sberbank",
+    "year": 2017,
+    "title": "Гайд по созданию интерфейсных текстов",
+    "clientId": "sberbank",
+    "services": [
+      "content-design"
+    ],
+    "markets": [
+      "fin"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/sber.png"
+  },
+  {
+    "id": "serverscom",
     "year": 2016,
     "title": "Интерфейс клиентского портала",
-    "client": "serverscom",
+    "clientId": "serverscom",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "telecom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/serverscom.svg"
   },
   {
-    "name": "simed",
+    "id": "simed",
     "year": 2025,
     "title": "Редизайн модуля записи к врачу",
-    "client": "simpleks",
+    "clientId": "simpleks",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/simed.svg"
   },
   {
-    "name": "simetra",
+    "id": "simetra",
     "year": 2022,
     "title": "UX-аудит системы транспортного моделирования",
-    "client": "simatra",
+    "clientId": "simatra",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "it",
       "log"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/simetra.svg"
   },
   {
-    "name": "sindbad",
-    "year": 2018,
-    "title": "Дизайн авиабилета и писем",
-    "client": "sindbad",
-    "services": [
-      "content-design",
-      "ux-design"
-    ],
-    "market": [
-      "log"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/sindbad.svg"
-  },
-  {
-    "name": "smartdeal-ecp",
-    "year": 2022,
-    "title": "Приложение для подписания документов при сделках с недвижимостью",
-    "client": "smartdeal",
-    "services": [
-      "redesign",
-      "new-features"
-    ],
-    "market": [
-      "it"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/smartdeal2.svg"
-  },
-  {
-    "name": "smartdeal",
+    "id": "smartdeal",
     "year": 2018,
     "title": "Дизайн рабочего места оператора",
-    "client": "smartdeal",
+    "clientId": "smartdeal",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "it",
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/smartdeal.svg"
   },
   {
-    "name": "snob",
+    "id": "sindbad",
+    "year": 2018,
+    "title": "Дизайн авиабилета и писем",
+    "clientId": "sindbad",
+    "services": [
+      "content-design",
+      "ux-design"
+    ],
+    "markets": [
+      "log"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/sindbad.svg"
+  },
+  {
+    "id": "smartdeal-ecp",
+    "year": 2022,
+    "title": "Приложение для подписания документов при сделках с недвижимостью",
+    "clientId": "smartdeal",
+    "services": [
+      "redesign",
+      "new-features"
+    ],
+    "markets": [
+      "it"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/smartdeal2.svg"
+  },
+  {
+    "id": "snob",
     "year": 2013,
     "title": "Юзабилити-аудит",
-    "client": "snob-ru",
+    "clientId": "snob-ru",
     "services": [
       "ux-audit"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/snob.svg"
   },
   {
-    "name": "sportmaster",
-    "year": 2015,
-    "title": "UX-тестирование терминалов самообслуживания «Спортмастера»",
-    "client": "sportmaster",
-    "services": [
-      "ux-audit",
-      "research"
-    ],
-    "market": [
-      "ec"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/sportmaster.svg"
-  },
-  {
-    "name": "stream-telecom",
-    "year": 2018,
-    "title": "Интерфейс сервиса SMS-рассылок",
-    "client": "stream-telecom",
-    "services": [
-      "redesign"
-    ],
-    "market": [
-      "telecom"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/streamtelecom.svg"
-  },
-  {
-    "name": "stroynastroy",
-    "year": 2023,
-    "title": "Дизайн интерфейса маркетплейса стройматериалов",
-    "client": "stroynastroy",
-    "services": [
-      "product-team",
-      "research",
-      "prototype"
-    ],
-    "market": [
-      "ec"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/stroynastroy.svg"
-  },
-  {
-    "name": "solar-staff",
+    "id": "solar-staff",
     "year": 2016,
     "title": "Точечные улучшения интерфейса",
-    "client": "solar-staff",
+    "clientId": "solar-staff",
     "services": [
       "ux-audit",
       "redesign"
     ],
-    "market": [
+    "markets": [
       "it"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/solarstaff.svg"
   },
   {
-    "name": "t1",
+    "id": "sportmaster",
+    "year": 2015,
+    "title": "UX-тестирование терминалов самообслуживания «Спортмастера»",
+    "clientId": "sportmaster",
+    "services": [
+      "ux-audit",
+      "research"
+    ],
+    "markets": [
+      "ec"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/sportmaster.svg"
+  },
+  {
+    "id": "stream-telecom",
+    "year": 2018,
+    "title": "Интерфейс сервиса SMS-рассылок",
+    "clientId": "stream-telecom",
+    "services": [
+      "redesign"
+    ],
+    "markets": [
+      "telecom"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/streamtelecom.svg"
+  },
+  {
+    "id": "stroynastroy",
+    "year": 2023,
+    "title": "Дизайн интерфейса маркетплейса стройматериалов",
+    "clientId": "stroynastroy",
+    "services": [
+      "product-team",
+      "research",
+      "prototype"
+    ],
+    "markets": [
+      "ec"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/stroynastroy.svg"
+  },
+  {
+    "id": "t1",
     "year": 2025,
     "title": "Медицинская карта с голосовым заполнением",
-    "client": "t1",
+    "clientId": "t1",
     "services": [
       "prototype"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/t1_big.svg"
   },
   {
-    "name": "tigitl",
+    "id": "tigitl",
     "year": 2016,
     "title": "Интерфейс поисковика классической музыки",
-    "client": "tigitl",
+    "clientId": "tigitl",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/tigitl.svg"
   },
   {
-    "name": "tinkoff",
+    "id": "tinkoff",
     "year": 2015,
     "title": "Онбординг для банка",
-    "client": "tinkoff",
+    "clientId": "tinkoff",
     "services": [
       "new-features",
       "content-design"
     ],
-    "market": [
+    "markets": [
       "fin"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/tinkoff.svg"
   },
   {
-    "name": "tiomed",
+    "id": "tiomed",
     "year": 2015,
     "title": "Контент-дизайн и структура сайта",
-    "client": "tiomed",
+    "clientId": "tiomed",
     "services": [
       "ux-design",
       "content-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/tiomed.svg"
   },
   {
-    "name": "tis",
+    "id": "tis",
     "year": 2021,
     "title": "Глобальная система дистанционного мониторинга давления",
-    "client": "tis",
+    "clientId": "tis",
     "services": [
       "ux-design",
       "product-team"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/tis_big.svg"
   },
   {
-    "name": "tmh",
+    "id": "tmh",
     "year": 2024,
     "title": "Платформа дистанционного мониторинга пациентов",
-    "client": "tmh",
+    "clientId": "tmh",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "med"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards-l/tmh_big.svg"
   },
   {
-    "name": "trash",
+    "id": "trash",
     "year": 2019,
     "title": "Дизайн интерфейса для Департамента природопользования Москвы",
-    "client": "moscow",
+    "clientId": "moscow",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "gos"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/moscowdept.svg"
   },
   {
-    "name": "veza",
+    "id": "veza",
     "year": 2019,
     "title": "Личный кабинет для проектировщиков и монтажников",
-    "client": "veza",
+    "clientId": "veza",
     "services": [
       "ux-design",
       "research"
     ],
-    "market": [
+    "markets": [
       "prom"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/veza.svg"
   },
   {
-    "name": "viking-line",
-    "year": 2013,
-    "title": "Справочная система для судоходного концерна",
-    "client": "viking-line",
-    "services": [
-      "content-design"
-    ],
-    "market": [
-      "log"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/vikingline.svg"
-  },
-  {
-    "name": "video-santa",
+    "id": "video-santa",
     "year": 2019,
     "title": "Дизайн мобильного интерфейса и авторское сопровождение",
-    "client": "ded-moroz",
+    "clientId": "ded-moroz",
     "services": [
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/dedmoroz.svg"
   },
   {
-    "name": "vuborgskiy-zamok",
+    "id": "vuborgskiy-zamok",
     "year": 2016,
     "title": "Сайт Выборгского музея-заповедника",
-    "client": "vyborg",
+    "clientId": "vyborg",
     "services": [
       "ux-design",
       "content-design"
     ],
-    "market": [
+    "markets": [
       "ed"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/vcastle.svg"
   },
   {
-    "name": "yit",
+    "id": "viking-line",
+    "year": 2013,
+    "title": "Справочная система для судоходного концерна",
+    "clientId": "viking-line",
+    "services": [
+      "content-design"
+    ],
+    "markets": [
+      "log"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/vikingline.svg"
+  },
+  {
+    "id": "yit",
     "year": 2014,
     "title": "Контент и дизайн интерфейса",
-    "client": "yit",
+    "clientId": "yit",
     "services": [
       "ux-design",
       "content-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/yit.svg"
   },
   {
-    "name": "yota",
-    "year": 2013,
-    "title": "ARM сотрудника службы поддержки сотового оператора",
-    "client": "yota",
-    "services": [
-      "ux-design",
-      "new-features"
-    ],
-    "market": [
-      "telecom"
-    ],
-    "image": "https://sobakapav.ru/images/portfolio/cards/yota.svg"
-  },
-  {
-    "name": "zapovednik",
+    "id": "zapovednik",
     "year": 2023,
     "title": "UX-аудит и редизайн магазина товаров для животных",
-    "client": "zapovednik",
+    "clientId": "zapovednik",
     "services": [
       "ux-audit",
       "redesign"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/zapovednik.svg"
   },
   {
-    "name": "zateya",
+    "id": "yota",
+    "year": 2013,
+    "title": "ARM сотрудника службы поддержки сотового оператора",
+    "clientId": "yota",
+    "services": [
+      "ux-design",
+      "new-features"
+    ],
+    "markets": [
+      "telecom"
+    ],
+    "image": "https://sobakapav.ru/images/portfolio/cards/yota.svg"
+  },
+  {
+    "id": "zateya",
     "year": 2014,
     "title": "UX-исследование и дизайн интерфейса интернет-магазина",
-    "client": "veselaya-zateya",
+    "clientId": "veselaya-zateya",
     "services": [
       "research",
       "ux-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/zateya.svg"
   },
   {
-    "name": "zehnder",
+    "id": "zehnder",
     "year": 2014,
     "title": "Контент-дизайн сайта для продаж отопительных приборов",
-    "client": "zehnder",
+    "clientId": "zehnder",
     "services": [
       "ux-design",
       "content-design"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/zehnder/logo.png"
   },
   {
-    "name": "zhivoj-office",
+    "id": "zhivoj-office",
     "year": 2015,
     "title": "Интернет-магазин для оптовиков",
-    "client": "zhivoy-ofis",
+    "clientId": "zhivoy-ofis",
     "services": [
       "redesign"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/zhivoj-office.svg"
   },
   {
-    "name": "zombieland",
+    "id": "zombieland",
     "year": 2014,
     "title": "Старт продукта",
-    "client": "zombilend",
+    "clientId": "zombilend",
     "services": [
       "product-team",
       "research"
     ],
-    "market": [
+    "markets": [
       "ec"
     ],
     "image": "https://sobakapav.ru/images/portfolio/cards/zombieland.svg"
